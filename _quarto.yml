@@ -25,6 +25,7 @@ format:
     
 execute:
   echo: false
+  freeze: auto
 link-external-newwindow: true 
 editor_options: 
   chunk_output_type: console
