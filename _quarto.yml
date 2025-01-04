@@ -1,0 +1,30 @@
+project:
+  type: book
+  
+book:
+  title: "Thesis Proposal: Modeling Crustacean Morphometric Maturity"
+  author: "Ruby Krasnow"
+  back-to-top-navigation: true
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - systematic_review.qmd
+    - simulation_testing.qmd
+    - morphmat.qmd
+    - eco_evo.qmd
+    - species_applications.qmd
+ 
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    code-link: true
+  pdf:
+    documentclass: scrreprt
+    
+execute:
+  echo: false
+link-external-newwindow: true 
+editor_options: 
+  chunk_output_type: console

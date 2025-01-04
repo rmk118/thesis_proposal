@@ -1,0 +1,48 @@
+---
+bibliography: references.bib
+---
+
+# Simulation Testing
+
+```{r}
+#| message: false
+library(tidyverse)
+library(gt)
+```
+
+Testing a proposed model against simulated data generated from a known underlying process is an important but sometimes overlooked step in ecological research [@austin2006; @lotterhos2022]. In fisheries science, simulation testing is commonly used to evaluate stock assessment and population dynamic models and assess their robustness to various types of error [@deroba2015; @piner2011].
+
+Before applying the size-at-maturity estimation procedures identified through the systematic review to real data, I will create multiple simulated datasets with differing characteristics in order to determine the domains of applicability and inference of each model. The domain of applicability refers to the types of datasets to which a model can reliably be applied, while the domain of inference is defined as the processes or conclusions that can be inferred from the model output [@lotterhos2022]. The methodology for this chapter will be heavily influenced by the principles for ecological simulation testing outlined by Lotterhos et al. [-@lotterhos2022] and the guidelines for computational method benchmarking developed by Weber et al. [-@weber2019] (See [Box 1](#box1)).
+
+::: {#box1 .box}
+```{r}
+
+guidelines <- data.frame(
+  guide = c(
+    "Define the purpose and the scope of the benchmark.",
+    "Include all relevant methods.",
+    "Select (or design) appropriate datasets.",
+    "Choose appropriate parameter values and software versions.",
+    "Evaluate methods according to key quantitative performance metrics.",
+    "Evaluate secondary metrics including computational requirements, user-friendliness, installation procedures, and documentation quality.",
+    "Interpret results and provide recommendations from both user and method developer perspectives.",
+    "Publish results in an accessible format.",
+    "Design the benchmark to include future extensions.",
+    "Follow reproducible research best practices, by making code and data publicly available."
+  )
+) %>% rownames_to_column("num")
+
+
+guidelines %>% gt() %>%
+  tab_header(title = "Box 1: Computational benchmarking guidelines") %>%
+  tab_style(style = cell_borders(sides = c("t"), style = NULL),
+            locations = cells_title()) %>% 
+  tab_options(column_labels.hidden = TRUE,
+              container.padding.y = px(0))
+
+```
+:::
+
+
+
+## References {.unnumbered}

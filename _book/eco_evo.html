@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Ecological &amp; Evolutionary Applications – Thesis Proposal: Modeling Crustacean Morphometric Maturity</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./species_applications.html" rel="next">
+<link href="./morphmat.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./eco_evo.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ecological &amp; Evolutionary Applications</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Thesis Proposal: Modeling Crustacean Morphometric Maturity</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./systematic_review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Systematic Review</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simulation_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simulation Testing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./morphmat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><code>morphmat</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./eco_evo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ecological &amp; Evolutionary Applications</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./species_applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Species Applications</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#morphometric-maturity-when-and-why" id="toc-morphometric-maturity-when-and-why" class="nav-link active" data-scroll-target="#morphometric-maturity-when-and-why"><span class="header-section-number">5.1</span> Morphometric Maturity: When and Why?</a></li>
+  <li><a href="#claws" id="toc-claws" class="nav-link" data-scroll-target="#claws"><span class="header-section-number">5.2</span> Claws</a>
+  <ul class="collapse">
+  <li><a href="#feeding-movement" id="toc-feeding-movement" class="nav-link" data-scroll-target="#feeding-movement"><span class="header-section-number">5.2.1</span> Feeding &amp; movement</a></li>
+  <li><a href="#sexual-selection" id="toc-sexual-selection" class="nav-link" data-scroll-target="#sexual-selection"><span class="header-section-number">5.2.2</span> Sexual selection</a></li>
+  <li><a href="#physiological-constraints" id="toc-physiological-constraints" class="nav-link" data-scroll-target="#physiological-constraints"><span class="header-section-number">5.2.3</span> Physiological constraints</a></li>
+  <li><a href="#abiotic-other" id="toc-abiotic-other" class="nav-link" data-scroll-target="#abiotic-other"><span class="header-section-number">5.2.4</span> Abiotic &amp; other</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ecological &amp; Evolutionary Applications</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Using changes in the relative growth of the claws or abdomen as a sign of the onset of sexual maturity is complicated by the multitude of ecological and evolutionary factors that work together to shape crustacean claw and abdomen morphology. This section will focus on the ecological and evolutionary context of crustacean morphometric maturity.</p>
+<section id="morphometric-maturity-when-and-why" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="morphometric-maturity-when-and-why"><span class="header-section-number">5.1</span> Morphometric Maturity: When and Why?</h2>
+<p>Although changes in morphometry have been successfully linked to sexual maturity and used to estimate SM50 in many crustacean species, other studies have found no distinct changes in claw or abdomen growth rates at maturity.</p>
+<ul>
+<li>Does the importance of morphometric maturity follow taxonomic patterns (i.e., is it true that morphometric maturity is not useful for the genus <em>Chaceon</em>)?</li>
+<li>Why is allometric growth a useful indicator of maturity for some crustacean taxa but not others? Are there crustacean taxa where these types of morphometric maturity analyses are not justified as a way to estimate functional maturity for management purposes?</li>
+<li>Are there correlations between the life history traits of a species and the presence or magnitude of changes in the relative growth of secondary sexual characteristics? Similarly, how much can be assumed about a species’ size at morphometric maturity based on the patterns observed in species that are closely related, fill similar ecological niches, or have similar life history characteristics/functional traits?
+<ul>
+<li>“It was concluded that there was little correlation between growth format and phylogenetic level… Gross ecological habit similarly failed to produce any general correlation with growth format” <span class="citation" data-cites="hartnoll2001">(<a href="#ref-hartnoll2001" role="doc-biblioref">Hartnoll 2001</a>)</span>. Will this hold for the much larger body of research included in my systematic review?</li>
+</ul></li>
+</ul>
+<p>This line of inquiry has management implications because it can inform how resources are allocated when researchers are attempting to estimate SM50 for a new species. If it seems unlikely that the onset of maturity for males of the species will exhibit discontinuous growth of the chelae, it may not be an efficient use of time and money to measure the chelae of thousands of individuals.</p>
+<p>Other questions and hypotheses that may be addressed include:</p>
+<ul>
+<li>Which factors influence the timing of the transition to morphometric maturity relative to the transition to physiological maturity?</li>
+<li>Under what circumstances can morphometric maturity be considered to be equivalent to functional maturity?</li>
+<li>Investigate possible correlations between the presence of (1) heterochely and (2) a terminal molt and the timing and severity of changes in allometric growth that occur at morphometric maturity.</li>
+<li>Are Portunid crabs less likely to show significant positive allometry for chela growth because of the potential for interfering with swimming ability/is there evidence for an evolutionary constraint on chela size in Portunid crabs? <span class="citation" data-cites="daniels2001 abelló1990">(<a href="#ref-daniels2001" role="doc-biblioref">Daniels 2001</a>; <a href="#ref-abelló1990" role="doc-biblioref">Abelló, Pertierra, and Reid 1990</a>)</span></li>
+<li>Effects of rhizocephalan parasitization on morphometric size at maturity <span class="citation" data-cites="narvarte2007">(<a href="#ref-narvarte2007" role="doc-biblioref">Narvarte et al. 2007</a>)</span></li>
+</ul>
+<p>There are many interesting opportunities for comparative phylogenetics surrounding this topic. For example, carapace morphometrics have been used to identify morphological convergence events within the family of primarily symbiotic pea crabs (Pinnotheridae) <span class="citation" data-cites="hultgren2022 degier2023">(<a href="#ref-hultgren2022" role="doc-biblioref">Hultgren, Foxx, and Palacios Theil 2022</a>; <a href="#ref-degier2023" role="doc-biblioref">Gier et al. 2023</a>)</span>. Initial analyses of carapace aspect ratio (AR, the ratio of carapace width to carapace length) found that correlations between carapace AR and host identity remained even after statistically accounting for phylogeny, indicating repeated evolution to specific host associations across the extensive pea crab phylogenetic tree<span class="citation" data-cites="hultgren2022">(<a href="#ref-hultgren2022" role="doc-biblioref">Hultgren, Foxx, and Palacios Theil 2022</a>)</span>. This idea has been corroborated by later research linking phylogenetic position and preferred host phyla to landmark-based carapace morphology <span class="citation" data-cites="degier2023">(<a href="#ref-degier2023" role="doc-biblioref">Gier et al. 2023</a>)</span> Along with earlier work on pea crab ecomorphology <span class="citation" data-cites="degier2020">(<a href="#ref-degier2020" role="doc-biblioref">Gier and Becker 2020</a>)</span>, these studies illustrate how integrating morphological, ecological, and molecular data can reveal strong evolutionary patterns within a subset of Crustacea.</p>
+</section>
+<section id="claws" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="claws"><span class="header-section-number">5.2</span> Claws</h2>
+<section id="feeding-movement" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="feeding-movement"><span class="header-section-number">5.2.1</span> Feeding &amp; movement</h3>
+<p><strong>Diet-induced plasticity</strong></p>
+<p>There is a large body of evidence that differences in diet-related exercise can affect claw size and shape within the lifespan of an individual crab as well as between individuals and populations. Changes in claw morphology are associated with ontogenetic shifts in diet for both marine and freshwater crabs <span class="citation" data-cites="lim2016 viozzi2021">(<a href="#ref-lim2016" role="doc-biblioref">Lim, Yong, and Christy 2016</a>; <a href="#ref-viozzi2021" role="doc-biblioref">Viozzi et al. 2021</a>)</span>. Smith and Palmer <span class="citation" data-cites="smith1994">(<a href="#ref-smith1994" role="doc-biblioref">1994</a>)</span> found significant differences in claw size and performance between <em>C. productus</em> individuals raised on experimental diets of varying levels of toughness, concluding that claw morphology is affected by differential use. Analogous results have been found for green crabs (<em>C. maenas</em>) raised on a diet of winkles (hard prey) compared to a diet of soft fish flesh <span class="citation" data-cites="abby-kalio1984">(<a href="#ref-abby-kalio1984" role="doc-biblioref">Abby-Kalio and Warner 1984</a>)</span>.</p>
+<p><strong>Reasons for differences between species/population chela size or shape</strong></p>
+<ul>
+<li><p>Diet consists of different prey species: crabs with larger chelae can consume a wider size range of hard-bodied prey items and can thus exploit a wider spectrum of prey species <span class="citation" data-cites="lee1992">(<a href="#ref-lee1992" role="doc-biblioref">Lee and Seed 1992</a>)</span></p></li>
+<li><p>Diet consists of the same prey species, but there are population differences in prey morphology (e.g., a high correlation between <em>C. maenas</em> crusher claw size and <em>L. obtusata</em> shell mass) <span class="citation" data-cites="edgell2008">(<a href="#ref-edgell2008" role="doc-biblioref">Edgell and Rochette 2008</a>)</span></p></li>
+<li><p>Geographic differentiation was only observable in the <em>C. maenas</em> crusher claw, not the cutter claw, and occurred in both sexes, indicating a trophic function <span class="citation" data-cites="smith2004">(<a href="#ref-smith2004" role="doc-biblioref">Smith 2004</a>)</span></p></li>
+<li><p>Differences in food availability (e.g., food resource concentrations, foraging opportunities) influence the energy available for claw growth <span class="citation" data-cites="mclain2010">(<a href="#ref-mclain2010" role="doc-biblioref">McLain and Pratt 2010</a>)</span></p></li>
+</ul>
+</section>
+<section id="sexual-selection" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="sexual-selection"><span class="header-section-number">5.2.2</span> Sexual selection</h3>
+<p><strong>Aggression/intrasexual competition</strong></p>
+<p>In some species, it appears that claw morphology has evolved for effectiveness in male-male competition rather than selection by female mating preferences <span class="citation" data-cites="callander2013">(<a href="#ref-callander2013" role="doc-biblioref">Callander et al. 2013</a>)</span>. Responses of male <em>C. maenas</em> to conspecific male competitors were strongly influenced by relative chela size, while body size had a comparatively weak effect <span class="citation" data-cites="lee1992">(<a href="#ref-lee1992" role="doc-biblioref">Lee and Seed 1992</a>)</span>. The role of cheliped size in decisions to initiate contests and in determining the outcome of those contests has also been demonstrated across a number of hermit crab species <span class="citation" data-cites="yasuda2016 yoshino2011">(<a href="#ref-yasuda2016" role="doc-biblioref">Yasuda and Koga 2016</a>; <a href="#ref-yoshino2011" role="doc-biblioref">Yoshino, Koga, and Oki 2011</a>)</span>. In fact, examples of the importance of claw morphology in intrasexual competition can be found in essentially all branches of the crustacean phylogenetic tree. The arched morphology of squat lobster chelae appears to have evolved to inflict puncture wounds on opponents during agonistic interactions <span class="citation" data-cites="claverie2007">(<a href="#ref-claverie2007" role="doc-biblioref">Claverie and Smith 2007</a>)</span>. Crayfish with experimentally impaired chelae were displaced from optimal shelter locations by unimpaired conspecifics <span class="citation" data-cites="levenbach1996">(<a href="#ref-levenbach1996" role="doc-biblioref">Levenbach and Hazlett 1996</a>)</span>. Chela development and differentiation has been especially well-studied for the American lobster (<em>Homarus americanus</em>). As early as 1935, Templeman noted that the outcome of a physical contest between two male lobsters of similar shell hardness was generally determined by the size of their large chelae <span class="citation" data-cites="templeman1935">(<a href="#ref-templeman1935" role="doc-biblioref">Templeman 1935</a>)</span>.</p>
+<p>However, this phenomenon is by no means universal: for example, the dotillid crab <em>Scopimera globosa</em> does not use its chelae to grasp or strike during male-male combat, instead predominantly using its walking legs during wrestling matches <span class="citation" data-cites="ida2017">(<a href="#ref-ida2017" role="doc-biblioref">Ida and Wada 2017</a>)</span>. Accordingly, Ida and Wada <span class="citation" data-cites="ida2017">(<a href="#ref-ida2017" role="doc-biblioref">2017</a>)</span> found that leg length had a significant impact on <em>S. globosa</em> fighting success, but carapace width and chela length did not.</p>
+<p><strong>Mating/copulation/signaling to females</strong></p>
+<ul>
+<li>Males in mating pairs of <em>C. maena</em>s had significantly larger chelae than the total male population <span class="citation" data-cites="lee1992">(<a href="#ref-lee1992" role="doc-biblioref">Lee and Seed 1992</a>)</span>.</li>
+</ul>
+</section>
+<section id="physiological-constraints" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="physiological-constraints"><span class="header-section-number">5.2.3</span> Physiological constraints</h3>
+<ul>
+<li><p>Mechanical advantage does not always decline with increasing claw length <span class="citation" data-cites="taylor2001 dennenmoser2013">(<a href="#ref-taylor2001" role="doc-biblioref">Taylor 2001</a>; <a href="#ref-dennenmoser2013" role="doc-biblioref">Dennenmoser and Christy 2013</a>)</span>. The optimal claw shape for signaling females is in opposition to the optimal shape for fighting, like the sexual selection vs.&nbsp;locomotion conflict, but Dennenmoser and Christy <span class="citation" data-cites="dennenmoser2013">(<a href="#ref-dennenmoser2013" role="doc-biblioref">2013</a>)</span> found that claw physiology and male fighting tactics compensate for the selective pressure for effective signals such that the claw remains a potent weapon <span class="citation" data-cites="allen2007 dennenmoser2013">(<a href="#ref-allen2007" role="doc-biblioref">Allen and Levinton 2007</a>; <a href="#ref-dennenmoser2013" role="doc-biblioref">Dennenmoser and Christy 2013</a>)</span>. However, muscle stress (force per unit area) generally declines with increasing claw size, leading Taylor <span class="citation" data-cites="taylor2001">(<a href="#ref-taylor2001" role="doc-biblioref">2001</a>)</span> to suggest that the positive allometric shifts in claw size observed in male decapod crustaceans may be needed to compensate for the declining muscle stress in order to maintain a constant force output per unit body size.&nbsp;</p></li>
+<li><p><strong>Energetic and lomotion-related costs + increased predation risk:</strong> for example, treadmill endurance capacity was significantly lower for fiddler crabs with intact claws compared to those without <span class="citation" data-cites="allen2007">(<a href="#ref-allen2007" role="doc-biblioref">Allen and Levinton 2007</a>)</span>. Fiddler crab sprint velocity was shown to increase following autonomy when running on a flat surface <span class="citation" data-cites="martin2019">(<a href="#ref-martin2019" role="doc-biblioref">Martin 2019</a>)</span>. Coevolution of leg morphology may help mitigate such locomotor and energetic costs of bearing enlarged chelae, as demonstrated by Bywater et al. <span class="citation" data-cites="bywater2018">(<a href="#ref-bywater2018" role="doc-biblioref">2018</a>)</span> in a genus-wide study of fiddler crabs. In other crustaceans, lactate levels (an indicator of fatigue) were positively related to cheliped size in the hermit crab <em>Pagurus bernhardus</em> <span class="citation" data-cites="doake2010">(<a href="#ref-doake2010" role="doc-biblioref">Doake, Scantlebury, and Elwood 2010</a>)</span>. Swimming speed was negatively correlated with chela size for the crayfish <em>Cherax dispar</em> <span class="citation" data-cites="wilson2009">(<a href="#ref-wilson2009" role="doc-biblioref">Wilson et al. 2009</a>)</span>.</p></li>
+</ul>
+</section>
+<section id="abiotic-other" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="abiotic-other"><span class="header-section-number">5.2.4</span> Abiotic &amp; other</h3>
+<ul>
+<li><p>Habitat/substrate type <span class="citation" data-cites="marochi2017 mclain2010">(<a href="#ref-marochi2017" role="doc-biblioref">Marochi, Masunari, and Schubart 2017</a>; <a href="#ref-mclain2010" role="doc-biblioref">McLain and Pratt 2010</a>)</span></p></li>
+<li><p>Temperature differences</p>
+<ul>
+<li>There is evidence that the major claw serves a thermoregulatory function for the fiddler crab and may allow them to occupy a broader range of thermal niches <span class="citation" data-cites="darnell2011 degrande2021a">(<a href="#ref-darnell2011" role="doc-biblioref">Darnell, Munguia, and Benkman 2011</a>; <a href="#ref-degrande2021a" role="doc-biblioref">De Grande, Fogo, and Costa 2021</a>)</span>.</li>
+</ul></li>
+<li><p>Cannibalism <span class="citation" data-cites="dutil2000">(<a href="#ref-dutil2000" role="doc-biblioref">Dutil et al. 2000</a>)</span></p></li>
+<li><p>Harvest-induced evolution was observed in the European lobster (<em>Homarus gammarus</em>) as a result of the selective pressure against large chelae exerted by the fishery <span class="citation" data-cites="sørdalen2018">(<a href="#ref-sørdalen2018" role="doc-biblioref">Tonje K. Sørdalen et al. 2018</a>)</span>. However, in a follow-up study, Sørdalen et al. <span class="citation" data-cites="sørdalen2020">(<a href="#ref-sørdalen2020" role="doc-biblioref">2020</a>)</span> showed that marine protected areas (MPAs) may partially restore trait loss, with males inside MPAs possessing larger claws than similarly-sized males in nearby fished areas.</p></li>
+<li><p>Seasonal variation <span class="citation" data-cites="yasuda2017">(<a href="#ref-yasuda2017" role="doc-biblioref">Yasuda et al. 2017</a>)</span></p></li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-abby-kalio1984" class="csl-entry" role="listitem">
+Abby-Kalio, N. J., and G. F. Warner. 1984. <span>“Effects of Two Different Feeding Regimes on the Chela Closer Muscles of the Shore Crab Carcinus Maenas (l).”</span> <em>Marine Behaviour and Physiology</em> 11 (3): 209–18. <a href="https://doi.org/10.1080/10236248409387046">https://doi.org/10.1080/10236248409387046</a>.
+</div>
+<div id="ref-abelló1990" class="csl-entry" role="listitem">
+Abelló, Pere, Juan P. Pertierra, and David G. Reid. 1990. <span>“Sexual Size Dimorphism, Relative Growth and Handedness in Liocarcinus Depurator and Macropipus Tuberculatus (Brachyura: Portunidae).”</span> <em>Scientia Marina</em> 54 (January): 195–202. <a href="https://digital.csic.es/bitstream/10261/28622/1/Abello_et_al_1990.pdf">https://digital.csic.es/bitstream/10261/28622/1/Abello_et_al_1990.pdf</a>.
+</div>
+<div id="ref-allen2007" class="csl-entry" role="listitem">
+Allen, Bengt J., and Jeffrey S. Levinton. 2007. <span>“Costs of Bearing a Sexually Selected Ornamental Weapon in a Fiddler Crab.”</span> <em>Functional Ecology</em> 21 (1): 154–61. <a href="https://doi.org/10.1111/j.1365-2435.2006.01219.x">https://doi.org/10.1111/j.1365-2435.2006.01219.x</a>.
+</div>
+<div id="ref-bywater2018" class="csl-entry" role="listitem">
+Bywater, Candice L., Robbie S. Wilson, Keyne Monro, and Craig R. White. 2018. <span>“Legs of Male Fiddler Crabs Evolved to Compensate for Claw Exaggeration and Enhance Claw Functionality During Waving Displays.”</span> <em>Evolution</em> 72 (11): 2491–2502. <a href="https://doi.org/10.1111/evo.13617">https://doi.org/10.1111/evo.13617</a>.
+</div>
+<div id="ref-callander2013" class="csl-entry" role="listitem">
+Callander, Sophia, Andrew T. Kahn, Tim Maricic, Michael D. Jennions, and Patricia R. Y. Backwell. 2013. <span>“Weapons or Mating Signals? Claw Shape and Mate Choice in a Fiddler Crab.”</span> <em>Behavioral Ecology and Sociobiology</em> 67 (7): 1163–67. <a href="https://doi.org/10.1007/s00265-013-1541-6">https://doi.org/10.1007/s00265-013-1541-6</a>.
+</div>
+<div id="ref-claverie2007" class="csl-entry" role="listitem">
+Claverie, Thomas, and I. Philip Smith. 2007. <span>“Functional Significance of an Unusual Chela Dimorphism in a Marine Decapod: Specialization as a Weapon?”</span> <em>Proceedings: Biological Sciences</em> 274 (1628): 3033–38. <a href="https://doi.org/10.1098/rspb.2007.1223">https://doi.org/10.1098/rspb.2007.1223</a>.
+</div>
+<div id="ref-daniels2001" class="csl-entry" role="listitem">
+Daniels, S. R. 2001. <span>“Allometric Growth, Handedness, and Morphological Variation in Potamonautes Warreni (Calman, 1918) (Decapoda, Brachyura, Potamonautidae) with a Redescription of the Species.”</span> <em>Crustaceana</em> 74 (3): 237–53. <a href="https://doi.org/10.1163/156854001505488">https://doi.org/10.1163/156854001505488</a>.
+</div>
+<div id="ref-darnell2011" class="csl-entry" role="listitem">
+Darnell, M. Zachary, Pablo Munguia, and Natural History Editor: Craig W. Benkman. 2011. <span>“Thermoregulation as an Alternate Function of the Sexually Dimorphic Fiddler Crab Claw.”</span> <em>The American Naturalist</em> 178 (3): 419–28. <a href="https://doi.org/10.1086/661239">https://doi.org/10.1086/661239</a>.
+</div>
+<div id="ref-degrande2021a" class="csl-entry" role="listitem">
+De Grande, Fernando Rafael, Bruno Rafael Fogo, and Tânia Marcia Costa. 2021. <span>“Losers Can Win: Thermoregulatory Advantages of Regenerated Claws of Fiddler Crab Males for Establishment in Warmer Microhabitats.”</span> <em>Journal of Thermal Biology</em> 99 (July): 102952. <a href="https://doi.org/10.1016/j.jtherbio.2021.102952">https://doi.org/10.1016/j.jtherbio.2021.102952</a>.
+</div>
+<div id="ref-dennenmoser2013" class="csl-entry" role="listitem">
+Dennenmoser, Stefan, and John H. Christy. 2013. <span>“The Design of a Beautiful Weapon: Compensation for Opposing Sexual Selection on a Trait with Two Functions.”</span> <em>Evolution</em> 67 (4): 1181–88. <a href="https://doi.org/10.1111/evo.12018">https://doi.org/10.1111/evo.12018</a>.
+</div>
+<div id="ref-doake2010" class="csl-entry" role="listitem">
+Doake, S., M. Scantlebury, and R. W. Elwood. 2010. <span>“The Costs of Bearing Arms and Armour in the Hermit Crab <span><em>Pagurus Bernhardus</em></span>.”</span> <em>Animal Behaviour</em> 80 (4): 637–42. <a href="https://doi.org/10.1016/j.anbehav.2010.06.023">https://doi.org/10.1016/j.anbehav.2010.06.023</a>.
+</div>
+<div id="ref-dutil2000" class="csl-entry" role="listitem">
+Dutil, J.-D., C. Rollet, R. Bouchard, and W. T. Claxton. 2000. <span>“Shell Strength and Carapace Size in Non-Adult and Adult Male Snow Crab (Chionoecetes Opilio).”</span> <em>Journal of Crustacean Biology</em> 20 (2): 399–406. <a href="https://doi.org/10.1163/20021975-99990051">https://doi.org/10.1163/20021975-99990051</a>.
+</div>
+<div id="ref-edgell2008" class="csl-entry" role="listitem">
+Edgell, Timothy C., and Rémy Rochette. 2008. <span>“Differential Snail Predation by an Exotic Crab and the Geography of Shell-Claw Covariance in the Northwest Atlantic.”</span> <em>Evolution</em> 62 (5): 1216–28. <a href="https://doi.org/10.1111/j.1558-5646.2008.00350.x">https://doi.org/10.1111/j.1558-5646.2008.00350.x</a>.
+</div>
+<div id="ref-degier2020" class="csl-entry" role="listitem">
+Gier, Werner de, and Carola Becker. 2020. <span>“A Review of the Ecomorphology of Pinnotherine Pea Crabs (Brachyura: Pinnotheridae), with an Updated List of Symbiont-Host Associations.”</span> <em>Diversity</em> 12 (11): 431. <a href="https://doi.org/10.3390/d12110431">https://doi.org/10.3390/d12110431</a>.
+</div>
+<div id="ref-degier2023" class="csl-entry" role="listitem">
+Gier, Werner de, Pepijn Helleman, Jurriaan van den Oever, and Charles H. J. M. Fransen. 2023. <span>“Ecomorphological Convergence in the Walking Leg Dactyli of Two Clades of Ascidian- and Mollusc-Associated Shrimps (Decapoda: Caridea: Palaemonidae).”</span> <em>Ecology and Evolution</em> 13 (12): e10768. <a href="https://doi.org/10.1002/ece3.10768">https://doi.org/10.1002/ece3.10768</a>.
+</div>
+<div id="ref-hartnoll2001" class="csl-entry" role="listitem">
+Hartnoll, Richard G. 2001. <span>“Growth in Crustacea <span></span> Twenty Years On.”</span> In, edited by José P. M. Paula, Augusto A. V. Flores, and Charles H. J. M. Fransen, 111–22. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1023/A:1017597104367">https://doi.org/10.1023/A:1017597104367</a>.
+</div>
+<div id="ref-hultgren2022" class="csl-entry" role="listitem">
+Hultgren, K. M., C. L. Foxx, and E. Palacios Theil. 2022. <span>“Host-Associated Morphological Convergence in Symbiotic Pea Crabs.”</span> <em>Evolutionary Ecology</em> 36 (2): 273–86. <a href="https://doi.org/10.1007/s10682-022-10153-0">https://doi.org/10.1007/s10682-022-10153-0</a>.
+</div>
+<div id="ref-ida2017" class="csl-entry" role="listitem">
+Ida, Haruka, and Keiji Wada. 2017. <span>“Aggressive Behavior and Morphology in Scopimera Globosa (de Haan, 1835) (Brachyura: Dotillidae).”</span> <em>Journal of Crustacean Biology</em> 37 (2): 125–30. <a href="https://doi.org/10.1093/jcbiol/rux011">https://doi.org/10.1093/jcbiol/rux011</a>.
+</div>
+<div id="ref-lee1992" class="csl-entry" role="listitem">
+Lee, S. Y., and R. Seed. 1992. <span>“Ecological Implications of Cheliped Size in Crabs: Some Data from Carcinus Maenas and Liocarcinus Holsatus.”</span> <em>Marine Ecology Progress Series</em> 84 (2): 151–60. <a href="https://doi.org/10.3354/meps084151">https://doi.org/10.3354/meps084151</a>.
+</div>
+<div id="ref-levenbach1996" class="csl-entry" role="listitem">
+Levenbach, Stuart, and Brian A. Hazlett. 1996. <span>“Habitat Displacement and the Mechanical and Display Functions of Chelae in Crayfish.”</span> <em>Journal of Freshwater Ecology</em> 11 (4): 485–92. <a href="https://doi.org/10.1080/02705060.1996.9664477">https://doi.org/10.1080/02705060.1996.9664477</a>.
+</div>
+<div id="ref-lim2016" class="csl-entry" role="listitem">
+Lim, Shirley S. L., Adeline Y. P. Yong, and John H. Christy. 2016. <span>“Ontogenetic Changes in Diet and Related Morphological Adaptations in Ocypode Gaudichaudii.”</span> <em>Invertebrate Biology</em> 135 (2): 117–26. <a href="https://doi.org/10.1111/ivb.12122">https://doi.org/10.1111/ivb.12122</a>.
+</div>
+<div id="ref-marochi2017" class="csl-entry" role="listitem">
+Marochi, Murilo Zanetti, Setuko Masunari, and Christoph D. Schubart. 2017. <span>“Genetic and Morphological Differentiation of the Semiterrestrial Crab Armases Angustipes (Brachyura: Sesarmidae) Along the Brazilian Coast.”</span> <em>Biological Bulletin</em> 232 (1): 30–44. <a href="https://doi.org/10.1086/691985">https://doi.org/10.1086/691985</a>.
+</div>
+<div id="ref-martin2019" class="csl-entry" role="listitem">
+Martin, Benjamin E. 2019. <span>“Autotomy and Running Performance of Fiddler Crabs (Decapoda: Brachyura: Ocypodidae).”</span> <em>Journal of Crustacean Biology</em> 39 (5): 613–16. <a href="https://doi.org/10.1093/jcbiol/ruz049">https://doi.org/10.1093/jcbiol/ruz049</a>.
+</div>
+<div id="ref-mclain2010" class="csl-entry" role="listitem">
+McLain, Denson K., and Ann E. Pratt. 2010. <span>“Food Availability in Beach and Marsh Habitats and the Size of the Fiddler Crab Claw, a Sexually Selected Weapon and Signal.”</span> <em>Oikos</em> 119 (3): 508–13. <a href="https://doi.org/10.1111/j.1600-1706.2009.18105.x">https://doi.org/10.1111/j.1600-1706.2009.18105.x</a>.
+</div>
+<div id="ref-narvarte2007" class="csl-entry" role="listitem">
+Narvarte, Maite Andrea, Raúl A. González, Silvia Elizabeth Guagliardo, Daniel Tanzola, and Lorena Pia Storero. 2007. <span>“First Studies on Morphometric Relationships and Size at Maturity of the Red Crab Platyxanthus Patagonicus (Milne-Edwards) and Variations Caused by Rhizocephalan Infestation, in the San Matías Gulf, Patagonia, Argentina.”</span> <em>Journal of Shellfish Research</em> 26 (2): 603–9. <a href="https://doi.org/10.2983/0730-8000(2007)26[603:FSOMRA]2.0.CO;2">https://doi.org/10.2983/0730-8000(2007)26[603:FSOMRA]2.0.CO;2</a>.
+</div>
+<div id="ref-smith2004" class="csl-entry" role="listitem">
+Smith, L. David. 2004. <span>“Biogeographic Differences in Claw Size and Performance in an Introduced Crab Predator Carcinus Maenas.”</span> <em>Marine Ecology Progress Series</em> 276: 209–22. <a href="https://doi.org/10.3354/meps276209">https://doi.org/10.3354/meps276209</a>.
+</div>
+<div id="ref-smith1994" class="csl-entry" role="listitem">
+Smith, L. David, and A. Richard Palmer. 1994. <span>“Effects of Manipulated Diet on Size and Performance of Brachyuran Crab Claws.”</span> <em>Science</em> 264 (5159): 710–12. <a href="https://doi.org/10.1126/science.264.5159.710">https://doi.org/10.1126/science.264.5159.710</a>.
+</div>
+<div id="ref-sørdalen2018" class="csl-entry" role="listitem">
+Sørdalen, Tonje K., Kim T. Halvorsen, Hugo B. Harrison, Charlie D. Ellis, Leif Asbjørn Vøllestad, Halvor Knutsen, Even Moland, and Esben M. Olsen. 2018. <span>“Harvesting Changes Mating Behaviour in European Lobster.”</span> <em>Evolutionary Applications</em> 11 (6): 963–77. <a href="https://doi.org/10.1111/eva.12611">https://doi.org/10.1111/eva.12611</a>.
+</div>
+<div id="ref-sørdalen2020" class="csl-entry" role="listitem">
+Sørdalen, Tonje Knutsen, Kim Tallaksen Halvorsen, Leif Asbjørn Vøllestad, Even Moland, and Esben Moland Olsen. 2020. <span>“Marine Protected Areas Rescue a Sexually Selected Trait in European Lobster.”</span> <em>Evolutionary Applications</em> 13 (9): 2222–33. <a href="https://doi.org/10.1111/eva.12992">https://doi.org/10.1111/eva.12992</a>.
+</div>
+<div id="ref-taylor2001" class="csl-entry" role="listitem">
+Taylor, Graeme M. 2001. <span>“The Evolution of Armament Strength: Evidence for a Constraint on the Biting Performance of Claws of Durophagous Decapods.”</span> <em>Evolution</em> 55 (3): 550–60. https://doi.org/<a href="https://doi.org/10.1111/j.0014-3820.2001.tb00788.x">https://doi.org/10.1111/j.0014-3820.2001.tb00788.x</a>.
+</div>
+<div id="ref-templeman1935" class="csl-entry" role="listitem">
+Templeman, Wilfred. 1935. <span>“Local Differences in the Body Proportions of the Lobster, Homarus Americanus.”</span> <em>Journal of the Biological Board of Canada</em> 1 (3): 213–26. <a href="https://doi.org/10.1139/f35-006">https://doi.org/10.1139/f35-006</a>.
+</div>
+<div id="ref-viozzi2021" class="csl-entry" role="listitem">
+Viozzi, M. Florencia, Juan M. Cabrera, Federico Giri, Débora de Azevedo Carvalho, and Verónica Williner. 2021. <span>“Ontogenetic Shifts in Natural Diet, Chelae, and Mandibles of the Omnivorous Freshwater Crab Aegla Uruguayana: Linking Morphology and Function.”</span> <em>Canadian Journal of Zoology</em> 99 (8): 625–41. <a href="https://doi.org/10.1139/cjz-2020-0290">https://doi.org/10.1139/cjz-2020-0290</a>.
+</div>
+<div id="ref-wilson2009" class="csl-entry" role="listitem">
+Wilson, Robbie S., Rob S. James, Candice Bywater, and Frank Seebacher. 2009. <span>“Costs and Benefits of Increased Weapon Size Differ Between Sexes of the Slender Crayfish, Cherax Dispar.”</span> <em>Journal of Experimental Biology</em> 212 (6): 853–58. <a href="https://doi.org/10.1242/jeb.024547">https://doi.org/10.1242/jeb.024547</a>.
+</div>
+<div id="ref-yasuda2016" class="csl-entry" role="listitem">
+Yasuda, Chiaki I., and Tsunenori Koga. 2016. <span>“Importance of Weapon Size in All Stages of Male-Male Contests in the Hermit Crab Pagurus Minutus.”</span> <em>Behavioral Ecology and Sociobiology</em> 70 (12): 2175–83. <a href="https://doi.org/10.1007/s00265-016-2221-0">https://doi.org/10.1007/s00265-016-2221-0</a>.
+</div>
+<div id="ref-yasuda2017" class="csl-entry" role="listitem">
+Yasuda, Chiaki I., Masaya Otoda, Reiko Nakano, Yuki Takiya, and Tsunenori Koga. 2017. <span>“Seasonal Change in Sexual Size Dimorphism of the Major Cheliped in the Hermit Crab Pagurus Minutus.”</span> <em>Ecological Research</em> 32 (3): 347–57. <a href="https://doi.org/10.1007/s11284-017-1438-3">https://doi.org/10.1007/s11284-017-1438-3</a>.
+</div>
+<div id="ref-yoshino2011" class="csl-entry" role="listitem">
+Yoshino, Kenji, Tsunenori Koga, and Sayaka Oki. 2011. <span>“Chelipeds Are the Real Weapon: Cheliped Size Is a More Effective Determinant Than Body Size in Male<span></span>male Competition for Mates in a Hermit Crab.”</span> <em>Behavioral Ecology and Sociobiology</em> 65 (9): 1825–32. <a href="https://doi.org/10.1007/s00265-011-1190-6">https://doi.org/10.1007/s00265-011-1190-6</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./morphmat.html" class="pagination-link" aria-label="`morphmat`">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><code>morphmat</code></span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./species_applications.html" class="pagination-link" aria-label="Species Applications">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Species Applications</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

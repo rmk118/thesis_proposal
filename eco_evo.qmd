@@ -1,0 +1,78 @@
+---
+bibliography: references.bib
+---
+
+# Ecological & Evolutionary Applications
+
+Using changes in the relative growth of the claws or abdomen as a sign of the onset of sexual maturity is complicated by the multitude of ecological and evolutionary factors that work together to shape crustacean claw and abdomen morphology. This section will focus on the ecological and evolutionary context of crustacean morphometric maturity.
+
+## Morphometric Maturity: When and Why?
+
+Although changes in morphometry have been successfully linked to sexual maturity and used to estimate SM50 in many crustacean species, other studies have found no distinct changes in claw or abdomen growth rates at maturity.
+
+-   Does the importance of morphometric maturity follow taxonomic patterns (i.e., is it true that morphometric maturity is not useful for the genus *Chaceon*)?
+-   Why is allometric growth a useful indicator of maturity for some crustacean taxa but not others? Are there crustacean taxa where these types of morphometric maturity analyses are not justified as a way to estimate functional maturity for management purposes?
+-   Are there correlations between the life history traits of a species and the presence or magnitude of changes in the relative growth of secondary sexual characteristics? Similarly, how much can be assumed about a species’ size at morphometric maturity based on the patterns observed in species that are closely related, fill similar ecological niches, or have similar life history characteristics/functional traits?
+    -   “It was concluded that there was little correlation between growth format and phylogenetic level... Gross ecological habit similarly failed to produce any general correlation with growth format” [@hartnoll2001]. Will this hold for the much larger body of research included in my systematic review?
+
+This line of inquiry has management implications because it can inform how resources are allocated when researchers are attempting to estimate SM50 for a new species. If it seems unlikely that the onset of maturity for males of the species will exhibit discontinuous growth of the chelae, it may not be an efficient use of time and money to measure the chelae of thousands of individuals.
+
+Other questions and hypotheses that may be addressed include:
+
+-   Which factors influence the timing of the transition to morphometric maturity relative to the transition to physiological maturity?
+-   Under what circumstances can morphometric maturity be considered to be equivalent to functional maturity?
+-   Investigate possible correlations between the presence of (1) heterochely and (2) a terminal molt and the timing and severity of changes in allometric growth that occur at morphometric maturity.
+-   Are Portunid crabs less likely to show significant positive allometry for chela growth because of the potential for interfering with swimming ability/is there evidence for an evolutionary constraint on chela size in Portunid crabs? [@daniels2001; @abelló1990]
+-   Effects of rhizocephalan parasitization on morphometric size at maturity [@narvarte2007]
+
+There are many interesting opportunities for comparative phylogenetics surrounding this topic. For example, carapace morphometrics have been used to identify morphological convergence events within the family of primarily symbiotic pea crabs (Pinnotheridae) [@hultgren2022; @degier2023]. Initial analyses of carapace aspect ratio (AR, the ratio of carapace width to carapace length) found that correlations between carapace AR and host identity remained even after statistically accounting for phylogeny, indicating repeated evolution to specific host associations across the extensive pea crab phylogenetic tree[@hultgren2022]. This idea has been corroborated by later research linking phylogenetic position and preferred host phyla to landmark-based carapace morphology [@degier2023] Along with earlier work on pea crab ecomorphology [@degier2020], these studies illustrate how integrating morphological, ecological, and molecular data can reveal strong evolutionary patterns within a subset of Crustacea.
+
+## Claws
+
+### Feeding & movement
+
+**Diet-induced plasticity**
+
+There is a large body of evidence that differences in diet-related exercise can affect claw size and shape within the lifespan of an individual crab as well as between individuals and populations. Changes in claw morphology are associated with ontogenetic shifts in diet for both marine and freshwater crabs [@lim2016; @viozzi2021]. Smith and Palmer [-@smith1994] found significant differences in claw size and performance between *C. productus* individuals raised on experimental diets of varying levels of toughness, concluding that claw morphology is affected by differential use. Analogous results have been found for green crabs (*C. maenas*) raised on a diet of winkles (hard prey) compared to a diet of soft fish flesh [@abby-kalio1984].
+
+**Reasons for differences between species/population chela size or shape**
+
+-   Diet consists of different prey species: crabs with larger chelae can consume a wider size range of hard-bodied prey items and can thus exploit a wider spectrum of prey species [@lee1992]
+
+-   Diet consists of the same prey species, but there are population differences in prey morphology (e.g., a high correlation between *C. maenas* crusher claw size and *L. obtusata* shell mass) [@edgell2008]
+
+-   Geographic differentiation was only observable in the *C. maenas* crusher claw, not the cutter claw, and occurred in both sexes, indicating a trophic function [@smith2004]
+
+-   Differences in food availability (e.g., food resource concentrations, foraging opportunities) influence the energy available for claw growth [@mclain2010]
+
+### Sexual selection
+
+**Aggression/intrasexual competition**
+
+In some species, it appears that claw morphology has evolved for effectiveness in male-male competition rather than selection by female mating preferences [@callander2013]. Responses of male *C. maenas* to conspecific male competitors were strongly influenced by relative chela size, while body size had a comparatively weak effect [@lee1992]. The role of cheliped size in decisions to initiate contests and in determining the outcome of those contests has also been demonstrated across a number of hermit crab species [@yasuda2016; @yoshino2011]. In fact, examples of the importance of claw morphology in intrasexual competition can be found in essentially all branches of the crustacean phylogenetic tree. The arched morphology of squat lobster chelae appears to have evolved to inflict puncture wounds on opponents during agonistic interactions [@claverie2007]. Crayfish with experimentally impaired chelae were displaced from optimal shelter locations by unimpaired conspecifics [@levenbach1996]. Chela development and differentiation has been especially well-studied for the American lobster (*Homarus americanus*). As early as 1935, Templeman noted that the outcome of a physical contest between two male lobsters of similar shell hardness was generally determined by the size of their large chelae [@templeman1935].
+
+However, this phenomenon is by no means universal: for example, the dotillid crab *Scopimera globosa* does not use its chelae to grasp or strike during male-male combat, instead predominantly using its walking legs during wrestling matches [@ida2017]. Accordingly, Ida and Wada [-@ida2017] found that leg length had a significant impact on *S. globosa* fighting success, but carapace width and chela length did not.
+
+**Mating/copulation/signaling to females**
+
+-   Males in mating pairs of *C. maena*s had significantly larger chelae than the total male population [@lee1992].
+
+### Physiological constraints
+
+-   Mechanical advantage does not always decline with increasing claw length [@taylor2001; @dennenmoser2013]. The optimal claw shape for signaling females is in opposition to the optimal shape for fighting, like the sexual selection vs. locomotion conflict, but Dennenmoser and Christy [-@dennenmoser2013] found that claw physiology and male fighting tactics compensate for the selective pressure for effective signals such that the claw remains a potent weapon [@allen2007; @dennenmoser2013]. However, muscle stress (force per unit area) generally declines with increasing claw size, leading Taylor [-@taylor2001] to suggest that the positive allometric shifts in claw size observed in male decapod crustaceans may be needed to compensate for the declining muscle stress in order to maintain a constant force output per unit body size. 
+
+-   **Energetic and lomotion-related costs + increased predation risk:** for example, treadmill endurance capacity was significantly lower for fiddler crabs with intact claws compared to those without [@allen2007]. Fiddler crab sprint velocity was shown to increase following autonomy when running on a flat surface [@martin2019]. Coevolution of leg morphology may help mitigate such locomotor and energetic costs of bearing enlarged chelae, as demonstrated by Bywater et al. [-@bywater2018] in a genus-wide study of fiddler crabs. In other crustaceans, lactate levels (an indicator of fatigue) were positively related to cheliped size in the hermit crab *Pagurus bernhardus* [@doake2010]. Swimming speed was negatively correlated with chela size for the crayfish *Cherax dispar* [@wilson2009].
+
+### Abiotic & other
+
+-   Habitat/substrate type [@marochi2017; @mclain2010]
+
+-   Temperature differences
+
+    -   There is evidence that the major claw serves a thermoregulatory function for the fiddler crab and may allow them to occupy a broader range of thermal niches [@darnell2011; @degrande2021a].
+
+-   Cannibalism [@dutil2000]
+
+-   Harvest-induced evolution was observed in the European lobster (*Homarus gammarus*) as a result of the selective pressure against large chelae exerted by the fishery [@sørdalen2018]. However, in a follow-up study, Sørdalen et al. [-@sørdalen2020] showed that marine protected areas (MPAs) may partially restore trait loss, with males inside MPAs possessing larger claws than similarly-sized males in nearby fished areas.
+
+-   Seasonal variation [@yasuda2017]
