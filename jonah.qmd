@@ -1,0 +1,8 @@
+---
+title: "Species Applications"
+format: html
+---
+
+# Jonah crab
+
+Modeling spatial variation in Jonah crab size at maturity.

@@ -7,12 +7,15 @@ book:
   back-to-top-navigation: true
   chapters:
     - index.qmd
-    - intro.qmd
+    - part: intro.qmd
+      chapters:
+      - importance.qmd
+      - valuable_species.qmd
     - systematic_review.qmd
+    - eco_evo.qmd
     - simulation_testing.qmd
     - morphmat.qmd
-    - eco_evo.qmd
-    - species_applications.qmd
+    - jonah.qmd
  
 bibliography: references.bib
 

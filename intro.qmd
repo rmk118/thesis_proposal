@@ -63,16 +63,4 @@ collabs %>% gt()
 
 ### Types of Allometric Growth in Crustaceans
 
-## Importance of size at maturity for management
-
-### Minimum harvest size
-
-### Stock assessment & model inputs
-
-### Accounting for spatial structure
-
-### Effects of harvesting
-
-### Climate
-
 ## References {.unnumbered}

@@ -1,0 +1,13 @@
+# Importance of size at maturity for management {.unnumbered}
+
+## Minimum harvest size
+
+## Stock assessment & model inputs
+
+## Accounting for spatial structure
+
+## Effects of harvesting
+
+## Climate
+
+## References {.unnumbered}

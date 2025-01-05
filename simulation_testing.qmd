@@ -10,6 +10,8 @@ library(tidyverse)
 library(gt)
 ```
 
+## Introduction
+
 Testing a proposed model against simulated data generated from a known underlying process is an important but sometimes overlooked step in ecological research [@austin2006; @lotterhos2022]. In fisheries science, simulation testing is commonly used to evaluate stock assessment and population dynamic models and assess their robustness to various types of error [@deroba2015; @piner2011].
 
 Before applying the size-at-maturity estimation procedures identified through the systematic review to real data, I will create multiple simulated datasets with differing characteristics in order to determine the domains of applicability and inference of each model. The domain of applicability refers to the types of datasets to which a model can reliably be applied, while the domain of inference is defined as the processes or conclusions that can be inferred from the model output [@lotterhos2022]. The methodology for this chapter will be heavily influenced by the principles for ecological simulation testing outlined by Lotterhos et al. [-@lotterhos2022] and the guidelines for computational method benchmarking developed by Weber et al. [-@weber2019] (See [Box 1](#box1)).
@@ -43,6 +45,29 @@ guidelines %>% gt() %>%
 ```
 :::
 
+## Model descriptions
 
+## Testing the models
+
+### Initial comparison - all models
+
+I will first test all methods on “nice” data, which will be 100 randomly generated data sets with the same parametrization, designed to mimic a real-world dataset.
+
+For the regression methods that accept or require upper and lower bounds for the possible SM50 value, combinations of quantiles representing the upper and lower bounds will be tested, with each combination tested on each of the original 100 randomly generated data sets to determine how slight changes in the data might affect where the upper and lower bounds should be set. For regression methods that accept possible numbers of breakpoints, I will test breakpoint values from 10 to 1000 in increments of 10.
+
+For clustering methods, I will test every combination of distance metric, agglomeration method, or k-means algorithm accepted by the given clustering function. Finally, all of the above procedures will be repeated on log-transformed data, standardized (scaled and centered) data, and, where possible for the method, transformed using PCA.
+
+### Comparison on different data sets
+
+I will choose the best-performing representative (highest % accuracy for clustering methods before regression, lowest MAE) from each general modeling approach to move on to a second round of simulation testing. If not already included, very popular methods (namely, `segmented`, `regrans`, and Somerton’s method) will also be included in the second round of testing. The second round of simulation testing will include changing the location of SM50 within the range of the data, the logistic slope parameter, the allometric growth parameters, and the level of error/noise in the data.
+
+For any remaining regression methods that accept or require upper and lower bounds for the possible SM50 value, I will again test combinations of quartiles representing the upper and lower bounds. This time, the testing will be done for the original parametrization of the data as well as 20 data sets where SM50 is much closer to the low end of the range of x-values and 20 data sets where SM50 is near the higher end of the x values in the data set.
+
+### Testing sampling bias
+
+Simulation studies can serve as a powerful tool to assess the effects of sampling strategies, sample size, and sampling bias on the output of an ecological model [@meynard2019; @lotterhos2022]. For parameter combinations where the model is effective, I will conduct a final round of simulation testing evaluating model performance on different sample sizes and size class representations.
+
+-   100 datasets for each sample size
+-   100 datasets for each size class representation (subsample 50-50, subsample 80-20, 20-80)
 
 ## References {.unnumbered}
