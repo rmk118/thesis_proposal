@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ruby Krasnow">
 
-<title>Thesis Proposal: Modeling Crustacean Morphometric Maturity</title>
+<title>2&nbsp; Importance of size at maturity for management – Thesis Proposal: Modeling Crustacean Morphometric Maturity</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,7 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./valuable_species.html" rel="next">
+<link href="./intro.html" rel="prev">
 <link href="./figures/simple_crab.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./importance.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Importance of size at maturity for management</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -112,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -133,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./importance.html" class="sidebar-item-text sidebar-link">
+  <a href="./importance.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Importance of size at maturity for management</span></span></a>
   </div>
 </li>
@@ -208,28 +228,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#minimum-harvest-size" id="toc-minimum-harvest-size" class="nav-link active" data-scroll-target="#minimum-harvest-size"><span class="header-section-number">2.1</span> Minimum harvest size</a></li>
+  <li><a href="#stock-assessment-model-inputs" id="toc-stock-assessment-model-inputs" class="nav-link" data-scroll-target="#stock-assessment-model-inputs"><span class="header-section-number">2.2</span> Stock assessment &amp; model inputs</a></li>
+  <li><a href="#accounting-for-spatial-structure" id="toc-accounting-for-spatial-structure" class="nav-link" data-scroll-target="#accounting-for-spatial-structure"><span class="header-section-number">2.3</span> Accounting for spatial structure</a></li>
+  <li><a href="#impacts-of-harvesting-climate" id="toc-impacts-of-harvesting-climate" class="nav-link" data-scroll-target="#impacts-of-harvesting-climate"><span class="header-section-number">2.4</span> Impacts of harvesting &amp; climate</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./importance.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Importance of size at maturity for management</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Thesis Proposal: Modeling Crustacean Morphometric Maturity</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Importance of size at maturity for management</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ruby Krasnow </p>
-          </div>
-  </div>
     
   
     
@@ -240,17 +257,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<p>This site hosts my <strong>in-progress</strong> proposal for my Ph.D.&nbsp;research at the University of Maine, School of Marine Sciences.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/dungeness_art.jpg" class="img-fluid figure-img"></p>
-<figcaption>Illustration by <a href="https://tamvmat.myportfolio.com/">Tamvmat</a>, <a href="https://bsky.app/profile/tamvmat.bsky.social">@tamvmat.bsky.social</a></figcaption>
-</figure>
+<p>Globally, crustacean (shrimp, lobster, and crab) fisheries are growing faster than any other group of fisheries, and represent some of the highest-value seafood products on the market <span class="citation" data-cites="boenish2022">(<a href="#ref-boenish2022" role="doc-biblioref">Boenish et al. 2022</a>)</span>. Accurate estimates of size at maturity are crucial for the sustainable management of these valuable fisheries.</p>
+<section id="minimum-harvest-size" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="minimum-harvest-size"><span class="header-section-number">2.1</span> Minimum harvest size</h2>
+<p>Size at maturity is a key consideration when setting minimum size regulations, as setting a minimum legal size below the size at 50% sexual maturity (SM50) can significantly restrict the reproductive potential of a population. When minimum size limits are set above SM50, high yield and spawning biomass can often be maintained even under high fishing pressure <span class="citation" data-cites="prince2019">(<a href="#ref-prince2019" role="doc-biblioref">Prince and Hordyk 2019</a>)</span>.</p>
+</section>
+<section id="stock-assessment-model-inputs" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="stock-assessment-model-inputs"><span class="header-section-number">2.2</span> Stock assessment &amp; model inputs</h2>
+<p>Effective management of crustacean fisheries depends on stock assessments that estimate current biomass levels, evaluate the health of the stock compared to historical levels, and predict the effects of potential management actions. The difficulty of aging crustaceans means that size-structured models are typically preferred over age-based methods for stock assessment purposes <span class="citation" data-cites="punt2013 punt2016">(<a href="#ref-punt2013" role="doc-biblioref">Punt, Huang, and Maunder 2013</a>; <a href="#ref-punt2016" role="doc-biblioref">Punt, Haddon, and McGarvey 2016</a>)</span>. SM50 is a fundamental parameter in frequently used stock assessment models like Length-Based Spawning Potential Ratio (LBSPR), which are especially useful for data-limited fisheries <span class="citation" data-cites="prince2019 hordyk2015">(<a href="#ref-prince2019" role="doc-biblioref">Prince and Hordyk 2019</a>; <a href="#ref-hordyk2015" role="doc-biblioref">Hordyk et al. 2015</a>)</span>. Stock assessment models can be highly sensitive to shifts in size at maturity inputs like SM50, particularly when combined with changes in growth parameters such as molt probability and molt increment probability <span class="citation" data-cites="hodgdon2022">(<a href="#ref-hodgdon2022" role="doc-biblioref">Hodgdon et al. 2022</a>)</span>. Understanding the effect that climate-driven shifts in life history input parameters like SM50 have on stock assessment model outputs is critical for future modeling efforts and fisheries management <span class="citation" data-cites="hodgdon2022">(<a href="#ref-hodgdon2022" role="doc-biblioref">Hodgdon et al. 2022</a>)</span>.</p>
+</section>
+<section id="accounting-for-spatial-structure" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="accounting-for-spatial-structure"><span class="header-section-number">2.3</span> Accounting for spatial structure</h2>
+</section>
+<section id="impacts-of-harvesting-climate" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="impacts-of-harvesting-climate"><span class="header-section-number">2.4</span> Impacts of harvesting &amp; climate</h2>
+<p>Monitoring changes in size at maturity is also an important tool to assess the impacts of environmental changes and fishing pressure on fish and invertebrate life-history characteristics <span class="citation" data-cites="audzijonyte2013 lappalainen2016">(<a href="#ref-audzijonyte2013" role="doc-biblioref">Audzijonyte, Kuparinen, and Fulton 2013</a>; <a href="#ref-lappalainen2016" role="doc-biblioref">Lappalainen et al. 2016</a>)</span>. For example, there is strong evidence that size-based fishery selection has led to declines in female SM50 for female American lobster (<em>Homarus americanus</em>) in the United States and Canada <span class="citation" data-cites="haarr2018 waller2019 waller2021">(<a href="#ref-haarr2018" role="doc-biblioref">Haarr et al. 2018</a>; <a href="#ref-waller2019" role="doc-biblioref">Waller et al. 2019</a>, <a href="#ref-waller2021" role="doc-biblioref">2021</a>)</span>.</p>
+<section id="references" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="references">References</h3>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-audzijonyte2013" class="csl-entry" role="listitem">
+Audzijonyte, Asta, Anna Kuparinen, and Elizabeth A. Fulton. 2013. <span>“How Fast Is Fisheries-Induced Evolution? Quantitative Analysis of Modelling and Empirical Studies.”</span> <em>Evolutionary Applications</em> 6 (4): 585–95. <a href="https://doi.org/10.1111/eva.12044">https://doi.org/10.1111/eva.12044</a>.
 </div>
-
-
+<div id="ref-boenish2022" class="csl-entry" role="listitem">
+Boenish, Robert, Jacob P Kritzer, Kristin Kleisner, Robert S Steneck, Karl Michael Werner, Wenbin Zhu, Frederick Schram, et al. 2022. <span>“The Global Rise of Crustacean Fisheries.”</span> <em>Frontiers in Ecology and the Environment</em> 20 (2): 102–10. <a href="https://doi.org/10.1002/fee.2431">https://doi.org/10.1002/fee.2431</a>.
+</div>
+<div id="ref-haarr2018" class="csl-entry" role="listitem">
+Haarr, Marthe Larsen, Bernard Sainte-Marie, Michel Comeau, M. John Tremblay, and Rémy Rochette. 2018. <span>“Female American Lobster (<span><em>Homarus Americanus</em></span>) Size-at-Maturity Declined in Canada During the 20th and Early 21st Centuries.”</span> <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 75 (6): 908–24. <a href="https://doi.org/10.1139/cjfas-2016-0434">https://doi.org/10.1139/cjfas-2016-0434</a>.
+</div>
+<div id="ref-hodgdon2022" class="csl-entry" role="listitem">
+Hodgdon, Cameron T., Noah S. Khalsa, Mackenzie D. Mazur, and Yong Chen. 2022. <span>“Climate-Driven Changes in Growth and Size at Maturity of Gulf of Maine Lobster Stocks: Implications for Stock Assessment Models.”</span> <em>Fishery Bulletin</em> 120 (3-4): 240–51. <a href="https://doi.org/10.7755/FB.120.3-4.5">https://doi.org/10.7755/FB.120.3-4.5</a>.
+</div>
+<div id="ref-hordyk2015" class="csl-entry" role="listitem">
+Hordyk, Adrian, Kotaro Ono, Keith Sainsbury, Neil Loneragan, and Jeremy Prince. 2015. <span>“Some Explorations of the Life History Ratios to Describe Length Composition, Spawning-Per-Recruit, and the Spawning Potential Ratio.”</span> <em>ICES Journal of Marine Science</em> 72 (1): 204–16. <a href="https://doi.org/10.1093/icesjms/fst235">https://doi.org/10.1093/icesjms/fst235</a>.
+</div>
+<div id="ref-lappalainen2016" class="csl-entry" role="listitem">
+Lappalainen, Antti, Lauri Saks, Mira Šuštar, Outi Heikinheimo, Kristiina Jürgens, Eevi Kokkonen, Mika Kurkilahti, Aare Verliin, and Markus Vetemaa. 2016. <span>“Length at Maturity as a Potential Indicator of Fishing Pressure Effects on Coastal Pikeperch (<span><em>Sander Lucioperca</em></span>) Stocks in the Northern Baltic Sea.”</span> <em>Fisheries Research</em> 174 (February): 47–57. <a href="https://doi.org/10.1016/j.fishres.2015.08.013">https://doi.org/10.1016/j.fishres.2015.08.013</a>.
+</div>
+<div id="ref-prince2019" class="csl-entry" role="listitem">
+Prince, Jeremy, and Adrian Hordyk. 2019. <span>“What to Do When You Have Almost Nothing: A Simple Quantitative Prescription for Managing Extremely Data-Poor Fisheries.”</span> <em>Fish and Fisheries</em> 20 (2): 224–38. <a href="https://doi.org/10.1111/faf.12335">https://doi.org/10.1111/faf.12335</a>.
+</div>
+<div id="ref-punt2016" class="csl-entry" role="listitem">
+Punt, André E., Malcolm Haddon, and Richard McGarvey. 2016. <span>“Estimating Growth Within Size-Structured Fishery Stock Assessments: What Is the State of the Art and What Does the Future Look Like?”</span> <em>Fisheries Research</em>, Growth: Theory, estimation, and application in fishery stock assessment models, 180 (August): 147–60. <a href="https://doi.org/10.1016/j.fishres.2014.11.007">https://doi.org/10.1016/j.fishres.2014.11.007</a>.
+</div>
+<div id="ref-punt2013" class="csl-entry" role="listitem">
+Punt, André E., TzuChuan Huang, and Mark N. Maunder. 2013. <span>“Review of Integrated Size-Structured Models for Stock Assessment of Hard-to-Age Crustacean and Mollusc Species.”</span> <em>ICES Journal of Marine Science</em> 70 (1): 16–33. <a href="https://doi.org/10.1093/icesjms/fss185">https://doi.org/10.1093/icesjms/fss185</a>.
+</div>
+<div id="ref-waller2021" class="csl-entry" role="listitem">
+Waller, Jesica D., Kathleen M. Reardon, Sarah E. Caron, Blaise P. Jenner, Erin L. Summers, and Carl J. Wilson. 2021. <span>“A Comparison of the Size at Maturity of Female American Lobsters (Homarus Americanus) over Three Decades and Across Coastal Areas of the Gulf of Maine Using Ovarian Staging.”</span> <em>ICES Journal of Marine Science</em> 78 (4): 1267–77. <a href="https://doi.org/10.1093/icesjms/fsab034">https://doi.org/10.1093/icesjms/fsab034</a>.
+</div>
+<div id="ref-waller2019" class="csl-entry" role="listitem">
+Waller, Jesica D., Kathleen M. Reardon, Sarah E. Caron, Henry M. Masters, Erin L. Summers, and Carl J. Wilson. 2019. <span>“Decrease in Size at Maturity of Female American Lobsters Homarus Americanus (h. Milne Edwards, 1837) (Decapoda: Astacidea: Nephropidae) over a 50-Year Period in Maine, USA.”</span> <em>Journal of Crustacean Biology</em> 39 (4): 509–15. <a href="https://doi.org/10.1093/jcbiol/ruz021">https://doi.org/10.1093/jcbiol/ruz021</a>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -678,10 +739,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link" aria-label="Overview &amp; Background">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview &amp; Background</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Overview &amp; Background">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview &amp; Background</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./valuable_species.html" class="pagination-link" aria-label="Relevance to valuable fisheries">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Relevance to valuable fisheries</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

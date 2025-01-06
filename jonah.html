@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ruby Krasnow">
 
-<title>Thesis Proposal: Modeling Crustacean Morphometric Maturity</title>
+<title>8&nbsp; Jonah crab – Thesis Proposal: Modeling Crustacean Morphometric Maturity</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,7 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./data_mgmt.html" rel="next">
+<link href="./morphmat.html" rel="prev">
 <link href="./figures/simple_crab.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +90,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -82,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./jonah.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Jonah crab</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -112,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -171,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./jonah.html" class="sidebar-item-text sidebar-link">
+  <a href="./jonah.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Jonah crab</span></span></a>
   </div>
 </li>
@@ -208,7 +257,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#jonah-crab" id="toc-jonah-crab" class="nav-link active" data-scroll-target="#jonah-crab"><span class="header-section-number">9</span> Jonah crab</a>
+  <ul class="collapse">
+  <li><a href="#introduction-obviously-this-will-be-much-longer" id="toc-introduction-obviously-this-will-be-much-longer" class="nav-link" data-scroll-target="#introduction-obviously-this-will-be-much-longer"><span class="header-section-number">9.1</span> Introduction (obviously this will be much longer)</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">9.2</span> Methods</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -217,19 +271,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Thesis Proposal: Modeling Crustacean Morphometric Maturity</h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Jonah crab</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ruby Krasnow </p>
-          </div>
-  </div>
     
   
     
@@ -240,17 +288,70 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1>
-<p>This site hosts my <strong>in-progress</strong> proposal for my Ph.D.&nbsp;research at the University of Maine, School of Marine Sciences.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/dungeness_art.jpg" class="img-fluid figure-img"></p>
-<figcaption>Illustration by <a href="https://tamvmat.myportfolio.com/">Tamvmat</a>, <a href="https://bsky.app/profile/tamvmat.bsky.social">@tamvmat.bsky.social</a></figcaption>
-</figure>
+<section id="jonah-crab" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Jonah crab</h1>
+<section id="introduction-obviously-this-will-be-much-longer" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="introduction-obviously-this-will-be-much-longer"><span class="header-section-number">9.1</span> Introduction (obviously this will be much longer)</h2>
+<p>The Jonah crab (<em>Cancer borealis</em>) fishery is managed in part by a minimum legal size, intended to protect females and enough mature males to sustain the population. However, there are many unresolved questions about the growth of Jonah crabs, including spatial variation in size at maturity <span class="citation" data-cites="truesdale2019">(<a href="#ref-truesdale2019" role="doc-biblioref">Truesdale, Dalton, and McManus 2019</a>)</span>. Here, I will combine the insights from the systematic review and simulation testing with cutting-edge ecological modeling tools in a novel approach to spatially-varying parametrization of size at maturity models that can be generalized to other crustacean fisheries.</p>
+</section>
+<section id="methods" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="methods"><span class="header-section-number">9.2</span> Methods</h2>
+<p>Based on the superior performance of <code>mclust</code> during the preliminary simulation testing, my current plan for analyzing the Jonah crab data is to use Gaussian mixture models for classification followed by spatial logistic regression to determine SM50. <strong>This may change as I find new modeling approaches through the systematic review and conduct more comprehensive simulation testing.</strong></p>
+<section id="jonah-crab-data" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="jonah-crab-data"><span class="header-section-number">9.2.1</span> Jonah crab data</h3>
+<p>Male Jonah crab morphological data used in this study were collected across the Northeast Atlantic in 2015-2019 and 2021. Most data were obtained from the annual Northeast Fisheries Science Center bottom trawl surveys, with supplemental measurements provided by the Massachusetts Department of Marine Fisheries and the University of Maryland Center for Environmental Science in 2015, 2016, and 2017. We only considered records that included a measurement for both carapace width (CW) and chela height (CH) and had spatial coordinates. Although there is also some data for female Jonah crabs, females are uncommon in the Jonah crab fishery because they are typically below the minimum legal size limit and associated trap vent sizes.</p>
+</section>
+<section id="mixture-model-clustering" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="mixture-model-clustering"><span class="header-section-number">9.2.2</span> Mixture model clustering</h3>
+<p>I will use the package <code>mclust</code> to perform model-based clustering using finite Gaussian mixture models <span class="citation" data-cites="scrucca2023">(<a href="#ref-scrucca2023" role="doc-biblioref">Scrucca et al. 2023</a>)</span>. In brief, this clustering method works by assuming that the groups (in this case, mature and immature crabs) correspond to different probability density functions, called mixture components. The overall mixture distribution is a weighted sum (formally, a convex linear combination) of these components. The parameters for the component distributions and the mixture weights are estimated using the Expectation-Maximization algorithm, an iterative approach to finding maximum-likelihood estimates that is commonly used for latent variable and missing data problems <span class="citation" data-cites="dempster1977">(<a href="#ref-dempster1977" role="doc-biblioref">Dempster, Laird, and Rubin 1977</a>)</span>.</p>
+<p>The data will not be manually transformed before clustering because the <code>mclust</code> default is to transform the data using singular value decomposition (SVD) before initializing the EM algorithm <span class="citation" data-cites="scrucca2015">(<a href="#ref-scrucca2015" role="doc-biblioref">Scrucca and Raftery 2015</a>)</span>. The number of clusters will be pre-specified <span class="math inline">\((G=2)\)</span>. The “EVV” type will be chosen to specify the geometric characteristics of the covariance matrices, meaning that the mixture components have equal volume but varying shape and orientation <span class="citation" data-cites="scrucca2023">(<a href="#ref-scrucca2023" role="doc-biblioref">Scrucca et al. 2023</a>)</span>.</p>
+</section>
+<section id="spatial-logistic-regression" class="level3" data-number="9.2.3">
+<h3 data-number="9.2.3" class="anchored" data-anchor-id="spatial-logistic-regression"><span class="header-section-number">9.2.3</span> Spatial logistic regression</h3>
+<p>The clustering-derived maturity labels will then used to fit a logistic regression model using the R package <code>sdmTMB</code> version 0.6.0.9013, which provides a flexible interface to fit spatial and spatiotemporal GLMMs (Generalized Linear Mixed Effects Models) <span class="citation" data-cites="anderson">(<a href="#ref-anderson" role="doc-biblioref">Anderson et al., n.d.</a>)</span>. The package employs Template Model Builder (TMB) and integrated nested Laplace approximations to find values for fixed effects that maximize the marginal log likelihood while integrating across random effects <span class="citation" data-cites="kristensen2016 rue2009">(<a href="#ref-kristensen2016" role="doc-biblioref">Kristensen et al. 2016</a>; <a href="#ref-rue2009" role="doc-biblioref">Rue, Martino, and Chopin 2009</a>)</span>. A Delaunay triangulation mesh will be constructed over the observed coordinates using the <code>make_mesh</code> function in <code>sdmTMB</code>, setting a minimum distance of 10 km to avoid overfitting. The mesh serves as an input for an <code>sdmTMB</code> logistic model (binomial family with a logit link) of the form <code>maturity ~ CW</code>, with a spatially-varying slope coefficient for carapace width added as a random effect. I will use the model to generate predictions over a grid of the target region and extracted the value of the coefficient for each location, then use the extracted coefficient to recalculate SM50 at each point. I will model spatial variation in the probability of maturity at legal size by generating model predictions over a grid that included CW as a constant attribute held at the minimum legal size.</p>
+<p>For comparison with the spatial model, I will fit a non-spatial logistic model using the base R function <code>glm()</code>. The Fieller method will be used to extract confidence intervals for SM50 from the GLM coefficients and variance-covariance matrix <span class="citation" data-cites="mainguy2024">(<a href="#ref-mainguy2024" role="doc-biblioref">Mainguy et al. 2024</a>)</span>. Comparison between models will be based on differences between their Akaike information criterion (AIC) values <span class="citation" data-cites="burnham2004">(<a href="#ref-burnham2004" role="doc-biblioref">Burnham and Anderson 2004</a>)</span>. Analytical randomized-quantile residuals will be checked for normality <span class="citation" data-cites="dunn1996">(<a href="#ref-dunn1996" role="doc-biblioref">Dunn and Smyth 1996</a>)</span> and simulation-based residuals from the fitted models will be checked for uniformity, overdispersion, and the presence of significant outliers using the R package <code>DHARMa</code> <span class="citation" data-cites="hartig">(<a href="#ref-hartig" role="doc-biblioref">Hartig, n.d.</a>)</span>.</p>
+</section>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-anderson" class="csl-entry" role="listitem">
+Anderson, Sean C., Eric J. Ward, Philina A. English, Lewis A. K. Barnett, and James T. Thorson. n.d. <span>“sdmTMB: An R Package for Fast, Flexible, and User-Friendly Generalized Linear Mixed Effects Models with Spatial and Spatiotemporal Random Fields.”</span> <a href="https://doi.org/10.1101/2022.03.24.485545">https://doi.org/10.1101/2022.03.24.485545</a>.
 </div>
-
-
+<div id="ref-burnham2004" class="csl-entry" role="listitem">
+Burnham, Kenneth P., and David R. Anderson. 2004. <span>“Multimodel Inference: Understanding AIC and BIC in Model Selection.”</span> <em>Sociological Methods &amp; Research</em> 33 (2): 261–304. <a href="https://doi.org/10.1177/0049124104268644">https://doi.org/10.1177/0049124104268644</a>.
+</div>
+<div id="ref-dempster1977" class="csl-entry" role="listitem">
+Dempster, A. P., N. M. Laird, and D. B. Rubin. 1977. <span>“Maximum Likelihood from Incomplete Data via the EM Algorithm.”</span> <em>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</em> 39 (1): 1–38. <a href="https://doi.org/10.1111/j.2517-6161.1977.tb01600.x">https://doi.org/10.1111/j.2517-6161.1977.tb01600.x</a>.
+</div>
+<div id="ref-dunn1996" class="csl-entry" role="listitem">
+Dunn, Peter K., and Gordon K. Smyth. 1996. <span>“Randomized Quantile Residuals.”</span> <em>Journal of Computational and Graphical Statistics</em> 5 (3): 236–44. <a href="https://doi.org/10.2307/1390802">https://doi.org/10.2307/1390802</a>.
+</div>
+<div id="ref-hartig" class="csl-entry" role="listitem">
+Hartig, Florian. n.d. <span>“DHARMa: Residual Diagnostics for Hierarchical (Multi-Level / Mixed) Regression Models.”</span> <a href="https://doi.org/10.32614/CRAN.package.DHARMa">https://doi.org/10.32614/CRAN.package.DHARMa</a>.
+</div>
+<div id="ref-kristensen2016" class="csl-entry" role="listitem">
+Kristensen, Kasper, Anders Nielsen, Casper W. Berg, Hans Skaug, and Bradley M. Bell. 2016. <span>“TMB: Automatic Differentiation and Laplace Approximation.”</span> <em>Journal of Statistical Software</em> 70 (April): 1–21. <a href="https://doi.org/10.18637/jss.v070.i05">https://doi.org/10.18637/jss.v070.i05</a>.
+</div>
+<div id="ref-mainguy2024" class="csl-entry" role="listitem">
+Mainguy, Julien, Martin Bélanger, Geneviève Ouellet-Cauchon, and Rafael de Andrade Moral. 2024. <span>“Monitoring Reproduction in Fish: Assessing the Adequacy of Ogives and the Predicted Uncertainty of Their <span><em>L</em></span>50 Estimates for More Reliable Biological Inferences.”</span> <em>Fisheries Research</em> 269 (January): 106863. <a href="https://doi.org/10.1016/j.fishres.2023.106863">https://doi.org/10.1016/j.fishres.2023.106863</a>.
+</div>
+<div id="ref-rue2009" class="csl-entry" role="listitem">
+Rue, Håvard, Sara Martino, and Nicolas Chopin. 2009. <span>“Approximate Bayesian Inference for Latent Gaussian Models by Using Integrated Nested Laplace Approximations.”</span> <em>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</em> 71 (2): 319–92. <a href="https://doi.org/10.1111/j.1467-9868.2008.00700.x">https://doi.org/10.1111/j.1467-9868.2008.00700.x</a>.
+</div>
+<div id="ref-scrucca2023" class="csl-entry" role="listitem">
+Scrucca, Luca, Chris Fraley, T. Brendan Murphy, and Adrian E. Raftery. 2023. <em>Model-based clustering, classification, and density estimation using mclust in R</em>. First edition. Boca Raton, FL: CRC Press. <a href="https://mclust-org.github.io/book/">https://mclust-org.github.io/book/</a>.
+</div>
+<div id="ref-scrucca2015" class="csl-entry" role="listitem">
+Scrucca, Luca, and Adrian E. Raftery. 2015. <span>“Improved Initialisation of Model-Based Clustering Using Gaussian Hierarchical Partitions.”</span> <em>Advances in Data Analysis and Classification</em> 9 (4): 447–60. <a href="https://doi.org/10.1007/s11634-015-0220-z">https://doi.org/10.1007/s11634-015-0220-z</a>.
+</div>
+<div id="ref-truesdale2019" class="csl-entry" role="listitem">
+Truesdale, Corinne L., Tracey M. Dalton, and M. Conor McManus. 2019. <span>“Fishers’ Knowledge and Perceptions of the Emerging Southern New England Jonah Crab Fishery.”</span> <em>North American Journal of Fisheries Management</em> 39 (5): 951–63. <a href="https://doi.org/10.1002/nafm.10327">https://doi.org/10.1002/nafm.10327</a>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -678,10 +779,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./morphmat.html" class="pagination-link" aria-label="`morphmat`">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><code>morphmat</code></span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Overview &amp; Background">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview &amp; Background</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./data_mgmt.html" class="pagination-link" aria-label="Data Management Plan">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Data Management Plan</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
