@@ -76,3 +76,6 @@ However, this phenomenon is by no means universal: for example, the dotillid cra
 -   Harvest-induced evolution was observed in the European lobster (*Homarus gammarus*) as a result of the selective pressure against large chelae exerted by the fishery [@sørdalen2018]. However, in a follow-up study, Sørdalen et al. [-@sørdalen2020] showed that marine protected areas (MPAs) may partially restore trait loss, with males inside MPAs possessing larger claws than similarly-sized males in nearby fished areas.
 
 -   Seasonal variation [@yasuda2017]
+
+
+## References {.unnumbered}

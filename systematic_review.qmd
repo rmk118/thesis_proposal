@@ -12,15 +12,15 @@ library(gt)
 
 ## Introduction
 
-The first step of the project will be to conduct a literature review to identify all modeling approaches used to estimate crustacean size at maturity using morphometric data. Special focus will be placed on understanding the methodologies of studies that have investigated regional/spatial variation in size at maturity. I will aim to follow current best practices for ensuring transparency and reproducibility in ecological systematic reviews and meta-analyses [@foo2021; @odea2021; @kambouris2024; @gates2002].
+The foundation of my dissertation will be a systematic literature review to identify all modeling approaches used to estimate crustacean size at maturity using morphometric data. Special focus will be placed on understanding the methodologies of studies that have investigated regional/spatial variation in size at maturity. I will aim to follow current best practices for ensuring transparency and reproducibility in ecological systematic reviews and meta-analyses [@foo2021; @odea2021; @kambouris2024; @gates2002].
+
+Synthesis research plays a crucial role in accelerating ecological knowledge by integrating evidence and organizing information in a way that can answer foundational, large-scale questions (Halpern et al., 2020) [@halpern2020; @spake2022]. The combined analysis of disparate data sources, theories, and tools is a powerful tool for advancing scientific understanding, and represents a powerful approach to informing evidence-based management decisions in the face of rapid environmental change [@halpern2020]. The results from qualitative and, where possible, quantitative/meta-analytical methods applied to a novel database of size at maturity studies will be invaluable for preventing the remainder of my graduate work from duplicating existing efforts and maximizing the scientific value of my research output. Additionally, given the relative impact of synthesis papers compared to non-synthesis papers, publishing a rigorous systematic review will be highly beneficial for establishing my presence as a promising researcher within the fisheries science community.
 
 ## Completed work
 
 ### Formulate initial question and identify inclusion/exclusion criteria
 
--   What methods have previously been used to model crustacean size at maturity based on morphometric data?
--   How have previous studies represented spatial variation in size at maturity within a given species?
--   How accurate and precise are these methods?
+The overarching question of this review is: what methods have previously been used to model crustacean size at maturity based on morphometric data, and in what contexts have they been applied?
 
 Since the focus of this review does not fit well into the PICO framework, I have used the SPIDER framework to organize the key components of the research question [@methley2014] (@tbl-spider).
 
@@ -79,5 +79,8 @@ Duplicates were first removed using the duplicate merging feature in the referen
 
 A small number of studies were excluded because they were written in a language other than English. Although not considering non-English studies can introduce bias into systematic reviews, some authors have found excluding non-English papers has a minimal effect on the overall conclusions of evidence syntheses [@vickers1998; @nussbaumer-streit2020; @jüni2002]. Additionally, one of the major arguments against excluding non-English studies is that it skews the geographical provenance of the body of evidence under consideration towards Europe and North America [@walpole2019]. The \>500 English studies retained for future screening represented a wide geographic distribution, and nearly all non-English studies were conducted in a region already represented by multiple English studies.
 
+## Data extraction
+
+See Appendix B.
 
 ## References {.unnumbered}

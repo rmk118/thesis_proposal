@@ -1,8 +1,33 @@
 ---
-title: "Species Applications"
+title: "Jonah crab"
 format: html
+bibliography: references.bib
 ---
 
 # Jonah crab
 
-Modeling spatial variation in Jonah crab size at maturity.
+## Introduction (obviously this will be much longer)
+
+The Jonah crab (*Cancer borealis*) fishery is managed in part by a minimum legal size, intended to protect females and enough mature males to sustain the population. However, there are many unresolved questions about the growth of Jonah crabs, including spatial variation in size at maturity [@truesdale2019]. Here, I will combine the insights from the systematic review and simulation testing with cutting-edge ecological modeling tools in a novel approach to spatially-varying parametrization of size at maturity models that can be generalized to other crustacean fisheries.
+
+## Methods
+
+Based on the superior performance of `mclust` during the preliminary simulation testing, my current plan for analyzing the Jonah crab data is to use Gaussian mixture models for classification followed by spatial logistic regression to determine SM50. **This may change as I find new modeling approaches through the systematic review and conduct more comprehensive simulation testing.**
+
+### Jonah crab data
+
+Male Jonah crab morphological data used in this study were collected across the Northeast Atlantic in 2015-2019 and 2021. Most data were obtained from the annual Northeast Fisheries Science Center bottom trawl surveys, with supplemental measurements provided by the Massachusetts Department of Marine Fisheries and the University of Maryland Center for Environmental Science in 2015, 2016, and 2017. We only considered records that included a measurement for both carapace width (CW) and chela height (CH) and had spatial coordinates. Although there is also some data for female Jonah crabs, females are uncommon in the Jonah crab fishery because they are typically below the minimum legal size limit and associated trap vent sizes.
+
+### Mixture model clustering
+
+I will use the package `mclust` to perform model-based clustering using finite Gaussian mixture models [@scrucca2023]. In brief, this clustering method works by assuming that the groups (in this case, mature and immature crabs) correspond to different probability density functions, called mixture components. The overall mixture distribution is a weighted sum (formally, a convex linear combination) of these components. The parameters for the component distributions and the mixture weights are estimated using the Expectation-Maximization algorithm, an iterative approach to finding maximum-likelihood estimates that is commonly used for latent variable and missing data problems [@dempster1977].
+
+The data will not be manually transformed before clustering because the `mclust` default is to transform the data using singular value decomposition (SVD) before initializing the EM algorithm [@scrucca2015]. The number of clusters will be pre-specified $(G=2)$. The "EVV" type will be chosen to specify the geometric characteristics of the covariance matrices, meaning that the mixture components have equal volume but varying shape and orientation [@scrucca2023].
+
+### Spatial logistic regression
+
+The clustering-derived maturity labels will then used to fit a logistic regression model using the R package `sdmTMB` version 0.6.0.9013, which provides a flexible interface to fit spatial and spatiotemporal GLMMs (Generalized Linear Mixed Effects Models) [@anderson]. The package employs Template Model Builder (TMB) and integrated nested Laplace approximations to find values for fixed effects that maximize the marginal log likelihood while integrating across random effects [@kristensen2016; @rue2009]. A Delaunay triangulation mesh will be constructed over the observed coordinates using the `make_mesh` function in `sdmTMB`, setting a minimum distance of 10 km to avoid overfitting. The mesh serves as an input for an `sdmTMB` logistic model (binomial family with a logit link) of the form `maturity ~ CW`, with a spatially-varying slope coefficient for carapace width added as a random effect. I will use the model to generate predictions over a grid of the target region and extracted the value of the coefficient for each location, then use the extracted coefficient to recalculate SM50 at each point. I will model spatial variation in the probability of maturity at legal size by generating model predictions over a grid that included CW as a constant attribute held at the minimum legal size.
+
+For comparison with the spatial model, I will fit a non-spatial logistic model using the base R function `glm()`. The Fieller method will be used to extract confidence intervals for SM50 from the GLM coefficients and variance-covariance matrix [@mainguy2024]. Comparison between models will be based on differences between their Akaike information criterion (AIC) values [@burnham2004]. Analytical randomized-quantile residuals will be checked for normality [@dunn1996] and simulation-based residuals from the fitted models will be checked for uniformity, overdispersion, and the presence of significant outliers using the R package `DHARMa` [@hartig].
+
+## References {.unnumbered}

@@ -1,3 +1,5 @@
 # Welcome {.unnumbered}
 
-Here will be a couple of sentences describing the book and hopefully some cool crab art.
+This site hosts my **in-progress** proposal for my Ph.D. research at the University of Maine, School of Marine Sciences.
+
+![Illustration by [Tamvmat](https://tamvmat.myportfolio.com/), [\@tamvmat.bsky.social](https://bsky.app/profile/tamvmat.bsky.social)](figures/dungeness_art.jpg){fig-align="center"}

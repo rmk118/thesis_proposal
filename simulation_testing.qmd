@@ -14,7 +14,7 @@ library(gt)
 
 Testing a proposed model against simulated data generated from a known underlying process is an important but sometimes overlooked step in ecological research [@austin2006; @lotterhos2022]. In fisheries science, simulation testing is commonly used to evaluate stock assessment and population dynamic models and assess their robustness to various types of error [@deroba2015; @piner2011].
 
-Before applying the size-at-maturity estimation procedures identified through the systematic review to real data, I will create multiple simulated datasets with differing characteristics in order to determine the domains of applicability and inference of each model. The domain of applicability refers to the types of datasets to which a model can reliably be applied, while the domain of inference is defined as the processes or conclusions that can be inferred from the model output [@lotterhos2022]. The methodology for this chapter will be heavily influenced by the principles for ecological simulation testing outlined by Lotterhos et al. [-@lotterhos2022] and the guidelines for computational method benchmarking developed by Weber et al. [-@weber2019] (See [Box 1](#box1)).
+Before applying the size-at-maturity estimation procedures identified through the systematic review to real data, I will create multiple simulated data sets with differing characteristics in order to determine the domains of applicability and inference of each model. The domain of applicability refers to the types of data sets to which a model can reliably be applied, while the domain of inference is defined as the processes or conclusions that can be inferred from the model output [@lotterhos2022]. The methodology for this chapter will be heavily influenced by the principles for ecological simulation testing outlined by Lotterhos et al. [-@lotterhos2022] and the guidelines for computational method benchmarking developed by Weber et al. [-@weber2019] (See [Box 1](#box1)).
 
 ::: {#box1 .box}
 ```{r}
@@ -51,7 +51,7 @@ guidelines %>% gt() %>%
 
 ### Initial comparison - all models
 
-I will first test all methods on “nice” data, which will be 100 randomly generated data sets with the same parametrization, designed to mimic a real-world dataset.
+I will first test all methods on “nice” data, which will be 100 randomly generated data sets with the same parametrization, designed to mimic a real-world data set.
 
 For the regression methods that accept or require upper and lower bounds for the possible SM50 value, combinations of quantiles representing the upper and lower bounds will be tested, with each combination tested on each of the original 100 randomly generated data sets to determine how slight changes in the data might affect where the upper and lower bounds should be set. For regression methods that accept possible numbers of breakpoints, I will test breakpoint values from 10 to 1000 in increments of 10.
 
@@ -67,7 +67,7 @@ For any remaining regression methods that accept or require upper and lower boun
 
 Simulation studies can serve as a powerful tool to assess the effects of sampling strategies, sample size, and sampling bias on the output of an ecological model [@meynard2019; @lotterhos2022]. For parameter combinations where the model is effective, I will conduct a final round of simulation testing evaluating model performance on different sample sizes and size class representations.
 
--   100 datasets for each sample size
--   100 datasets for each size class representation (subsample 50-50, subsample 80-20, 20-80)
+-   100 data sets for each sample size
+-   100 data sets for each size class representation (subsample 50-50, subsample 80-20, 20-80)
 
 ## References {.unnumbered}

@@ -1,0 +1,23 @@
+# Data Management Plan
+
+## Description of the types of data and information expected to be created during the course of the project
+
+*Simulation output*: Environmental data generated from this study will include artificial chela height, abdomen width, and carapace width data from simulated samples of crustacean populations. Datasets will be generated based on different combinations of parameters describing the population and sampling procedure, including mean carapace width, sample size, and sharpness of the transition to maturity.
+
+*Systematic review*: For each source included in the systematic review, information will be extracted for 62 separate variables related to the context, methodology, and conclusions of the study. An EML-formatted attribute table of these variables is provided in Appendix B. The temporal range of the sources included in the review will be 1935 to present. No geographic limitations will be imposed.
+
+*Sensitivity*: Data generated during the course of the project are expected to be either simulated or collected from publicly-available sources (e.g., published scientific literature). Thus, there are not expected to be sensitivity concerns or a need for data access limitations or restrictions.
+
+## Tentative date by which data will be shared
+
+Data will be shared by the end of my graduate studies or whenever manuscripts are published. 
+
+## Standards to be used for data/metadata format and content
+
+Data management for this project will be guided by the [Findable, Accessible, Interoperable, and Reusable (FAIR) principles](https://www.go-fair.org/fair-principles/) for data management. Output will be available in non-proprietary and machine-readable file formats (.csv) for sharing and archiving to maximize the potential for reuse and longevity. Metadata will be formatted according to the [Ecological Metadata Language (EML)](https://eml.ecoinformatics.org/) schema, a comprehensive and flexible XML metadata standard widely used for environmental and ecological data. EML is highly interoperable and uses internationally recognized standards such as ORCID, the ISO 8601 Date and Time standard, and ITIS for authoritative taxonomic IDs. Data dictionaries (descriptions of each column/variable in a data table) will be generated in tabular format and downloaded as .csv files for conversion into “attributeList” objects within the EML schema.
+
+## Methods for providing data stewardship, access, and preservation
+
+During the analysis, data will be stored in at least three separate locations to minimize the potential for data loss. The systematic review data will be compiled in a cloud-based Google Sheet and regularly downloaded as a .csv file that is uploaded to the GitHub repository associated with the project and saved to an external hard drive. Similarly, the simulation output (saved as .csv files) will be available in a GitHub repository and uploaded to Google Drive and saved to an external hard drive. Data will be deposited in the data repository Zenodo, providing public access and permanent archiving. Through Zenodo, each dataset will be assigned a Digital Object Identifier (DOI) to unambiguously identify the data and facilitate data citation. When appropriate, I will also append my data as supplemental files in reports and publications.
+
+The R scripts used to analyze the data will be made available alongside the data itself, and I will follow best practices to ensure the reproducibility of my code. Such practices include avoiding absolute file paths, using meaningful file names and file hierarchies, implementing modular code through the use of custom functions, and intuitive variable naming. Where appropriate, I will use Quarto documents to combine text, code, and output into a single file.

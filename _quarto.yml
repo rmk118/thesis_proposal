@@ -4,11 +4,15 @@ project:
 book:
   title: "Thesis Proposal: Modeling Crustacean Morphometric Maturity"
   author: "Ruby Krasnow"
+  repo-url: https://github.com/rmk118/thesis_proposal
   back-to-top-navigation: true
+  page-navigation: true
+  favicon: figures/simple_crab.svg
   chapters:
     - index.qmd
-    - part: intro.qmd
+    - part: "Introduction"
       chapters:
+      - intro.qmd
       - importance.qmd
       - valuable_species.qmd
     - systematic_review.qmd
@@ -16,15 +20,18 @@ book:
     - simulation_testing.qmd
     - morphmat.qmd
     - jonah.qmd
+  appendices:
+    - data_mgmt.qmd
+    - eml.qmd
  
 bibliography: references.bib
-
+number-depth: 3
+toc-depth: 2
+toc-expand: 1
 format:
   html:
     theme: cosmo
     code-link: true
-  pdf:
-    documentclass: scrreprt
     
 execute:
   echo: false

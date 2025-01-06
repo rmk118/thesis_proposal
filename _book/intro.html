@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.39">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Introduction – Thesis Proposal: Modeling Crustacean Morphometric Maturity</title>
+<title>1&nbsp; Overview &amp; Background – Thesis Proposal: Modeling Crustacean Morphometric Maturity</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,7 +17,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -28,6 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./importance.html" rel="next">
 <link href="./index.html" rel="prev">
+<link href="./figures/simple_crab.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview &amp; Background</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -83,6 +104,9 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Thesis Proposal: Modeling Crustacean Morphometric Maturity</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/rmk118/thesis_proposal" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -100,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -109,14 +133,20 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview &amp; Background</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./importance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Importance of size at maturity for management</span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Importance of size at maturity for management</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./valuable_species.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Relevance to valuable fisheries</span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Relevance to valuable fisheries</span></span></a>
   </div>
 </li>
       </ul>
@@ -124,56 +154,75 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./systematic_review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Systematic Review</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Systematic Review</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./eco_evo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ecological &amp; Evolutionary Applications</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ecological &amp; Evolutionary Applications</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simulation_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Simulation Testing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Simulation Testing</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./morphmat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title"><code>morphmat</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title"><code>morphmat</code></span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./jonah.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">species_applications</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Jonah crab</span></span></a>
   </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_mgmt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Data Management Plan</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./eml.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">eml</span></span></a>
+  </div>
+</li>
+      </ul>
 </li>
     </ul>
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1"><h2 id="toc-title">Table of contents</h2>
    
-  <ul>
-<li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#proposed-structure" id="toc-proposed-structure" class="nav-link" data-scroll-target="#proposed-structure">Proposed Structure</a></li>
-  <li>
-<a href="#morphometric-size-at-maturity---background" id="toc-morphometric-size-at-maturity---background" class="nav-link" data-scroll-target="#morphometric-size-at-maturity---background">Morphometric Size at Maturity - Background</a>
   <ul class="collapse">
-<li><a href="#types-of-maturity" id="toc-types-of-maturity" class="nav-link" data-scroll-target="#types-of-maturity">Types of Maturity</a></li>
-  <li><a href="#types-of-allometric-growth-in-crustaceans" id="toc-types-of-allometric-growth-in-crustaceans" class="nav-link" data-scroll-target="#types-of-allometric-growth-in-crustaceans">Types of Allometric Growth in Crustaceans</a></li>
-  </ul>
-</li>
+<li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="header-section-number">1.1</span> Summary</a></li>
+  <li><a href="#proposed-structure" id="toc-proposed-structure" class="nav-link" data-scroll-target="#proposed-structure"><span class="header-section-number">1.2</span> Proposed Structure</a></li>
+  <li><a href="#morphometric-size-at-maturity---background" id="toc-morphometric-size-at-maturity---background" class="nav-link" data-scroll-target="#morphometric-size-at-maturity---background"><span class="header-section-number">1.3</span> Morphometric Size at Maturity - Background</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Introduction</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview &amp; Background</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview &amp; Background</span>
+</h1>
 </div>
 
 
@@ -187,33 +236,35 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header><section id="summary" class="level2"><h2 class="anchored" data-anchor-id="summary">Summary</h2>
+</header><section id="summary" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="summary">
+<span class="header-section-number">1.1</span> Summary</h2>
 <p>Accurate estimates of size at maturity are crucial for the effective management of marine crustaceans, which represent the most valuable group of wild-capture fisheries by landed mass. Size at maturity values often influence the establishment of minimum landing sizes and represent crucial inputs in widely-used stock assessment models. For many crustaceans, size at maturity can be observed through changes in the relative size and growth of the chelae (males) or abdomen (females), referred to as a transition to morphometric maturity. Morphometric maturity is often a better indicator of functional maturity (i.e., the ability to successfully mate and produce offspring) than physiological maturity, which generally must be determined through gonad dissection or similarly invasive methods. Over the past century, various methods have been developed to estimate size at morphometric maturity for hundreds of crustacean species across the globe. Despite their widespread use, there has been limited research comparing the accuracy of these methods, and many researchers are unaware of more recently developed approaches to modeling size at maturity using morphometric data. My proposed thesis will address these gaps by comprehensively evaluating all documented approaches to modeling size at morphometric maturity and developing tools to facilitate the adoption of sound quantitative methods by fisheries scientists and managers.</p>
-</section><section id="proposed-structure" class="level2"><h2 class="anchored" data-anchor-id="proposed-structure">Proposed Structure</h2>
-<p>I propose that my dissertation will contain at least five chapters, organized under three main headings: synthesis research (literature reviews and meta-analyses), quantitative methods (simulation testing and R package development), and applications to specific crustacean species (<a href="#tbl-outline" class="quarto-xref">Table&nbsp;<span>1</span></a>).</p>
+</section><section id="proposed-structure" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="proposed-structure">
+<span class="header-section-number">1.2</span> Proposed Structure</h2>
+<p>I propose that my dissertation will contain at least five chapters, organized under three main headings: synthesis research (literature reviews and meta-analyses), quantitative methods (simulation testing and R package development), and applications to specific crustacean species (<a href="#tbl-outline" class="quarto-xref">Table&nbsp;<span>1.1</span></a>).</p>
 <div class="cell">
 <div id="tbl-outline" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-outline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Proposed structure of PhD dissertation
+Table&nbsp;1.1: Proposed structure of PhD dissertation
 </figcaption><div aria-describedby="tbl-outline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="bnoyrnjjfx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bnoyrnjjfx table {
+<div id="qmdgvynnck" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qmdgvynnck table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bnoyrnjjfx thead, #bnoyrnjjfx tbody, #bnoyrnjjfx tfoot, #bnoyrnjjfx tr, #bnoyrnjjfx td, #bnoyrnjjfx th {
+#qmdgvynnck thead, #qmdgvynnck tbody, #qmdgvynnck tfoot, #qmdgvynnck tr, #qmdgvynnck td, #qmdgvynnck th {
   border-style: none;
 }
 
-#bnoyrnjjfx p {
+#qmdgvynnck p {
   margin: 0;
   padding: 0;
 }
 
-#bnoyrnjjfx .gt_table {
+#qmdgvynnck .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -239,12 +290,12 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   border-left-color: #D3D3D3;
 }
 
-#bnoyrnjjfx .gt_caption {
+#qmdgvynnck .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bnoyrnjjfx .gt_title {
+#qmdgvynnck .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -256,7 +307,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   border-bottom-width: 0;
 }
 
-#bnoyrnjjfx .gt_subtitle {
+#qmdgvynnck .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -268,7 +319,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   border-top-width: 0;
 }
 
-#bnoyrnjjfx .gt_heading {
+#qmdgvynnck .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -280,13 +331,13 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   border-right-color: #D3D3D3;
 }
 
-#bnoyrnjjfx .gt_bottom_border {
+#qmdgvynnck .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bnoyrnjjfx .gt_col_headings {
+#qmdgvynnck .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -301,7 +352,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   border-right-color: #D3D3D3;
 }
 
-#bnoyrnjjfx .gt_col_heading {
+#qmdgvynnck .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -321,7 +372,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   overflow-x: hidden;
 }
 
-#bnoyrnjjfx .gt_column_spanner_outer {
+#qmdgvynnck .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -333,15 +384,15 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   padding-right: 4px;
 }
 
-#bnoyrnjjfx .gt_column_spanner_outer:first-child {
+#qmdgvynnck .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bnoyrnjjfx .gt_column_spanner_outer:last-child {
+#qmdgvynnck .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bnoyrnjjfx .gt_column_spanner {
+#qmdgvynnck .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -353,11 +404,11 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   width: 100%;
 }
 
-#bnoyrnjjfx .gt_spanner_row {
+#qmdgvynnck .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bnoyrnjjfx .gt_group_heading {
+#qmdgvynnck .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -383,7 +434,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   text-align: left;
 }
 
-#bnoyrnjjfx .gt_empty_group_heading {
+#qmdgvynnck .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -398,15 +449,15 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   vertical-align: middle;
 }
 
-#bnoyrnjjfx .gt_from_md > :first-child {
+#qmdgvynnck .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bnoyrnjjfx .gt_from_md > :last-child {
+#qmdgvynnck .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bnoyrnjjfx .gt_row {
+#qmdgvynnck .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -425,7 +476,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   overflow-x: hidden;
 }
 
-#bnoyrnjjfx .gt_stub {
+#qmdgvynnck .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -438,7 +489,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   padding-right: 5px;
 }
 
-#bnoyrnjjfx .gt_stub_row_group {
+#qmdgvynnck .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -452,15 +503,15 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   vertical-align: top;
 }
 
-#bnoyrnjjfx .gt_row_group_first td {
+#qmdgvynnck .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bnoyrnjjfx .gt_row_group_first th {
+#qmdgvynnck .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bnoyrnjjfx .gt_summary_row {
+#qmdgvynnck .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -470,16 +521,16 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   padding-right: 5px;
 }
 
-#bnoyrnjjfx .gt_first_summary_row {
+#qmdgvynnck .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bnoyrnjjfx .gt_first_summary_row.thick {
+#qmdgvynnck .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bnoyrnjjfx .gt_last_summary_row {
+#qmdgvynnck .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -489,7 +540,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   border-bottom-color: #D3D3D3;
 }
 
-#bnoyrnjjfx .gt_grand_summary_row {
+#qmdgvynnck .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -499,7 +550,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   padding-right: 5px;
 }
 
-#bnoyrnjjfx .gt_first_grand_summary_row {
+#qmdgvynnck .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -509,7 +560,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   border-top-color: #D3D3D3;
 }
 
-#bnoyrnjjfx .gt_last_grand_summary_row_top {
+#qmdgvynnck .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -519,11 +570,11 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   border-bottom-color: #D3D3D3;
 }
 
-#bnoyrnjjfx .gt_striped {
+#qmdgvynnck .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bnoyrnjjfx .gt_table_body {
+#qmdgvynnck .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -532,7 +583,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   border-bottom-color: #D3D3D3;
 }
 
-#bnoyrnjjfx .gt_footnotes {
+#qmdgvynnck .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -546,7 +597,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   border-right-color: #D3D3D3;
 }
 
-#bnoyrnjjfx .gt_footnote {
+#qmdgvynnck .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -555,7 +606,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   padding-right: 5px;
 }
 
-#bnoyrnjjfx .gt_sourcenotes {
+#qmdgvynnck .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -569,7 +620,7 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   border-right-color: #D3D3D3;
 }
 
-#bnoyrnjjfx .gt_sourcenote {
+#qmdgvynnck .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -577,72 +628,72 @@ Table&nbsp;1: Proposed structure of PhD dissertation
   padding-right: 5px;
 }
 
-#bnoyrnjjfx .gt_left {
+#qmdgvynnck .gt_left {
   text-align: left;
 }
 
-#bnoyrnjjfx .gt_center {
+#qmdgvynnck .gt_center {
   text-align: center;
 }
 
-#bnoyrnjjfx .gt_right {
+#qmdgvynnck .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bnoyrnjjfx .gt_font_normal {
+#qmdgvynnck .gt_font_normal {
   font-weight: normal;
 }
 
-#bnoyrnjjfx .gt_font_bold {
+#qmdgvynnck .gt_font_bold {
   font-weight: bold;
 }
 
-#bnoyrnjjfx .gt_font_italic {
+#qmdgvynnck .gt_font_italic {
   font-style: italic;
 }
 
-#bnoyrnjjfx .gt_super {
+#qmdgvynnck .gt_super {
   font-size: 65%;
 }
 
-#bnoyrnjjfx .gt_footnote_marks {
+#qmdgvynnck .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bnoyrnjjfx .gt_asterisk {
+#qmdgvynnck .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bnoyrnjjfx .gt_indent_1 {
+#qmdgvynnck .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bnoyrnjjfx .gt_indent_2 {
+#qmdgvynnck .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bnoyrnjjfx .gt_indent_3 {
+#qmdgvynnck .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bnoyrnjjfx .gt_indent_4 {
+#qmdgvynnck .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bnoyrnjjfx .gt_indent_5 {
+#qmdgvynnck .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bnoyrnjjfx .katex-display {
+#qmdgvynnck .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bnoyrnjjfx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qmdgvynnck div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -685,30 +736,30 @@ Table&nbsp;1: Proposed structure of PhD dissertation
 </div>
 </div>
 <p>My proposed chapters are thematically connected and build upon one another in a natural progression. Chapter 1 will focus on identifying the modeling approaches (e.g., various types of piecewise regression and clustering) used to estimate size at maturity and will examine the context in which they are applied and the conclusions drawn from the given application. Chapter 2 will use the comprehensive dataset compiled in Chapter 1 to identify how changes in morphometry may be correlated with the life history traits, ecological niches, and evolutionary trajectories of different crustacean species. Chapter 3 will use simulation testing to evaluate the performance of the models identified in Chapter 1 when applied to artificial datasets with known size at maturity values. The simulation testing will allow me to determine how accurately each model can recover the true parameters when presented with realistic challenges like small sample sizes, underrepresentation of smaller individuals, and high variability/error in the data.</p>
-<p>Chapter 4 describes an open-source R package I am developing that will contain easy-to-implement functions for researchers to implement the modeling approaches identified and tested in the previous chapters. Finally, the Applications section will demonstrate the value of this research by using the best practices I identify in Chapter 3 to model size at maturity for specific crustacean species. At a minimum, this will include a chapter modeling spatial variation in Jonah crab (<em>Cancer borealis</em>) size at maturity, illustrating how the workflows discussed under the Quantitative Methods heading can be extended to incorporate spatially-structured or time series data. However, I have identified numerous potential avenues to apply this work in collaboration with external researchers (<a href="#tbl-possiblecollabs" class="quarto-xref">Table&nbsp;<span>2</span></a>), and undoubtedly more will arise over the course of my graduate studies.</p>
+<p>Chapter 4 describes an open-source R package I am developing that will contain easy-to-implement functions for researchers to implement the modeling approaches identified and tested in the previous chapters. Finally, the Applications section will demonstrate the value of this research by using the best practices I identify in Chapter 3 to model size at maturity for specific crustacean species. At a minimum, this will include a chapter modeling spatial variation in Jonah crab (<em>Cancer borealis</em>) size at maturity, illustrating how the workflows discussed under the Quantitative Methods heading can be extended to incorporate spatially-structured or time series data. However, I have identified numerous potential avenues to apply this work in collaboration with external researchers (<a href="#tbl-possiblecollabs" class="quarto-xref">Table&nbsp;<span>1.2</span></a>), and undoubtedly more will arise over the course of my graduate studies.</p>
 <div class="cell">
 <div id="tbl-possiblecollabs" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-possiblecollabs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Example extensions/applications of the topics discussed in the main chapters.
+Table&nbsp;1.2: Example extensions/applications of the topics discussed in the main chapters.
 </figcaption><div aria-describedby="tbl-possiblecollabs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="wbbzneksdt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wbbzneksdt table {
+<div id="eotlxdyklu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eotlxdyklu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wbbzneksdt thead, #wbbzneksdt tbody, #wbbzneksdt tfoot, #wbbzneksdt tr, #wbbzneksdt td, #wbbzneksdt th {
+#eotlxdyklu thead, #eotlxdyklu tbody, #eotlxdyklu tfoot, #eotlxdyklu tr, #eotlxdyklu td, #eotlxdyklu th {
   border-style: none;
 }
 
-#wbbzneksdt p {
+#eotlxdyklu p {
   margin: 0;
   padding: 0;
 }
 
-#wbbzneksdt .gt_table {
+#eotlxdyklu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -734,12 +785,12 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   border-left-color: #D3D3D3;
 }
 
-#wbbzneksdt .gt_caption {
+#eotlxdyklu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wbbzneksdt .gt_title {
+#eotlxdyklu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -751,7 +802,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   border-bottom-width: 0;
 }
 
-#wbbzneksdt .gt_subtitle {
+#eotlxdyklu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -763,7 +814,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   border-top-width: 0;
 }
 
-#wbbzneksdt .gt_heading {
+#eotlxdyklu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -775,13 +826,13 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   border-right-color: #D3D3D3;
 }
 
-#wbbzneksdt .gt_bottom_border {
+#eotlxdyklu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wbbzneksdt .gt_col_headings {
+#eotlxdyklu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -796,7 +847,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   border-right-color: #D3D3D3;
 }
 
-#wbbzneksdt .gt_col_heading {
+#eotlxdyklu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -816,7 +867,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   overflow-x: hidden;
 }
 
-#wbbzneksdt .gt_column_spanner_outer {
+#eotlxdyklu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -828,15 +879,15 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   padding-right: 4px;
 }
 
-#wbbzneksdt .gt_column_spanner_outer:first-child {
+#eotlxdyklu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wbbzneksdt .gt_column_spanner_outer:last-child {
+#eotlxdyklu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wbbzneksdt .gt_column_spanner {
+#eotlxdyklu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -848,11 +899,11 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   width: 100%;
 }
 
-#wbbzneksdt .gt_spanner_row {
+#eotlxdyklu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wbbzneksdt .gt_group_heading {
+#eotlxdyklu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -878,7 +929,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   text-align: left;
 }
 
-#wbbzneksdt .gt_empty_group_heading {
+#eotlxdyklu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -893,15 +944,15 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   vertical-align: middle;
 }
 
-#wbbzneksdt .gt_from_md > :first-child {
+#eotlxdyklu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wbbzneksdt .gt_from_md > :last-child {
+#eotlxdyklu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wbbzneksdt .gt_row {
+#eotlxdyklu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -920,7 +971,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   overflow-x: hidden;
 }
 
-#wbbzneksdt .gt_stub {
+#eotlxdyklu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -933,7 +984,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   padding-right: 5px;
 }
 
-#wbbzneksdt .gt_stub_row_group {
+#eotlxdyklu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -947,15 +998,15 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   vertical-align: top;
 }
 
-#wbbzneksdt .gt_row_group_first td {
+#eotlxdyklu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wbbzneksdt .gt_row_group_first th {
+#eotlxdyklu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wbbzneksdt .gt_summary_row {
+#eotlxdyklu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -965,16 +1016,16 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   padding-right: 5px;
 }
 
-#wbbzneksdt .gt_first_summary_row {
+#eotlxdyklu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wbbzneksdt .gt_first_summary_row.thick {
+#eotlxdyklu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wbbzneksdt .gt_last_summary_row {
+#eotlxdyklu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -984,7 +1035,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   border-bottom-color: #D3D3D3;
 }
 
-#wbbzneksdt .gt_grand_summary_row {
+#eotlxdyklu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -994,7 +1045,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   padding-right: 5px;
 }
 
-#wbbzneksdt .gt_first_grand_summary_row {
+#eotlxdyklu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1004,7 +1055,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   border-top-color: #D3D3D3;
 }
 
-#wbbzneksdt .gt_last_grand_summary_row_top {
+#eotlxdyklu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1014,11 +1065,11 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   border-bottom-color: #D3D3D3;
 }
 
-#wbbzneksdt .gt_striped {
+#eotlxdyklu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wbbzneksdt .gt_table_body {
+#eotlxdyklu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1027,7 +1078,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   border-bottom-color: #D3D3D3;
 }
 
-#wbbzneksdt .gt_footnotes {
+#eotlxdyklu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1041,7 +1092,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   border-right-color: #D3D3D3;
 }
 
-#wbbzneksdt .gt_footnote {
+#eotlxdyklu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1050,7 +1101,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   padding-right: 5px;
 }
 
-#wbbzneksdt .gt_sourcenotes {
+#eotlxdyklu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1064,7 +1115,7 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   border-right-color: #D3D3D3;
 }
 
-#wbbzneksdt .gt_sourcenote {
+#eotlxdyklu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1072,72 +1123,72 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
   padding-right: 5px;
 }
 
-#wbbzneksdt .gt_left {
+#eotlxdyklu .gt_left {
   text-align: left;
 }
 
-#wbbzneksdt .gt_center {
+#eotlxdyklu .gt_center {
   text-align: center;
 }
 
-#wbbzneksdt .gt_right {
+#eotlxdyklu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wbbzneksdt .gt_font_normal {
+#eotlxdyklu .gt_font_normal {
   font-weight: normal;
 }
 
-#wbbzneksdt .gt_font_bold {
+#eotlxdyklu .gt_font_bold {
   font-weight: bold;
 }
 
-#wbbzneksdt .gt_font_italic {
+#eotlxdyklu .gt_font_italic {
   font-style: italic;
 }
 
-#wbbzneksdt .gt_super {
+#eotlxdyklu .gt_super {
   font-size: 65%;
 }
 
-#wbbzneksdt .gt_footnote_marks {
+#eotlxdyklu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wbbzneksdt .gt_asterisk {
+#eotlxdyklu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wbbzneksdt .gt_indent_1 {
+#eotlxdyklu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wbbzneksdt .gt_indent_2 {
+#eotlxdyklu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wbbzneksdt .gt_indent_3 {
+#eotlxdyklu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wbbzneksdt .gt_indent_4 {
+#eotlxdyklu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wbbzneksdt .gt_indent_5 {
+#eotlxdyklu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wbbzneksdt .katex-display {
+#eotlxdyklu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wbbzneksdt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#eotlxdyklu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1171,12 +1222,47 @@ Table&nbsp;2: Example extensions/applications of the topics discussed in the mai
 </figure>
 </div>
 </div>
-</section><section id="morphometric-size-at-maturity---background" class="level2"><h2 class="anchored" data-anchor-id="morphometric-size-at-maturity---background">Morphometric Size at Maturity - Background</h2>
-<section id="types-of-maturity" class="level3"><h3 class="anchored" data-anchor-id="types-of-maturity">Types of Maturity</h3>
-</section><section id="types-of-allometric-growth-in-crustaceans" class="level3"><h3 class="anchored" data-anchor-id="types-of-allometric-growth-in-crustaceans">Types of Allometric Growth in Crustaceans</h3>
+</section><section id="morphometric-size-at-maturity---background" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="morphometric-size-at-maturity---background">
+<span class="header-section-number">1.3</span> Morphometric Size at Maturity - Background</h2>
+<section id="types-of-maturity" class="level3" data-number="1.3.1"><h3 data-number="1.3.1" class="anchored" data-anchor-id="types-of-maturity">
+<span class="header-section-number">1.3.1</span> Types of Maturity</h3>
+<p>Crustaceans grow in a series of discrete steps by molting, a complex process controlled by the endocrine system during which the animal sheds its entire exoskeleton (ecdysis). Growth can typically be divided into two phases, immature and mature, each of which consists of a number of instars (molts) (McLay, 2015). The immature and mature phases are often separated by a “puberty molt” that includes distinct morphological changes and after which the crustacean is sexually mature (Hartnoll, 2001).</p>
+<p>There are several different types of sexual maturity in crustaceans (Box 1, reviewed in Waiho et al., 2017). There is widespread inconsistency in the terminology used to describe the different types of crustacean maturity, which in some instances has prevented accurate size-at-maturity estimates and inhibited effective fishery management (e.g., Waddy and Aiken, 2005).</p>
+<p>Functional maturity, the ability of an individual to successfully mate and produce offspring, is the most directly related to the reproductive potential of a population and is therefore considered the most important for management purposes. To provide additional clarity, some authors refer to the transition to functional maturity as “onset of breeding” and restrict “onset of maturity” for references to the development of primary (physiological) or secondary (morphological) sexual characteristics (e.g., Montgomery, 1992).</p>
+<p>Much of the growth that occurs through molting is isometric, meaning that various parts of the body are increasing in size by the same amount and thus remaining proportionate. The disproportionate growth of body parts is called allometric growth and often occurs for secondary sexual characteristics, most notably for the chelipeds of male crustaceans and the abdomen of females. Although I will focus specifically on allometry (changes in relative size or growth), shape-based morphometry using morphological landmarks can similarly be used to identify the onset of sexual maturity in crustaceans (Collins et al., 2008).</p>
+<p>Within the broad paradigm of crustacean growth, there exists a tremendous diversity of growth patterns. The first major factor distinguishing these growth scenarios is the presence or absence of a terminal molt. For species that exhibit indeterminate growth, molting continues until death, whereas determinate growth is said to occur when a crustacean enters “terminal anecdysis” after the last molt (often the puberty molt) and can no longer grow or repair bodily damage by molting. Female sexual maturity is often relatively easy to visually assess via the presence of embryos or eggs, the presence of sperm or sperm plugs in the seminal receptacle, differences in ovary color and size, and/or obvious changes in abdomen morphology. However, determining male maturity based on primary reproductive characteristics (e.g., examination of the vas deferens) can be more challenging. An increase in the relative size of the abdomen for females and the relative size of the claw for males when crustaceans reach sexual maturity has been recognized for over a century (Huxley, 1924; Templeman, 1935).</p>
+<p>In some cases, the link between morphological changes and sexual reproduction is obvious; for example, male shrimp develop a modified appendage called a petasma that is used for spermatophore transfer during copulation (Bauer, 1996). For species like the seabob shrimp Xiphopenaeus kroyeri, male morphological maturity (characterized by petasma development) appears to be a prerequisite for physiological maturity, defined as maturation of the testes and vasa diferentia (Andrioli et al., 2024). Here, we considered a specific type of morphological maturity in which an allometric relationship between two body parts changes when an animal becomes sexually mature.</p>
+<p>The difference between physiological and morphometric maturity is perhaps most evident when considering the snow crab (Chionoecetes opilio), in which males mature in three stages: “immature” males lack spermatophores, “adolescent” males have spermatophores but undifferentiated chelae, and “mature” males have both spermatophores and differentiated chelae (Sainte-Marie et al., 1995). Growth patterns often change upon reaching maturity due to increased energy allocation towards reproduction, meaning that biphasic growth models are more accurate than those that do not differentiate between pre- and post-maturation growth (Beverton and Holt, 1957; Quince et al., 2008; Minte-Vera et al., 2016). An extreme example of this phenomenon can be found in crustacean species like the snow crab that have a terminal molt to maturity, meaning that growth ceases once an individual becomes mature (Conan and Comeau, 1986).</p>
+<p>Morphometric maturity is preferable over physiological maturity for fisheries management purposes, because in many cases individuals may have mature gonads but are incapable of mating (are not “functionally mature”) because they have not developed the necessary secondary sexual characteristics. Although both physiological and functional maturity are commonly used to estimate SM50, the criteria used to identify immature and mature reproductive phases often has a major impact on the estimated parameters (Reed et al., 2023).</p>
+</section><section id="types-of-allometric-growth-in-crustaceans" class="level3" data-number="1.3.2"><h3 data-number="1.3.2" class="anchored" data-anchor-id="types-of-allometric-growth-in-crustaceans">
+<span class="header-section-number">1.3.2</span> Types of Allometric Growth in Crustaceans</h3>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="figures/growth_phases2.jpg" class="img-fluid figure-img"></p>
+<figcaption>Various possible biphasic growth patterns in Crustacea. After McLay <span class="citation" data-cites="mclay2015">(<a href="#ref-mclay2015" role="doc-biblioref">2015</a>)</span>.</figcaption></figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="figures/growth_phases2.png" class="img-fluid figure-img"></p>
+<figcaption>Possible growth patterns depicted on a log-log scale, where the x-axis is body size and the y-axis is the size of the body part that exhibits allometric growth.</figcaption></figure>
+</div>
+</div>
+</div>
+</div>
 </section></section><section id="references" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-mclay2015" class="csl-entry" role="listitem">
+McLay, Colin L. 2015. <span>“Moulting and Growth in Brachyura.”</span> In, 9C-I:245–316. Treatise on Zoology - Anatomy, Taxonomy, Biology - the Crustacea. Brill. <a href="https://brill.com/edcollbook/title/19136">https://brill.com/edcollbook/title/19136</a>.
+</div>
+</div>
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1605,7 +1691,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./importance.html" class="pagination-link" aria-label="Importance of size at maturity for management">
-        <span class="nav-page-text">Importance of size at maturity for management</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Importance of size at maturity for management</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
