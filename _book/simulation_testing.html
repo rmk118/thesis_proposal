@@ -83,7 +83,32 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
+}</script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
@@ -207,8 +232,11 @@ div.csl-indent {
    
   <ul class="collapse">
 <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">6.1</span> Introduction</a></li>
-  <li><a href="#model-descriptions" id="toc-model-descriptions" class="nav-link" data-scroll-target="#model-descriptions"><span class="header-section-number">6.2</span> Model descriptions</a></li>
-  <li><a href="#testing-the-models" id="toc-testing-the-models" class="nav-link" data-scroll-target="#testing-the-models"><span class="header-section-number">6.3</span> Testing the models</a></li>
+  <li><a href="#basic-simulation-steps" id="toc-basic-simulation-steps" class="nav-link" data-scroll-target="#basic-simulation-steps"><span class="header-section-number">6.2</span> Basic simulation steps</a></li>
+  <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations"><span class="header-section-number">6.3</span> Equations</a></li>
+  <li><a href="#a-note-on-the-error-distribution" id="toc-a-note-on-the-error-distribution" class="nav-link" data-scroll-target="#a-note-on-the-error-distribution"><span class="header-section-number">6.4</span> A note on the error distribution</a></li>
+  <li><a href="#model-descriptions" id="toc-model-descriptions" class="nav-link" data-scroll-target="#model-descriptions"><span class="header-section-number">6.5</span> Model descriptions</a></li>
+  <li><a href="#testing-the-models" id="toc-testing-the-models" class="nav-link" data-scroll-target="#testing-the-models"><span class="header-section-number">6.6</span> Testing the models</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></nav>
     </div>
@@ -237,23 +265,23 @@ div.csl-indent {
 <div id="box1" class="box">
 <div class="cell">
 <div class="cell-output-display">
-<div id="ljprwukrra" style="padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ljprwukrra table {
+<div id="cltejbczkl" style="padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#cltejbczkl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ljprwukrra thead, #ljprwukrra tbody, #ljprwukrra tfoot, #ljprwukrra tr, #ljprwukrra td, #ljprwukrra th {
+#cltejbczkl thead, #cltejbczkl tbody, #cltejbczkl tfoot, #cltejbczkl tr, #cltejbczkl td, #cltejbczkl th {
   border-style: none;
 }
 
-#ljprwukrra p {
+#cltejbczkl p {
   margin: 0;
   padding: 0;
 }
 
-#ljprwukrra .gt_table {
+#cltejbczkl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -279,12 +307,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#ljprwukrra .gt_caption {
+#cltejbczkl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ljprwukrra .gt_title {
+#cltejbczkl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -296,7 +324,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#ljprwukrra .gt_subtitle {
+#cltejbczkl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -308,7 +336,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#ljprwukrra .gt_heading {
+#cltejbczkl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -320,13 +348,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ljprwukrra .gt_bottom_border {
+#cltejbczkl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ljprwukrra .gt_col_headings {
+#cltejbczkl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -341,7 +369,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ljprwukrra .gt_col_heading {
+#cltejbczkl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -361,7 +389,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#ljprwukrra .gt_column_spanner_outer {
+#cltejbczkl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -373,15 +401,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#ljprwukrra .gt_column_spanner_outer:first-child {
+#cltejbczkl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ljprwukrra .gt_column_spanner_outer:last-child {
+#cltejbczkl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ljprwukrra .gt_column_spanner {
+#cltejbczkl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -393,11 +421,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#ljprwukrra .gt_spanner_row {
+#cltejbczkl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ljprwukrra .gt_group_heading {
+#cltejbczkl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -423,7 +451,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#ljprwukrra .gt_empty_group_heading {
+#cltejbczkl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -438,15 +466,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#ljprwukrra .gt_from_md > :first-child {
+#cltejbczkl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ljprwukrra .gt_from_md > :last-child {
+#cltejbczkl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ljprwukrra .gt_row {
+#cltejbczkl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -465,7 +493,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#ljprwukrra .gt_stub {
+#cltejbczkl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -478,7 +506,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ljprwukrra .gt_stub_row_group {
+#cltejbczkl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -492,15 +520,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#ljprwukrra .gt_row_group_first td {
+#cltejbczkl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ljprwukrra .gt_row_group_first th {
+#cltejbczkl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ljprwukrra .gt_summary_row {
+#cltejbczkl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -510,16 +538,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ljprwukrra .gt_first_summary_row {
+#cltejbczkl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ljprwukrra .gt_first_summary_row.thick {
+#cltejbczkl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ljprwukrra .gt_last_summary_row {
+#cltejbczkl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -529,7 +557,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ljprwukrra .gt_grand_summary_row {
+#cltejbczkl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -539,7 +567,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ljprwukrra .gt_first_grand_summary_row {
+#cltejbczkl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -549,7 +577,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#ljprwukrra .gt_last_grand_summary_row_top {
+#cltejbczkl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -559,11 +587,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ljprwukrra .gt_striped {
+#cltejbczkl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ljprwukrra .gt_table_body {
+#cltejbczkl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -572,7 +600,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ljprwukrra .gt_footnotes {
+#cltejbczkl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -586,7 +614,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ljprwukrra .gt_footnote {
+#cltejbczkl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -595,7 +623,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ljprwukrra .gt_sourcenotes {
+#cltejbczkl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -609,7 +637,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ljprwukrra .gt_sourcenote {
+#cltejbczkl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -617,72 +645,72 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ljprwukrra .gt_left {
+#cltejbczkl .gt_left {
   text-align: left;
 }
 
-#ljprwukrra .gt_center {
+#cltejbczkl .gt_center {
   text-align: center;
 }
 
-#ljprwukrra .gt_right {
+#cltejbczkl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ljprwukrra .gt_font_normal {
+#cltejbczkl .gt_font_normal {
   font-weight: normal;
 }
 
-#ljprwukrra .gt_font_bold {
+#cltejbczkl .gt_font_bold {
   font-weight: bold;
 }
 
-#ljprwukrra .gt_font_italic {
+#cltejbczkl .gt_font_italic {
   font-style: italic;
 }
 
-#ljprwukrra .gt_super {
+#cltejbczkl .gt_super {
   font-size: 65%;
 }
 
-#ljprwukrra .gt_footnote_marks {
+#cltejbczkl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ljprwukrra .gt_asterisk {
+#cltejbczkl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ljprwukrra .gt_indent_1 {
+#cltejbczkl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ljprwukrra .gt_indent_2 {
+#cltejbczkl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ljprwukrra .gt_indent_3 {
+#cltejbczkl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ljprwukrra .gt_indent_4 {
+#cltejbczkl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ljprwukrra .gt_indent_5 {
+#cltejbczkl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ljprwukrra .katex-display {
+#cltejbczkl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ljprwukrra div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#cltejbczkl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -737,21 +765,38 @@ div.csl-indent {
 </div>
 </div>
 </div>
-</section><section id="model-descriptions" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="model-descriptions">
-<span class="header-section-number">6.2</span> Model descriptions</h2>
-</section><section id="testing-the-models" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="testing-the-models">
-<span class="header-section-number">6.3</span> Testing the models</h2>
-<section id="initial-comparison---all-models" class="level3" data-number="6.3.1"><h3 data-number="6.3.1" class="anchored" data-anchor-id="initial-comparison---all-models">
-<span class="header-section-number">6.3.1</span> Initial comparison - all models</h3>
-<p>I will first test all methods on “nice” data, which will be 100 randomly generated data sets with the same parametrization, designed to mimic a real-world data set.</p>
-<p>For the regression methods that accept or require upper and lower bounds for the possible SM50 value, combinations of quantiles representing the upper and lower bounds will be tested, with each combination tested on each of the original 100 randomly generated data sets to determine how slight changes in the data might affect where the upper and lower bounds should be set. For regression methods that accept possible numbers of breakpoints, I will test breakpoint values from 10 to 1000 in increments of 10.</p>
+</section><section id="basic-simulation-steps" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="basic-simulation-steps">
+<span class="header-section-number">6.2</span> Basic simulation steps</h2>
+<ol type="1">
+<li>Create normal distribution of crabs with given mean and SD for carapace width</li>
+<li>Use logistic distribution function with known location and scale parameters (i.e., known L50 and steepness of the logistic curve) to find the probability of maturity for each individual</li>
+<li>Using given parameters for the slope and intercept of the allometric equation, find the predicted chela height for each individual based on their carapace width</li>
+<li>Add error representing individual variation in allometric growth, which we assume to be log-normally distributed. Variance in empirical size-at-maturity data often appears higher for mature individuals, so by assuming a multiplicative error structure, these errors will be proportional to the x-axis variable. For example, a measurement error of 4 mm would be less likely to occur when measuring a crab with a carapace that is 30 mm in length (a 13% error) than for a crab with a 100-mm carapace (a 4% error).</li>
+</ol></section><section id="equations" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="equations">
+<span class="header-section-number">6.3</span> Equations</h2>
+<p>The parameterization of the logistic equation we will use is: <span class="math display">\[f(x)=\frac{1}{1+e^{-(x-a)/b}} \]</span> where <span class="math inline">\(a\)</span> is a location parameter and <span class="math inline">\(b\)</span> is the shape parameter.</p>
+<p>The allometric growth equation is \begin{equation}Y=\beta X^{\alpha},\end{equation}</p>
+<p>which results in a linear plot when log-transformed: <span class="math inline">\(\log{(Y)}= \tilde\beta+\alpha \log{(X)}\)</span>. Here, <span class="math inline">\(\alpha\)</span> is the slope of the allometric line and <span class="math inline">\(\beta\)</span> is the intercept, with <span class="math inline">\(\tilde{\beta}=\log{(\beta)}\)</span>. Differences in the intercept of the allometry indicate differences in the proportionate size of the chela, irrespective of carapace width. In contrast, differences in the slope parameter represent differences in how the relative size of the chela changes with body size.</p>
+</section><section id="a-note-on-the-error-distribution" class="level2" data-number="6.4"><h2 data-number="6.4" class="anchored" data-anchor-id="a-note-on-the-error-distribution">
+<span class="header-section-number">6.4</span> A note on the error distribution</h2>
+<p>We assume that the errors added in Step 4 are normally distributed around the regression lines obtained by log-transforming the raw CW and CH values. In other words, we are assuming the original data has multiplicative log-normally distributed error:</p>
+<p><span class="math display">\[Y=\beta X^{\alpha}e^{\varepsilon}, \quad \varepsilon \sim N(0,\sigma^2)\]</span> <span class="math display">\[\log{(Y)}=\log{(\beta)}+ \alpha\log{(X)}+\varepsilon, \quad \varepsilon \sim N(0,\sigma^2)\]</span></p>
+<p>The question of whether error structures should be assumed to be multiplicative or additive when fitting allometric models is non-trivial and often controversial <span class="citation" data-cites="packard2009 ballantyne2013 xiao2011">(<a href="#ref-packard2009" role="doc-biblioref">Packard 2009</a>; <a href="#ref-ballantyne2013" role="doc-biblioref">Ballantyne 2013</a>; <a href="#ref-xiao2011" role="doc-biblioref">Xiao et al. 2011</a>)</span>. However, the assumption of multiplicative error is often appropriate for biological contexts and in this case, simulating error based on a multiplicative structure generates artificial data sets that adequately resemble the empirical morphometric data sets we are interested in <span class="citation" data-cites="xiao2011 kerkhoff2009">(<a href="#ref-xiao2011" role="doc-biblioref">Xiao et al. 2011</a>; <a href="#ref-kerkhoff2009" role="doc-biblioref">Kerkhoff and Enquist 2009</a>)</span>. Alternative error distributions for allometric models continue to be developed, and future extensions of our research could consider the performance of various size-at-maturity models when applied to simulated data with different forms of error <span class="citation" data-cites="echavarría-heras2024">(<a href="#ref-echavarr%C3%ADa-heras2024" role="doc-biblioref">Echavarría-Heras et al. 2024</a>)</span>.</p>
+</section><section id="model-descriptions" class="level2" data-number="6.5"><h2 data-number="6.5" class="anchored" data-anchor-id="model-descriptions">
+<span class="header-section-number">6.5</span> Model descriptions</h2>
+<p>Here will be mathematical descriptions of all of the models I have found so far.</p>
+</section><section id="testing-the-models" class="level2" data-number="6.6"><h2 data-number="6.6" class="anchored" data-anchor-id="testing-the-models">
+<span class="header-section-number">6.6</span> Testing the models</h2>
+<section id="initial-comparison---all-models" class="level3" data-number="6.6.1"><h3 data-number="6.6.1" class="anchored" data-anchor-id="initial-comparison---all-models">
+<span class="header-section-number">6.6.1</span> Initial comparison - all models</h3>
+<p>I will first test all methods on “nice” data, which will be 100 randomly generated data sets with the same parametrization, designed to mimic a real-world data set. For the regression methods that accept or require upper and lower bounds for the possible SM50 value, combinations of quantiles representing the upper and lower bounds will be tested, with each combination tested on each of the original 100 randomly generated data sets to determine how slight changes in the data might affect where the upper and lower bounds should be set. For regression methods that accept possible numbers of breakpoints, I will test breakpoint values from 10 to 1000 in increments of 10.</p>
 <p>For clustering methods, I will test every combination of distance metric, agglomeration method, or k-means algorithm accepted by the given clustering function. Finally, all of the above procedures will be repeated on log-transformed data, standardized (scaled and centered) data, and, where possible for the method, transformed using PCA.</p>
-</section><section id="comparison-on-different-data-sets" class="level3" data-number="6.3.2"><h3 data-number="6.3.2" class="anchored" data-anchor-id="comparison-on-different-data-sets">
-<span class="header-section-number">6.3.2</span> Comparison on different data sets</h3>
+</section><section id="comparison-on-different-data-sets" class="level3" data-number="6.6.2"><h3 data-number="6.6.2" class="anchored" data-anchor-id="comparison-on-different-data-sets">
+<span class="header-section-number">6.6.2</span> Comparison on different data sets</h3>
 <p>I will choose the best-performing representative (highest % accuracy for clustering methods before regression, lowest MAE) from each general modeling approach to move on to a second round of simulation testing. If not already included, very popular methods (namely, <code>segmented</code>, <code>regrans</code>, and Somerton’s method) will also be included in the second round of testing. The second round of simulation testing will include changing the location of SM50 within the range of the data, the logistic slope parameter, the allometric growth parameters, and the level of error/noise in the data.</p>
 <p>For any remaining regression methods that accept or require upper and lower bounds for the possible SM50 value, I will again test combinations of quartiles representing the upper and lower bounds. This time, the testing will be done for the original parametrization of the data as well as 20 data sets where SM50 is much closer to the low end of the range of x-values and 20 data sets where SM50 is near the higher end of the x values in the data set.</p>
-</section><section id="testing-sampling-bias" class="level3" data-number="6.3.3"><h3 data-number="6.3.3" class="anchored" data-anchor-id="testing-sampling-bias">
-<span class="header-section-number">6.3.3</span> Testing sampling bias</h3>
+</section><section id="testing-sampling-bias" class="level3" data-number="6.6.3"><h3 data-number="6.6.3" class="anchored" data-anchor-id="testing-sampling-bias">
+<span class="header-section-number">6.6.3</span> Testing sampling bias</h3>
 <p>Simulation studies can serve as a powerful tool to assess the effects of sampling strategies, sample size, and sampling bias on the output of an ecological model <span class="citation" data-cites="meynard2019 lotterhos2022">(<a href="#ref-meynard2019" role="doc-biblioref">Meynard, Leroy, and Kaplan 2019</a>; <a href="#ref-lotterhos2022" role="doc-biblioref">Lotterhos, Fitzpatrick, and Blackmon 2022</a>)</span>. For parameter combinations where the model is effective, I will conduct a final round of simulation testing evaluating model performance on different sample sizes and size class representations.</p>
 <ul>
 <li>100 data sets for each sample size</li>
@@ -763,8 +808,17 @@ div.csl-indent {
 <div id="ref-austin2006" class="csl-entry" role="listitem">
 Austin, M. P., L. Belbin, J. A. Meyers, M. D. Doherty, and M. Luoto. 2006. <span>“Evaluation of Statistical Models Used for Predicting Plant Species Distributions: Role of Artificial Data and Theory.”</span> <em>Ecological Modelling</em>, Predicting species distributions, 199 (2): 197–216. <a href="https://doi.org/10.1016/j.ecolmodel.2006.05.023">https://doi.org/10.1016/j.ecolmodel.2006.05.023</a>.
 </div>
+<div id="ref-ballantyne2013" class="csl-entry" role="listitem">
+Ballantyne, Ford. 2013. <span>“Evaluating Model Fit to Determine If Logarithmic Transformations Are Necessary in Allometry: A Comment on the Exchange Between Packard (2009) and Kerkhoff and Enquist (2009).”</span> <em>Journal of Theoretical Biology</em> 317 (January): 418–21. <a href="https://doi.org/10.1016/j.jtbi.2012.09.035">https://doi.org/10.1016/j.jtbi.2012.09.035</a>.
+</div>
 <div id="ref-deroba2015" class="csl-entry" role="listitem">
 Deroba, Jonathan J., D. S. Butterworth, R.D., Jr Methot, J. A. A. De Oliveira, C. Fernandez, A. Nielsen, S. X. Cadrin, et al. 2015. <span>“Simulation Testing the Robustness of Stock Assessment Models to Error: Some Results from the ICES Strategic Initiative on Stock Assessment Methods.”</span> <em>ICES Journal of Marine Science</em> 72 (1): 19–30. <a href="https://doi.org/10.1093/icesjms/fst237">https://doi.org/10.1093/icesjms/fst237</a>.
+</div>
+<div id="ref-echavarría-heras2024" class="csl-entry" role="listitem">
+Echavarría-Heras, Héctor, Enrique Villa-Diharce, Abelardo Montesinos-López, and Cecilia Leal-Ramírez. 2024. <span>“An Extended Multiplicative Error Model of Allometry: Incorporating Systematic Components, Non-Normal Distributions, and Piecewise Heteroscedasticity.”</span> <em>Biology Methods and Protocols</em> 9 (1): bpae024. <a href="https://doi.org/10.1093/biomethods/bpae024">https://doi.org/10.1093/biomethods/bpae024</a>.
+</div>
+<div id="ref-kerkhoff2009" class="csl-entry" role="listitem">
+Kerkhoff, Andrew J., and Brian J. Enquist. 2009. <span>“Multiplicative by Nature: Why Logarithmic Transformation Is Necessary in Allometry.”</span> <em>Journal of Theoretical Biology</em> 257 (3): 519–21. <a href="https://doi.org/10.1016/j.jtbi.2008.12.026">https://doi.org/10.1016/j.jtbi.2008.12.026</a>.
 </div>
 <div id="ref-lotterhos2022" class="csl-entry" role="listitem">
 Lotterhos, Katie E., Matthew C. Fitzpatrick, and Heath Blackmon. 2022. <span>“Simulation Tests of Methods in Evolution, Ecology, and Systematics: Pitfalls, Progress, and Principles.”</span> <em>Annual Review of Ecology, Evolution, and Systematics</em> 53 (1): 113–36. <a href="https://doi.org/10.1146/annurev-ecolsys-102320-093722">https://doi.org/10.1146/annurev-ecolsys-102320-093722</a>.
@@ -772,11 +826,17 @@ Lotterhos, Katie E., Matthew C. Fitzpatrick, and Heath Blackmon. 2022. <span>“
 <div id="ref-meynard2019" class="csl-entry" role="listitem">
 Meynard, Christine N., Boris Leroy, and David M. Kaplan. 2019. <span>“Testing Methods in Species Distribution Modelling Using Virtual Species: What Have We Learnt and What Are We Missing?”</span> <em>Ecography</em> 42 (12): 2021–36. <a href="https://doi.org/10.1111/ecog.04385">https://doi.org/10.1111/ecog.04385</a>.
 </div>
+<div id="ref-packard2009" class="csl-entry" role="listitem">
+Packard, Gary C. 2009. <span>“On the Use of Logarithmic Transformations in Allometric Analyses.”</span> <em>Journal of Theoretical Biology</em> 257 (3): 515–18. <a href="https://doi.org/10.1016/j.jtbi.2008.10.016">https://doi.org/10.1016/j.jtbi.2008.10.016</a>.
+</div>
 <div id="ref-piner2011" class="csl-entry" role="listitem">
 Piner, Kevin R., Hui-Hua Lee, Mark N. Maunder, and Richard D. Methot. 2011. <span>“A Simulation-Based Method to Determine Model Misspecification: Examples Using Natural Mortality and Population Dynamics Models.”</span> <em>Marine and Coastal Fisheries</em> 3 (1): 336343. <a href="https://doi.org/10.1080/19425120.2011.611005">https://doi.org/10.1080/19425120.2011.611005</a>.
 </div>
 <div id="ref-weber2019" class="csl-entry" role="listitem">
 Weber, Lukas M., Wouter Saelens, Robrecht Cannoodt, Charlotte Soneson, Alexander Hapfelmeier, Paul P. Gardner, Anne-Laure Boulesteix, Yvan Saeys, and Mark D. Robinson. 2019. <span>“Essential Guidelines for Computational Method Benchmarking.”</span> <em>Genome Biology</em> 20 (1): 125. <a href="https://doi.org/10.1186/s13059-019-1738-8">https://doi.org/10.1186/s13059-019-1738-8</a>.
+</div>
+<div id="ref-xiao2011" class="csl-entry" role="listitem">
+Xiao, Xiao, Ethan P. White, Mevin B. Hooten, and Susan L. Durham. 2011. <span>“On the Use of Log-Transformation Vs. Nonlinear Regression for Analyzing Biological Power Laws.”</span> <em>Ecology</em> 92 (10): 1887–94. <a href="https://doi.org/10.1890/11-0538.1">https://doi.org/10.1890/11-0538.1</a>.
 </div>
 </div>
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">

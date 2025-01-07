@@ -45,15 +45,38 @@ guidelines %>% gt() %>%
 ```
 :::
 
+## Basic simulation steps
+
+1.  Create normal distribution of crabs with given mean and SD for carapace width
+2.  Use logistic distribution function with known location and scale parameters (i.e., known L50 and steepness of the logistic curve) to find the probability of maturity for each individual
+3.  Using given parameters for the slope and intercept of the allometric equation, find the predicted chela height for each individual based on their carapace width
+4.  Add error representing individual variation in allometric growth, which we assume to be log-normally distributed. Variance in empirical size-at-maturity data often appears higher for mature individuals, so by assuming a multiplicative error structure, these errors will be proportional to the x-axis variable. For example, a measurement error of 4 mm would be less likely to occur when measuring a crab with a carapace that is 30 mm in length (a 13% error) than for a crab with a 100-mm carapace (a 4% error).
+
+## Equations
+
+The parameterization of the logistic equation we will use is: $$f(x)=\frac{1}{1+e^{-(x-a)/b}} $$ where $a$ is a location parameter and $b$ is the shape parameter.
+
+The allometric growth equation is \\begin{equation}\label{eqn:allometry}Y=\\beta X\^{\\alpha},\\end{equation}
+
+which results in a linear plot when log-transformed: $\log{(Y)}= \tilde\beta+\alpha \log{(X)}$. Here, $\alpha$ is the slope of the allometric line and $\beta$ is the intercept, with $\tilde{\beta}=\log{(\beta)}$. Differences in the intercept of the allometry indicate differences in the proportionate size of the chela, irrespective of carapace width. In contrast, differences in the slope parameter represent differences in how the relative size of the chela changes with body size.
+
+## A note on the error distribution
+
+We assume that the errors added in Step 4 are normally distributed around the regression lines obtained by log-transforming the raw CW and CH values. In other words, we are assuming the original data has multiplicative log-normally distributed error:
+
+$$Y=\beta X^{\alpha}e^{\varepsilon}, \quad \varepsilon \sim N(0,\sigma^2)$$ $$\log{(Y)}=\log{(\beta)}+ \alpha\log{(X)}+\varepsilon, \quad \varepsilon \sim N(0,\sigma^2)$$
+
+The question of whether error structures should be assumed to be multiplicative or additive when fitting allometric models is non-trivial and often controversial [@packard2009; @ballantyne2013; @xiao2011]. However, the assumption of multiplicative error is often appropriate for biological contexts and in this case, simulating error based on a multiplicative structure generates artificial data sets that adequately resemble the empirical morphometric data sets we are interested in [@xiao2011; @kerkhoff2009]. Alternative error distributions for allometric models continue to be developed, and future extensions of our research could consider the performance of various size-at-maturity models when applied to simulated data with different forms of error [@echavarría-heras2024].
+
 ## Model descriptions
+
+Here will be mathematical descriptions of all of the models I have found so far.
 
 ## Testing the models
 
 ### Initial comparison - all models
 
-I will first test all methods on “nice” data, which will be 100 randomly generated data sets with the same parametrization, designed to mimic a real-world data set.
-
-For the regression methods that accept or require upper and lower bounds for the possible SM50 value, combinations of quantiles representing the upper and lower bounds will be tested, with each combination tested on each of the original 100 randomly generated data sets to determine how slight changes in the data might affect where the upper and lower bounds should be set. For regression methods that accept possible numbers of breakpoints, I will test breakpoint values from 10 to 1000 in increments of 10.
+I will first test all methods on “nice” data, which will be 100 randomly generated data sets with the same parametrization, designed to mimic a real-world data set. For the regression methods that accept or require upper and lower bounds for the possible SM50 value, combinations of quantiles representing the upper and lower bounds will be tested, with each combination tested on each of the original 100 randomly generated data sets to determine how slight changes in the data might affect where the upper and lower bounds should be set. For regression methods that accept possible numbers of breakpoints, I will test breakpoint values from 10 to 1000 in increments of 10.
 
 For clustering methods, I will test every combination of distance metric, agglomeration method, or k-means algorithm accepted by the given clustering function. Finally, all of the above procedures will be repeated on log-transformed data, standardized (scaled and centered) data, and, where possible for the method, transformed using PCA.
 

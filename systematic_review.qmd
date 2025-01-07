@@ -16,7 +16,7 @@ The foundation of my dissertation will be a systematic literature review to iden
 
 Synthesis research plays a crucial role in accelerating ecological knowledge by integrating evidence and organizing information in a way that can answer foundational, large-scale questions [@halpern2020; @spake2022]. The combined analysis of disparate data sources, theories, and tools is a powerful tool for advancing scientific understanding, and represents a powerful approach to informing evidence-based management decisions in the face of rapid environmental change [@halpern2020; @koricheva2013]. The results from qualitative and, where possible, quantitative/meta-analytical methods applied to a novel database of size at maturity studies will be invaluable for preventing the remainder of my graduate work from duplicating existing efforts and maximizing the scientific value of my research output. Additionally, given the relative impact of synthesis papers compared to non-synthesis papers, publishing a rigorous systematic review will be highly beneficial for establishing my presence as a promising researcher within the fisheries science community.
 
-https://nmfs-openscapes.github.io/
+*Section about importance of reproducible synthesis research & how this project aligns with the NMFS Openscapes initiative and general movement towards open science*
 
 ## Completed work
 
@@ -92,5 +92,15 @@ One will be in "wide" format with one row for each paper/source. The Parameters 
 Following EML format, the first supporting table contains factor codes. The second supporting table contains standardized descriptions of each measured body part to mitigate confusion resulting from the usage of general terms like "claw height". Similarly, a third table contains standardized descriptions of each modeling approach to mitigate confusion resulting from the usage of general terms like "piecewise regression".
 
 Additional information regarding the storage and accessibility of these data is available in @sec-datamgmt.
+
+## Publication bias
+
+In any systematic review, it is necessary to investigate potential bias in the studies included in the review. I will use appropriate graphical and statistical tests (e.g., funnel plots) to identify the existence of publication bias and assess the impact of publication bias on the results of the review [@nakagawa2012; @nakagawa2022]. I will also discuss potential bias associated with the literature search and extraction proceses [@koricheva2013].
+
+## Data analysis
+
+Most factor variables will be summarized by calculating the proportion of included studies for which the variable was coded TRUE: for example, if the study also recorded physiological maturity, if the study included a measure of variance for their SM50 estimate, or if the study mentioned excluding individuals with regenerating chelae.
+
+More complex meta-analytical models will be fit as Bayesian multilevel mixed models, likely using the `MCMCglmm` or `brms` packages with `bayestestR` or `bayesplot` for visualizing posterior distributions, trace plots, etc. These models will include phylogenetic correlation matrices and can account for non-independence when multiple effect sizes are obtained from the same study.
 
 ## References {.unnumbered}
