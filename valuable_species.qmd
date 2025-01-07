@@ -1,6 +1,10 @@
+---
+bibliography: references.bib
+---
+
 # Relevance to valuable fisheries
 
-Evidence for the utility of modeling morphometric maturity for the management of specific crustacean species that support economically valuable U.S. fisheries.
+The National Marine Fisheries Service prioritizes optimizing stock yields, preventing overfishing, and enhancing climate and economic resilience within the U.S. seafood and fishing sectors [@noaafisheries2022]. Achieving these goals will require ongoing scientific advancements to support adaptive fisheries management in the face of shifting ecosystem dynamics [@noaafisheries2024]. My research will greatly expand our ability to accurately and non-invasively estimate crustacean size at maturity. The results of this project will be directly applicable to the establishment of minimum landing sizes and the development of stock assessment models for dozens of U.S. fisheries. Here, I provide evidence for the utility of modeling morphometric maturity for the management of specific crustacean species that support economically valuable U.S. fisheries.
 
 ## Jonah crab
 

@@ -20,4 +20,8 @@ Effective management of crustacean fisheries depends on stock assessments that e
 
 Monitoring changes in size at maturity is also an important tool to assess the impacts of environmental changes and fishing pressure on fish and invertebrate life-history characteristics [@audzijonyte2013; @lappalainen2016]. For example, there is strong evidence that size-based fishery selection has led to declines in female SM50 for female American lobster (*Homarus americanus*) in the United States and Canada [@haarr2018; @waller2019; @waller2021].
 
+*Climate impacts go here*
+
+Thus, a better understanding of size at maturity will contribute to broader work to assess the effects of climate change on regional fisheries harvest scenarios [@noaafisheries2024]. My project will support federally mandated efforts to optimize and diversify sustainable seafood production and fishing opportunities while ensuring the long-term sustainability of fisheries through effective and efficient management.
+
 ### References {.unnumbered}

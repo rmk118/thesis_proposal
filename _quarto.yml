@@ -22,7 +22,7 @@ book:
     - jonah.qmd
   appendices:
     - data_mgmt.qmd
-    - eml.qmd
+   # - eml.qmd
  
 bibliography: references.bib
 number-depth: 3

@@ -1,4 +1,4 @@
-# Data Management Plan
+# Data Management Plan {#sec-datamgmt}
 
 ## Description of the types of data and information expected to be created during the course of the project
 

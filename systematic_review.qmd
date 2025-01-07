@@ -12,15 +12,17 @@ library(gt)
 
 ## Introduction
 
-The foundation of my dissertation will be a systematic literature review to identify all modeling approaches used to estimate crustacean size at maturity using morphometric data. Special focus will be placed on understanding the methodologies of studies that have investigated regional/spatial variation in size at maturity. I will aim to follow current best practices for ensuring transparency and reproducibility in ecological systematic reviews and meta-analyses [@foo2021; @odea2021; @kambouris2024; @gates2002].
+The foundation of my dissertation will be a systematic literature review to identify all modeling approaches used to estimate crustacean size at maturity using morphometric data. Special focus will be placed on understanding the methodologies of studies that have investigated regional/spatial variation in size at maturity. I will aim to follow current best practices for ensuring transparency and reproducibility in ecological systematic reviews and meta-analyses [@foo2021; @odea2021; @kambouris2024; @gates2002; @koricheva2013].
 
-Synthesis research plays a crucial role in accelerating ecological knowledge by integrating evidence and organizing information in a way that can answer foundational, large-scale questions (Halpern et al., 2020) [@halpern2020; @spake2022]. The combined analysis of disparate data sources, theories, and tools is a powerful tool for advancing scientific understanding, and represents a powerful approach to informing evidence-based management decisions in the face of rapid environmental change [@halpern2020]. The results from qualitative and, where possible, quantitative/meta-analytical methods applied to a novel database of size at maturity studies will be invaluable for preventing the remainder of my graduate work from duplicating existing efforts and maximizing the scientific value of my research output. Additionally, given the relative impact of synthesis papers compared to non-synthesis papers, publishing a rigorous systematic review will be highly beneficial for establishing my presence as a promising researcher within the fisheries science community.
+Synthesis research plays a crucial role in accelerating ecological knowledge by integrating evidence and organizing information in a way that can answer foundational, large-scale questions [@halpern2020; @spake2022]. The combined analysis of disparate data sources, theories, and tools is a powerful tool for advancing scientific understanding, and represents a powerful approach to informing evidence-based management decisions in the face of rapid environmental change [@halpern2020; @koricheva2013]. The results from qualitative and, where possible, quantitative/meta-analytical methods applied to a novel database of size at maturity studies will be invaluable for preventing the remainder of my graduate work from duplicating existing efforts and maximizing the scientific value of my research output. Additionally, given the relative impact of synthesis papers compared to non-synthesis papers, publishing a rigorous systematic review will be highly beneficial for establishing my presence as a promising researcher within the fisheries science community.
+
+https://nmfs-openscapes.github.io/
 
 ## Completed work
 
 ### Formulate initial question and identify inclusion/exclusion criteria
 
-The overarching question of this review is: what methods have previously been used to model crustacean size at maturity based on morphometric data, and in what contexts have they been applied?
+*Overarching question:* What methods have previously been used to model crustacean size at maturity based on morphometric data, and in what contexts have they been applied?
 
 Since the focus of this review does not fit well into the PICO framework, I have used the SPIDER framework to organize the key components of the research question [@methley2014] (@tbl-spider).
 
@@ -73,7 +75,7 @@ databases %>%
   gt()
 ```
 
-For Google Scholar, the search query used was: intitle:(("maturity" AND "size") AND ("crab" OR "Crustacea" OR "Decapoda" OR "Brachyura")). The query used for all other databases was: (morpho\* AND "maturity" AND "size") AND ("crab" OR "Crustacea" OR "Decapoda" OR "Brachyura"). The search string was tested with a preliminary Scopus search to ensure that it could find two articles that were highly relevant to the project: Olsen and Stevens [-@olsen2020] and Lawrence et al. [-@lawrence2021].
+Developing a formal search strategy is a key component of a systematic review [@foo2021]. For Google Scholar, the search query used was: intitle:(("maturity" AND "size") AND ("crab" OR "Crustacea" OR "Decapoda" OR "Brachyura")). The query used for all other databases was: (morpho\* AND "maturity" AND "size") AND ("crab" OR "Crustacea" OR "Decapoda" OR "Brachyura"). The search string was tested with a preliminary Scopus search to ensure that it could find two articles that were highly relevant to the project: Olsen and Stevens [-@olsen2020] and Lawrence et al. [-@lawrence2021].
 
 Duplicates were first removed using the duplicate merging feature in the reference manager software Zotero. A second round of duplicate screening was conducted using the online systematic review software Rayyan, which was then used for the initial screening of titles and abstracts. In some cases, the full text was briefly skimmed to resolve uncertainties about whether the study should be included that resulted from absent or ambiguous descriptions in the abstract of the method of determining size at maturity. The primary reason for exclusion was that the study determined physiological or functional maturity rather than morphometric maturity [@waiho2017]. Another common category of excluded studies were those using morphometric analysis for a purpose other than determining size at maturity, such as to distinguish two species, compare populations within a species, or identify the biological effects of an external variable like temperature or predation. At least 70 studies were focused on the general morphology and/or size at maturity of a non-crustacean organism, particularly skates, rays, and marine snails.
 
@@ -81,6 +83,14 @@ A small number of studies were excluded because they were written in a language 
 
 ## Data extraction
 
-See Appendix B.
+Building a well-designed database is a fundamental component of a comparative analysis of ecological data and allows the data to be reused and expanded in support of future scientific inquiry [@schwanz2022].
+
+My database will include three main data tables for extracted data alongside three supporting tables with important metadata.
+
+One will be in "wide" format with one row for each paper/source. The Parameters and Species tables will be in long/stacked format, with one row for each relevant grouping included in a source.
+
+Following EML format, the first supporting table contains factor codes. The second supporting table contains standardized descriptions of each measured body part to mitigate confusion resulting from the usage of general terms like "claw height". Similarly, a third table contains standardized descriptions of each modeling approach to mitigate confusion resulting from the usage of general terms like "piecewise regression".
+
+Additional information regarding the storage and accessibility of these data is available in @sec-datamgmt.
 
 ## References {.unnumbered}
