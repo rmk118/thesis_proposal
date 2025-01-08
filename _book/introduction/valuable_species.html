@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Relevance to valuable fisheries – Thesis Proposal: Modeling Crustacean Morphometric Maturity</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../syst_review/systematic_review.html" rel="next">
+<link href="../introduction/importance.html" rel="prev">
+<link href="../figures/simple_crab.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../introduction/intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="../introduction/valuable_species.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Relevance to valuable fisheries</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Thesis Proposal: Modeling Crustacean Morphometric Maturity</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/rmk118/thesis_proposal" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../introduction/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview &amp; Background</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../introduction/importance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Importance of size at maturity for management</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../introduction/valuable_species.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Relevance to valuable fisheries</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Systematic Review</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syst_review/systematic_review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Systematic Review</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../eco_evo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ecological &amp; Evolutionary Applications</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Simulation Testing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../simulations/simulation_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Simulation Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../simulations/planned_sims.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Planned Simulations</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../morphmat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title"><code>morphmat</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../jonah.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Jonah crab</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_mgmt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Data Management Plan</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syst_review/eml.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Database structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syst_review/supporting_tabs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Data extraction keys</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#jonah-crab" id="toc-jonah-crab" class="nav-link active" data-scroll-target="#jonah-crab"><span class="header-section-number">3.1</span> Jonah crab</a></li>
+  <li><a href="#american-lobster" id="toc-american-lobster" class="nav-link" data-scroll-target="#american-lobster"><span class="header-section-number">3.2</span> American lobster</a></li>
+  <li><a href="#blue-crab" id="toc-blue-crab" class="nav-link" data-scroll-target="#blue-crab"><span class="header-section-number">3.3</span> Blue crab</a></li>
+  <li><a href="#snow-crab" id="toc-snow-crab" class="nav-link" data-scroll-target="#snow-crab"><span class="header-section-number">3.4</span> Snow crab</a></li>
+  <li><a href="#atlantic-deep-sea-red-crab" id="toc-atlantic-deep-sea-red-crab" class="nav-link" data-scroll-target="#atlantic-deep-sea-red-crab"><span class="header-section-number">3.5</span> Atlantic deep-sea red crab</a></li>
+  <li><a href="#dungeness-crab" id="toc-dungeness-crab" class="nav-link" data-scroll-target="#dungeness-crab"><span class="header-section-number">3.6</span> Dungeness crab</a></li>
+  <li><a href="#king-crab" id="toc-king-crab" class="nav-link" data-scroll-target="#king-crab"><span class="header-section-number">3.7</span> King crab</a></li>
+  <li><a href="#stone-crab" id="toc-stone-crab" class="nav-link" data-scroll-target="#stone-crab"><span class="header-section-number">3.8</span> Stone crab</a></li>
+  <li><a href="#tanner-crab" id="toc-tanner-crab" class="nav-link" data-scroll-target="#tanner-crab"><span class="header-section-number">3.9</span> Tanner crab</a></li>
+  <li><a href="#caribbean-spiny-lobster" id="toc-caribbean-spiny-lobster" class="nav-link" data-scroll-target="#caribbean-spiny-lobster"><span class="header-section-number">3.10</span> Caribbean spiny lobster</a></li>
+  <li><a href="#pandalus-shrimp" id="toc-pandalus-shrimp" class="nav-link" data-scroll-target="#pandalus-shrimp"><span class="header-section-number">3.11</span> <em>Pandalus</em> shrimp</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../introduction/intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="../introduction/valuable_species.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Relevance to valuable fisheries</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Relevance to valuable fisheries</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The National Marine Fisheries Service prioritizes optimizing stock yields, preventing overfishing, and enhancing climate and economic resilience within the U.S. seafood and fishing sectors <span class="citation" data-cites="noaafisheries2022">(<a href="#ref-noaafisheries2022" role="doc-biblioref">NOAA Fisheries 2022</a>)</span>. Achieving these goals will require ongoing scientific advancements to support adaptive fisheries management in the face of shifting ecosystem dynamics <span class="citation" data-cites="noaafisheries2024">(<a href="#ref-noaafisheries2024" role="doc-biblioref">NOAA Fisheries 2024</a>)</span>. My research will greatly expand our ability to accurately and non-invasively estimate crustacean size at maturity. The results of this project will be directly applicable to the establishment of minimum landing sizes and the development of stock assessment models for dozens of U.S. fisheries. Here, I provide evidence for the utility of modeling morphometric maturity for the management of specific crustacean species that support economically valuable U.S. fisheries.</p>
+<section id="jonah-crab" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="jonah-crab"><span class="header-section-number">3.1</span> Jonah crab</h2>
+<p>Scientific name: <em>Cancer borealis</em></p>
+<p>Selected publications related to morphometric maturity: <span class="citation" data-cites="lawrence2020 lawrence2021 olsen2020 moriyasu2002">(<a href="#ref-lawrence2020" role="doc-biblioref">A. E. Lawrence 2020</a>; <a href="#ref-lawrence2021" role="doc-biblioref">A. Lawrence et al. 2021</a>; <a href="#ref-olsen2020" role="doc-biblioref">N. A. Olsen and Stevens 2020</a>; <a href="#ref-moriyasu2002" role="doc-biblioref">Moriyasu et al. 2002</a>)</span></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Relevant research priorities</strong></td>
+<td><strong>Source</strong></td>
+</tr>
+<tr class="even">
+<td>“Better knowledge of the Jonah crab reproductive biology, particularly maturation rates (e.g., age-at-maturity) … would be useful to gain greater insight into crab population dynamics and vulnerability to overfishing.”<br>
+<br>
+Under <em>2.3.2: Size-at-Maturity</em>: “We recognize additional modeling approaches need to be developed to better stabilize these models and improve performance.”</td>
+<td>Jonah Crab Benchmark Stock Assessment and Peer Review Report, 2023</td>
+</tr>
+<tr class="odd">
+<td>Reproductive studies pertaining to male-female spawning size ratios, the possibility of successful spawning by physiologically mature but morphometrically immature male crabs, and potential for sperm limitations should be conducted</td>
+<td><a href="https://asmfc.org/uploads/file/65cb97282024JonahCrab_ResearchPriorities.pdf">Research Priorities and Recommendations to Support Interjurisdictional Fisheries Management: JONAH CRAB</a></td>
+</tr>
+<tr class="even">
+<td>Research growth mechanisms for both sexes (e.g., potential for terminal molt, lack of growth associated with molting, high natural mortality for adults) to explain lack of exploitation signal (i.e., lack of size structure change) in available data sets.</td>
+<td><a href="https://asmfc.org/uploads/file/65cb97282024JonahCrab_ResearchPriorities.pdf">Research Priorities and Recommendations to Support Interjurisdictional Fisheries Management: JONAH CRAB</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="american-lobster" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="american-lobster"><span class="header-section-number">3.2</span> American lobster</h2>
+<p>Scientific name: <em>Homarus americanus</em></p>
+<p>Selected publications related to morphometric maturity: <span class="citation" data-cites="templeman1935 waller2021 émond2010 little2005 comeau2002 landers2001 conan2001">(<a href="#ref-templeman1935" role="doc-biblioref">Templeman 1935</a>; <a href="#ref-waller2021" role="doc-biblioref">Waller et al. 2021</a>; <a href="#ref-émond2010" role="doc-biblioref">Émond, Sainte-Marie, and Gendron 2010</a>; <a href="#ref-little2005" role="doc-biblioref">Little and Watson 2005</a>; <a href="#ref-comeau2002" role="doc-biblioref">Comeau and Savoie 2002</a>; <a href="#ref-landers2001" role="doc-biblioref">Landers, Keser, and Saila 2001</a>; <a href="#ref-conan2001" role="doc-biblioref">Conan, Comeau, and Moriyasu 2001</a>)</span></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Relevant research priorities</strong></td>
+<td><strong>Source</strong></td>
+</tr>
+<tr class="even">
+<td>“The Review Panel found all aspects of growth were very high research priorities, e.g., …, continued monitoring and study of changes in size at maturity due to its influence on growth”<br>
+<br>
+Under <em>8.2 - Research Recommendations</em><br>
+a. Maturity (Medium Priority) … Future maturity work should focus on additional statistical areas with large landings contributions. Exploration of non‐invasive techniques to assess maturity are also desirable, allowing for more frequent and efficient updates to maturity estimates. Methods to allow for time‐varying maturity in the assessment model should also be explored, to better capture the influence of a changing environment on lobster population dynamics. Finally, it is extremely important for the newly updated maturity data to be applied towards updating the growth matrix underlying the assessment model</td>
+<td><a href="https://www.asmfc.org/uploads/file/5fb2c4a82020AmLobsterBenchmarkStockAssmt_PeerReviewReport.pdf">2020 American Lobster Benchmark Stock Assessment and Peer Review Report<br>
+<br>
+</a><a href="https://asmfc.org/uploads/file/63ea7b2dResearchPriorities_AmLobster2020.pdf">Research Priorities and Recommendations to Support Interjurisdictional Fisheries Management: AMERICAN LOBSTER</a></td>
+</tr>
+<tr class="odd">
+<td>“Up to date female size at maturity studies and accompanying biological measurements are necessary for future assessment and management efforts.”<br>
+<br>
+“This work highlights the need to update historical maturity datasets as these measures of lobster development and growth are integral to evaluations of the size-based regulatory tools used in the management of the American lobster fishery.”</td>
+<td><span class="citation" data-cites="waller2021">Waller et al. (<a href="#ref-waller2021" role="doc-biblioref">2021</a>)</span></td>
+</tr>
+<tr class="even">
+<td>“As the region continues to experience significant changes in the fishery and rates of warming, accurately characterizing size at maturity for female lobsters is key to assessing both reproductive potential and growth rates.”<br>
+<br>
+“The spatial differences in size at maturity observed here reinforce the need to document potential changes in life history traits over the American lobster’s geographical range”</td>
+<td><span class="citation" data-cites="ellertson2022">Ellertson et al. (<a href="#ref-ellertson2022" role="doc-biblioref">2022</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="blue-crab" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="blue-crab"><span class="header-section-number">3.3</span> Blue crab</h2>
+<p>Scientific name: <em>Callinectes sapidus</em></p>
+<p>Selected publications related to morphometric maturity: <span class="citation" data-cites="thienes2023 olmi1983 waugh2009 olsen2016 marchessaux2023 newcombe1949">(<a href="#ref-thienes2023" role="doc-biblioref">Thienes 2023</a>; <a href="#ref-olmi1983" role="doc-biblioref">Olmi and Bishop 1983</a>; <a href="#ref-waugh2009" role="doc-biblioref">Waugh et al. 2009</a>; <a href="#ref-olsen2016" role="doc-biblioref">Z. Olsen, Wagner, and Sutton 2016</a>; <a href="#ref-marchessaux2023" role="doc-biblioref">Marchessaux, Gjoni, and Sarà 2023</a>; <a href="#ref-newcombe1949" role="doc-biblioref">Newcombe, Sandoz, and Rogers-Talbert 1949</a>)</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 76%">
+<col style="width: 23%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Relevant research priorities</strong></td>
+<td><strong>Source</strong></td>
+</tr>
+<tr class="even">
+<td>“Evidence of a decreasing female size-at-maturity in the Chesapeake Bay could suggest that the productivity of the population is decreasing. CBSAC suggests prioritizing research studies that aim to address data gaps related to blue crab fecundity and population productivity to better understand trends in abundance.”</td>
+<td>Chesapeake Bay Stock Assessment Committee (CBSAC) Blue Crab Workshop Report, 2022</td>
+</tr>
+<tr class="odd">
+<td>“Knowledge of the species’ life history traits in Florida remains inadequate for a complete and accurate stock assessment. Specifically, much remains unknown about blue crab reproductive biology, seasonality of spawning, and recruitment patterns.”</td>
+<td><span class="citation" data-cites="hart2021">Hart, Crowley, and Walters (<a href="#ref-hart2021" role="doc-biblioref">2021</a>)</span></td>
+</tr>
+<tr class="even">
+<td>“Research on the variability of reproductive parameters (e.g., maturity, fecundity and batch production) is a high priority.”</td>
+<td>Stock Assessment of Blue Crab in Chesapeake Bay, 2011 (most recent complete stock assessment)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="snow-crab" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="snow-crab"><span class="header-section-number">3.4</span> Snow crab</h2>
+<p>Scientific name: <em>Chionoecetes opilio</em></p>
+<p>Selected publications related to morphometric maturity: <span class="citation" data-cites="bakanev2023 mullowney2021 catlin2020 divine2019 dawe2012 burmeister2010 orensanz2007 hébert2002 mayrand1998 claxton1994 warren1994 comeau1992">(<a href="#ref-bakanev2023" role="doc-biblioref">Bakanev and Pavlov 2023</a>; <a href="#ref-mullowney2021" role="doc-biblioref">Mullowney and Baker 2021</a>; <a href="#ref-catlin2020" role="doc-biblioref">Catlin 2020</a>; <a href="#ref-divine2019" role="doc-biblioref">Divine et al. 2019</a>; <a href="#ref-dawe2012" role="doc-biblioref">Dawe et al. 2012</a>; <a href="#ref-burmeister2010" role="doc-biblioref">Burmeister and Sainte-Marie 2010</a>; <a href="#ref-orensanz2007" role="doc-biblioref">Orensanz, Ernst, and Armstrong 2007</a>; <a href="#ref-hébert2002" role="doc-biblioref">Hébert et al. 2002</a>; <a href="#ref-mayrand1998" role="doc-biblioref">Mayrand, Guderley, and Dutil 1998</a>; <a href="#ref-claxton1994" role="doc-biblioref">Claxton, Govind, and Elner 1994</a>; <a href="#ref-warren1994" role="doc-biblioref">Warren 1994</a>; <a href="#ref-comeau1992" role="doc-biblioref">Comeau and Conan 1992</a>)</span> (extremely large body of research)</p>
+</section>
+<section id="atlantic-deep-sea-red-crab" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="atlantic-deep-sea-red-crab"><span class="header-section-number">3.5</span> Atlantic deep-sea red crab</h2>
+<p>Scientific name: <em>Chaceon quinquedens</em></p>
+<p>Selected publications related to morphometric maturity: <span class="citation" data-cites="stevens2016 martínez-rivera2020 haefner1977">(<a href="#ref-stevens2016" role="doc-biblioref">Stevens and Guida 2016</a>; <a href="#ref-martínez-rivera2020" role="doc-biblioref">Martínez-Rivera, Long, and Stevens 2020</a>; <a href="#ref-haefner1977" role="doc-biblioref">Haefner 1977</a>)</span></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Relevant research priorities</strong></td>
+<td><strong>Source</strong></td>
+</tr>
+<tr class="even">
+<td>“Studies to evaluate reproduction and sexual maturity are needed to estimate biological reference points and key parameters for fisheries management and stock assessment models.”</td>
+<td><span class="citation" data-cites="martínez-rivera2020">Martínez-Rivera, Long, and Stevens (<a href="#ref-martínez-rivera2020" role="doc-biblioref">2020</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>“Traditional reference points for the deep sea red crab stock are difficult to estimate due to lack of basic information.”<br>
+<br>
+“The [Peer Review] Panel prioritized the collection of growth and natural mortality information… and simulation modeling to develop reference points appropriate for this species’ life history as the most important areas of research to move the assessment to a more analytical approach.”</td>
+<td><a href="https://repository.library.noaa.gov/view/noaa/55439">NEFSC Management Track Assessments, Spring 2023</a></td>
+</tr>
+<tr class="even">
+<td>“Deep-sea red crab is a data-poor species with little known of its growth or longevity… There is scant information on biological parameters of red deepsea crab, such as size at maturity, fecundity, or timing of reproduction.”</td>
+<td><span class="citation" data-cites="stevens2016">Stevens and Guida (<a href="#ref-stevens2016" role="doc-biblioref">2016</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dungeness-crab" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="dungeness-crab"><span class="header-section-number">3.6</span> Dungeness crab</h2>
+<p>Scientific name: <em>Metacarcinus magister</em></p>
+<p>Selected publications related to morphometric maturity: <span class="citation" data-cites="wainwright1993 worton2009 collier1983 butler1961">(<a href="#ref-wainwright1993" role="doc-biblioref">Wainwright and Armstrong 1993</a>; <a href="#ref-worton2009" role="doc-biblioref">Worton et al. 2009</a>; <a href="#ref-collier1983" role="doc-biblioref">Collier 1983</a>; <a href="#ref-butler1961" role="doc-biblioref">Butler 1961</a>)</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 95%">
+<col style="width: 4%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Relevant research priorities</strong></td>
+<td><strong>Source</strong></td>
+</tr>
+<tr class="even">
+<td>“Our study offers a first step toward evaluating the functional maturity and legal size limits of Dungeness crab, but until functional maturity can be defined in a competitive setting [and] a full functional maturity schedule is determined … changing the size limit is not recommended.”</td>
+<td><span class="citation" data-cites="worton2009">Worton et al. (<a href="#ref-worton2009" role="doc-biblioref">2009</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="king-crab" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="king-crab"><span class="header-section-number">3.7</span> King crab</h2>
+<p>Scientific name: <em>Paralithodes</em> spp. &amp; <em>Lithodes</em> spp.</p>
+<p>Selected publications related to morphometric maturity: <span class="citation" data-cites="wallace1949 somerton1983 filina2011 stevens2014 pengilly2002 olson2018 paul2000 somerton1986 sloan1985 jewett1985 somerton1981">(<a href="#ref-wallace1949" role="doc-biblioref">Wallace, Pertuit, and Hvatum 1949</a>; <a href="#ref-somerton1983" role="doc-biblioref">Somerton and MacIntosh 1983</a>; <a href="#ref-filina2011" role="doc-biblioref">Filina 2011</a>; <a href="#ref-stevens2014" role="doc-biblioref">Stevens and Jewett 2014</a>; <a href="#ref-pengilly2002" role="doc-biblioref">Pengilly, Blau, and Blackburn 2002</a>; <a href="#ref-olson2018" role="doc-biblioref">Olson, Siddon, and Eckert 2018</a>; <a href="#ref-paul2000" role="doc-biblioref">Paul and Paul 2000</a>; <a href="#ref-somerton1986" role="doc-biblioref">Somerton and Otto 1986</a>; <a href="#ref-sloan1985" role="doc-biblioref">Sloan 1985</a>; <a href="#ref-jewett1985" role="doc-biblioref">Jewett, Sloan, and Somerton 1985</a>; <a href="#ref-somerton1981" role="doc-biblioref">Somerton 1981a</a>)</span></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Relevant research priorities</strong></td>
+<td><strong>Source</strong></td>
+</tr>
+<tr class="even">
+<td>“Size at maturity has not been determined specifcally for Pribilof Islands red king crab males.”</td>
+<td><a href="https://www.npfmc.org/about-the-council/plan-teams/bsai-crab-planning-team/">2022 (triennial) assessment for Pribilof Islands red king crab</a></td>
+</tr>
+<tr class="odd">
+<td>“Specific research on St.&nbsp;Matthew Island blue king crab life history parameters is not available and therefore data are borrowed from other stocks/species.”</td>
+<td><a href="https://meetings.npfmc.org/CommentReview/DownloadFile?p=9bd6e314-99e4-47b8-a7a4-e306c8c6a19e.pdf&amp;fileName=SMBKC%20SAFE%202024.pdf">2024 assessment for Saint Matthew Island blue king crab</a></td>
+</tr>
+<tr class="even">
+<td>“Size at maturity of NSRKC is highly uncertain.”<br>
+Male crab size at maturity is listed as a “critical model assumption”</td>
+<td><a href="https://meetings.npfmc.org/CommentReview/DownloadFile?p=277cb146-c63e-4bf4-a58d-d492a53fc68e.pdf&amp;fileName=C1%20NSRKC%20SAFE.pdf">2024 assessment for Norton Sound red king crab</a></td>
+</tr>
+<tr class="odd">
+<td>“Along with a lack of annual survey data, limited stock-specific life history stock information prevents development of a comprehensive length-based assessment model.”<br>
+Under <em>Research priorities:</em> Male size at maturity</td>
+<td><a href="https://meetings.npfmc.org/CommentReview/DownloadFile?p=a74445e6-933f-462e-84b5-313a4eb6798d.pdf&amp;fileName=C2%20AIGKC%20Safe%20Chapter.pdf">2024 assessment for Aleutian Islands golden king crab</a></td>
+</tr>
+<tr class="even">
+<td>“Size at maturity has not been estimated for WAI male red king crab.”</td>
+<td><a href="https://meetings.npfmc.org/CommentReview/DownloadFile?p=70a592e2-88a7-4aa4-9948-b31aecab1abb.pdf&amp;fileName=WAIRKC_SAFE_2023.pdf">2023 (triennial) West Aleutian Islands red king crab</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="stone-crab" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="stone-crab"><span class="header-section-number">3.8</span> Stone crab</h2>
+<p>Scientific name: <em>Menippe</em> spp.</p>
+<p>Selected publications related to morphometric maturity: <span class="citation" data-cites="zambrano2020 crowley2018 reeves2017 gerhart2008 bertini2007 restrepo1989 bert1986">(<a href="#ref-zambrano2020" role="doc-biblioref">Zambrano and Ramos 2020</a>; <a href="#ref-crowley2018" role="doc-biblioref">Crowley et al. 2018</a>; <a href="#ref-reeves2017" role="doc-biblioref">Reeves et al. 2017</a>; <a href="#ref-gerhart2008" role="doc-biblioref">Gerhart and Bert 2008</a>; <a href="#ref-bertini2007" role="doc-biblioref">Bertini et al. 2007</a>; <a href="#ref-restrepo1989" role="doc-biblioref">Restrepo 1989</a>; <a href="#ref-bert1986" role="doc-biblioref">Bert et al. 1986</a>)</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 96%">
+<col style="width: 3%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Relevant research priorities</strong></td>
+<td><strong>Source</strong></td>
+</tr>
+<tr class="even">
+<td><p>“Transitioning to more sophisticated stock assessments, which would allow more effective fisheries management, will require detailed information on population biology, specifically, size at reproductive maturity.”<br>
+</p>
+<p>“The development of accurate estimates of size at sexual maturity in stone crabs must use all available indicators of maturity and must include studies conducted throughout the range of the fished stock.”</p></td>
+<td><span class="citation" data-cites="crowley2018">Crowley et al. (<a href="#ref-crowley2018" role="doc-biblioref">2018</a>)</span></td>
+</tr>
+<tr class="odd">
+<td><p>“Assessment of the heavily exploited stone crab in Florida requires accurate descriptions of the reproductive biology and population dynamics of the stock.”</p>
+<p>Crowley et al. <span class="citation" data-cites="crowley2019">(<a href="#ref-crowley2019" role="doc-biblioref">2019</a>)</span> developed an an age-structured model that utilized the new size at maturity information published in Crowley et al. <span class="citation" data-cites="crowley2018">(<a href="#ref-crowley2018" role="doc-biblioref">2018</a>)</span>. The model estimates of spawning potential ratio (SPR) were sensitive to the assumed size at sexual maturity, demonstrated the sensitivity of estimated biological reference points to the input life-history parameters and highlighting the need for continued research into stone crab maturity.</p></td>
+<td><span class="citation" data-cites="crowley2019">Crowley et al. (<a href="#ref-crowley2019" role="doc-biblioref">2019</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tanner-crab" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="tanner-crab"><span class="header-section-number">3.9</span> Tanner crab</h2>
+<p>Scientific name: <em>Chionoecetes bairdi</em></p>
+<p>Selected publications related to morphometric maturity: <span class="citation" data-cites="stevens1993 paul1995 otto2002 stone2003 fong2007 murphy2021 richar2022 somerton1981a">(<a href="#ref-stevens1993" role="doc-biblioref">Stevens et al. 1993</a>; <a href="#ref-paul1995" role="doc-biblioref">Paul and Paul 1995</a>; <a href="#ref-otto2002" role="doc-biblioref">Otto and Pengilly 2002</a>; <a href="#ref-stone2003" role="doc-biblioref">Stone, Masuda, and Clark 2003</a>; <a href="#ref-fong2007" role="doc-biblioref">Fong and Dunham 2007</a>; <a href="#ref-murphy2021" role="doc-biblioref">Murphy 2021</a>; <a href="#ref-richar2022" role="doc-biblioref">Richar and Foy 2022</a>; <a href="#ref-somerton1981a" role="doc-biblioref">Somerton 1981b</a>)</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 93%">
+<col style="width: 6%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Relevant research priorities</strong></td>
+<td><strong>Source</strong></td>
+</tr>
+<tr class="even">
+<td>“In many years our size at 50% maturity estimates were well below the regulation legal retention sizes… Further research into this issue, and careful monitoring in future years should be a priority.”</td>
+<td><span class="citation" data-cites="richar2022">Richar and Foy (<a href="#ref-richar2022" role="doc-biblioref">2022</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="caribbean-spiny-lobster" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="caribbean-spiny-lobster"><span class="header-section-number">3.10</span> Caribbean spiny lobster</h2>
+<p>Scientific name: <em>Panulirus argus</em></p>
+<p>Selected publications related to morphometric maturity: <span class="citation" data-cites="anderson2013 atherley2021 tewfik2020">(<a href="#ref-anderson2013" role="doc-biblioref">Anderson et al. 2013</a>; <a href="#ref-atherley2021" role="doc-biblioref">Atherley et al. 2021</a>; <a href="#ref-tewfik2020" role="doc-biblioref">Tewfik, Babcock, and Phillips 2020</a>)</span></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Relevant research priorities</strong></td>
+<td><strong>Source</strong></td>
+</tr>
+<tr class="even">
+<td>Under <em>7.1 Research Recommendations</em>: More basic biological studies to improve understanding of key life history processes<br>
+such as growth, length/age at maturity, fecundity, and their spatial variability.</td>
+<td><a href="https://www.noaa.gov/sites/default/files/legacy/document/2021/Mar/ID406_Report_SEDAR57.pdf">SEDAR 57 Stock Assessment Report, 2019</a> (most recent completed stock assessment)</td>
+</tr>
+<tr class="odd">
+<td>“Our study focused on size at sexual maturity in females, but based on our data, similar studies should be conducted on males.” “Our findings underscore the importance of using locally derived reproductive data for regulatory decision making… Territories lacking recent data are advised to assess their <em>P. argus</em> populations using the techniques presented here.”</td>
+<td><span class="citation" data-cites="atherley2021">Atherley et al. (<a href="#ref-atherley2021" role="doc-biblioref">2021</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pandalus-shrimp" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="pandalus-shrimp"><span class="header-section-number">3.11</span> <em>Pandalus</em> shrimp</h2>
+<p>The genus <em>Pandalus</em> includes many species of shrimp that are economically valuable for the United States fishing industry. Commercial fishing occurs for ocean shrimp (<em>P. jordani</em>) off the coast of Washington, Oregon, and California, while spot shrimp (<em>P. platyceros</em>) are targeted throughout their geographic range from Southern California to the Aleutian Islands in Alaska <span class="citation" data-cites="levy2020">(<a href="#ref-levy2020" role="doc-biblioref">Levy et al. 2020</a>)</span>. Other shrimp of commercial and subsistence value in Alaska include the Alaskan pink shrimp (<em>P. eous</em>), the humpy shrimp (<em>P. goniurus</em>), the humpback shrimp, (<em>P. hypsinotus</em>), and the sidestripe shrimp (<em>P. dispar</em>). On the Atlantic coast, the northern shrimp (<em>P. borealis</em>) supported a large fishery in the Gulf of Maine for decades but is now extremely depleted and commercial fishing for northern shrimp is prohibited. Despite the fishing moratorium that has been in place since 2014, the most recent stock assessment update (December 2024) reported a continued decline in stock status, with all indices at all-time lows <span class="citation" data-cites="atlanticstatesmarinefisheriescommission2024">(<a href="#ref-atlanticstatesmarinefisheriescommission2024" role="doc-biblioref">Atlantic States Marine Fisheries Commission 2024</a>)</span>.</p>
+<p><em>Pandalus</em> species are difficult to model using traditional stock assessment methods because they are protandric sequential hermaphrodites; i.e., they reproduce as males before changing sex to become female <span class="citation" data-cites="bergström2000">(<a href="#ref-bergström2000" role="doc-biblioref">Bergström 2000</a>)</span>. Along with the size at which the sex transition occurs, their growth rate, recruitment dynamics, and natural mortality can be highly sensitive to changes in environmental conditions <span class="citation" data-cites="chang2021 hansen2000 perry2000 hannah2011">(<a href="#ref-chang2021" role="doc-biblioref">Chang, Richards, and Chen 2021</a>; <a href="#ref-hansen2000" role="doc-biblioref">Hansen and Aschan 2000</a>; <a href="#ref-perry2000" role="doc-biblioref">Perry, Boutillier, and Foreman 2000</a>; <a href="#ref-hannah2011" role="doc-biblioref">Hannah 2011</a>)</span>. Rather than including a size at 50% maturity (SM50) parameter, current <em>P. borealis</em> stock assessment models include a parameter <span class="math inline">\(L_{50_{sex}} (y)\)</span>, the length at which 50% of shrimp change sex to females in year <em>y</em> <span class="citation" data-cites="drouineau2012 cao2017">(<a href="#ref-drouineau2012" role="doc-biblioref">Drouineau et al. 2012</a>; <a href="#ref-cao2017" role="doc-biblioref">Cao, Chen, and Richards 2017a</a>)</span>. A statistical catch-at-length model model that includes environmental variables <span class="citation" data-cites="cao2017 cao2017a">(<a href="#ref-cao2017" role="doc-biblioref">Cao, Chen, and Richards 2017a</a>, <a href="#ref-cao2017a" role="doc-biblioref">2017b</a>)</span> utilizing such a sex change function is now preferentially used for <em>P. borealis</em> management over catch-survey analysis (CSA) and Age Structured Assessment Program (ASAP) models used in previous analyses <span class="citation" data-cites="cadrin1999 atlanticstatesmarinefisheriescommission2021 atlanticstatesmarinefisheriescommission2018">(<a href="#ref-cadrin1999" role="doc-biblioref">Cadrin et al. 1999</a>; <a href="#ref-atlanticstatesmarinefisheriescommission2021" role="doc-biblioref">Atlantic States Marine Fisheries Commission 2021</a>, <a href="#ref-atlanticstatesmarinefisheriescommission2018" role="doc-biblioref">2018</a>)</span>. The notable plasticity of <span class="math inline">\(L_{50_{sex}}\)</span> in <em>Pandalus</em> means that it is useful as an indicator of population status; for example, comparing annual <span class="math inline">\(L_{50_{sex}}\)</span> values to established baselines is an important component of the management of the <em>P. platyceros</em> and <em>P. hypsinotus</em> fisheries in Southeast Alaska <span class="citation" data-cites="smith2020">(<a href="#ref-smith2020" role="doc-biblioref">Smith 2020</a>)</span>. Because fecundity increases with size for <em>Pandalus</em> species, decreases in <span class="math inline">\(L_{50_{sex}}\)</span> result in decreased population fecundity, which can lead to lower recruitment and further reductions in population size <span class="citation" data-cites="smith2020">(<a href="#ref-smith2020" role="doc-biblioref">Smith 2020</a>)</span>.</p>
+<p>Multiparous and primiparous females can be easily differentiated by sternal spines that are only present in females who have not previously spawned <span class="citation" data-cites="mccrary1971">(<a href="#ref-mccrary1971" role="doc-biblioref">McCrary 1971</a>)</span>. This criterion was used by Skúladóttir and Pétursson to calculate median length at maturity for <em>P. borealis</em> (an example of determining SM50 based on <em>functional</em> maturity) in the Denmark Strait, finding geographic variation in SM50 between three different areas in the waters around Iceland <span class="citation" data-cites="skúladóttir1998 skúladóttir1999">(<a href="#ref-skúladóttir1998" role="doc-biblioref">Skúladóttir 1998</a>; <a href="#ref-skúladóttir1999" role="doc-biblioref">Skúladóttir and Pétursson 1999</a>)</span>. In conjunction with the general hermaphroditic structure of their life history, this means that morphometric maturity is not generally a highly relevant notion for <em>Pandalus</em> shrimps. However, morphometric analyses have been used to discriminate between populations of <em>P. borealis</em> from different Icelandic fjords <span class="citation" data-cites="jónsdóttir2016">(<a href="#ref-jónsdóttir2016" role="doc-biblioref">Jónsdóttir, Guðlaugsdóttir, and Karlsson 2016</a>)</span>.</p>
+<p>In summary, although size at maturity and morphometric analysis are separately important for <em>Pandalus</em>, size at morphometric maturity does not appear to be relevant for the U.S. fisheries for species within the genus.</p>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-anderson2013" class="csl-entry" role="listitem">
+Anderson, Joshua R., Angelo J. Spadaro, J. Antonio Baeza, and Donald C. Behringer. 2013. <span>“Ontogenetic Shifts in Resource Allocation: Colour Change and Allometric Growth of Defensive and Reproductive Structures in the Caribbean Spiny Lobster <span><em>Panulirus Argus</em></span>.”</span> <em>Biological Journal of the Linnean Society</em> 108 (1): 87–98. <a href="https://doi.org/10.1111/j.1095-8312.2012.01998.x">https://doi.org/10.1111/j.1095-8312.2012.01998.x</a>.
+</div>
+<div id="ref-atherley2021" class="csl-entry" role="listitem">
+Atherley, Nicole A. M., Michelle M. Dennis, Donald C. Behringer, and Mark A. Freeman. 2021. <span>“Size at Sexual Maturity and Seasonal Reproductive Activity of the Caribbean Spiny Lobster Panulirus Argus.”</span> <em>Marine Ecology Progress Series</em> 671 (August): 129–45. <a href="https://doi.org/10.3354/meps13762">https://doi.org/10.3354/meps13762</a>.
+</div>
+<div id="ref-atlanticstatesmarinefisheriescommission2018" class="csl-entry" role="listitem">
+Atlantic States Marine Fisheries Commission. 2018. <span>“2018 Northern Shrimp Benchmark Stock Assessment and Peer Review Report.”</span> <a href="https://www.asmfc.org/uploads/file/5bc798aaNShrimpBenchmarkAssessment_PeerReviewReport_2018_web.pdf">https://www.asmfc.org/uploads/file/5bc798aaNShrimpBenchmarkAssessment_PeerReviewReport_2018_web.pdf</a>.
+</div>
+<div id="ref-atlanticstatesmarinefisheriescommission2021" class="csl-entry" role="listitem">
+———. 2021. <span>“Northern Shrimp Stock Assessment Update 2021.”</span> <a href="https://asmfc.org/uploads/file/63ee4ae1NShrimpAssessmentUpdateReport_2021.pdf">https://asmfc.org/uploads/file/63ee4ae1NShrimpAssessmentUpdateReport_2021.pdf</a>.
+</div>
+<div id="ref-atlanticstatesmarinefisheriescommission2024" class="csl-entry" role="listitem">
+———. 2024. <span>“Northern Shrimp Stock Assessment Update 2024.”</span> <a href="https://asmfc.org/uploads/file/6763357f2024NShrimpAssessmentUpdate.pdf">https://asmfc.org/uploads/file/6763357f2024NShrimpAssessmentUpdate.pdf</a>.
+</div>
+<div id="ref-bakanev2023" class="csl-entry" role="listitem">
+Bakanev, S. V., and V. A. Pavlov. 2023. <span>“Comparative Analysis of the Morphometric and Reproductive Parameters of Snow Crab (Chionoecetes Opilio) from the Kara and Barents Seas.”</span> <em>Oceanology</em> 63 (5): 664–73. <a href="https://doi.org/10.1134/S000143702305003X">https://doi.org/10.1134/S000143702305003X</a>.
+</div>
+<div id="ref-bergström2000" class="csl-entry" role="listitem">
+Bergström, B. I. 2000. <span>“The Biology of <span><em>Pandalus</em></span>.”</span> In, 38:55–245. Academic Press. <a href="https://doi.org/10.1016/S0065-2881(00)38003-8">https://doi.org/10.1016/S0065-2881(00)38003-8</a>.
+</div>
+<div id="ref-bert1986" class="csl-entry" role="listitem">
+Bert, Theresa M., James Tilmant, J. Dodrill, and G. E. Davis. 1986. <span>“Aspects of the population dynamics and biology of the stone crab (Menippe mercenaria) in Everglades and Biscayne National Parks as determined by trapping.”</span> Homestead, FL. <a href="https://purl.fdlp.gov/GPO/gpo23183">https://purl.fdlp.gov/GPO/gpo23183</a>.
+</div>
+<div id="ref-bertini2007" class="csl-entry" role="listitem">
+Bertini, Giovana, Adriane Araújo Braga, Adilson Fransozo, Michéle de Oliveira Dias Alves Corrêa, and Fulvio Aurélio de Morais Freire. 2007. <span>“Relative Growth and Sexual Maturity of the Stone Crab Menippe Nodifrons Stimpson, 1859 (Brachyura, Xanthoidea) in Southeastern Brazil.”</span> <em>Brazilian Archives of Biology and Technology</em> 50 (2): 259–67. <a href="https://doi.org/10.1590/s1516-89132007000200011">https://doi.org/10.1590/s1516-89132007000200011</a>.
+</div>
+<div id="ref-burmeister2010" class="csl-entry" role="listitem">
+Burmeister, AnnDorte, and Bernard Sainte-Marie. 2010. <span>“Pattern and Causes of a Temperature-Dependent Gradient of Size at Terminal Moult in Snow Crab (Chionoecetes Opilio) Along West Greenland.”</span> <em>Polar Biology</em> 33 (6): 775–88. <a href="https://doi.org/10.1007/s00300-009-0755-6">https://doi.org/10.1007/s00300-009-0755-6</a>.
+</div>
+<div id="ref-butler1961" class="csl-entry" role="listitem">
+Butler, T. H. 1961. <span>“Growth and Age Determination of the Pacific Edible Crab Cancer Magister Dana.”</span> <em>Journal of the Fisheries Research Board of Canada</em> 18 (5): 873–91. <a href="https://doi.org/10.1139/f61-060">https://doi.org/10.1139/f61-060</a>.
+</div>
+<div id="ref-cadrin1999" class="csl-entry" role="listitem">
+Cadrin, Steven X., Stephen H. Clark, Daniel F. Schick, Michael P. Armstrong, David McCarron, and Bruce Smith. 1999. <span>“Application of Catch-Survey Models to the Northern Shrimp Fishery in the Gulf of Maine.”</span> <em>North American Journal of Fisheries Management</em> 19 (2): 551–68. <a href="https://doi.org/10.1577/1548-8675(1999)019<0551:AOCSMT>2.0.CO;2">https://doi.org/10.1577/1548-8675(1999)019&lt;0551:AOCSMT&gt;2.0.CO;2</a>.
+</div>
+<div id="ref-cao2017" class="csl-entry" role="listitem">
+Cao, Jie, Yong Chen, and R. Anne Richards. 2017a. <span>“Improving Assessment of Pandalus Stocks Using a Seasonal, Size-Structured Assessment Model with Environmental Variables. Part i: Model Description and Application.”</span> <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 74 (3): 349–62. <a href="https://doi.org/10.1139/cjfas-2016-0020">https://doi.org/10.1139/cjfas-2016-0020</a>.
+</div>
+<div id="ref-cao2017a" class="csl-entry" role="listitem">
+———. 2017b. <span>“Improving Assessment of<span><em>Pandalus</em></span>stocks Using a Seasonal, Size-Structured Assessment Model with Environmental Variables. Part II: Model Evaluation and Simulation.”</span> <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 74 (3): 363–76. <a href="https://doi.org/10.1139/cjfas-2016-0021">https://doi.org/10.1139/cjfas-2016-0021</a>.
+</div>
+<div id="ref-catlin2020" class="csl-entry" role="listitem">
+Catlin, Nicole. 2020. <span>“Age Validation, Size-at-Age, Size-at-Maturity, and Age-at-Maturity in Snow Crab (Chionoecetes Opilio) from Different Thermal Regimes in Newfoundland.”</span> PhD thesis. <a href="https://unbscholar.lib.unb.ca/bitstreams/6bdd23b5-4357-459f-b667-959383b05044/download">https://unbscholar.lib.unb.ca/bitstreams/6bdd23b5-4357-459f-b667-959383b05044/download</a>.
+</div>
+<div id="ref-chang2021" class="csl-entry" role="listitem">
+Chang, Hsiao-Yun, R. Anne Richards, and Yong Chen. 2021. <span>“Effects of Environmental Factors on Reproductive Potential of the Gulf of Maine Northern Shrimp (<span><em>Pandalus Borealis</em></span>).”</span> <em>Global Ecology and Conservation</em> 30 (October): e01774. <a href="https://doi.org/10.1016/j.gecco.2021.e01774">https://doi.org/10.1016/j.gecco.2021.e01774</a>.
+</div>
+<div id="ref-claxton1994" class="csl-entry" role="listitem">
+Claxton, W. T., C. K. Govind, and Robert W. Elner. 1994. <span>“Chela Function, Morphometric Maturity, and the Mating Embrace in Male Snow Crab, Chionoecetes Opilio.”</span> <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 51 (5): 1110–18. <a href="https://doi.org/10.1139/f94-110">https://doi.org/10.1139/f94-110</a>.
+</div>
+<div id="ref-collier1983" class="csl-entry" role="listitem">
+Collier, Patrick C. 1983. <span>“Movement and Growth of Post-Larval Dungeness Crabs, Cancer Magister, in the San Francisco Area.”</span> In, edited by Paul W. Wild and Robert N. Tasto. California Department of Fish &amp; Game. <a href="https://escholarship.org/uc/item/3jx926kt">https://escholarship.org/uc/item/3jx926kt</a>.
+</div>
+<div id="ref-comeau1992" class="csl-entry" role="listitem">
+Comeau, Michel, and Gérard Y. Conan. 1992. <span>“Morphometry and Gonad Maturity of Male Snow Crab, Chionoecetes Opilio.”</span> <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 49 (12): 2460–68. <a href="https://doi.org/10/bmjjsp">https://doi.org/10/bmjjsp</a>.
+</div>
+<div id="ref-comeau2002" class="csl-entry" role="listitem">
+Comeau, Michel, and Fernand Savoie. 2002. <span>“Maturity and Reproductive Cycle of the Female American Lobster, Homarus Americanus, in the Southern Gulf of St. Lawrence, Canada.”</span> <em>Journal of Crustacean Biology</em> 22 (4): 762–74. <a href="https://doi.org/10.1163/20021975-99990290">https://doi.org/10.1163/20021975-99990290</a>.
+</div>
+<div id="ref-conan2001" class="csl-entry" role="listitem">
+Conan, Gérard Y., Michel Comeau, and Mikio Moriyasu. 2001. <span>“Are Morphometrical Approaches Appropriate to Establish Size at Maturity for Male American Lobster, Homarus Americanus?”</span> <em>Journal of Crustacean Biology</em> 21 (4): 937–47. <a href="https://doi.org/10.1651/0278-0372(2001)021[0937:amaate]2.0.co;2">https://doi.org/10.1651/0278-0372(2001)021[0937:amaate]2.0.co;2</a>.
+</div>
+<div id="ref-crowley2018" class="csl-entry" role="listitem">
+Crowley, Claire E., Ryan L. Gandy, Kendra L. Daly, and Erin Hoerl Leone. 2018. <span>“Assessment of Maturity in the Eastern Gulf of Mexico Florida Stone Crab Menippe Mercenaria Fishery.”</span> <em>Transactions of the American Fisheries Society</em> 147 (6): 1124–45. <a href="https://doi.org/10.1002/tafs.10109">https://doi.org/10.1002/tafs.10109</a>.
+</div>
+<div id="ref-crowley2019" class="csl-entry" role="listitem">
+Crowley, Claire E., Colin P. Shea, Ryan L. Gandy, and Kendra L. Daly. 2019. <span>“Fecundity Assessment of Stone Crabs in the Eastern Gulf of Mexico.”</span> <em>Marine and Coastal Fisheries</em> 11 (1): 32–47. <a href="https://doi.org/10.1002/mcf2.10059">https://doi.org/10.1002/mcf2.10059</a>.
+</div>
+<div id="ref-dawe2012" class="csl-entry" role="listitem">
+Dawe, Earl G., Darrell R. J. Mullowney, Mikio Moriyasu, and Elmer Wade. 2012. <span>“Effects of Temperature on Size-at-Terminal Molt and Molting Frequency in Snow Crab Chionoecetes Opilio from Two Canadian Atlantic Ecosystems.”</span> <em>Marine Ecology Progress Series</em> 469 (November): 279–96. <a href="https://doi.org/10.3354/meps09793">https://doi.org/10.3354/meps09793</a>.
+</div>
+<div id="ref-divine2019" class="csl-entry" role="listitem">
+Divine, L. M., F. J. Mueter, Gordon H. Kruse, Bodil A. Bluhm, Stephen C. Jewett, and Katrin Iken. 2019. <span>“New Estimates of Weight-at-Size, Maturity-at-Size, Fecundity, and Biomass of Snow Crab, Chionoecetes Opilio, in the Arctic Ocean Off Alaska.”</span> <em>Fisheries Research</em> 218: 246–58. <a href="https://doi.org/10.1016/j.fishres.2019.05.002">https://doi.org/10.1016/j.fishres.2019.05.002</a>.
+</div>
+<div id="ref-drouineau2012" class="csl-entry" role="listitem">
+Drouineau, Hilaire, Louise Savard, Mathieu Desgagnés, and Daniel Duplisea. 2012. <span>“SPAM (Sex-Structured Pandalus Assessment Model): A&nbsp;Stock Assessment Model for Pandalus Stocks.”</span> <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 69 (4): 770–83. <a href="https://doi.org/10.1139/f2012-011">https://doi.org/10.1139/f2012-011</a>.
+</div>
+<div id="ref-ellertson2022" class="csl-entry" role="listitem">
+Ellertson, Aubrey A., Jesica D. Waller, Tracy L. Pugh, and N. David Bethoney. 2022. <span>“Differences in the Size at Maturity of Female American Lobsters (Homarus Americanus) from Offshore Southern New England and Eastern Georges Bank, USA.”</span> <em>Fisheries Research</em> 250: 106276. <a href="https://doi.org/10.1016/j.fishres.2022.106276">https://doi.org/10.1016/j.fishres.2022.106276</a>.
+</div>
+<div id="ref-émond2010" class="csl-entry" role="listitem">
+Émond, Kim, Bernard Sainte-Marie, and Louise Gendron. 2010. <span>“Relative Growth, Life-History Phases, and Sexual&nbsp;Maturity of American Lobster (Homarus&nbsp;Americanus).”</span> <em>Canadian Journal of Zoology</em> 88 (4): 347–58. <a href="https://doi.org/10.1139/Z10-008">https://doi.org/10.1139/Z10-008</a>.
+</div>
+<div id="ref-filina2011" class="csl-entry" role="listitem">
+Filina, Elena A. 2011. <span>“Spermatogenesis and Physiological Maturity of Male Red King Crab (Paralithodes Camtschaticus Tilesius, 1815) and Snow Crab (Chionoecetes Opilio Fabricius, 1788) in the Barents Sea.”</span> <em>Marine Biology Research</em> 7 (3): 289–96. <a href="https://doi.org/10.1080/17451000.2010.497188">https://doi.org/10.1080/17451000.2010.497188</a>.
+</div>
+<div id="ref-fong2007" class="csl-entry" role="listitem">
+Fong, Ken H., and Jason S. Dunham. 2007. <span>“Inshore Tanner Crab (Chionoecetes Bairdi) Biology in a Central Coast Inlet, British Columbia, Canada.”</span> <em>Journal of Shellfish Research</em> 26 (2): 581–95. <a href="https://doi.org/10.2983/0730-8000(2007)26[581:ITCCBB]2.0.CO;2">https://doi.org/10.2983/0730-8000(2007)26[581:ITCCBB]2.0.CO;2</a>.
+</div>
+<div id="ref-gerhart2008" class="csl-entry" role="listitem">
+Gerhart, Susan D., and Theresa M. Bert. 2008. <span>“Life-History Aspects of Stone Crabs (Genus Menippe): Size at Maturity, Growth, and Age.”</span> <em>Journal of Crustacean Biology</em> 28 (2): 252–61. https://doi.org/<a href="https://doi.org/10.1163/20021975-99990372">https://doi.org/10.1163/20021975-99990372</a>.
+</div>
+<div id="ref-haefner1977" class="csl-entry" role="listitem">
+Haefner, Paul A. 1977. <span>“Reproductive Biology of the Female Deep-Sea Red Crab, Geryon Quinquedens, from the Chesapeake Bight.”</span> <em>Fishery Bulletin</em> 75 (1): 91–102. <a href="https://scholarworks.wm.edu/vimsarticles/635">https://scholarworks.wm.edu/vimsarticles/635</a>.
+</div>
+<div id="ref-hannah2011" class="csl-entry" role="listitem">
+Hannah, Robert W. 2011. <span>“Variation in the Distribution of Ocean Shrimp (Pandalus Jordani) Recruits: Links with Coastal Upwelling and Climate Change.”</span> <em>Fisheries Oceanography</em> 20 (4): 305–13. <a href="https://doi.org/10.1111/j.1365-2419.2011.00585.x">https://doi.org/10.1111/j.1365-2419.2011.00585.x</a>.
+</div>
+<div id="ref-hansen2000" class="csl-entry" role="listitem">
+Hansen, H Ø, and M Aschan. 2000. <span>“Growth, Size- and Age-at-Maturity of Shrimp, <span><em>Pandalus Borealis</em></span> , at Svalbard Related to Environmental Parameters.”</span> <em>Journal of Northwest Atlantic Fishery Science</em> 27 (December): 83–91. <a href="https://doi.org/10.2960/J.v27.a8">https://doi.org/10.2960/J.v27.a8</a>.
+</div>
+<div id="ref-hart2021" class="csl-entry" role="listitem">
+Hart, Hannah R., Claire E. Crowley, and Erin A. Walters. 2021. <span>“Blue Crab Spawning and Recruitment in Two Gulf Coast and Two Atlantic Estuaries in Florida.”</span> <em>Marine and Coastal Fisheries</em> 13 (2): 113–30. <a href="https://doi.org/10.1002/mcf2.10136">https://doi.org/10.1002/mcf2.10136</a>.
+</div>
+<div id="ref-hébert2002" class="csl-entry" role="listitem">
+Hébert, M., Khadra Benhalima, G. Miron, and Mikio Moriyasu. 2002. <span>“Moulting and Growth of Male Snow Crab, Chionoecetes Opilio (o. Fabricius, 1788) (Decapoda, Majidae), in the Southern Gulf of St. Lawrence.”</span> <em>Crustaceana</em> 75 (5): 671–702. <a href="https://doi.org/10.1163/156854002760202679">https://doi.org/10.1163/156854002760202679</a>.
+</div>
+<div id="ref-jewett1985" class="csl-entry" role="listitem">
+Jewett, Stephen C., N. A. Sloan, and David A. Somerton. 1985. <span>“Size at Sexual Maturity and Fecundity of the Fjord-Dwelling Golden King Crab Lithodes Aequispina Benedict from Northern British Columbia.”</span> <em>Journal of Crustacean Biology</em> 5 (3): 377–85. <a href="https://doi.org/10.2307/1547909">https://doi.org/10.2307/1547909</a>.
+</div>
+<div id="ref-jónsdóttir2016" class="csl-entry" role="listitem">
+Jónsdóttir, Ingibjörg G., Anika K. Guðlaugsdóttir, and Hjalti Karlsson. 2016. <span>“Morphometric Differences Between Sub-Populations of Northern Shrimp (<span><em>Pandalus Borealis</em></span>). A Case Study from Two Adjacent Fjords in Iceland.”</span> <em>Regional Studies in Marine Science</em> 3 (January): 42–48. <a href="https://doi.org/10.1016/j.rsma.2015.04.002">https://doi.org/10.1016/j.rsma.2015.04.002</a>.
+</div>
+<div id="ref-landers2001" class="csl-entry" role="listitem">
+Landers, Donald F., Milan Keser, and Saul B. Saila. 2001. <span>“Changes in Female Lobster (Homarus Americanus) Size at Maturity and Implications for the Lobster Resource in Long Island Sound, Connecticut.”</span> <em>Marine and Freshwater Research</em> 52 (8): 1283–90. <a href="https://doi.org/10.1071/mf01045">https://doi.org/10.1071/mf01045</a>.
+</div>
+<div id="ref-lawrence2020" class="csl-entry" role="listitem">
+Lawrence, Amanda Elizabeth. 2020. <span>“Investigating Morphometric and Physiological Maturity Alongside Insulin-Like Androgenic Gland (Iag) Expression and Size in Male Jonah Crab, Cancer Borealis, in Southern New England.”</span> PhD thesis, United States – Maryland. <a href="https://drum.lib.umd.edu/items/1f01ab80-e476-435f-a5ac-f847e4c43d52">https://drum.lib.umd.edu/items/1f01ab80-e476-435f-a5ac-f847e4c43d52</a>.
+</div>
+<div id="ref-lawrence2021" class="csl-entry" role="listitem">
+Lawrence, Amanda, Bradley G. Stevens, Burton Shank, and Jum Sook Chung. 2021. <span>“Morphometric and Physiological Maturity of Male Jonah Crab, Cancer Borealis Stimpson, 1859 (Decapoda: Brachyura: Cancridae), in Southern New England, USA.”</span> <em>Journal of Crustacean Biology</em> 41 (3): ruab030. <a href="https://doi.org/10.1093/jcbiol/ruab030">https://doi.org/10.1093/jcbiol/ruab030</a>.
+</div>
+<div id="ref-levy2020" class="csl-entry" role="listitem">
+Levy, Tom, Sherry L. Tamone, Rivka Manor, Esther D. Bower, and Amir Sagi. 2020. <span>“The Protandric Life History of the Northern Spot Shrimp Pandalus Platyceros: Molecular Insights and Implications for Fishery Management.”</span> <em>Scientific Reports</em> 10 (1): 1287. <a href="https://doi.org/10.1038/s41598-020-58262-6">https://doi.org/10.1038/s41598-020-58262-6</a>.
+</div>
+<div id="ref-little2005" class="csl-entry" role="listitem">
+Little, Susan A., and Winsor H., III Watson. 2005. <span>“Differences in the Size at Maturity of Female American Lobsters, Homarus Americanus, Captured Throughout the Range of the Offshore Fishery.”</span> <em>Journal of Crustacean Biology</em> 25 (4): 585–92. <a href="https://doi.org/10/fdxn2q">https://doi.org/10/fdxn2q</a>.
+</div>
+<div id="ref-marchessaux2023" class="csl-entry" role="listitem">
+Marchessaux, Guillaume, Vojsava Gjoni, and Gianluca Sarà. 2023. <span>“Environmental Drivers of Size-Based Population Structure, Sexual Maturity and Fecundity: A Study of the Invasive Blue Crab Callinectes Sapidus (Rathbun, 1896) in the Mediterranean Sea.”</span> <em>PLOS ONE</em> 18 (8): e0289611. <a href="https://doi.org/10.1371/journal.pone.0289611">https://doi.org/10.1371/journal.pone.0289611</a>.
+</div>
+<div id="ref-martínez-rivera2020" class="csl-entry" role="listitem">
+Martínez-Rivera, Stephanie, William C. Long, and Bradley G. Stevens. 2020. <span>“Physiological and Behavioral Sexual Maturity of Female Red Deep-Sea Crabs Chaceon Quinquedens (Smith, 1879) (Decapoda: Brachyura: Geryonidae) in the Mid-Atlantic Bight.”</span> <em>Journal of Crustacean Biology</em> 40 (3): 330–40. <a href="https://doi.org/10.1093/jcbiol/ruaa007">https://doi.org/10.1093/jcbiol/ruaa007</a>.
+</div>
+<div id="ref-mayrand1998" class="csl-entry" role="listitem">
+Mayrand, Elise, Helga Guderley, and Jean-Denis Dutil. 1998. <span>“Effect of Morphometric Maturity and Size on Enzyme Activities and Nucleic Acid Ratios in the Snow Crab Chionoecetes Opilio.”</span> <em>Journal of Crustacean Biology</em> 18 (2): 232–42. <a href="https://doi.org/10.2307/1549317">https://doi.org/10.2307/1549317</a>.
+</div>
+<div id="ref-mccrary1971" class="csl-entry" role="listitem">
+McCrary, Jerry A. 1971. <span>“Sternal Spines as a Characteristic for Differentiating Between Females of Some Pandalidae.”</span> <em>Journal of the Fisheries Research Board of Canada</em> 28 (1): 98–100. <a href="https://doi.org/10.1139/f71-014">https://doi.org/10.1139/f71-014</a>.
+</div>
+<div id="ref-moriyasu2002" class="csl-entry" role="listitem">
+Moriyasu, Mikio, Khadra Benhalima, David Duggan, Peter Lawton, and David Robichaud. 2002. <span>“Reproductive Biology of Male Jonah Crab, Cancer Borealis Stimpson, 1859 (Decapoda, Cancridae) on the Scotian Shelf, Northwestern Atlantic.”</span> <em>Crustaceana</em> 75 (7): 891–913. <a href="https://doi.org/10.1163/156854002321210730">https://doi.org/10.1163/156854002321210730</a>.
+</div>
+<div id="ref-mullowney2021" class="csl-entry" role="listitem">
+Mullowney, Darrell R. J., and Krista D. Baker. 2021. <span>“Size-at-Maturity Shift in a Male-Only Fishery: Factors Affecting Molt-Type Outcomes in Newfoundland and Labrador Snow Crab (Chionoecetes Opilio).”</span> <em>ICES Journal of Marine Science</em> 78 (2): 516–33. <a href="https://doi.org/10.1093/icesjms/fsaa164">https://doi.org/10.1093/icesjms/fsaa164</a>.
+</div>
+<div id="ref-murphy2021" class="csl-entry" role="listitem">
+Murphy, James T. 2021. <span>“Temporal and Spatial Variability in Size-at-Maturity for the Eastern Bering Sea Snow and Tanner Crab (<span><em>Chionoecetes Opilio</em></span> and <span><em>C</em></span>. <span><em>Bairdi</em></span>).”</span> <em>Fisheries Research</em> 234 (February): 105761. <a href="https://doi.org/10.1016/j.fishres.2020.105761">https://doi.org/10.1016/j.fishres.2020.105761</a>.
+</div>
+<div id="ref-newcombe1949" class="csl-entry" role="listitem">
+Newcombe, Curtis L., Mildred D. Sandoz, and R. Rogers-Talbert. 1949. <span>“Differential Growth and Moulting Characteristics of the Blue Crab, Callinectes Sapidus Rathbun.”</span> <em>Journal of Experimental Zoology</em> 110 (1): 113–52. <a href="https://doi.org/10.1002/jez.1401100107">https://doi.org/10.1002/jez.1401100107</a>.
+</div>
+<div id="ref-noaafisheries2022" class="csl-entry" role="listitem">
+NOAA Fisheries. 2022. <span>“NOAA Fisheries Strategic Plan 2022-2025,”</span> December. <a href="https://www.fisheries.noaa.gov/resource/document/noaa-fisheries-strategic-plans">https://www.fisheries.noaa.gov/resource/document/noaa-fisheries-strategic-plans</a>.
+</div>
+<div id="ref-noaafisheries2024" class="csl-entry" role="listitem">
+———. 2024. <span>“National Seafood Strategy Implementation Plan.”</span> <a href="https://www.fisheries.noaa.gov/s3/2024-09/09-2024-Natl-Seafood-Strat-Imp-Plan.pdf">https://www.fisheries.noaa.gov/s3/2024-09/09-2024-Natl-Seafood-Strat-Imp-Plan.pdf</a>.
+</div>
+<div id="ref-olmi1983" class="csl-entry" role="listitem">
+Olmi, Eugene J., and James M. Bishop. 1983. <span>“Variations in Total Width-Weight Relationships of Blue Crabs, Callinectes Sapidus, in Relation to Sex, Maturity, Molt Stage, and Carapace Form.”</span> <em>Journal of Crustacean Biology</em>, no. 4: 575–81. <a href="https://doi.org/10.1163/193724083X00238">https://doi.org/10.1163/193724083X00238</a>.
+</div>
+<div id="ref-olsen2020" class="csl-entry" role="listitem">
+Olsen, Noelle A., and Bradley G. Stevens. 2020. <span>“Size at Maturity, Shell Conditions, and Morphometric Relationships of Male and Female Jonah Crabs in the Middle Atlantic Bight.”</span> <em>North American Journal of Fisheries Management</em> 40 (6): 1472–85. <a href="https://doi.org/10.1002/nafm.10509">https://doi.org/10.1002/nafm.10509</a>.
+</div>
+<div id="ref-olsen2016" class="csl-entry" role="listitem">
+Olsen, Zachary, Tom Wagner, and Glen Sutton. 2016. <span>“Regional and Temporal Variation in Size at Maturity of Female Blue Crabs in Texas Coastal Waters.”</span> <em>Transactions of the American Fisheries Society</em> 145 (5): 10591067. <a href="https://doi.org/10.1080/00028487.2016.1185036">https://doi.org/10.1080/00028487.2016.1185036</a>.
+</div>
+<div id="ref-olson2018" class="csl-entry" role="listitem">
+Olson, Andrew P., Chris E. Siddon, and Ginny L. Eckert. 2018. <span>“Spatial Variability in Size at Maturity of Golden King Crab (Lithodes Aequispinus) and Implications for Fisheries Management.”</span> <em>Royal Society Open Science</em> 5 (3): 171802. <a href="https://doi.org/10.1098/rsos.171802">https://doi.org/10.1098/rsos.171802</a>.
+</div>
+<div id="ref-orensanz2007" class="csl-entry" role="listitem">
+Orensanz, Jose Maria, Billy Ernst, and David A. Armstrong. 2007. <span>“Variation of Female Size and Stage at Maturity in Snow Crab (Chionoecetes Opilio) (Brachyura: Majidae) from the Eastern Bering Sea.”</span> <em>Journal of Crustacean Biology</em> 27 (4): 576–91. <a href="https://doi.org/10.1651/S-2790.1">https://doi.org/10.1651/S-2790.1</a>.
+</div>
+<div id="ref-otto2002" class="csl-entry" role="listitem">
+Otto, Robert S., and Douglas Pengilly. 2002. <span>“Crabs in Cold Water Regions: Biology, Management, and Economics.”</span> In, 339–49. Alaska Sea Grant, University of Alaska Fairbanks. <a href="https://doi.org/10.4027/ccwrbme.2002.26">https://doi.org/10.4027/ccwrbme.2002.26</a>.
+</div>
+<div id="ref-paul1995" class="csl-entry" role="listitem">
+Paul, A. J., and J. M. Paul. 1995. <span>“Molting of Functionally Mature Male Chionoecetes Bairdi Rathbun (Decapoda: Majidae) and Changes in Carapace and Chela Measurements.”</span> <em>Journal of Crustacean Biology</em> 15 (4): 686–92. <a href="https://doi.org/10.1163/193724095X00091">https://doi.org/10.1163/193724095X00091</a>.
+</div>
+<div id="ref-paul2000" class="csl-entry" role="listitem">
+———. 2000. <span>“Changes in Chela Heights and Carapace Lengths in Male and Female Golden King Crabs Lithodes Aequispinus After Molting in the Laboratory.”</span> <em>Alaska Fisheries Research Bulletin</em> 6 (2): 70–77. <a href="http://www.adfg.state.ak.us/pubs/afrb/vol6_n2/2pauv6n2.pdf">http://www.adfg.state.ak.us/pubs/afrb/vol6_n2/2pauv6n2.pdf</a>.
+</div>
+<div id="ref-pengilly2002" class="csl-entry" role="listitem">
+Pengilly, Douglas, S. F. Blau, and J. E. Blackburn. 2002. <span>“Crabs in Cold Water Regions: Biology, Management, and Economics.”</span> In, 213–24. Alaska Sea Grant, University of Alaska Fairbanks. <a href="https://doi.org/10.4027/ccwrbme.2002.17">https://doi.org/10.4027/ccwrbme.2002.17</a>.
+</div>
+<div id="ref-perry2000" class="csl-entry" role="listitem">
+Perry, R. Ian, James A. Boutillier, and Michael G. G. Foreman. 2000. <span>“Environmental Influences on the Availability of Smooth Pink Shrimp, Pandalus Jordani, to Commercial Fishing Gear Off Vancouver Island, Canada.”</span> <em>Fisheries Oceanography</em> 9 (1): 50–61. <a href="https://doi.org/10.1046/j.1365-2419.2000.00121.x">https://doi.org/10.1046/j.1365-2419.2000.00121.x</a>.
+</div>
+<div id="ref-reeves2017" class="csl-entry" role="listitem">
+Reeves, David B., Ryan T. Munnelly, Edward J. Chesney, Donald M. Baltz, and Brian D. Marx. 2017. <span>“Stone Crab Menippe Spp. Populations on Louisiana<span>’</span>s Nearshore Oil and Gas Platforms: Higher Density and Size at Maturity on a Sand Shoal.”</span> <em>Transactions of the American Fisheries Society</em> 146 (3): 371383. <a href="https://doi.org/10.1080/00028487.2017.1281164">https://doi.org/10.1080/00028487.2017.1281164</a>.
+</div>
+<div id="ref-restrepo1989" class="csl-entry" role="listitem">
+Restrepo, Victor R. 1989. <span>“Growth Estimates for Male Stone Crabs Along the Southwest Coast of Florida: A Synthesis of Available Data and Methods.”</span> <em>Transactions of the American Fisheries Society</em> 118 (1): 20–29. <a href="https://doi.org/10.1577/1548-8659(1989)118<0020:GEFMSC>2.3.CO;2">https://doi.org/10.1577/1548-8659(1989)118&lt;0020:GEFMSC&gt;2.3.CO;2</a>.
+</div>
+<div id="ref-richar2022" class="csl-entry" role="listitem">
+Richar, Jonathan I., and Robert J. Foy. 2022. <span>“A Novel Morphometry-Based Method for Assessing Maturity in Male Tanner Crab, Chionoecetes Bairdi.”</span> <em>Facets</em> 7 (1): 1598–1616. <a href="https://doi.org/10.1139/facets-2021-0061">https://doi.org/10.1139/facets-2021-0061</a>.
+</div>
+<div id="ref-skúladóttir1998" class="csl-entry" role="listitem">
+Skúladóttir, Unnur. 1998. <span>“Size at Sexual Maturity of Female Northern Shrimp (<span><em>Pandalus Borealis</em></span> Krøyer) in the Denmark Strait 1985<span></span>93 and a Comparison with the Nearest Icelandic Shrimp Populations.”</span> <em>Journal of Northwest Atlantic Fishery Science</em> 24 (November): 27–37. <a href="https://doi.org/10.2960/J.v24.a2">https://doi.org/10.2960/J.v24.a2</a>.
+</div>
+<div id="ref-skúladóttir1999" class="csl-entry" role="listitem">
+Skúladóttir, Unnur, and Gunnar Pétursson. 1999. <span>“Defining Populations of Northern Shrimp, Pandalus Borealis (Krøyer 1838), in Icelandic Waters Using the Maximum Length and Maturity Ogive of Females.”</span> <em>Rit Fiskideildar</em> 16: 247–62.
+</div>
+<div id="ref-sloan1985" class="csl-entry" role="listitem">
+Sloan, N. A. 1985. <span>“Life History Characteristics of Fjord-Dwelling Golden King Crabs Lithodes Aequispina.”</span> <em>Marine Ecology Progress Series</em> 22 (March): 219–28. <a href="https://doi.org/10.3354/meps022219">https://doi.org/10.3354/meps022219</a>.
+</div>
+<div id="ref-smith2020" class="csl-entry" role="listitem">
+Smith, Quinn. 2020. <span>“Southeast Alaska Pot Shrimp Stock Status Prior to the 2019/20 Season.”</span> <a href="https://www.adfg.alaska.gov/FedAidPDFs/FDS20-19.pdf">https://www.adfg.alaska.gov/FedAidPDFs/FDS20-19.pdf</a>.
+</div>
+<div id="ref-somerton1981" class="csl-entry" role="listitem">
+Somerton, David A. 1981a. <span>“Contribution to the Life History of the Deep-Sea King Crab, Lithodes Couesi, in the Gulf of Alaska.”</span> <em>Fishery Bulletin</em> 79 (2): 259–69. <a href="https://fisherybulletin.nmfs.noaa.gov/content/contribution-life-history-deep-sea-king-crab-lithodes-couesi-gulf-alaska">https://fisherybulletin.nmfs.noaa.gov/content/contribution-life-history-deep-sea-king-crab-lithodes-couesi-gulf-alaska</a>.
+</div>
+<div id="ref-somerton1981a" class="csl-entry" role="listitem">
+———. 1981b. <span>“Regional Variation in the Size of Maturity of Two Species of Tanner Crab (Chionoecetes Bairdi and c. Opilio) in the Eastern Bering Sea, and Its Use in Defining Management Subareas.”</span> <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 38 (2): 163–74. <a href="https://doi.org/10.1139/f81-022">https://doi.org/10.1139/f81-022</a>.
+</div>
+<div id="ref-somerton1983" class="csl-entry" role="listitem">
+Somerton, David A., and Richard A. MacIntosh. 1983. <span>“The Size at Sexual Maturity of Blue King Crab, Paralithodes Platypus, in Alaska.”</span> <em>Fishery Bulletin</em> 81 (3): 621–28. <a href="https://spo.nmfs.noaa.gov/content/size-sexual-maturity-blue-king-crab-paralithodes-platypus-alaska">https://spo.nmfs.noaa.gov/content/size-sexual-maturity-blue-king-crab-paralithodes-platypus-alaska</a>.
+</div>
+<div id="ref-somerton1986" class="csl-entry" role="listitem">
+Somerton, David A., and Robert S. Otto. 1986. <span>“Distribution and Reproductive Biology of the Golden King Crab, Lithodes Aequispina, in the Eastern Bering Sea.”</span> <em>Fishery Bulletin</em> 84 (3): 571–84. <a href="https://spo.nmfs.noaa.gov/node/14297">https://spo.nmfs.noaa.gov/node/14297</a>.
+</div>
+<div id="ref-stevens1993" class="csl-entry" role="listitem">
+Stevens, Bradley G., William E. Donaldson, Jan. A. Haaga, and J. Eric Munk. 1993. <span>“Morphometry and Maturity of Paired Tanner Crabs, Chionoecetes Bairdi, from Shallow- and Deepwater Environments.”</span> <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 50 (7): 1504–16. <a href="https://doi.org/10.1139/f93-172">https://doi.org/10.1139/f93-172</a>.
+</div>
+<div id="ref-stevens2016" class="csl-entry" role="listitem">
+Stevens, Bradley G., and Vincent G. Guida. 2016. <span>“Depth and Temperature Distribution, Morphometrics, and Sex Ratios of Red Deepsea Crab (Chaceon Quinquedens) at 4 Sampling Sites in the Mid-Atlantic Bight.”</span> <em>Fishery Bulletin</em> 114 (3): 343–59. <a href="https://doi.org/10.7755/FB.114.3.7">https://doi.org/10.7755/FB.114.3.7</a>.
+</div>
+<div id="ref-stevens2014" class="csl-entry" role="listitem">
+Stevens, Bradley G., and Stephen C. Jewett. 2014. <span>“Growth, Molting, and Feeding of King Crabs.”</span> In, 315–62. Boca Raton, FL: CRC Press. <a href="https://doi.org/10.1201/b16664-12">https://doi.org/10.1201/b16664-12</a>.
+</div>
+<div id="ref-stone2003" class="csl-entry" role="listitem">
+Stone, Robert P., Michele M. Masuda, and John E. Clark. 2003. <span>“Growth of Male Tanner Crabs Chionoecetes Bairdi in a Southeast Alaska Estuary.”</span> <em>Alaska Fisheries Research Bulletin</em> 10 (2): 137–48. <a href="https://www.adfg.alaska.gov/static/home/library/PDFs/afrb/stonv10n2.pdf">https://www.adfg.alaska.gov/static/home/library/PDFs/afrb/stonv10n2.pdf</a>.
+</div>
+<div id="ref-templeman1935" class="csl-entry" role="listitem">
+Templeman, Wilfred. 1935. <span>“Local Differences in the Body Proportions of the Lobster, Homarus Americanus.”</span> <em>Journal of the Biological Board of Canada</em> 1 (3): 213–26. <a href="https://doi.org/10.1139/f35-006">https://doi.org/10.1139/f35-006</a>.
+</div>
+<div id="ref-tewfik2020" class="csl-entry" role="listitem">
+Tewfik, Alexander, Elizabeth A Babcock, and Myles Phillips. 2020. <span>“Spiny Lobster Fisheries Status Across Time and a Mosaic of Spatial Management Regimes.”</span> <em>ICES Journal of Marine Science</em> 77 (3): 1002–16. <a href="https://doi.org/10.1093/icesjms/fsaa008">https://doi.org/10.1093/icesjms/fsaa008</a>.
+</div>
+<div id="ref-thienes2023" class="csl-entry" role="listitem">
+Thienes, Michael. 2023. <span>“Variability in Size at Maturity of Female Blue Crab (Callinectes Sapidus) in Coastal South Carolina.”</span> PhD thesis, United States – South Carolina. <a href="https://www.proquest.com/docview/2817281407/abstract/BD488A4CC8CC4A1EPQ/1">https://www.proquest.com/docview/2817281407/abstract/BD488A4CC8CC4A1EPQ/1</a>.
+</div>
+<div id="ref-wainwright1993" class="csl-entry" role="listitem">
+Wainwright, Thomas C., and David A. Armstrong. 1993. <span>“Growth Patterns in the Dungeness Crab (Cancer Magister Dana): Synthesis of Data and Comparison of Models.”</span> <em>Journal of Crustacean Biology</em> 13 (1): 36–50. <a href="https://doi.org/10.2307/1549121">https://doi.org/10.2307/1549121</a>.
+</div>
+<div id="ref-wallace1949" class="csl-entry" role="listitem">
+Wallace, M. Marvin, Camile J. Pertuit, and Arthur R. Hvatum. 1949. <em>Contribution to the biology of the king crab (Paralithodes camtschatica Tilesius)</em>. Fishery Leaflets 340. Washington, D.C.: Fish; Wildlife Service, United States Dept. of the Interior. <a href="https://www.arlis.org/docs/vol1/AK_Heritage/FWS/FL/3/FL-340.pdf">https://www.arlis.org/docs/vol1/AK_Heritage/FWS/FL/3/FL-340.pdf</a>.
+</div>
+<div id="ref-waller2021" class="csl-entry" role="listitem">
+Waller, Jesica D., Kathleen M. Reardon, Sarah E. Caron, Blaise P. Jenner, Erin L. Summers, and Carl J. Wilson. 2021. <span>“A Comparison of the Size at Maturity of Female American Lobsters (Homarus Americanus) over Three Decades and Across Coastal Areas of the Gulf of Maine Using Ovarian Staging.”</span> <em>ICES Journal of Marine Science</em> 78 (4): 1267–77. <a href="https://doi.org/10.1093/icesjms/fsab034">https://doi.org/10.1093/icesjms/fsab034</a>.
+</div>
+<div id="ref-warren1994" class="csl-entry" role="listitem">
+Warren, William G. 1994. <span>“Maturity and Molt Status of Crustacea: Determining Classification Without Prior Criteria.”</span> <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 51 (2): 408–16. <a href="https://doi.org/10.1139/f94-042">https://doi.org/10.1139/f94-042</a>.
+</div>
+<div id="ref-waugh2009" class="csl-entry" role="listitem">
+Waugh, David A., Rodney M. Feldmann, Jennifer L. Burrell, Angela L. Hull, Kristie Hein, and Carrie E. Schweitzer. 2009. <span>“Ontogenetic Variations in Cuticle Morphology in the Blue Crab Callinectes Sapidus Rathbun, 1896.”</span> <em>Journal of Crustacean Biology</em> 29 (2): 141–56. <a href="https://doi.org/10.1651/08-3105.1">https://doi.org/10.1651/08-3105.1</a>.
+</div>
+<div id="ref-worton2009" class="csl-entry" role="listitem">
+Worton, Carrie L., Dan Urban, Katherine M. Swiney, Zac Grauvogel, and Susie Byersdorfer. 2009. <span>“Biology and Management of Exploited Crab Populations Under Climate Change.”</span> In, 319. Alaska Sea Grant, University of Alaska Fairbanks. <a href="https://www.researchgate.net/publication/268484224_Size_at_Physiological_Maturity_and_Minimum_Size_at_Functional_Maturity_for_Male_Dungeness_Crabs_in_Alaska_Waters">https://www.researchgate.net/publication/268484224_Size_at_Physiological_Maturity_and_Minimum_Size_at_Functional_Maturity_for_Male_Dungeness_Crabs_in_Alaska_Waters</a>.
+</div>
+<div id="ref-zambrano2020" class="csl-entry" role="listitem">
+Zambrano, René, and John Ramos. 2020. <span>“Relative Growth of <span><em>Menippe Frontalis</em></span> (Crustacea: Brachyura) in the Gulf of Guayaquil, Ecuador, by Multi-Model Approach.”</span> <em>Nauplius</em> 28 (July): e2020030. <a href="https://doi.org/10.1590/2358-2936e2020030">https://doi.org/10.1590/2358-2936e2020030</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../introduction/importance.html" class="pagination-link" aria-label="Importance of size at maturity for management">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Importance of size at maturity for management</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../syst_review/systematic_review.html" class="pagination-link" aria-label="Systematic Review">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Systematic Review</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

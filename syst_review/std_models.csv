@@ -1,0 +1,24 @@
+"","code","definition","lines_connect","parallel_ok","logistic_reg_included","notes"
+"1","BSL","Broken-stick model with logistic transition","Yes","No","Yes",NA
+"2","CLASS","Separate linear regression lines fit to already-classified points","Varies","Varies","Varies","- CLASS-INT: intersection of regression lines
+- CLASS-SEP: separate lines not specified to intersect
+- CLASS-LOG: if overlap b/w two lines, used logistic regression to find breakpoint"
+"3","CLU","Clustering (without discriminant analysis)",NA,NA,"Yes (indirectly)","Includes kmeans, pam, hkmeans, dbscan, hdbscan, mixture models, etc."
+"4","CM","Cubic",NA,NA,"No",NA
+"5","DIS","Discriminant analysis",NA,NA,"Yes (indirectly)","Includes LDA and QDA. Can be preceded by PCA (principle component analysis = principal factor analysis = major axis regression) and/or preceded by any clustering method."
+"6","DID","distribution interval derived (DID) maturity cutline","No",NA,"Yes (indirectly)","Richar & Foy (2022)"
+"7","GAM","Generalized additive model or other form of smoothing splines",NA,NA,"No",NA
+"8","INFL_PT","Based on inflection point or dividing line between frequency modes of a CH/CW ratio histogram",NA,NA,"Yes (indirectly)",NA
+"9","INT","Intersecting","Yes","No","No, intersection is SMM","Two separate lines are plotted for known mature and known immature individuals (like with Somerton method), and t-test used to compare slopes b/w lines. If slopes diff, SM50 is taken to be the intersection of the two lines."
+"10","LM","Linear",NA,NA,"No",NA
+"11","MIX","Mixture modeling","No","Yes","Yes (indirectly)",NA
+"12","PU","Piecewise linear unclear/not specified","Varies","Varies","No","The description is either unclear or contradictory; for example, citing Somerton 1980b but the description is of TL_even"
+"13","QM","Quadratic",NA,NA,"No",NA
+"14","RATIO","Based on a change in CH/CW ratio using a method other than the inflection point method",NA,NA,"Yes (indirectly)",NA
+"15","SR","Broken-stick/segmented regression","Yes","No","No, breakpoint is SMM",NA
+"16","TL","Two-line model no transition (lines start/end at breakpoint)","No","Yes","No, breakpoint is SMM","TL_obs = iterates over observed values, TL_even = iterates over evenly-spaced values b/w lower and upper limit of unknown range"
+"17","TLL","Two-line model with logistic transition","Yes","Yes","Yes",NA
+"18","TLS","Two-line Somerton method (lines can overlap)","No","Yes","Yes (indirectly)",NA
+"19","TLS2","Somerton method where lines are tested for a sig. diff. before classifying the unknown points","No","Yes","Yes (indirectly)",NA
+"20","VE (B)","Visual estimation of allometric breakpoint","Varies","Yes","No",NA
+"21","VE (D)","Visual estimation of discriminant function",NA,NA,"Yes (indirectly)",NA

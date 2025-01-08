@@ -1,0 +1,186 @@
+---
+bibliography: ../references.bib
+---
+
+# Simulation Testing
+
+```{r}
+#| message: false
+library(tidyverse)
+library(gt)
+library(PNWColors)
+
+source("../morphmat_funs.R")
+```
+
+## Introduction
+
+Testing a proposed model against simulated data generated from a known underlying process is an important but sometimes overlooked step in ecological research [@austin2006; @lotterhos2022]. In fisheries science, simulation testing is commonly used to evaluate stock assessment and population dynamic models and assess their robustness to various types of error [@deroba2015; @piner2011].
+
+Before applying the size-at-maturity estimation procedures identified through the systematic review to real data, I will create multiple simulated data sets with differing characteristics in order to determine the domains of applicability and inference of each model. The domain of applicability refers to the types of data sets to which a model can reliably be applied, while the domain of inference is defined as the processes or conclusions that can be inferred from the model output [@lotterhos2022]. The methodology for this chapter will be heavily influenced by the principles for ecological simulation testing outlined by Lotterhos et al. [-@lotterhos2022] and the guidelines for computational method benchmarking developed by Weber et al. [-@weber2019] (See [Box 1](#box1)).
+
+::: {#box1 .box}
+```{r}
+
+guidelines <- data.frame(
+  guide = c(
+    "Define the purpose and the scope of the benchmark.",
+    "Include all relevant methods.",
+    "Select (or design) appropriate datasets.",
+    "Choose appropriate parameter values and software versions.",
+    "Evaluate methods according to key quantitative performance metrics.",
+    "Evaluate secondary metrics including computational requirements, user-friendliness, installation procedures, and documentation quality.",
+    "Interpret results and provide recommendations from both user and method developer perspectives.",
+    "Publish results in an accessible format.",
+    "Design the benchmark to include future extensions.",
+    "Follow reproducible research best practices, by making code and data publicly available."
+  )
+) %>% rownames_to_column("num")
+
+
+guidelines %>% gt() %>%
+  tab_header(title = "Box 1: Computational benchmarking guidelines") %>%
+  tab_style(style = cell_borders(sides = c("t"), style = NULL),
+            locations = cells_title()) %>% 
+  tab_options(column_labels.hidden = TRUE,
+              container.padding.y = px(0))
+
+```
+:::
+
+## Basic simulation steps
+
+1. Create a normal distribution of the body size variable
+2. Calculate probability of maturity for each individual based on body size
+3. Calculate predicted claw or abdomen size based on body size
+4. Add error
+
+The `fake_crustaceans` function in `morphmat` allows users to rapidly generate many data sets with options for changing parameters in each of the four steps.
+
+In more detail:
+
+1.  Create a normal distribution of the body size variable with the specified mean and SD. The `fake_crustaceans` default is to generate a random sample of 1000 crustaceans with a mean carapace width/body size of 105 mm and standard deviation of 20 mm. 
+
+```{r}
+#| label: fake_crabs_default
+#| code-fold: true
+
+default_sim <- fake_crustaceans()
+
+default_sim_long <- default_sim %>%
+  rename(
+    reg_x = x,
+    reg_y = y,
+    log_y = log_y,
+    log_x = log_x
+  ) %>%
+  pivot_longer(
+    cols = c(reg_x, reg_y, log_x, log_y),
+    names_sep = "_",
+    names_to = c("log", "var")
+  ) %>%
+  mutate(log = if_else(log == "log", TRUE, FALSE))
+
+```
+
+```{r}
+#| label: fig-defaulthist
+#| code-fold: true
+#| fig-cap: "Histogram of carapace widths"
+#| out-width: 80%
+#| fig-asp: 0.5
+
+# visualize size distribution
+ggplot() +
+  geom_histogram(data = default_sim, aes(x = x), bins = 35) +
+  mytheme + labs(x = "Carapace width (mm)", y = "Count")
+
+```
+
+2.  Use a logistic distribution with known location and scale parameters (i.e., known L50 and steepness of the logistic curve) to find the probability of maturity for each individual based on their body size. The `fake_crustaceans` default is for the true size at maturity for the population to be 100 mm, with a slope parameter for the logistic equation of 5. 
+
+The parameterization of the logistic equation we will use is: $$f(x)=\frac{1}{1+e^{-(x-a)/b}} $$ where $a$ is a location parameter and $b$ is the shape parameter.
+
+```{r}
+#| label: fig-defaultdensity
+#| code-fold: true
+#| fig-cap: "Distribution of carapace widths by maturity level"
+#| out-width: 80%
+#| fig-asp: 0.5
+
+# Size by maturity stage histogram
+ggplot() +
+  geom_density(
+    data = default_sim,
+    aes(
+      x = x,
+      group = mature,
+      color = mature,
+      fill = mature
+    ),
+    alpha = 0.5
+  ) +
+  mytheme +
+  labs(fill = NULL,
+       color = NULL,
+       x = "Carapace width (mm)",
+       y = "Density") +
+  scale_color_manual(
+    values = c("0" = "#368aab", "1" = "#993843"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  ) +
+  scale_fill_manual(
+    values = c("0" = "#7bbcd5", "1" = "#CA6E78"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  )
+```
+
+3.  Using given parameters for the slope and intercept of the allometric equation, find the predicted chela height for each individual based on their carapace width. 
+
+The allometric growth equation is \\begin{equation}\label{eqn:allometry}Y=\\beta X\^{\\alpha},\\end{equation}
+
+which results in a linear plot when log-transformed: $\log{(Y)}= \tilde\beta+\alpha \log{(X)}$. Here, $\alpha$ is the slope of the allometric line and $\beta$ is the intercept, with $\tilde{\beta}=\log{(\beta)}$. Differences in the intercept of the allometry indicate differences in the proportionate size of the chela, irrespective of carapace width. In contrast, differences in the slope parameter represent differences in how the relative size of the chela changes with body size.
+
+The `fake_crustaceans` default is no change in the allometric slope or intercept parameters $(\alpha=1.2, \beta=0.1)$ upon reaching maturity, so if this was real data, we would not actually be able to estimate size at maturity based on a change in morphometric ratios. The SD of the error distribution also remains constant upon reaching maturity.
+
+```{r}
+#| label: fig-defaultlineserror
+#| code-fold: true
+#| fig-cap: "Carapace width vs. chela height using the default simulation parameters. Vertical grey lines represent the size at maturity used in the logistic equation (100 mm)."
+#| fig-asp: 0.6
+
+temp_df <- default_sim_long %>% pivot_wider(names_from = var)
+
+ggplot(data = temp_df, aes(x = x, y = y, color = mature)) +
+  geom_point(alpha = 0.5, size = 1) +
+  facet_wrap( ~ log, scales = "free", labeller = as_labeller(c("FALSE" = "Normal scale", "TRUE" = "Log scale"))) +
+  mytheme +
+  labs(x = "Carapace width (mm)", y = "Chela height (mm)", color = NULL) +
+  scale_color_manual(
+    values = c("0" = "#7bbcd5", "1" = "#CA6E78"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  ) +
+  geom_vline(
+    data = filter(temp_df, log == TRUE),
+    aes(xintercept = log(100)),
+    lty = "dashed",
+    color = "grey"
+  ) +
+  geom_vline(
+    data = filter(temp_df, log == FALSE),
+    aes(xintercept = 100),
+    lty = "dashed",
+    color = "grey"
+  )
+```
+
+4.  Add error representing individual variation in allometric growth. Errors added in Step 4 are assumed to be normally distributed around the regression lines obtained by log-transforming the raw CW and CH values. In other words, the data are assumed to have multiplicative log-normally distributed error:
+
+$$Y=\beta X^{\alpha}e^{\varepsilon}, \quad \varepsilon \sim N(0,\sigma^2)$$ $$\log{(Y)}=\log{(\beta)}+ \alpha\log{(X)}+\varepsilon, \quad \varepsilon \sim N(0,\sigma^2)$$
+
+The question of whether error structures should be assumed to be multiplicative or additive when fitting allometric models is non-trivial and often controversial [@packard2009; @ballantyne2013; @xiao2011]. However, the assumption of multiplicative error is often appropriate for biological contexts and in this case, simulating error based on a multiplicative structure generates artificial data sets that adequately resemble the empirical morphometric data sets we are interested in [@xiao2011; @kerkhoff2009]. Variance in empirical size-at-maturity data often appears higher for mature individuals, so by assuming a multiplicative error structure, these errors will be proportional to the x-axis variable. For example, a measurement error of 4 mm would be less likely to occur when measuring a crab with a carapace that is 30 mm in length (a 13% error) than for a crab with a 100-mm carapace (a 4% error). Alternative error distributions for allometric models continue to be developed, and future extensions of our research could consider the performance of various size-at-maturity models when applied to simulated data with different forms of error [@echavarría-heras2024].
+
+## References {.unnumbered}

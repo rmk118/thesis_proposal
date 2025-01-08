@@ -1,0 +1,29 @@
+---
+bibliography: ../references.bib
+---
+
+# Importance of size at maturity for management
+
+Globally, crustacean (shrimp, lobster, and crab) fisheries are growing faster than any other group of fisheries, and represent some of the highest-value seafood products on the market [@boenish2022]. Accurate estimates of size at maturity are crucial for the sustainable management of these valuable fisheries.
+
+![Importance of size at maturity for the management of crustacean fisheries.](../figures/circle_diagram.png){fig-align="center"}
+
+## Minimum harvest size
+
+Size at maturity is a key consideration when setting minimum size regulations, as setting a minimum legal size below the size at 50% sexual maturity (SM50) can significantly restrict the reproductive potential of a population. When minimum size limits are set above SM50, high yield and spawning biomass can often be maintained even under high fishing pressure [@prince2019].
+
+## Stock assessment & model inputs
+
+Effective management of crustacean fisheries depends on stock assessments that estimate current biomass levels, evaluate the health of the stock compared to historical levels, and predict the effects of potential management actions. The difficulty of aging crustaceans means that size-structured models are typically preferred over age-based methods for stock assessment purposes [@punt2013; @punt2016]. SM50 is a fundamental parameter in frequently used stock assessment models like Length-Based Spawning Potential Ratio (LBSPR), which are especially useful for data-limited fisheries [@prince2019; @hordyk2015]. Stock assessment models can be highly sensitive to shifts in size at maturity inputs like SM50, particularly when combined with changes in growth parameters such as molt probability and molt increment probability [@hodgdon2022]. Understanding the effect that climate-driven shifts in life history input parameters like SM50 have on stock assessment model outputs is critical for future modeling efforts and fisheries management [@hodgdon2022].
+
+## Accounting for spatial structure
+
+## Impacts of harvesting & climate
+
+Monitoring changes in size at maturity is also an important tool to assess the impacts of environmental changes and fishing pressure on fish and invertebrate life-history characteristics [@audzijonyte2013; @lappalainen2016]. For example, there is strong evidence that size-based fishery selection has led to declines in female SM50 for female American lobster (*Homarus americanus*) in the United States and Canada [@haarr2018; @waller2019; @waller2021].
+
+*Climate impacts go here*
+
+Thus, a better understanding of size at maturity will contribute to broader work to assess the effects of climate change on regional fisheries harvest scenarios [@noaafisheries2024]. My project will support federally mandated efforts to optimize and diversify sustainable seafood production and fishing opportunities while ensuring the long-term sustainability of fisheries through effective and efficient management.
+
+### References {.unnumbered}

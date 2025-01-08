@@ -1,0 +1,51 @@
+---
+format: html
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+library(gt)
+```
+
+# Database structure {#sec-databases}
+
+```{r}
+#| message: false
+#| label: tbl-litrevkeys
+#| tbl-cap: "EML attributes for study-level data"
+
+# x <- "11quZD2e4_RDqfX7bn75G7LxkEtVeL-m-9Dv_Ou3PliM"
+# x <- drive_get(as_id(x))
+# keys_eml <- drive_download(x, type = "csv", overwrite = TRUE, path = "lit_rev_keys")
+lit_keys <- read.csv("lit_rev_keys.csv")
+
+lit_keys %>% gt()
+```
+
+```{r}
+#| message: false
+#| label: tbl-recordkeys
+#| tbl-cap: "EML attributes for record-level data"
+
+# params_keys <- read_clip_tbl()
+# write.csv(params_keys, "params_keys.csv")
+params_keys <- read.csv("params_keys.csv")
+
+params_keys %>% gt()
+```
+
+```{r}
+#| message: false
+#| label: tbl-specieskeys
+#| tbl-cap: "EML attributes for species data"
+
+# species_keys <- read_clip_tbl()
+# write.csv(species_keys, "species_keys.csv")
+species_keys <- read.csv("species_keys.csv")
+
+species_keys %>% gt()
+```
+
+
+## References {.unnumbered}

@@ -1,0 +1,390 @@
+---
+bibliography: ../references.bib
+---
+
+# Planned Simulations
+
+```{r}
+#| message: false
+library(tidyverse)
+library(gt)
+library(PNWColors)
+
+source("../morphmat_funs.R")
+```
+
+Now, we will use different combinations of logistic and allometric parameters to determine how the model approach performs given varying possibilities for the true underlying biological process. We will also include several possibilities for the amount of noise present in the data by changing the magnitude of both types errors. The collection of parameter sets will include some extreme combinations that represent challenging or "adversarial" data sets. Such simulations help determine the domain of applicability by assessing model performance across a range of biologically realistic data sets that capture the variation and imperfection found in empirical data [@lotterhos2022].
+
+## Initial comparison - all models
+
+I will first test all methods on “nice” data, which will be 100 randomly generated data sets with the same parametrization, designed to roughly mimic a real-world data set: Figure 34 from [@chilton2011], which plots carapace width vs. chela height for 1,353 snow crabs (*Chionoecetes opilio*) collected in 2009 from the Eastern Bering Sea. 
+
+![Figure from Chilton et al. (2011)](../figures/Chilton2011.jpeg){fig-alt="Figure 34 from Chilton et al. (2011)" fig-align="center"}
+
+A similar data set can be recreated by:
+
+1.  Setting the L50 parameter to the 75 mm value referenced in the report
+2.  Reducing the mean carapace width to 85 mm
+3.  Choosing a relatively high logistic slope parameter (9) to create high overlap between the mature and immature clouds
+4.  Setting a moderate error level (scale parameter = 17)
+5.  Choose allometric parameters such that the slope increases at maturity (from 0.9 to 1.06) but the intercept decreases (from 0.25 to 0.2), so that the lines will intersect
+
+```{r}
+#| warning: false
+#| fig-asp: 0.5
+#| code-fold: true
+
+nice_test <- fake_crustaceans(error_scale = 17, slope = 9, L50 = 75, n = 800,
+  allo_params = c(0.9, 0.25, 1.06, 0.2), x_mean = 85, x_sd = 21) 
+
+nice_test %>%
+  ggplot() +
+  geom_point(aes(x = x, y = y, shape = mature), color = "black", fill = "grey34", size = 2) +
+  mytheme +
+  scale_shape_manual(values = c(24, 22), labels = c("0" = "Immature", "1" = "Mature")) +
+  labs(x = "Carapace width (mm)", y = "Chela height (mm)", shape = NULL) +
+  scale_x_continuous(breaks = seq(0, 150, 15), limits = c(0, 155)) +
+  scale_y_continuous(breaks = seq(0, 40, 5), limits = c(0, 40))
+```
+
+For the regression methods that accept or require upper and lower bounds for the possible SM50 value, combinations of quantiles representing the upper and lower bounds will be tested, with each combination tested on each of the original 100 randomly generated data sets to determine how slight changes in the data might affect where the upper and lower bounds should be set. For regression methods that accept possible numbers of breakpoints, I will test breakpoint values from 10 to 1000 in increments of 10.
+
+For clustering methods, I will test every combination of distance metric, agglomeration method, or k-means algorithm accepted by the given clustering function. Finally, all of the above procedures will be repeated on log-transformed data, standardized (scaled and centered) data, and, where possible for the method, transformed using PCA.
+
+## Comparison on different data sets
+
+I will choose the best-performing representative (highest % accuracy for clustering methods before regression, lowest MAE) from each general modeling approach to move on to a second round of simulation testing. If not already included, very popular methods (namely, `segmented`, `regrans`, and Somerton’s method) will also be included in the second round of testing. The second round of simulation testing will include changing the location of SM50 within the range of the data, the logistic slope parameter, the allometric growth parameters, and the level of error/noise in the data.
+
+### Logistic slope parameter
+
+The slope of the logistic distribution becomes less steep with higher values of $a$. The lower values are representative of a species where there is very little intraspecific variation in size at maturity; if the true L50 is 100 mm, almost all individuals will become mature close to 100 mm. In contrast, the high parameters represent a species where there is significant variation in L50 between individuals.
+
+```{r}
+slope_options <- c(1:10)
+
+# Create data frame of allometric parameter vectors
+allo_params_df <- tribble(
+  ~ name, ~ vec, 
+  # No change in the slope or intercept - default
+  "no_change", c(1.2, 0.1, 1.2, 0.1), 
+  
+  # No change in the slope, slight increase in the intercept: the relative size
+  # of chela is the same with varying CWs within a maturity stage, but becomes
+  # proportionally larger upon reaching maturity.
+  "parallel", c(1.1, 0.1, 1.1, 0.15),    
+  
+  # Slight increase in the slope, no change in the intercept. The relative size
+  # of the chela does not become proportionately larger upon reaching maturity,
+  # but the rate at which chela size increases with increasing body size is
+  # higher for adult crabs compared to juveniles (goes from allometric to
+  # slightly hyperallometric).
+  "allo_to_hyper", c(1, 0.2, 1.1, 0.2),
+  
+  # Moderate increase in the slope, moderate decrease in the intercept. The
+  # relative size of the chela becomes smaller upon reaching maturity, but the
+  # rate at which chela size increases with increasing body size is higher for
+  # adult crabs compared to juveniles (goes from allometric to hyperallometric).
+  "crossing", c(1, 0.25, 1.25, 0.08), 
+  
+  # Large increase in the slope, large decrease in the intercept. The relative
+  # size of the chela becomes much smaller upon reaching maturity, but the rate
+  # at which chela size increases with increasing body size is much higher for
+  # adult crabs compared to juveniles (goes from slightly hypoallometric to
+  # hyperallometric).
+  "hypo_to_hyper", c(0.9, 0.27, 1.75, 0.006)) 
+
+# Error options
+err_options_df <- tribble(
+  ~ errs, ~ err, 
+  "none", 10 ^ 9, 
+  "low",  20, 
+  "high", 15)
+
+params_df <- expand_grid(allo_params_df, slope_options)
+
+err_params_df <- params_df %>% expand_grid(err_options_df)
+
+fake_crabs <- err_params_df %>%
+  rowwise() %>%
+  mutate(output = list(
+    fake_crustaceans(
+      allo_params = vec,
+      slope = slope_options,
+      error_scale = err
+    )
+  )) %>%
+  unnest(output)
+```
+
+```{r}
+#| label: fig-logisticslopes
+#| code-fold: true
+#| fig-cap: "Probability of maturity function with varying slope parameters. The vertical dashed line represents the size at maturity/inflection point/location parameter, which is set to 100 mm."
+#| fig-asp: 0.6
+
+# Logistic curves with different slope parameters
+ggplot(fake_crabs) +
+  geom_line(aes(x = x, y = prob_mat, color = as.factor(slope_options)),
+            linewidth = 1) +
+  geom_vline(
+    xintercept = 100,
+    lty = "dashed",
+    color = "gray2",
+    linewidth = 0.5) +
+  scale_color_manual(values = 
+              pnw_palette(name = "Shuksan2", n = 10, type = "continuous")) +
+  labs(x = "Carapace width (mm)",
+       y = "Probability of maturity",
+       color = "Slope parameter") + 
+  mytheme_light
+```
+
+Another way of visualizing the impact of changing the slope parameter $(a)$ is by comparing density plots of maturity by CW. @fig-logisticdensity illustrates how the area of intersection between the immature and mature curves increases with increasing values of $a$. The right tail of the immature distribution extends to much higher CW values when $a=10$ compared to when $a=1$, while the left tail of the mature distribution extends much lower.
+
+```{r}
+#| label: fig-logisticdensity
+#| code-fold: true
+#| fig-cap: "Density plots illustrating smoothed distributions of mature and immature crabs over a range of carapace widths for four different values controlling the shape of the underlying logistic function."
+
+# Size by maturity stage density plots
+ggplot() +
+  geom_density(
+    data = fake_crabs %>% filter(slope_options %in% c(1, 4, 7, 10)),
+    aes(
+      x = x,
+      group = mature,
+      color = mature,
+      fill = mature
+    ),
+    alpha = 0.5
+  ) +
+  mytheme +
+  facet_wrap( ~ slope_options, ncol = 1) +
+  labs(fill = NULL,
+       color = NULL,
+       x = "Carapace width (mm)",
+       y = "Density") +
+  scale_color_manual(
+    values = c("0" = "#368aab", "1" = "#993843"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  ) +
+  scale_fill_manual(
+    values = c("0" = "#7bbcd5", "1" = "#CA6E78"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  )
+```
+
+The slope of the logistic curve (the sharpness of the transition to maturity), the allometric slope and intercept, and the magnitude of the error in the data. Instead of leaving the slope parameter at 5, we will try values from 1 to 10. Values above 10 were initially tested, but the degree of overlap between the mature and immature groups was far beyond what is likely to be observed in nature. We will test five different options for how allometric growth changes upon reaching maturity, including the default of no change. We will test three options for the magnitude of the errors. The three options will be a normal distribution with an extremely small SD (essentially no error), a SD equal to 1/20 the range of the x-axis variable, or a SD of 1/15 the range of the x-axis variable. Then, we create data frame with all possible combinations of these parameters and create a simulated data set for each combination.
+
+::: panel-tabset
+#### Original scale
+
+```{r}
+#| label: fig-origlinesonly
+#| code-fold: true
+#| fig-cap: "Chela height (mm) vs. carapace width (mm) for the different allometric parameter sets. Logistic slope parameter is set to 5 and introduced error is minimal."
+
+# Lines only - original scale
+ggplot(data = fake_crabs %>% filter(slope_options == 5, errs == "none")) +
+  geom_point(aes(x = x, y = y, color = mature), size = 1, alpha = 0.5) +
+  facet_wrap( ~ name) +
+  mytheme +
+  labs(x = "Carapace width (mm)", y = "Chela height (mm)", color = NULL) +
+  geom_vline(xintercept = 100,
+             lty = "dashed",
+             color = "gray") +
+  scale_color_manual(
+    values = c("0" = "#7bbcd5", "1" = "#CA6E78"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  )
+
+```
+
+#### Log scale
+
+```{r}
+#| label: fig-loglinesonly
+#| code-fold: true
+#| fig-cap: "Log chela height vs. log carapace width for the different allometric parameter sets"
+
+# Lines only - log scale
+ggplot(data = fake_crabs %>% filter(slope_options == 5, errs == "none")) +
+  geom_point(aes(x = log_x, y = log_y, color = mature),
+             size = 1,
+             alpha = 0.5) +
+  facet_wrap( ~ name) +
+  mytheme +
+  labs(x = "Log carapace width", y = "Log chela height", color = NULL) +
+  geom_vline(xintercept = log(100),
+             lty = "dashed",
+             color = "gray") +
+  scale_color_manual(
+    values = c("0" = "#7bbcd5", "1" = "#CA6E78"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  )
+
+```
+:::
+
+Now we add data points for the three different error levels:
+
+::: panel-tabset
+#### Original scale
+
+```{r}
+#| code-fold: true
+#| fig-cap: "Chela height (mm) vs. carapace width (mm) for the different allometric parameter sets and error options"
+
+
+# Points and lines for one shape parameter and 3 error combos - original scale
+ggplot(data = fake_crabs %>% filter(slope_options == 5)) +
+  geom_vline(xintercept = 100,
+             lty = "dashed",
+             color = "gray") +
+  geom_point(aes(x = x, y = y, color = mature, fill = mature),
+    alpha = 0.5,
+    shape = 21,
+    size = 1,
+    stroke = 0) +
+  facet_grid(errs ~ name) +
+  mytheme +
+  labs(x = "Carapace width (mm)",
+       y = "Chela height (mm)",
+       color = NULL,
+       fill = NULL) +
+  scale_color_manual(
+    values = c("0" = "#368aab", "1" = "#993843"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  ) +
+  scale_fill_manual(
+    values = c("0" = "#7bbcd5", "1" = "#CA6E78"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  ) +
+  guides(lty = "none", 
+         color = guide_legend(override.aes = list(size = 3, alpha = 1))) +
+  scale_x_continuous(breaks = c(100, 200))
+```
+
+#### Log scale
+
+```{r}
+#| code-fold: true
+#| fig-cap: "Log chela height vs. log carapace width for the different allometric parameter sets and error options"
+
+
+# Points and lines for one shape parameter and 3 error combos - log scale
+ggplot(data = fake_crabs %>% filter(slope_options == 5)) +
+  geom_vline(xintercept = log(100), lty = "dashed", color = "gray") +
+  geom_point(aes(x = log_x, y = log_y, color = mature, fill = mature), 
+             alpha = 0.5, shape = 21, size = 1, stroke = 0) +
+  facet_grid(errs ~ name) +
+  mytheme +
+  labs(x = "Log carapace width", y = "Log chela height", 
+       color = NULL, fill = NULL) +
+  scale_color_manual(
+    values = c("0" = "#368aab", "1" = "#993843"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  ) +
+  scale_fill_manual(
+    values = c("0" = "#7bbcd5", "1" = "#CA6E78"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  ) +
+  guides(lty = "none", color = guide_legend(override.aes = 
+                                              list(size = 3, alpha = 1))) +
+  scale_x_continuous(breaks = c(3, 4, 5))
+
+```
+:::
+
+Keeping the error levels low, here is what each allometric parameter set looks like when the logistic slope parameter is changed:
+
+::: panel-tabset
+#### Original scale
+
+```{r}
+#| code-fold: true
+#| fig-cap: "Chela height vs. carapace width for the different allometric parameter sets and logistic slope options"
+
+ggplot(data = fake_crabs %>% filter(errs == "low", slope_options %in% c(1, 4, 7, 10))) +
+  geom_vline(
+    xintercept = 100,
+    lty = "dashed",
+    color = "gray"
+  ) +
+  geom_point(
+    aes(x = x, y = y, color = mature, fill = mature),
+    shape = 21,
+    alpha = 0.5,
+    size = 1,
+    stroke = 0
+  ) +
+  facet_grid(slope_options ~ name) +
+  mytheme +
+  labs(
+    x = "Carapace width (mm)",
+    y = "Chela height (mm)",
+    color = NULL,
+    fill = NULL
+  ) +
+  scale_color_manual(
+    values = c("0" = "#368aab", "1" = "#993843"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  ) +
+  scale_fill_manual(
+    values = c("0" = "#7bbcd5", "1" = "#CA6E78"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")
+  ) +
+  guides(lty = "none", fill = guide_legend(override.aes = list(
+    size = 3, alpha =
+      1
+  ))) +
+  scale_x_continuous(breaks = c(100, 200))
+
+```
+
+#### Log scale
+
+```{r}
+#| code-fold: true
+#| fig-cap: "Log chela height vs. log carapace width for the different allometric parameter sets and logistic slope options"
+
+fake_crabs %>% 
+  filter(errs == "low", slope_options %in% c(1, 4, 7, 10)) %>% 
+ggplot() +
+  geom_vline(xintercept = log(100), lty = "dashed", color = "gray") +
+  geom_point(aes(x = log_x, y = log_y, color = mature, fill = mature), 
+             shape = 21, alpha = 0.5, size = 1, stroke = 0) +
+  facet_grid(slope_options ~ name) +
+  mytheme +
+  labs(x = "Log carapace width", y = "Log chela height", 
+       color = NULL, fill = NULL) +
+  scale_color_manual(values = c("0" = "#368aab", "1" = "#993843"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")) +
+  scale_fill_manual(values = c("0" = "#7bbcd5", "1" = "#CA6E78"),
+    breaks = c(0, 1),
+    labels = c("0" = "Immature", "1" = "Mature")) +
+  guides(lty = "none", 
+         fill = guide_legend(override.aes = list(size = 3, alpha = 1))) +
+  scale_x_continuous(breaks = c(3, 4, 5))
+
+```
+:::
+
+For any remaining regression methods that accept or require upper and lower bounds for the possible SM50 value, I will again test combinations of quartiles representing the upper and lower bounds. This time, the testing will be done for the original parametrization of the data as well as 20 data sets where SM50 is much closer to the low end of the range of x-values and 20 data sets where SM50 is near the higher end of the x values in the data set.
+
+## Testing sampling bias
+
+Simulation studies can serve as a powerful tool to assess the effects of sampling strategies, sample size, and sampling bias on the output of an ecological model [@meynard2019; @lotterhos2022]. For parameter combinations where the model is effective, I will conduct a final round of simulation testing evaluating model performance on different sample sizes and size class representations. This will entail testing each model on 100 data sets for each sample size and 100 data sets for each size class representation (subsample 50% juvenile-50% adult, 75% juvenile-25% adult, 25% juvenile-75% adult).
+
+## References {.unnumbered}

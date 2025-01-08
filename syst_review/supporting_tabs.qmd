@@ -1,0 +1,54 @@
+---
+format: html
+---
+
+# Data extraction keys {#sec-databasekeys}
+
+```{r}
+#| message: false
+library(tidyverse)
+library(gt)
+```
+
+```{r}
+#| message: false
+#| label: tbl-factorkeys
+#| tbl-cap: "Factor keys following EML format."
+
+# factor_keys <- read_clip_tbl()
+# write.csv(factor_keys, "factor_keys.csv")
+
+factor_keys <- read.csv("factor_keys.csv")
+factor_keys %>% gt()
+```
+
+```{r}
+#| message: false
+#| label: tbl-stdmeasurements
+#| tbl-cap: "Standardized measurement codes to be used during data extraction."
+
+# supporting_tabs <- read_clip_tbl()
+# write.csv(supporting_tabs, "supporting_tabs.csv")
+
+supporting_tabs <- read.csv("supporting_tabs.csv")
+supporting_tabs %>% gt()
+```
+
+
+```{r}
+#| message: false
+#| label: tbl-stdmodels
+#| tbl-cap: "Standardized model codes to be used during data extraction."
+
+# std_models <- read_clip_tbl()
+# write.csv(std_models, "std_models.csv")
+
+std_models <- read.csv("std_models.csv")
+std_models %>% gt()
+```
+
+### Measurement Notes
+
+1.  Prefixes: l\_ = left, r\_ = right, d\_ = dominant, m\_ = minor. pre\_ = pre-molt, post\_ = post-molt, o\_ = original, reg\_ = regenerated. Use dominant and minor instead of left/right where possible
+2.  "Claw" is assumed to mean chela rather than the entire cheliped
+3.  Variables should only be recorded if they are used to (attempt to) estimate size at maturity. For example, crab weight may be recorded for general growth modeling but should not be listed as a variable unless changes in the relationship between weight and a different variable were used to estimate size at maturity

@@ -12,17 +12,23 @@ book:
     - index.qmd
     - part: "Introduction"
       chapters:
-      - intro.qmd
-      - importance.qmd
-      - valuable_species.qmd
-    - systematic_review.qmd
+      - introduction/intro.qmd
+      - introduction/importance.qmd
+      - introduction/valuable_species.qmd
+    - part: "Systematic Review"
+      chapters:
+      - syst_review/systematic_review.qmd
     - eco_evo.qmd
-    - simulation_testing.qmd
+    - part: "Simulation Testing"
+      chapters:
+      - simulations/simulation_testing.qmd
+      - simulations/planned_sims.qmd
     - morphmat.qmd
     - jonah.qmd
   appendices:
     - data_mgmt.qmd
-   # - eml.qmd
+    - syst_review/eml.qmd
+    - syst_review/supporting_tabs.qmd
  
 bibliography: references.bib
 number-depth: 3
