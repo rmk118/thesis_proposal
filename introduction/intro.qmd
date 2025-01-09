@@ -76,6 +76,14 @@ The difference between physiological and morphometric maturity is perhaps most e
 
 Much of the growth that occurs through molting is isometric, meaning that various parts of the body are increasing in size by the same amount and thus remaining proportionate. The disproportionate growth of body parts is called allometric growth and often occurs for secondary sexual characteristics, most notably for the chelipeds of male crustaceans and the abdomen of females. Although I will focus specifically on allometry (changes in relative size or growth), shape-based morphometry using morphological landmarks can similarly be used to identify the onset of sexual maturity in crustaceans [@collins2008].
 
+There are three kinds of allometric growth: ontogenetic allometry, static allometry, and phylogenetic allometry (@fig-allometry-types) [@gould1971]. When $x$ and $y$ are traits measured in the same individual through developmental time, the relationship is called an ontogenetic allometry. When they are measured in different individuals at the same developmental stage within a population or species it is called static allometry.
+
+![Types of allometry. (A) Ontogenetic allometry. (B) Static allometry. (C) Phylogenetic allometry](images/types_of_allometry.png){#fig-allometry-types fig-align="center"}
+
+![Relationship between ontogenetic and static allometry, after Shingleton (2010). Thin grey lines represent individual growth trajectories (the relationship between body and claw size within the development of a single individual). The final body and claw sizes (blue dots) combine to form the allometry of size for the population (the thick black line).](images/onto_plus_static.png){fig-align="center" width="400"}
+
+![All three types of allometry in one figure. After Neiro (2020). Different shapes represent three different crustacean species.](images/three_allometry.png){fig-align="center"}
+
 Growth patterns often change upon reaching maturity due to increased energy allocation towards reproduction, meaning that biphasic growth models are more accurate than those that do not differentiate between pre- and post-maturation growth [@quince2008; @minte-vera2016]. Within the broad paradigm of crustacean growth, there exists a tremendous diversity of growth patterns. The first major factor distinguishing these growth scenarios is the presence or absence of a terminal molt. For species that exhibit indeterminate growth, molting continues until death, whereas determinate growth is said to occur when a crustacean enters “terminal anecdysis” after the last molt (often the puberty molt) and can no longer grow or repair bodily damage by molting. An extreme example of how growth changes at maturity can be found in crustacean species like the snow crab that have a terminal molt to maturity, meaning that growth ceases once an individual becomes mature [@conan1986].
 
 ::: {layout-ncol="2"}
