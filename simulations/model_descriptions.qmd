@@ -1,0 +1,403 @@
+---
+title: "model_descriptions"
+format: html
+editor_options: 
+  chunk_output_type: console
+bibliography: references.bib
+---
+
+```{r}
+set.seed(12)
+
+library(tidyverse)
+library(morphmat)
+library(segmented)
+library(patchwork)
+library(ggtext)
+
+mytheme <- theme_classic() + # define custom theme for ggplots
+  theme(
+    axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+    axis.title.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),
+    text = element_text(size = 13))
+
+fc <- fake_crustaceans(n = 300, L50 = 100, allo_params = c(0.9, 0.25, 1.06, 0.2))
+```
+
+# Segmented (broken-stick) model
+
+\begin{equation*}\log{y}=
+    \begin{cases}
+     \tilde{\beta_1} + \alpha_1 \log{x}             & \text{for }\log{x} \leq c \\
+     \tilde{\beta_1} + c(\alpha_1-\alpha_2)+\alpha_2 \log{x}  & \text{for }\log{x} > c
+    \end{cases}       
+\end{equation*}
+
+At $\log{x}=c$, the bottom equation becomes $\tilde{\beta_1}+(\log{x})(\alpha_1-\alpha_2)+\alpha_2\log{x}$, equivalent to the top equation. Note that in this formulation, there is only one intercept term $(\beta_1)$, so the immature and mature lines cannot have the same slope without being equivalent lines.
+
+In this model, the estimated value of the breakpoint parameter $c$ is taken to be SM50.
+
+```{r}
+lm_log <- lm(log_y ~ log_x, data = fc)
+lm_log_seg <- segmented(lm_log)
+
+x_grid <- data.frame(log_x = seq(min(fc$log_x), max(fc$log_x), length = 200))
+
+preds <- predict(lm_log_seg, x_grid)
+
+ggplot()+
+  geom_point(aes(fc$log_x, fc$log_y)) +
+  geom_line(aes(x_grid$log_x, preds), color = "red", linewidth = 1) + 
+  mytheme +
+  labs(x = "Log carapace width (mm)", y = "Log chela height (mm)", linetype = NULL) +
+  geom_vline(
+    aes(xintercept = confint.segmented(lm_log_seg)[[1]], linetype = "Est. SM50"),
+    linewidth = 1
+  ) +
+  geom_vline(
+    aes(xintercept = log(100), linetype = "True SM50"),
+    color = "black",
+    linewidth = 1
+  ) +
+  scale_linetype_manual(values = c("solid", "dashed")) + guides(linetype = guide_legend(override.aes = list(size = 10)))
+
+```
+
+## Standard two-line models {#sec-twoA}
+
+Two-line models differ from broken-stick models because the intersection point of the line representing the immature individuals and the line representing mature individuals is not necessarily the same as the optimal breakpoint value (the value on the x-axis where the y-values switch from being predicted by the immature line to being predicted by the mature line).
+
+The SM50 could be defined as the optimal breakpoint OR as the point at which the two lines actually intersect; i.e. where the regression equations predict the same y-value. The intersection point may be lower or higher than the previously determined breakpoint and is sometimes even negative.
+
+```{r}
+TL_out <- two_line(fc, xvar = "x", yvar = "y",
+                   verbose = TRUE,
+                   log = TRUE)
+
+ggplot(data = TL_out$data) +
+  geom_point(aes(log_x, log_y, color = as.factor(group))) +
+  labs(
+    x = "Log CW (mm)",
+    y = "Log CH (mm)",
+    color = "Predicted maturity",
+    linetype = NULL
+  ) +
+  mytheme +
+  geom_vline(aes(xintercept = TL_out$breakpoint, linetype = "Estimated SM50"),
+             linewidth = 0.5) +
+  geom_vline(aes(xintercept = log(100), linetype = "True SM50"), linewidth = 0.5) +
+  scale_color_manual(
+    values = c("1" = "#7bbcd5", "2" = "#CA6E78"),
+    breaks = c(1, 2),
+    labels = c("1" = "Immature", "2" = "Mature")
+  ) +
+  annotate(
+    geom = "segment",
+      x = -Inf,
+      y = TL_out$imm_int + TL_out$imm_slope * 3.5,
+      xend = TL_out$breakpoint,
+      yend = TL_out$imm_int + TL_out$imm_slope * TL_out$breakpoint,
+    color = "#368aab",
+    linewidth = 1
+  ) +
+  annotate(
+    geom = "segment",
+    x = TL_out$breakpoint,
+    y = TL_out$mat_int + TL_out$mat_slope * TL_out$breakpoint,
+    xend = max(TL_out$data$log_x),
+    yend = TL_out$mat_int + TL_out$mat_slope * max(TL_out$data$log_x),
+    color = "#993843",
+    linewidth = 1) +
+  scale_linetype_manual(values = c("solid", "dashed")) + guides(linetype = guide_legend(override.aes = list(size = 10)))
+```
+
+## Two-line model with logistic transition
+
+$$\log{y}=\left( \tilde{\beta_1}+\alpha_1\log{x}\right)F+\left(\tilde{\beta_2}+\alpha_2\log{x}\right)\left(1-F\right), \quad \text{or}$$
+
+$$y=\beta_1x^{\alpha_1} F+\beta_2x^{\alpha_2}\left(1-F\right), \quad \text{where}$$ $$F(x)=\frac{1}{1+e^{-(x-a)/b}} $$
+
+Here, the left- and right-hand line segments do not have to intersect like in the previous models, allowing for the two maturity stages to have parallel slopes with distinct allometric intercepts. The location parameter $a$ in the logistic transition function is taken as the estimate of SM50.
+
+An alternate way of representing the two-line model with a logistic transition is to have the parameters switch between phases, rather than the equations: $$y=\Bigl(\beta_1+\left(\beta_2-\beta_1\right)F\Bigr) x^{\left(\alpha_1+\left(\alpha_2-\alpha_1\right)F\right)} $$
+
+Bervain et al. [-@bervian2006] believe this formulation is more elegant than the former, as it retains Huxley's [@huxley1924] power law as a general biological rule, albeit with parameters that change during ontogeny.
+
+```{r}
+TLL_out <- two_line_logistic(fc, "log_x", "log_y", verbose = TRUE)
+TLL_SM50 <- two_line_logistic(fc, "log_x", "log_y", verbose = FALSE)
+
+TLL_preds <- predict(TLL_out)
+
+ggplot(fc) +
+  geom_vline(aes(
+    xintercept = TLL_SM50,
+    linetype = "Est. SM50"
+  ),
+  linewidth = 1) +
+  geom_point(aes(x = log_x, y = log_y)) + 
+  mytheme +
+  geom_vline(aes(xintercept = log(100), linetype = "True SM50"), linewidth = 1) +
+  geom_line(aes(x = log_x, y = TLL_preds),
+            color = "red", linewidth = 1) +
+  scale_linetype_manual(values = c("solid", "dashed")) +
+  labs(x = "Log CW (mm)", y = "Log CH (mm)", linetype = NULL) + guides(linetype = guide_legend(override.aes = list(size = 10)))
+```
+
+
+```{r}
+seg_min <- ggplot() +
+  geom_point(aes(fc$log_x, fc$log_y), color = "#A5AAAF", size = 1) +
+  geom_line(aes(x_grid$log_x, preds), linewidth = 1) +
+  labs(x = NULL, y = NULL) +
+  mytheme + theme(axis.ticks = element_blank(), axis.text = element_blank()) +
+  coord_fixed(ratio = 1,
+              xlim = c(3.5, 5.3),
+              ylim = c(2, 3.8))
+
+TL_min <- ggplot(data = TL_out$data) +
+  geom_point(aes(log_x, log_y), color = "#A5AAAF", size = 1) +
+  labs(
+    x = NULL,
+    y = NULL,
+    color = NULL,
+    linetype = NULL
+  ) +
+  mytheme +
+  theme(
+    legend.position = "none",
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) +
+  annotate(
+    geom = "segment",
+    x = -Inf,
+    y = TL_out$imm_int + TL_out$imm_slope * 3.5,
+    xend = TL_out$breakpoint,
+    yend = TL_out$imm_int + TL_out$imm_slope * TL_out$breakpoint,
+    color = "blue",
+    linewidth = 1
+  ) +
+  annotate(
+    geom = "segment",
+    x = TL_out$breakpoint,
+    y = TL_out$mat_int + TL_out$mat_slope * TL_out$breakpoint,
+    xend = max(TL_out$data$log_x),
+    yend = TL_out$mat_int + TL_out$mat_slope * max(TL_out$data$log_x),
+    color = "red",
+    linewidth = 1
+  ) +
+  coord_fixed(ratio = 1,
+              xlim = c(3.5, 5.3),
+              ylim = c(2, 3.8))
+
+TLL_min <- ggplot(fc) +
+  geom_point(aes(x = log_x, y = log_y), color = "#A5AAAF", size = 1) + 
+  mytheme +
+  geom_line(aes(x = log_x, y = TLL_preds), linewidth = 1) +
+  scale_linetype_manual(values = c("solid", "dashed")) +
+  labs(x = NULL, y = NULL)  +
+  coord_fixed(ratio = 1,
+              xlim = c(3.5, 5.3),
+              ylim = c(2, 3.8)) +
+  theme(
+    legend.position = "none",
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) 
+```
+
+```{r}
+seg_min + TL_min + TLL_min
+```
+
+```{r}
+ggplot(data = fc) +
+  geom_point(aes(log_x, log_y, color = as.factor(mature))) +
+  mytheme + scale_color_manual(values = c("red", "blue")) +
+  theme(
+    legend.position = "none",
+    axis.ticks = element_blank(),
+    axis.text = element_blank()
+  ) + labs(x = NULL, y = NULL) 
+```
+
+```{r}
+# library("treeio")
+# library("ggtree")
+
+# Create a Newick format string representing a 6-node phylogenetic tree
+newick <- "(((D:0.65,( (F:0.1, G:0.1):0.45, E:0.55):0.1):0.05, C:0.7):0.3, A:1);"
+reltime <- c(NA, NA, NA, NA, NA, NA, 0, 0.3, 0.35, 0.45, 0.9)
+reltime_0.95_CI <- list(NA, NA, NA, NA, NA, NA,
+          c(-0.05, 0.15), c(0.23, 0.45), c(0.28, 0.41), c(0.38, 0.6), c(0.78, 0.93))
+
+# Read the Newick string into a phylogenetic tree object
+tree <- as.treedata(read.tree(text = newick))
+
+tree <- as_tibble(tree) %>% 
+  mutate(reltime = reltime, reltime_0.95_CI = reltime_0.95_CI)
+tree$body_size <- c(3, 1, 2, 3, 5, 7, NA, NA, NA, NA , NA)
+tree <- as.treedata(tree)
+
+# Plot the phylogenetic tree using ggtree
+# ggtree(tree, ladderize = FALSE) +
+#   geom_tiplab() +
+#   theme_tree()
+# 
+
+```
+
+
+## Part A
+```{r}
+partA_left <-  ggtree(tree, ladderize = FALSE)  %<+% d + 
+  geom_range(range = "reltime_0.95_CI", color='#A8B8FF', size = 3, alpha = 0.6) +
+  geom_rootedge(rootedge = 0.05) +
+  theme_minimal() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.major.x = element_line(linetype = "dashed", color = "lightgrey"),
+    axis.text.y = element_blank(),
+    axis.line.x = element_line(color = "black"),
+    axis.ticks.x = element_line(color = "black"),
+    axis.ticks.length.x = unit(8, "pt"),
+    axis.text = element_blank(),
+    axis.title.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),
+    legend.position = "none",
+    axis.minor.ticks.length = rel(0.4)
+  ) +
+  labs(x = "Time-calibrated phylogenetic tree") +
+  geom_tippoint(aes(size = body_size), shape = 19, x = 1.05) +
+  scale_x_continuous(
+    limits = c(-0.1, 1.1),
+    guide = guide_axis(minor.ticks = TRUE),
+    minor_breaks = seq(-0.1, 1, by = 0.05)
+  ) +
+  annotate(geom = "text", label = "SM50", x = 1.05, y = 6.7) +
+  geom_richtext(label = "Variance in<br>divergence time",
+                x = 0.05, y = 2.08,
+                label.color = NA) +
+  geom_richtext(label = "Ancestral state<br>reconstruction",
+                x = 0, y = 6.6,
+                label.color = NA) +
+  geom_segment(x = 0.18, xend = 0.27, y = 2.1, yend = 2.1, linewidth = 0.2) +
+  geom_segment(x = -0.05, y = 5, yend = 6.2, linewidth = 0.2)
+```
+
+```{r}
+x <- seq(1,25, length.out = 100)
+y <- 1.2 + 0.8 * x
+z <- 0.12*x
+
+points <- tribble(
+  ~x, ~y, ~size,
+  1,  3, 2,
+  5, 4.4, 5,
+  9, 11, 3,
+  16, 17, 6,
+  22, 17, 8
+)
+
+partA_right <- ggplot(data.frame(x, y), aes(x, y)) +
+  geom_ribbon(aes(ymin = y - z, ymax = y + z), fill = "#A8B8FF", alpha = 0.6) +
+  geom_smooth(method = "lm", se = FALSE, color = "black") +
+  mytheme +
+  labs(x = "Covariate", y = "SM50", title = "Example output") +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "none"
+  ) + 
+  coord_fixed(ratio = 0.9, ylim = c(0, 24)) +
+  geom_point(data = points, aes(x = x, y = y, size = size))
+
+arrowplot <- 
+  tibble(x = 0, y = 0) %>% 
+  ggplot(aes(x, y, label = "<span style='font-family:fa-solid;'>&#xf30b;</span>")) +
+  geom_richtext(size = unit(10, "cm"), label.colour = NA, fill = NA, col = 'lightgrey') +
+    coord_fixed(xlim = c(-0.05, 0.05), ylim = c(-0.025, 0.025), ratio = 5) + theme_void()
+```
+
+```{r}
+partA <- partA_left + arrowplot + partA_right + plot_annotation(
+  title = 'Comparative analysis',
+  subtitle = 'Hypotheses concerning evolutionary processes',
+  theme = theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+                plot.subtitle = element_text(hjust = 0.5)))
+```
+
+## Part B
+```{r}
+pointsB <- tribble(
+  ~tiplab, ~size, ~var, ~x, ~y,
+  "A",      2.1,  4,    1,  1,
+  "A",      1.9,  2,    2,  1,
+   "A",     2,    1.5,    3,  1,
+  "C",     5,     5,    1,  2,
+   "C",    6,     2.5,    2,  2,
+  "D",     5,     4,    1,  3,
+  "E",     2,     6,  1, 4,
+  "F",     2,     4,    1, 5,
+  "F",     6,     4,    3, 5,
+  "G",     5,     4,    1, 6,
+   "G",    4.8,   3,    2, 6
+) %>% mutate(var = var/5)
+
+points_plot <-
+ggplot(pointsB)  +
+  geom_segment(aes(x = x -var/2, xend = x + var/2, y = -y),
+               size = 2, color = "#A8B8FF", alpha = 0.6) +
+  geom_point(aes(x, -y, size = size*2)) +
+  theme_void() +
+  theme(legend.position = "none")+ 
+  coord_cartesian(expand = TRUE) +
+  scale_size_area(max_size = 6) +
+  annotate(geom = "text", x = 3, y = -4.08, label = "Effect size +\nsampling variance", hjust = 0.5) +
+  annotate(geom = "text", x = 2, y = -.5, label = "Multiple SM50 values per species", hjust = 0.5) +
+  geom_segment(x = 3, y = -4.8, yend = -4.4, linewidth = 0.2)
+  
+```
+
+```{r}
+static_tree <- ggtree(tree, branch.length = "none", color = "grey60") +
+  theme_tree() +
+  scale_y_reverse() +
+  geom_richtext(label = "Static<br>phylogenetic<br>tree",
+                x = 0.6, y = -5, color = "black", label.color = NA)  +
+  geom_segment(x = 0.5, y = -2.95, yend = -4.55, linewidth = 0.2) +
+  geom_segment(x = -0.2, xend = 0, y = -2, linewidth = 0.4, color = "grey60") +
+  vexpand(0.2)
+
+partB_left <- static_tree %>% insert_right(points_plot, width = 0.8)
+```
+
+```{r}
+pointsC <- data.frame(x = c(5, 5.2, 3.5, 4.5, 6, 4, 2.5),
+                      y = c(0, 0.3, 2.8, 7.4, 2.5, 4.9,1 ))
+
+partB_right <- ggplot(pointsC)  +
+  annotate(geom = "polygon", x = c(2, 5, 8), y = c(-Inf, 10, -Inf), fill = "#A8B8FF", alpha = 0.6) +
+  geom_point(aes(x, y)) +
+  geom_segment(x = 2, xend = 5, y = -Inf, yend = 10, color = "black", lty = "dashed") +
+  geom_segment(x = 8, xend = 5, y = -Inf, yend = 10, color = "black", lty = "dashed") + 
+  geom_segment(x = 5, y = -Inf, yend = 10, color = "black") +
+  lims(x = c(1, 9), y = c(0, 10)) + 
+  labs(x = "Effect size", y = "1/Standard error") +
+  theme_classic() +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank())
+
+```
+
+```{r}
+partB <- partB_left + arrowplot + partB_right + 
+  plot_annotation(
+  title = 'Multilevel meta-analysis',
+  subtitle = 'Hypotheses concerning generality',
+  theme = theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+                plot.subtitle = element_text(hjust = 0.5)))
+```
+

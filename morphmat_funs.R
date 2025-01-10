@@ -348,7 +348,7 @@ two_line_stevens <- function(dat,
 
 # REGRANS -----------------------------------------------------------------
 
-regrans_fun <- function(dat,
+regrans <- function(dat,
                         xvar,
                         yvar,
                         lower = NULL,
