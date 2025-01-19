@@ -1,5 +1,7 @@
 ---
 bibliography: ../references.bib
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Importance of size at maturity for management
@@ -16,16 +18,28 @@ Size at maturity is a key consideration when setting minimum size regulations, a
 
 Effective management of crustacean fisheries depends on stock assessments that estimate current biomass levels, evaluate the health of the stock compared to historical levels, and predict the effects of potential management actions. The difficulty of aging crustaceans means that size-structured models are typically preferred over age-based methods for stock assessment purposes [@punt2013; @punt2016]. SM50 is a fundamental parameter in frequently used stock assessment models like Length-Based Spawning Potential Ratio (LBSPR), which are especially useful for data-limited fisheries [@prince2019; @hordyk2015]. Stock assessment models can be highly sensitive to shifts in size at maturity inputs like SM50, particularly when combined with changes in growth parameters such as molt probability and molt increment probability [@hodgdon2022]. Understanding the effect that climate-driven shifts in life history input parameters like SM50 have on stock assessment model outputs is critical for future modeling efforts and fisheries management [@hodgdon2022].
 
+Even when temporal variation in maturity does not have a dominant impact on assessment output, uncertainty in maturity estimates can be a significant contributor to overall uncertainty in biomass estimates [@miller2018]. This underscores the importance of morphometric maturity modeling approaches that provide reliable estimates of the uncertainty associated with the resulting SM50 values.
+
 ## Accounting for spatial structure
 
-## Impacts of harvesting & climate
+## Fishing effects on size at maturity
 
 Monitoring changes in size at maturity is also an important tool to assess the impacts of environmental changes and fishing pressure on fish and invertebrate life-history characteristics [@audzijonyte2013; @lappalainen2016]. For example, there is strong evidence that size-based fishery selection has led to declines in female SM50 for female American lobster (*Homarus americanus*) in the United States and Canada [@haarr2018; @waller2019; @waller2021; @lebris2017].
 
-*Climate impacts go here*
+## Climate impacts
+
+Shifts in ocean conditions have already led to shifts in the abundance and spatial distribution of important marine fisheries, with resulting impacts on their productivity [@cheung2013; @nye2009]. Consequently, understanding the effects of climate change on marine resources and identifying effective mitigation strategies are key priorities of the NOAA Fisheries National Climate Science Strategy.
+
+Delaying revisions to harvest regulations in response to climate-related changes in population growth rates can increase the likelihood of a population collapse [@brown2012; @pershing2015]. Conversely, dynamic biological reference points and responsive harvest control rules can increase the climate resilience of a fishery [@collie2021; @kritzer2019]. Identifying and refining non-invasive, relatively inexpensive methods of monitoring size at maturity and other life history traits dictating reproductive potential will support the dynamic and adaptive fisheries management needed to offset the negative effects of climate change [@karp2019; @gaines2018; @holsman2019].
+
+Knowledge of the direction and magnitude of climate-related shifts in size at maturity is essential for simulating the effects of alternative minimum size limits under various warming scenarios [@hunt2023].
+
+NOAA Fisheries [Climate Vulnerability Assessments](https://www.fisheries.noaa.gov/national/climate/climate-vulnerability-assessments) identify which species may be most vulnerable based on their exposure to projected environmental changes and their ability to cope with those changes given their specific life history characteristics. Of the crustaceans included in the Northeast Fish and Shellfish Climate Vulnerability Assessment (American lobster, Cancer crabs, blue crab, northern shrimp, and deep-sea red crab), only deep-sea red crab did not score at least "moderate" on overall vulnerability, while all species scored "high" on the exposure component of the assessment [@hare2016].
+
+<!--# The Gulf of Maine is experiencing extremely rapid warming (source, Pershing paper) and is home to the extremely lucrative American lobster fishery as well as several other crustacean fisheries of current or potential commercial value. -->
 
 Mullowney and Baker [@mullowney2021] found that colder temperatures were a significant driver of decreases in snow crab size-at-morphometric-maturity in Newfoundland and Labrador. Conversely, an inverse relationship between size at maturity and temperature has been observed for the American lobster [@lebris2017].
 
-Thus, a better understanding of size at maturity will contribute to broader work to assess the effects of climate change on regional fisheries harvest scenarios [@noaafisheries2024]. My project will support federally mandated efforts to optimize and diversify sustainable seafood production and fishing opportunities while ensuring the long-term sustainability of fisheries through effective and efficient management.
+A better understanding of size at maturity will contribute to broader work to assess the effects of climate change on regional fisheries harvest scenarios [@noaafisheries2024]. My project will thus support federally mandated efforts to optimize and diversify sustainable seafood production and fishing opportunities while ensuring the long-term sustainability of fisheries through effective and efficient management.
 
 ### References {.unnumbered}

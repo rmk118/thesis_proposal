@@ -1,0 +1,89 @@
+Database table,attributeName,class,attributeDefinition,formatString,unit,numberType
+Study,authors,character,"Authors of the source, in the order in which they were listed in the source. Author names should be in Last, First M.I. format (e.g., Smith, John L.) with initials used if first names are not provided (Smith, J. or Smith, J.L.). Separate author names with a semicolon and do not include ""and"" or an ampersand symbol before the last author in the list.",NA,NA,NA
+"Study, record",auth_short,character,"First author of source if there are 3+ authors or ""Auth1 & Auth2"" if there are only two authors.",NA,NA,NA
+Study,type,character,"Source type (journal article, thesis, conference paper, etc.)",NA,NA,NA
+"Study, record",title,character,"Source title, in sentence case.",NA,NA,NA
+Study,paper_link,character,"Link to paper, using a DOI or other permanent identifier where available.",NA,NA,NA
+Study,language,character,Language(s) in which the source was published,NA,NA,NA
+Study,journal,character,"Journal title, if applicable. Do not abbreviate.",NA,NA,NA
+"Study, species",species_common,character,"Common name of modeled species, either as given in the source document or as listed in WoRMS. Separated by "";"" if multiple",NA,NA,NA
+"Study, record, species",species_sci,character,"Scientific name of modeled species (ITIS standard/most current valid taxonomic name, as listed in WoRMS). Separated by "";"" if multiple",NA,NA,NA
+Study,country,character,Country or countries where the samples were collected. This is not necessarily the country home to the institution(s) with which the authors are primarily affiliated. Refer to this link for standardized country names: https://en.wikipedia.org/wiki/List_of_sovereign_states,NA,NA,NA
+Study,time_method,character,"Description of how temporal variation was included in the study (e.g., separate estimates of SM50 for multiple years of data vs. dynamical system/state-space approach).",NA,NA,NA
+Study,spatial_method,character,"Description of how spatial variation was included in the study (e.g., separate estimates of SM50 for multiple regions vs. a spatially-explicit model).",NA,NA,NA
+Study,all_vars_meas,character,"List of all variables measured in the study for the purpose of determining size at maturity, separated by "";"". Use standardized measurement names where possible",NA,NA,NA
+Study,all_vars_used,character,"List of all variables used to obtain the final estimate of SM50, separated by "";"". Most commonly carapace width and chela height for males and carapace width and abdomen width or length for females. Use standardized measurement names where possible.",NA,NA,NA
+Study,ref_var,character,Which reference variable was used as a measure of body size? Use standardized measurement names where possible.,NA,NA,NA
+Study,claw_regen_notes,character,Description of approach used to exclude regenerating chelae from the final analysis.,NA,NA,NA
+"Study, record",mod_form,character,"Modeling approach used to estimate SM50, separated by "";"" if multiple. Used standardized names where possible.",NA,NA,NA
+Study,referred_to_as,character,Authors' name for the modeling approach used to estimate SM50.,NA,NA,NA
+Study,reference,character,Which paper(s) did the authors cite as a reference for their modeling approach?,NA,NA,NA
+Study,error_dist,character,"Did the authors mention error distributions? If true, explain: did they explicitly model error distributions or structures (measurement error, heteroscedasticity, etc.) and if so, how?",NA,NA,NA
+Study,reg_type,character,"Provide details on the type of regression did the authors use, if the answer was TRUE for ""Did the authors discuss/justify their use of Model I vs Model II regression?""",NA,NA,NA
+Study,mod_tests,character,"What kinds of tests, if any, did the authors perform on the results of their model? This can include the type of test used to compare the SM50 to a linear model",NA,NA,NA
+Study,ref_var_notes,character,Notes about justification for selecting the given reference variable.,NA,NA,NA
+Study,software,character,What software or programming language was used for the modeling?,NA,NA,NA
+Study,package,character,"Any specific computer programs, scripts, orcpackages described by the source as being used for the model.",NA,NA,NA
+Study,code_link,character,"Link to code, using a DOI or other permanent identifier where available.",NA,NA,NA
+Study,data_link,character,"Link to data, using a DOI or other permanent identifier where available.",NA,NA,NA
+Study,ecoevo_sig,character,Paper's explanation of the evolutionary/ecological significance of the change in chela and/or abdomen morphology at maturity.,NA,NA,NA
+Study,fishing_effect,character,Paper's findings related to the effects of harvesting on size at maturity.,NA,NA,NA
+Study,temp_effect,character,Paper's findings related to the effects of temperature or climate change on size at maturity.,NA,NA,NA
+"Study, record",comments,character,Other comments about the paper,NA,NA,NA
+"Study, record",year,dateTime,Year of publication,YYYY,NA,NA
+Study,start_date,dateTime,Beginning of time period during which samples were collected,YYYY-MM-DD,NA,NA
+Study,end_date,dateTime,End of time period during which samples were collected,YYYY-MM-DD,NA,NA
+Study,habitat,factor,"Type of habitat where the crustacean lives (""marine"", ""fresh"", ""brackish"", ""terrestrial""). Default should be what is listed in WoRMS, unless the source document indicates otherwise. For example, if WoRMS lists a species as marine/freshwater/brackish but the population studied in the article was only from a freshwater stream, put ""fresh"".",NA,NA,NA
+"Study, record",sex,factor,"Sex for which SM50 is being estimated (M, F, B = both separately, C = both combined, NS = not specified). Note that sometimes size at maturity will be estimated for both sexes but for females will be done using ovarian staging or similar physiological methods, while allometric data are used for males. If estimates of SM50 are not derived for the females besides a normal maturity ogive, this would only count as ""M""",NA,NA,NA
+Study,phys_comp,factor,"How did the estimate of size at morphometric maturity compare to estimates of size at physiological or functional maturity, either from the same study or from previous studies mentioned in the paper? 
+higher/lower/same = morphometric L50 was higher than/lower than/roughly the same as phys/func L50
+conflict = morphometric L50 was higher than some previous phys/func estimates and lower than others
+NA if no comparison made",NA,NA,NA
+Study,also_phys,factor,"Did the authors also measure physiological or functional maturity? E.g., classification of gonad development, presence of sperm in female spermathecae. (TRUE/FALSE)",NA,NA,NA
+Study,coords_avail,factor,"Did the authors provide geographic coordinates for the location(s) where samples were collected? TRUE, FALSE, or APPROX if not provided but could be extracted from provided maps or closely approximated based on information given in the text",NA,NA,NA
+Study,time_var,factor,Did the authors consider temporal variation in SM50? (TRUE/FALSE),NA,NA,NA
+Study,spatial_var,factor,Did the authors consider spatial variation in SM50? (TRUE/FALSE),NA,NA,NA
+Study,claw_regen,factor,Did they mention excluding crabs with (fully or partially) regenerated chelae? (TRUE/FALSE),NA,NA,NA
+Study,mult_models,factor,Did the authors test multiple modeling approaches to estimate SM50? Note: this does not include a simple linear model developed as the null hypothesis to a piecewise model (see next question). Also excluded are models based on morphological or functional maturity data. (TRUE/FALSE),NA,NA,NA
+Study,reg_mention,factor,"Did the authors discuss/justify their use of Model I vs Model II regression? (OLS, Reduced Major Axis, Major Axis) (TRUE/FALSE)",NA,NA,NA
+Study,log_trans,factor,"Did the authors assume an untransformed or log-log relationship for the regression equation? NOTE that this does NOT refer to whether the authors used log-log data for the regression fitting or non-linear least squares (e.g., Levenberg-Marquardt), as either of those methods assume y=aX^b instead of y=a+bx",NA,NA,NA
+Study,est_variance,factor,"Did the study provide a measure of variance/confidence for their estimate of SM50? (SD, 95% CIs, etc.)",NA,NA,NA
+Study,code_avail,factor,Does the paper provide the code used for the modeling? (TRUE/FALSE),NA,NA,NA
+Study,data_avail,factor,Does the paper provide the raw data used for the analysis? (TRUE/FALSE),NA,NA,NA
+Study,success,factor,"Did the authors conclude that the morphometric relationship could be reliably used to estimate size at maturity, or at least to distinguish between immature and mature individuals? (TRUE/FALSE)",NA,NA,NA
+Study,mgmt_context,factor,Did the authors mention tangible ways in which fisheries regulations/management frameworks might be adjusted based on their findings? (TRUE/FALSE),NA,NA,NA
+Study,novel_stats,factor,Does the paper develop a novel method or include commentary about an existing modeling method that should be tested/explored during the simulation testing? (TRUE/FALSE),NA,NA,NA
+"Study, record",study_id,numeric,ID number assigned to each study for the purpose of aligning entries in different datasets,NA,dimensionless,natural
+"Study, record, species",AphiaID,numeric,"WoRMS AphiaID(s) of the species included in the study, separated by "";"" if multiple",NA,dimensionless,natural
+Study,tot_samp_size,numeric,Total number of unique crustaceans from which morphometric data were analyzed,NA,number,natural
+Study,min_samp_size,numeric,"Minimum sample size used to estimate size at maturity, if separate models were fit for different sexes, regions, etc.",NA,number,natural
+Study,max_samp_size,numeric,"Maximum sample size used to estimate size at maturity, if separate models were fit for different sexes, regions, etc.",NA,number,natural
+"Study, record",latitude,numeric,"Latitude value(s), in EPSG 4326/WGS84 format, separated by "";"" if multiple",NA,degree,real
+"Study, record",longitude,numeric,"Longitude value(s), in EPSG 4326/WGS84 format, separated by "";"" if multiple",NA,degree,real
+Study,num_breakpoints,numeric,"How many transition points were estimated? Default is 1, the transition between immature and mature, but could be >1 if used to differentiate instars",NA,number,natural
+Record,start_date_record,dateTime,Beginning of time period during which samples for this specific record were collected,YYYY-MM-DD,NA,NA
+Record,end_date_record,dateTime,End of time period during which samples were for this specific record were collected,YYYY-MM-DD,NA,NA
+Record,mod_form_record,character,Modeling approach used to estimate SM50 in this specific instance. Used standardized names where possible.,NA,NA,NA
+Record,x_axis_units,character,Unit of the x-axis/independent variable in the regression for which slope & intercept parameters are being extracted,NA,NA,NA
+Record,y_axis_units,character,Unit of the y-axis/dependent variable in the regression for which slope & intercept parameters are being extracted,NA,NA,NA
+Record,sm50_units,numeric,Unit in which SM50 value was given,NA,NA,NA
+Record,sm50_SE,numeric,"Standard error of SM50 value, if provided",NA,dimensionless,real
+Record,sm50_SD,numeric,"Standard deviation of SM50 value, if provided",NA,dimensionless,real
+Record,sm50,numeric,"Final SM50 value(s) estimated in the study, in the original units",NA,dimensionless,real
+Record,samp_size_record,numeric,Sample size of the specific regression from which parameters are being extracted,NA,number,natural
+Record,f_ab_slope,factor,How did the allometric slope parameter (growth rate of the female abdomen compared to carapace width or length) change at maturity? Variables are abdomen width and carapace width unless otherwise specified,NA,NA,NA
+Record,m_claw_slope,factor,How did the allometric slope parameter (growth rate of the male claw compared to carapace width or length) change at maturity?,NA,NA,NA
+Record,f_ab_int,factor,How did the allometric intercept parameter (relative size of the female abdomen compared to carapace width or length) change at maturity?,NA,NA,NA
+Record,m_claw_int,factor,How did the allometric intercept parameter (relative size of the male claw compared to carapace width or length) change at maturity?,NA,NA,NA
+Record,imm_slope_val,numeric,Allometric growth slope parameter for male claw size vs. body size before maturity,NA,dimensionless,real
+Record,mat_slope_val,numeric,Allometric growth slope parameter for male claw size vs. body size before maturity,NA,dimensionless,real
+Record,comments_group,character,"Comments about the sampling dates, region, etc. needed to distinguish between multiple SM50 values obtained from a single study",NA,NA,NA
+Species,sex_species,factor,"Sex for which the traits are being reported (M, F, B = both separately, C = both combined, NS = not specified)",NA,NA,NA
+Species,terminal_molt,factor,Does the species exhibit determinate growth/terminal anecdysis?,NA,NA,NA
+Species,terminal_source_name,character,"Brief citation of source document reporting presence or absence of terminal molt, e.g., Jones et al. (2018)",NA,NA,NA
+Species,terminal_molt_link,character,"Link to source reporting presence or absence of terminal molt, DOI preferred.",NA,NA,NA
+Species,heterochely,factor,Does the species exhibit heterochely?,NA,NA,NA
+Species,heterochely_source_name,character,"Brief citation of source document reporting presence or absence of heterochely, e.g., Jones et al. (2018)",NA,NA,NA
+Species,heterochely_link,character,"Link to source reporting presence or absence of heterochely, DOI preferred.",NA,NA,NA
+Species,comments,character,Other comments about the entry,NA,NA,NA
+Species,genetic_data_link,character,Links to relevant genetic data/phylogenetic tree for genus/etc.,NA,NA,NA

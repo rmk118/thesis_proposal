@@ -221,8 +221,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+<li><a href="#measurement-notes" id="toc-measurement-notes" class="nav-link active" data-scroll-target="#measurement-notes"><span class="header-section-number">C.1</span> Measurement Notes</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data_mgmt.html">Appendices</a></li><li class="breadcrumb-item"><a href="../syst_review/supporting_tabs.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Data extraction keys</span></a></li></ol></nav><div class="quarto-title">
@@ -246,874 +250,426 @@ ul.task-list li input[type="checkbox"] {
 Table&nbsp;C.1: Factor keys following EML format.
 </figcaption><div aria-describedby="tbl-factorkeys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="zhstxeawbq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zhstxeawbq table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<!-- preamble start -->
 
-#zhstxeawbq thead, #zhstxeawbq tbody, #zhstxeawbq tfoot, #zhstxeawbq tr, #zhstxeawbq td, #zhstxeawbq th {
-  border-style: none;
-}
+    <script>
 
-#zhstxeawbq p {
-  margin: 0;
-  padding: 0;
-}
+      function styleCell_1efcd1k1d8l0kzbg6l12(i, j, css_id) {
+          var table = document.getElementById("tinytable_1efcd1k1d8l0kzbg6l12");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_1efcd1k1d8l0kzbg6l12');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_1efcd1k1d8l0kzbg6l12(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_1efcd1k1d8l0kzbg6l12");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 0, j: 0 }, { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 20, j: 0 }, { i: 21, j: 0 }, { i: 22, j: 0 }, { i: 23, j: 0 }, { i: 24, j: 0 }, { i: 25, j: 0 }, { i: 26, j: 0 }, { i: 27, j: 0 }, { i: 28, j: 0 }, { i: 29, j: 0 }, { i: 30, j: 0 }, { i: 31, j: 0 }, { i: 32, j: 0 }, { i: 33, j: 0 }, { i: 34, j: 0 }, { i: 35, j: 0 }, { i: 36, j: 0 }, { i: 37, j: 0 }, { i: 38, j: 0 }, { i: 39, j: 0 }, { i: 40, j: 0 }, { i: 41, j: 0 }, { i: 42, j: 0 }, { i: 43, j: 0 }, { i: 44, j: 0 }, { i: 45, j: 0 }, { i: 46, j: 0 }, { i: 47, j: 0 }, { i: 48, j: 0 }, { i: 49, j: 0 }, { i: 50, j: 0 }, { i: 51, j: 0 }, { i: 52, j: 0 }, { i: 53, j: 0 }, { i: 54, j: 0 }, { i: 55, j: 0 }, { i: 56, j: 0 }, { i: 57, j: 0 }, { i: 58, j: 0 }, { i: 59, j: 0 }, { i: 60, j: 0 }, { i: 61, j: 0 }, { i: 62, j: 0 }, { i: 63, j: 0 }, { i: 64, j: 0 }, { i: 65, j: 0 }, { i: 66, j: 0 }, { i: 67, j: 0 }, { i: 68, j: 0 }, { i: 0, j: 1 }, { i: 1, j: 1 }, { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 11, j: 1 }, { i: 12, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 16, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 19, j: 1 }, { i: 20, j: 1 }, { i: 21, j: 1 }, { i: 22, j: 1 }, { i: 23, j: 1 }, { i: 24, j: 1 }, { i: 25, j: 1 }, { i: 26, j: 1 }, { i: 27, j: 1 }, { i: 28, j: 1 }, { i: 29, j: 1 }, { i: 30, j: 1 }, { i: 31, j: 1 }, { i: 32, j: 1 }, { i: 33, j: 1 }, { i: 34, j: 1 }, { i: 35, j: 1 }, { i: 36, j: 1 }, { i: 37, j: 1 }, { i: 38, j: 1 }, { i: 39, j: 1 }, { i: 40, j: 1 }, { i: 41, j: 1 }, { i: 42, j: 1 }, { i: 43, j: 1 }, { i: 44, j: 1 }, { i: 45, j: 1 }, { i: 46, j: 1 }, { i: 47, j: 1 }, { i: 48, j: 1 }, { i: 49, j: 1 }, { i: 50, j: 1 }, { i: 51, j: 1 }, { i: 52, j: 1 }, { i: 53, j: 1 }, { i: 54, j: 1 }, { i: 55, j: 1 }, { i: 56, j: 1 }, { i: 57, j: 1 }, { i: 58, j: 1 }, { i: 59, j: 1 }, { i: 60, j: 1 }, { i: 61, j: 1 }, { i: 62, j: 1 }, { i: 63, j: 1 }, { i: 64, j: 1 }, { i: 65, j: 1 }, { i: 66, j: 1 }, { i: 67, j: 1 }, { i: 68, j: 1 }, { i: 0, j: 2 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 16, j: 2 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 20, j: 2 }, { i: 21, j: 2 }, { i: 22, j: 2 }, { i: 23, j: 2 }, { i: 24, j: 2 }, { i: 25, j: 2 }, { i: 26, j: 2 }, { i: 27, j: 2 }, { i: 28, j: 2 }, { i: 29, j: 2 }, { i: 30, j: 2 }, { i: 31, j: 2 }, { i: 32, j: 2 }, { i: 33, j: 2 }, { i: 34, j: 2 }, { i: 35, j: 2 }, { i: 36, j: 2 }, { i: 37, j: 2 }, { i: 38, j: 2 }, { i: 39, j: 2 }, { i: 40, j: 2 }, { i: 41, j: 2 }, { i: 42, j: 2 }, { i: 43, j: 2 }, { i: 44, j: 2 }, { i: 45, j: 2 }, { i: 46, j: 2 }, { i: 47, j: 2 }, { i: 48, j: 2 }, { i: 49, j: 2 }, { i: 50, j: 2 }, { i: 51, j: 2 }, { i: 52, j: 2 }, { i: 53, j: 2 }, { i: 54, j: 2 }, { i: 55, j: 2 }, { i: 56, j: 2 }, { i: 57, j: 2 }, { i: 58, j: 2 }, { i: 59, j: 2 }, { i: 60, j: 2 }, { i: 61, j: 2 }, { i: 62, j: 2 }, { i: 63, j: 2 }, { i: 64, j: 2 }, { i: 65, j: 2 }, { i: 66, j: 2 }, { i: 67, j: 2 }, { i: 68, j: 2 },  ], css_id: 'tinytable_css_ejfer1fr00gh1vnn3mf2',}, 
+          ];
 
-#zhstxeawbq .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#zhstxeawbq .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#zhstxeawbq .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#zhstxeawbq .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#zhstxeawbq .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#zhstxeawbq .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#zhstxeawbq .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#zhstxeawbq .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#zhstxeawbq .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#zhstxeawbq .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#zhstxeawbq .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#zhstxeawbq .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#zhstxeawbq .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#zhstxeawbq .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#zhstxeawbq .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#zhstxeawbq .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#zhstxeawbq .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#zhstxeawbq .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#zhstxeawbq .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#zhstxeawbq .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#zhstxeawbq .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#zhstxeawbq .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#zhstxeawbq .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#zhstxeawbq .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#zhstxeawbq .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#zhstxeawbq .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#zhstxeawbq .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#zhstxeawbq .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#zhstxeawbq .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#zhstxeawbq .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#zhstxeawbq .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#zhstxeawbq .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#zhstxeawbq .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#zhstxeawbq .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#zhstxeawbq .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#zhstxeawbq .gt_left {
-  text-align: left;
-}
-
-#zhstxeawbq .gt_center {
-  text-align: center;
-}
-
-#zhstxeawbq .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#zhstxeawbq .gt_font_normal {
-  font-weight: normal;
-}
-
-#zhstxeawbq .gt_font_bold {
-  font-weight: bold;
-}
-
-#zhstxeawbq .gt_font_italic {
-  font-style: italic;
-}
-
-#zhstxeawbq .gt_super {
-  font-size: 65%;
-}
-
-#zhstxeawbq .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#zhstxeawbq .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#zhstxeawbq .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#zhstxeawbq .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#zhstxeawbq .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#zhstxeawbq .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#zhstxeawbq .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#zhstxeawbq .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#zhstxeawbq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
-<th id="X" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">X</th>
-<th id="attributeName" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">attributeName</th>
-<th id="code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">code</th>
-<th id="definition" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">definition</th>
-</tr></thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">1</td>
-<td class="gt_row gt_left" headers="attributeName">also_phys</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">2</td>
-<td class="gt_row gt_left" headers="attributeName">also_phys</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">3</td>
-<td class="gt_row gt_left" headers="attributeName">also_phys</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">4</td>
-<td class="gt_row gt_left" headers="attributeName">claw_regen</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">5</td>
-<td class="gt_row gt_left" headers="attributeName">claw_regen</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">6</td>
-<td class="gt_row gt_left" headers="attributeName">claw_regen</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">7</td>
-<td class="gt_row gt_left" headers="attributeName">code_avail</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">8</td>
-<td class="gt_row gt_left" headers="attributeName">code_avail</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">9</td>
-<td class="gt_row gt_left" headers="attributeName">code_avail</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">10</td>
-<td class="gt_row gt_left" headers="attributeName">coords_avail</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">11</td>
-<td class="gt_row gt_left" headers="attributeName">coords_avail</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">12</td>
-<td class="gt_row gt_left" headers="attributeName">coords_avail</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">13</td>
-<td class="gt_row gt_left" headers="attributeName">data_avail</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">14</td>
-<td class="gt_row gt_left" headers="attributeName">data_avail</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">15</td>
-<td class="gt_row gt_left" headers="attributeName">data_avail</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">16</td>
-<td class="gt_row gt_left" headers="attributeName">est_variance</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">17</td>
-<td class="gt_row gt_left" headers="attributeName">est_variance</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">18</td>
-<td class="gt_row gt_left" headers="attributeName">est_variance</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">19</td>
-<td class="gt_row gt_left" headers="attributeName">habitat</td>
-<td class="gt_row gt_left" headers="code">brackish</td>
-<td class="gt_row gt_left" headers="definition">Lives in environments with intermediate or fluctuating salinities, including estuaries and mangroves</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">20</td>
-<td class="gt_row gt_left" headers="attributeName">habitat</td>
-<td class="gt_row gt_left" headers="code">fresh</td>
-<td class="gt_row gt_left" headers="definition">Lives in freshwater environments</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">21</td>
-<td class="gt_row gt_left" headers="attributeName">habitat</td>
-<td class="gt_row gt_left" headers="code">marine</td>
-<td class="gt_row gt_left" headers="definition">Lives in marine environments</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">22</td>
-<td class="gt_row gt_left" headers="attributeName">habitat</td>
-<td class="gt_row gt_left" headers="code">semi-terrestrial</td>
-<td class="gt_row gt_left" headers="definition">Lives partially on land (or in non-submerged trees) and partially in an aquatic environment</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">23</td>
-<td class="gt_row gt_left" headers="attributeName">habitat</td>
-<td class="gt_row gt_left" headers="code">terrestrial</td>
-<td class="gt_row gt_left" headers="definition">Lives on land</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">24</td>
-<td class="gt_row gt_left" headers="attributeName">log_trans</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">25</td>
-<td class="gt_row gt_left" headers="attributeName">log_trans</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">26</td>
-<td class="gt_row gt_left" headers="attributeName">log_trans</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">27</td>
-<td class="gt_row gt_left" headers="attributeName">mgmt_context</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">28</td>
-<td class="gt_row gt_left" headers="attributeName">mgmt_context</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">29</td>
-<td class="gt_row gt_left" headers="attributeName">mgmt_context</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">30</td>
-<td class="gt_row gt_left" headers="attributeName">morph_v_phys</td>
-<td class="gt_row gt_left" headers="code">conflict</td>
-<td class="gt_row gt_left" headers="definition">Morphometric SM50 was higher than some functional/physiological SM50 values and lower than others. Other complex situations that do not fall into one of the other four categories can be labeled as this and expanded upon in the comments column.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">31</td>
-<td class="gt_row gt_left" headers="attributeName">morph_v_phys</td>
-<td class="gt_row gt_left" headers="code">higher</td>
-<td class="gt_row gt_left" headers="definition">Morphometric SM50 was higher than values provided for SM50 based on a measure of physiological or functional maturity.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">32</td>
-<td class="gt_row gt_left" headers="attributeName">morph_v_phys</td>
-<td class="gt_row gt_left" headers="code">lower</td>
-<td class="gt_row gt_left" headers="definition">Morphometric SM50 was lower than values provided for SM50 based on a measure of physiological or functional maturity.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">33</td>
-<td class="gt_row gt_left" headers="attributeName">morph_v_phys</td>
-<td class="gt_row gt_left" headers="code">none</td>
-<td class="gt_row gt_left" headers="definition">No comparison between morphometric SM50 and other maturity types was made.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">34</td>
-<td class="gt_row gt_left" headers="attributeName">morph_v_phys</td>
-<td class="gt_row gt_left" headers="code">same</td>
-<td class="gt_row gt_left" headers="definition">Morphometric SM50 was roughly the same as values provided for SM50 based on a measure of physiological or functional maturity.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">35</td>
-<td class="gt_row gt_left" headers="attributeName">mult_models</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">36</td>
-<td class="gt_row gt_left" headers="attributeName">mult_models</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">37</td>
-<td class="gt_row gt_left" headers="attributeName">mult_models</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">38</td>
-<td class="gt_row gt_left" headers="attributeName">novel_stats</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">39</td>
-<td class="gt_row gt_left" headers="attributeName">novel_stats</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">40</td>
-<td class="gt_row gt_left" headers="attributeName">novel_stats</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">41</td>
-<td class="gt_row gt_left" headers="attributeName">reg_mention</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">42</td>
-<td class="gt_row gt_left" headers="attributeName">reg_mention</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">43</td>
-<td class="gt_row gt_left" headers="attributeName">reg_mention</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">44</td>
-<td class="gt_row gt_left" headers="attributeName">sex</td>
-<td class="gt_row gt_left" headers="code">B</td>
-<td class="gt_row gt_left" headers="definition">Estimates made for both males and females, but separately and possibly using different allometric variables,</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">45</td>
-<td class="gt_row gt_left" headers="attributeName">sex</td>
-<td class="gt_row gt_left" headers="code">C</td>
-<td class="gt_row gt_left" headers="definition">SM50 estimate made using combined measurements of the same allometric variables from both sexes</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">46</td>
-<td class="gt_row gt_left" headers="attributeName">sex</td>
-<td class="gt_row gt_left" headers="code">F</td>
-<td class="gt_row gt_left" headers="definition">Females only</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">47</td>
-<td class="gt_row gt_left" headers="attributeName">sex</td>
-<td class="gt_row gt_left" headers="code">M</td>
-<td class="gt_row gt_left" headers="definition">Males only</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">48</td>
-<td class="gt_row gt_left" headers="attributeName">sex</td>
-<td class="gt_row gt_left" headers="code">NS</td>
-<td class="gt_row gt_left" headers="definition">Not specified</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">49</td>
-<td class="gt_row gt_left" headers="attributeName">spatial_var</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">50</td>
-<td class="gt_row gt_left" headers="attributeName">spatial_var</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">51</td>
-<td class="gt_row gt_left" headers="attributeName">spatial_var</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">52</td>
-<td class="gt_row gt_left" headers="attributeName">success</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">53</td>
-<td class="gt_row gt_left" headers="attributeName">success</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">54</td>
-<td class="gt_row gt_left" headers="attributeName">success</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">55</td>
-<td class="gt_row gt_left" headers="attributeName">time_var</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">56</td>
-<td class="gt_row gt_left" headers="attributeName">time_var</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">57</td>
-<td class="gt_row gt_left" headers="attributeName">time_var</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">58</td>
-<td class="gt_row gt_left" headers="attributeName">f_ab_slope; m_claw_slope; f_ab_int; m_claw_int</td>
-<td class="gt_row gt_left" headers="code">inc</td>
-<td class="gt_row gt_left" headers="definition">Increased at maturity</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">59</td>
-<td class="gt_row gt_left" headers="attributeName">f_ab_slope; m_claw_slope; f_ab_int; m_claw_int</td>
-<td class="gt_row gt_left" headers="code">dec</td>
-<td class="gt_row gt_left" headers="definition">Decreased at maturity</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">60</td>
-<td class="gt_row gt_left" headers="attributeName">f_ab_slope; m_claw_slope; f_ab_int; m_claw_int</td>
-<td class="gt_row gt_left" headers="code">none</td>
-<td class="gt_row gt_left" headers="definition">No significant change at maturity</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">61</td>
-<td class="gt_row gt_left" headers="attributeName">f_ab_slope; m_claw_slope; f_ab_int; m_claw_int</td>
-<td class="gt_row gt_left" headers="code">tri</td>
-<td class="gt_row gt_left" headers="definition">Triphasic (2 distinct maturity-related transitions)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">62</td>
-<td class="gt_row gt_left" headers="attributeName">f_ab_slope; m_claw_slope; f_ab_int; m_claw_int</td>
-<td class="gt_row gt_left" headers="code">NA</td>
-<td class="gt_row gt_left" headers="definition">Not discussed or not applicable for the modeling approach used</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">63</td>
-<td class="gt_row gt_left" headers="attributeName">terminal_molt</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">64</td>
-<td class="gt_row gt_left" headers="attributeName">terminal_molt</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">65</td>
-<td class="gt_row gt_left" headers="attributeName">terminal_molt</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">66</td>
-<td class="gt_row gt_left" headers="attributeName">heterochely</td>
-<td class="gt_row gt_left" headers="code">FALSE</td>
-<td class="gt_row gt_left" headers="definition">FALSE</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">67</td>
-<td class="gt_row gt_left" headers="attributeName">heterochely</td>
-<td class="gt_row gt_left" headers="code">TRUE</td>
-<td class="gt_row gt_left" headers="definition">TRUE</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">68</td>
-<td class="gt_row gt_left" headers="attributeName">heterochely</td>
-<td class="gt_row gt_left" headers="code">complex</td>
-<td class="gt_row gt_left" headers="definition">Not equivocally true or false; see comments for additional information.</td>
-</tr>
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_1efcd1k1d8l0kzbg6l12(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script><style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_ejfer1fr00gh1vnn3mf2, .table th.tinytable_css_ejfer1fr00gh1vnn3mf2 { text-align: left; }
+    </style>
+<div class="container">
+      <table class="table" id="tinytable_1efcd1k1d8l0kzbg6l12" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+<thead><tr>
+<th scope="col">attributeName</th>
+                <th scope="col">code</th>
+                <th scope="col">definition</th>
+              </tr></thead>
+<tbody>
+<tr>
+<td>also_phys                                     </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>also_phys                                     </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>also_phys                                     </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>claw_regen                                    </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>claw_regen                                    </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>claw_regen                                    </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>code_avail                                    </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>code_avail                                    </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>code_avail                                    </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>coords_avail                                  </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>coords_avail                                  </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>coords_avail                                  </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>data_avail                                    </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>data_avail                                    </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>data_avail                                    </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>est_variance                                  </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>est_variance                                  </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>est_variance                                  </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>habitat                                       </td>
+                  <td>brackish        </td>
+                  <td>Lives in environments with intermediate or fluctuating salinities, including estuaries and mangroves                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>habitat                                       </td>
+                  <td>fresh           </td>
+                  <td>Lives in freshwater environments                                                                                                                                                                                                                   </td>
+                </tr>
+<tr>
+<td>habitat                                       </td>
+                  <td>marine          </td>
+                  <td>Lives in marine environments                                                                                                                                                                                                                       </td>
+                </tr>
+<tr>
+<td>habitat                                       </td>
+                  <td>semi-terrestrial</td>
+                  <td>Lives partially on land (or in non-submerged trees) and partially in an aquatic environment                                                                                                                                                        </td>
+                </tr>
+<tr>
+<td>habitat                                       </td>
+                  <td>terrestrial     </td>
+                  <td>Lives on land                                                                                                                                                                                                                                      </td>
+                </tr>
+<tr>
+<td>log_trans                                     </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>log_trans                                     </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>log_trans                                     </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>mgmt_context                                  </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>mgmt_context                                  </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>mgmt_context                                  </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>morph_v_phys                                  </td>
+                  <td>conflict        </td>
+                  <td>Morphometric SM50 was higher than some functional/physiological SM50 values and lower than others. Other complex situations that do not fall into one of the other four categories can be labeled as this and expanded upon in the comments column.</td>
+                </tr>
+<tr>
+<td>morph_v_phys                                  </td>
+                  <td>higher          </td>
+                  <td>Morphometric SM50 was higher than values provided for SM50 based on a measure of physiological or functional maturity.                                                                                                                             </td>
+                </tr>
+<tr>
+<td>morph_v_phys                                  </td>
+                  <td>lower           </td>
+                  <td>Morphometric SM50 was lower than values provided for SM50 based on a measure of physiological or functional maturity.                                                                                                                              </td>
+                </tr>
+<tr>
+<td>morph_v_phys                                  </td>
+                  <td>none            </td>
+                  <td>No comparison between morphometric SM50 and other maturity types was made.                                                                                                                                                                         </td>
+                </tr>
+<tr>
+<td>morph_v_phys                                  </td>
+                  <td>same            </td>
+                  <td>Morphometric SM50 was roughly the same as values provided for SM50 based on a measure of physiological or functional maturity.                                                                                                                     </td>
+                </tr>
+<tr>
+<td>mult_models                                   </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>mult_models                                   </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>mult_models                                   </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>novel_stats                                   </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>novel_stats                                   </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>novel_stats                                   </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>reg_mention                                   </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>reg_mention                                   </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>reg_mention                                   </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>sex                                           </td>
+                  <td>B               </td>
+                  <td>Estimates made for both males and females, but separately and possibly using different allometric variables,                                                                                                                                       </td>
+                </tr>
+<tr>
+<td>sex                                           </td>
+                  <td>C               </td>
+                  <td>SM50 estimate made using combined measurements of the same allometric variables from both sexes                                                                                                                                                    </td>
+                </tr>
+<tr>
+<td>sex                                           </td>
+                  <td>F               </td>
+                  <td>Females only                                                                                                                                                                                                                                       </td>
+                </tr>
+<tr>
+<td>sex                                           </td>
+                  <td>M               </td>
+                  <td>Males only                                                                                                                                                                                                                                         </td>
+                </tr>
+<tr>
+<td>sex                                           </td>
+                  <td>NS              </td>
+                  <td>Not specified                                                                                                                                                                                                                                      </td>
+                </tr>
+<tr>
+<td>spatial_var                                   </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>spatial_var                                   </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>spatial_var                                   </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>success                                       </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>success                                       </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>success                                       </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>time_var                                      </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>time_var                                      </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>time_var                                      </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>f_ab_slope; m_claw_slope; f_ab_int; m_claw_int</td>
+                  <td>inc             </td>
+                  <td>Increased at maturity                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>f_ab_slope; m_claw_slope; f_ab_int; m_claw_int</td>
+                  <td>dec             </td>
+                  <td>Decreased at maturity                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>f_ab_slope; m_claw_slope; f_ab_int; m_claw_int</td>
+                  <td>none            </td>
+                  <td>No significant change at maturity                                                                                                                                                                                                                  </td>
+                </tr>
+<tr>
+<td>f_ab_slope; m_claw_slope; f_ab_int; m_claw_int</td>
+                  <td>tri             </td>
+                  <td>Triphasic (2 distinct maturity-related transitions)                                                                                                                                                                                                </td>
+                </tr>
+<tr>
+<td>f_ab_slope; m_claw_slope; f_ab_int; m_claw_int</td>
+                  <td>NA              </td>
+                  <td>Not discussed or not applicable for the modeling approach used                                                                                                                                                                                     </td>
+                </tr>
+<tr>
+<td>terminal_molt                                 </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>terminal_molt                                 </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>terminal_molt                                 </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>heterochely                                   </td>
+                  <td>FALSE           </td>
+                  <td>FALSE                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>heterochely                                   </td>
+                  <td>TRUE            </td>
+                  <td>TRUE                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>heterochely                                   </td>
+                  <td>complex         </td>
+                  <td>Not equivocally true or false; see comments for additional information.                                                                                                                                                                            </td>
+                </tr>
 </tbody>
 </table>
 </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </figure>
@@ -1125,625 +681,213 @@ Table&nbsp;C.1: Factor keys following EML format.
 Table&nbsp;C.2: Standardized measurement codes to be used during data extraction.
 </figcaption><div aria-describedby="tbl-stdmeasurements-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="odmkfrxekd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#odmkfrxekd table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<!-- preamble start -->
 
-#odmkfrxekd thead, #odmkfrxekd tbody, #odmkfrxekd tfoot, #odmkfrxekd tr, #odmkfrxekd td, #odmkfrxekd th {
-  border-style: none;
-}
+    <script>
 
-#odmkfrxekd p {
-  margin: 0;
-  padding: 0;
-}
+      function styleCell_v75mwzf65ejcrne28g6f(i, j, css_id) {
+          var table = document.getElementById("tinytable_v75mwzf65ejcrne28g6f");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_v75mwzf65ejcrne28g6f');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_v75mwzf65ejcrne28g6f(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_v75mwzf65ejcrne28g6f");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 0, j: 0 }, { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 20, j: 0 }, { i: 21, j: 0 }, { i: 22, j: 0 }, { i: 23, j: 0 }, { i: 24, j: 0 }, { i: 25, j: 0 }, { i: 26, j: 0 }, { i: 27, j: 0 }, { i: 28, j: 0 }, { i: 29, j: 0 }, { i: 30, j: 0 }, { i: 31, j: 0 }, { i: 32, j: 0 }, { i: 0, j: 1 }, { i: 1, j: 1 }, { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 11, j: 1 }, { i: 12, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 16, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 19, j: 1 }, { i: 20, j: 1 }, { i: 21, j: 1 }, { i: 22, j: 1 }, { i: 23, j: 1 }, { i: 24, j: 1 }, { i: 25, j: 1 }, { i: 26, j: 1 }, { i: 27, j: 1 }, { i: 28, j: 1 }, { i: 29, j: 1 }, { i: 30, j: 1 }, { i: 31, j: 1 }, { i: 32, j: 1 },  ], css_id: 'tinytable_css_7m19sxlgn3srdd0azh5k',}, 
+          ];
 
-#odmkfrxekd .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#odmkfrxekd .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#odmkfrxekd .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#odmkfrxekd .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#odmkfrxekd .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#odmkfrxekd .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#odmkfrxekd .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#odmkfrxekd .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#odmkfrxekd .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#odmkfrxekd .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#odmkfrxekd .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#odmkfrxekd .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#odmkfrxekd .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#odmkfrxekd .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#odmkfrxekd .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#odmkfrxekd .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#odmkfrxekd .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#odmkfrxekd .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#odmkfrxekd .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#odmkfrxekd .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#odmkfrxekd .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#odmkfrxekd .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#odmkfrxekd .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#odmkfrxekd .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#odmkfrxekd .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#odmkfrxekd .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#odmkfrxekd .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#odmkfrxekd .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#odmkfrxekd .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#odmkfrxekd .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#odmkfrxekd .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#odmkfrxekd .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#odmkfrxekd .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#odmkfrxekd .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#odmkfrxekd .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#odmkfrxekd .gt_left {
-  text-align: left;
-}
-
-#odmkfrxekd .gt_center {
-  text-align: center;
-}
-
-#odmkfrxekd .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#odmkfrxekd .gt_font_normal {
-  font-weight: normal;
-}
-
-#odmkfrxekd .gt_font_bold {
-  font-weight: bold;
-}
-
-#odmkfrxekd .gt_font_italic {
-  font-style: italic;
-}
-
-#odmkfrxekd .gt_super {
-  font-size: 65%;
-}
-
-#odmkfrxekd .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#odmkfrxekd .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#odmkfrxekd .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#odmkfrxekd .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#odmkfrxekd .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#odmkfrxekd .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#odmkfrxekd .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#odmkfrxekd .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#odmkfrxekd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
-<th id="X" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">X</th>
-<th id="code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">code</th>
-<th id="definition" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">definition</th>
-</tr></thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">1</td>
-<td class="gt_row gt_left" headers="code">ca_w</td>
-<td class="gt_row gt_left" headers="definition">Carapace width, not otherwise specified.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">2</td>
-<td class="gt_row gt_left" headers="code">long_ca_w</td>
-<td class="gt_row gt_left" headers="definition">Long carapace width: maximum carapace width including spines</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">3</td>
-<td class="gt_row gt_left" headers="code">short_ca_w</td>
-<td class="gt_row gt_left" headers="definition">Short carapace width: maximum carapace width excluding spines. Measurements of internal carapace width are assumed to be of this type.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">4</td>
-<td class="gt_row gt_left" headers="code">ca_len</td>
-<td class="gt_row gt_left" headers="definition">Carapace length, not otherwise specified.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">5</td>
-<td class="gt_row gt_left" headers="code">long_ca_len</td>
-<td class="gt_row gt_left" headers="definition">Long carapace length: distance from the tips of the two frontal teeth to the extreme posterior margin of the carapace, excluding curvature of the carapace.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">6</td>
-<td class="gt_row gt_left" headers="code">short_ca_len</td>
-<td class="gt_row gt_left" headers="definition">Short carapace length: distance from the base of the two frontal teeth to the extreme posterior margin of the carapace, excluding curvature of the carapace.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">7</td>
-<td class="gt_row gt_left" headers="code">fo_w</td>
-<td class="gt_row gt_left" headers="definition">Fronto-orbital width: distance between the outer angles of the orbits.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">8</td>
-<td class="gt_row gt_left" headers="code">f_w</td>
-<td class="gt_row gt_left" headers="definition">Frontal width: distance across the portion of the carapace between but not including the orbital area.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">9</td>
-<td class="gt_row gt_left" headers="code">ab_w</td>
-<td class="gt_row gt_left" headers="definition">Abdomen width, not otherwise specified.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">10</td>
-<td class="gt_row gt_left" headers="code">ab_w2</td>
-<td class="gt_row gt_left" headers="definition">Width of 2nd abdominal segment</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">11</td>
-<td class="gt_row gt_left" headers="code">ab_w3</td>
-<td class="gt_row gt_left" headers="definition">Width of 3rd abdominal segment</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">12</td>
-<td class="gt_row gt_left" headers="code">ab_w4</td>
-<td class="gt_row gt_left" headers="definition">Width of 4th abdominal segment</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">13</td>
-<td class="gt_row gt_left" headers="code">ab_w5</td>
-<td class="gt_row gt_left" headers="definition">Width of 5th abdominal segment</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">14</td>
-<td class="gt_row gt_left" headers="code">ab_w6</td>
-<td class="gt_row gt_left" headers="definition">Width of 6th abdominal segment</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">15</td>
-<td class="gt_row gt_left" headers="code">ab_w7</td>
-<td class="gt_row gt_left" headers="definition">Width of 7th abdominal segment</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">16</td>
-<td class="gt_row gt_left" headers="code">ab_len</td>
-<td class="gt_row gt_left" headers="definition">Abdomen length.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">17</td>
-<td class="gt_row gt_left" headers="code">bod_h</td>
-<td class="gt_row gt_left" headers="definition">Body height (depth): Distance between the highest part of the dorsal metagastric region and a point along the ventral median line just anterior to the flexed abdomen.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">18</td>
-<td class="gt_row gt_left" headers="code">cheliped_len</td>
-<td class="gt_row gt_left" headers="definition">Cheliped length: Distance from the articulation of the coxa with the sternum to the most distal part of the propodus OR not otherwise specified.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">19</td>
-<td class="gt_row gt_left" headers="code">cheliped_w</td>
-<td class="gt_row gt_left" headers="definition">Cheliped width, not otherwise specified.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">20</td>
-<td class="gt_row gt_left" headers="code">cp_len</td>
-<td class="gt_row gt_left" headers="definition">Chela propodus (=manus) length. Distance from the tip of the propodus (sometimes tip of dactyl) to the articulation with the carpus. If not otherwise specified, chela/claw length is assumed to refer to this.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">21</td>
-<td class="gt_row gt_left" headers="code">cp_w</td>
-<td class="gt_row gt_left" headers="definition">Chela propodus width (breadth). If not otherwise specified, chela/claw width is assumed to refer to this. Includes measurements referring to chela palm width/breath.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">22</td>
-<td class="gt_row gt_left" headers="code">cp_h</td>
-<td class="gt_row gt_left" headers="definition">Chela propodus height (depth). Distance between the long dorsal spine and the base of the propodus. Includes variables described as chela palm height or depth. If not otherwise specified, chela/claw height assumed to refer to this.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">23</td>
-<td class="gt_row gt_left" headers="code">ch_palm_len</td>
-<td class="gt_row gt_left" headers="definition">Chela palm length. Diagonally across chela palm (as in Conan &amp; Comeau, 1986) or not otherwise specified.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">24</td>
-<td class="gt_row gt_left" headers="code">merus_len</td>
-<td class="gt_row gt_left" headers="definition">Merus length, variously defined. Wallace (1949): Measured on a diagonal from the most posterior dorsal point of articulation of merus and carpus to the most anterior dorsal margin of articulation between the merus and preceding segment, whereas Finney (1981) measured on a straight line, not diagonal.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">25</td>
-<td class="gt_row gt_left" headers="code">merus_w</td>
-<td class="gt_row gt_left" headers="definition">Merus width, variously defined.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">26</td>
-<td class="gt_row gt_left" headers="code">leg_len</td>
-<td class="gt_row gt_left" headers="definition">Leg length, variously defined. E.g., Kulmiye et al. (2006): from the tip of the dactyl to the proximal margin of ischium.</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">27</td>
-<td class="gt_row gt_left" headers="code">head_w</td>
-<td class="gt_row gt_left" headers="definition">Head width</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">28</td>
-<td class="gt_row gt_left" headers="code">head_len</td>
-<td class="gt_row gt_left" headers="definition">Head length</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">29</td>
-<td class="gt_row gt_left" headers="code">head_h</td>
-<td class="gt_row gt_left" headers="definition">Head height</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">30</td>
-<td class="gt_row gt_left" headers="code">bod_len</td>
-<td class="gt_row gt_left" headers="definition">Body length</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">31</td>
-<td class="gt_row gt_left" headers="code">ww</td>
-<td class="gt_row gt_left" headers="definition">Wet weight</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">32</td>
-<td class="gt_row gt_left" headers="code">dw</td>
-<td class="gt_row gt_left" headers="definition">Dry weight</td>
-</tr>
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_v75mwzf65ejcrne28g6f(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script><style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_7m19sxlgn3srdd0azh5k, .table th.tinytable_css_7m19sxlgn3srdd0azh5k { text-align: left; }
+    </style>
+<div class="container">
+      <table class="table" id="tinytable_v75mwzf65ejcrne28g6f" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+<thead><tr>
+<th scope="col">code</th>
+                <th scope="col">definition</th>
+              </tr></thead>
+<tbody>
+<tr>
+<td>ca_w        </td>
+                  <td>Carapace width, not otherwise specified.                                                                                                                                                                                                                                                                     </td>
+                </tr>
+<tr>
+<td>long_ca_w   </td>
+                  <td>Long carapace width: maximum carapace width including spines                                                                                                                                                                                                                                                 </td>
+                </tr>
+<tr>
+<td>short_ca_w  </td>
+                  <td>Short carapace width: maximum carapace width excluding spines. Measurements of internal carapace width are assumed to be of this type.                                                                                                                                                                       </td>
+                </tr>
+<tr>
+<td>ca_len      </td>
+                  <td>Carapace length, not otherwise specified.                                                                                                                                                                                                                                                                    </td>
+                </tr>
+<tr>
+<td>long_ca_len </td>
+                  <td>Long carapace length: distance from the tips of the two frontal teeth to the extreme posterior margin of the carapace, excluding curvature of the carapace.                                                                                                                                                  </td>
+                </tr>
+<tr>
+<td>short_ca_len</td>
+                  <td>Short carapace length: distance from the base of the two frontal teeth to the extreme posterior margin of the carapace, excluding curvature of the carapace.                                                                                                                                                 </td>
+                </tr>
+<tr>
+<td>fo_w        </td>
+                  <td>Fronto-orbital width: distance between the outer angles of the orbits.                                                                                                                                                                                                                                       </td>
+                </tr>
+<tr>
+<td>f_w         </td>
+                  <td>Frontal width: distance across the portion of the carapace between but not including the orbital area.                                                                                                                                                                                                       </td>
+                </tr>
+<tr>
+<td>ab_w        </td>
+                  <td>Abdomen width, not otherwise specified.                                                                                                                                                                                                                                                                      </td>
+                </tr>
+<tr>
+<td>ab_w2       </td>
+                  <td>Width of 2nd abdominal segment                                                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>ab_w3       </td>
+                  <td>Width of 3rd abdominal segment                                                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>ab_w4       </td>
+                  <td>Width of 4th abdominal segment                                                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>ab_w5       </td>
+                  <td>Width of 5th abdominal segment                                                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>ab_w6       </td>
+                  <td>Width of 6th abdominal segment                                                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>ab_w7       </td>
+                  <td>Width of 7th abdominal segment                                                                                                                                                                                                                                                                               </td>
+                </tr>
+<tr>
+<td>ab_len      </td>
+                  <td>Abdomen length.                                                                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>bod_h       </td>
+                  <td>Body height (depth): Distance between the highest part of the dorsal metagastric region and a point along the ventral median line just anterior to the flexed abdomen.                                                                                                                                       </td>
+                </tr>
+<tr>
+<td>cheliped_len</td>
+                  <td>Cheliped length: Distance from the articulation of the coxa with the sternum to the most distal part of the propodus OR not otherwise specified.                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>cheliped_w  </td>
+                  <td>Cheliped width, not otherwise specified.                                                                                                                                                                                                                                                                     </td>
+                </tr>
+<tr>
+<td>cp_len      </td>
+                  <td>Chela propodus (=manus) length. Distance from the tip of the propodus (sometimes tip of dactyl) to the articulation with the carpus. If not otherwise specified, chela/claw length is assumed to refer to this.                                                                                              </td>
+                </tr>
+<tr>
+<td>cp_w        </td>
+                  <td>Chela propodus width (breadth). If not otherwise specified, chela/claw width is assumed to refer to this. Includes measurements referring to chela palm width/breath.                                                                                                                                        </td>
+                </tr>
+<tr>
+<td>cp_h        </td>
+                  <td>Chela propodus height (depth). Distance between the long dorsal spine and the base of the propodus. Includes variables described as chela palm height or depth. If not otherwise specified, chela/claw height assumed to refer to this.                                                                      </td>
+                </tr>
+<tr>
+<td>ch_palm_len </td>
+                  <td>Chela palm length. Diagonally across chela palm (as in Conan &amp; Comeau, 1986) or not otherwise specified.                                                                                                                                                                                                     </td>
+                </tr>
+<tr>
+<td>merus_len   </td>
+                  <td>Merus length, variously defined. Wallace (1949): Measured on a diagonal from the most posterior dorsal point of articulation of merus and carpus to the most anterior dorsal margin of articulation between the merus and preceding segment, whereas Finney (1981) measured on a straight line, not diagonal.</td>
+                </tr>
+<tr>
+<td>merus_w     </td>
+                  <td>Merus width, variously defined.                                                                                                                                                                                                                                                                              </td>
+                </tr>
+<tr>
+<td>leg_len     </td>
+                  <td>Leg length, variously defined. E.g., Kulmiye et al. (2006): from the tip of the dactyl to the proximal margin of ischium.                                                                                                                                                                                    </td>
+                </tr>
+<tr>
+<td>head_w      </td>
+                  <td>Head width                                                                                                                                                                                                                                                                                                   </td>
+                </tr>
+<tr>
+<td>head_len    </td>
+                  <td>Head length                                                                                                                                                                                                                                                                                                  </td>
+                </tr>
+<tr>
+<td>head_h      </td>
+                  <td>Head height                                                                                                                                                                                                                                                                                                  </td>
+                </tr>
+<tr>
+<td>bod_len     </td>
+                  <td>Body length                                                                                                                                                                                                                                                                                                  </td>
+                </tr>
+<tr>
+<td>ww          </td>
+                  <td>Wet weight                                                                                                                                                                                                                                                                                                   </td>
+                </tr>
+<tr>
+<td>dw          </td>
+                  <td>Dry weight                                                                                                                                                                                                                                                                                                   </td>
+                </tr>
 </tbody>
 </table>
 </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </figure>
@@ -1755,665 +899,266 @@ Table&nbsp;C.2: Standardized measurement codes to be used during data extraction
 Table&nbsp;C.3: Standardized model codes to be used during data extraction.
 </figcaption><div aria-describedby="tbl-stdmodels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="mjvmqtnyvy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mjvmqtnyvy table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<!-- preamble start -->
 
-#mjvmqtnyvy thead, #mjvmqtnyvy tbody, #mjvmqtnyvy tfoot, #mjvmqtnyvy tr, #mjvmqtnyvy td, #mjvmqtnyvy th {
-  border-style: none;
-}
+    <script>
 
-#mjvmqtnyvy p {
-  margin: 0;
-  padding: 0;
-}
+      function styleCell_ptbla4b8ozb9c77426cm(i, j, css_id) {
+          var table = document.getElementById("tinytable_ptbla4b8ozb9c77426cm");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_ptbla4b8ozb9c77426cm');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_ptbla4b8ozb9c77426cm(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_ptbla4b8ozb9c77426cm");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 0, j: 0 }, { i: 1, j: 0 }, { i: 2, j: 0 }, { i: 3, j: 0 }, { i: 4, j: 0 }, { i: 5, j: 0 }, { i: 6, j: 0 }, { i: 7, j: 0 }, { i: 8, j: 0 }, { i: 9, j: 0 }, { i: 10, j: 0 }, { i: 11, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 14, j: 0 }, { i: 15, j: 0 }, { i: 16, j: 0 }, { i: 17, j: 0 }, { i: 18, j: 0 }, { i: 19, j: 0 }, { i: 20, j: 0 }, { i: 21, j: 0 }, { i: 0, j: 1 }, { i: 1, j: 1 }, { i: 2, j: 1 }, { i: 3, j: 1 }, { i: 4, j: 1 }, { i: 5, j: 1 }, { i: 6, j: 1 }, { i: 7, j: 1 }, { i: 8, j: 1 }, { i: 9, j: 1 }, { i: 10, j: 1 }, { i: 11, j: 1 }, { i: 12, j: 1 }, { i: 13, j: 1 }, { i: 14, j: 1 }, { i: 15, j: 1 }, { i: 16, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 19, j: 1 }, { i: 20, j: 1 }, { i: 21, j: 1 }, { i: 0, j: 2 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 16, j: 2 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 20, j: 2 }, { i: 21, j: 2 }, { i: 0, j: 3 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 12, j: 3 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 15, j: 3 }, { i: 16, j: 3 }, { i: 17, j: 3 }, { i: 18, j: 3 }, { i: 19, j: 3 }, { i: 20, j: 3 }, { i: 21, j: 3 }, { i: 0, j: 4 }, { i: 1, j: 4 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 7, j: 4 }, { i: 8, j: 4 }, { i: 9, j: 4 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 12, j: 4 }, { i: 13, j: 4 }, { i: 14, j: 4 }, { i: 15, j: 4 }, { i: 16, j: 4 }, { i: 17, j: 4 }, { i: 18, j: 4 }, { i: 19, j: 4 }, { i: 20, j: 4 }, { i: 21, j: 4 }, { i: 0, j: 5 }, { i: 1, j: 5 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 7, j: 5 }, { i: 8, j: 5 }, { i: 9, j: 5 }, { i: 10, j: 5 }, { i: 11, j: 5 }, { i: 12, j: 5 }, { i: 13, j: 5 }, { i: 14, j: 5 }, { i: 15, j: 5 }, { i: 16, j: 5 }, { i: 17, j: 5 }, { i: 18, j: 5 }, { i: 19, j: 5 }, { i: 20, j: 5 }, { i: 21, j: 5 },  ], css_id: 'tinytable_css_i8vuha4suce1v74hnde0',}, 
+          ];
 
-#mjvmqtnyvy .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#mjvmqtnyvy .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#mjvmqtnyvy .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#mjvmqtnyvy .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#mjvmqtnyvy .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#mjvmqtnyvy .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#mjvmqtnyvy .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#mjvmqtnyvy .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#mjvmqtnyvy .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#mjvmqtnyvy .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#mjvmqtnyvy .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#mjvmqtnyvy .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#mjvmqtnyvy .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#mjvmqtnyvy .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#mjvmqtnyvy .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#mjvmqtnyvy .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#mjvmqtnyvy .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#mjvmqtnyvy .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#mjvmqtnyvy .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#mjvmqtnyvy .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#mjvmqtnyvy .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#mjvmqtnyvy .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#mjvmqtnyvy .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#mjvmqtnyvy .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#mjvmqtnyvy .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#mjvmqtnyvy .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#mjvmqtnyvy .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#mjvmqtnyvy .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#mjvmqtnyvy .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#mjvmqtnyvy .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#mjvmqtnyvy .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#mjvmqtnyvy .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#mjvmqtnyvy .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#mjvmqtnyvy .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#mjvmqtnyvy .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#mjvmqtnyvy .gt_left {
-  text-align: left;
-}
-
-#mjvmqtnyvy .gt_center {
-  text-align: center;
-}
-
-#mjvmqtnyvy .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#mjvmqtnyvy .gt_font_normal {
-  font-weight: normal;
-}
-
-#mjvmqtnyvy .gt_font_bold {
-  font-weight: bold;
-}
-
-#mjvmqtnyvy .gt_font_italic {
-  font-style: italic;
-}
-
-#mjvmqtnyvy .gt_super {
-  font-size: 65%;
-}
-
-#mjvmqtnyvy .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#mjvmqtnyvy .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#mjvmqtnyvy .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#mjvmqtnyvy .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#mjvmqtnyvy .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#mjvmqtnyvy .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#mjvmqtnyvy .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#mjvmqtnyvy .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#mjvmqtnyvy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
-<th id="X" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">X</th>
-<th id="code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">code</th>
-<th id="definition" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">definition</th>
-<th id="lines_connect" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">lines_connect</th>
-<th id="parallel_ok" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">parallel_ok</th>
-<th id="logistic_reg_included" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">logistic_reg_included</th>
-<th id="notes" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">notes</th>
-</tr></thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">1</td>
-<td class="gt_row gt_left" headers="code">BSL</td>
-<td class="gt_row gt_left" headers="definition">Broken-stick model with logistic transition</td>
-<td class="gt_row gt_left" headers="lines_connect">Yes</td>
-<td class="gt_row gt_left" headers="parallel_ok">No</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">Yes</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">2</td>
-<td class="gt_row gt_left" headers="code">CLASS</td>
-<td class="gt_row gt_left" headers="definition">Separate linear regression lines fit to already-classified points</td>
-<td class="gt_row gt_left" headers="lines_connect">Varies</td>
-<td class="gt_row gt_left" headers="parallel_ok">Varies</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">Varies</td>
-<td class="gt_row gt_left" headers="notes">- CLASS-INT: intersection of regression lines - CLASS-SEP: separate lines not specified to intersect - CLASS-LOG: if overlap b/w two lines, used logistic regression to find breakpoint</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">3</td>
-<td class="gt_row gt_left" headers="code">CLU</td>
-<td class="gt_row gt_left" headers="definition">Clustering (without discriminant analysis)</td>
-<td class="gt_row gt_left" headers="lines_connect">NA</td>
-<td class="gt_row gt_left" headers="parallel_ok">NA</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">Yes (indirectly)</td>
-<td class="gt_row gt_left" headers="notes">Includes kmeans, pam, hkmeans, dbscan, hdbscan, mixture models, etc.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">4</td>
-<td class="gt_row gt_left" headers="code">CM</td>
-<td class="gt_row gt_left" headers="definition">Cubic</td>
-<td class="gt_row gt_left" headers="lines_connect">NA</td>
-<td class="gt_row gt_left" headers="parallel_ok">NA</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">No</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">5</td>
-<td class="gt_row gt_left" headers="code">DIS</td>
-<td class="gt_row gt_left" headers="definition">Discriminant analysis</td>
-<td class="gt_row gt_left" headers="lines_connect">NA</td>
-<td class="gt_row gt_left" headers="parallel_ok">NA</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">Yes (indirectly)</td>
-<td class="gt_row gt_left" headers="notes">Includes LDA and QDA. Can be preceded by PCA (principle component analysis = principal factor analysis = major axis regression) and/or preceded by any clustering method.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">6</td>
-<td class="gt_row gt_left" headers="code">DID</td>
-<td class="gt_row gt_left" headers="definition">distribution interval derived (DID) maturity cutline</td>
-<td class="gt_row gt_left" headers="lines_connect">No</td>
-<td class="gt_row gt_left" headers="parallel_ok">NA</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">Yes (indirectly)</td>
-<td class="gt_row gt_left" headers="notes">Richar &amp; Foy (2022)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">7</td>
-<td class="gt_row gt_left" headers="code">GAM</td>
-<td class="gt_row gt_left" headers="definition">Generalized additive model or other form of smoothing splines</td>
-<td class="gt_row gt_left" headers="lines_connect">NA</td>
-<td class="gt_row gt_left" headers="parallel_ok">NA</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">No</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">8</td>
-<td class="gt_row gt_left" headers="code">INFL_PT</td>
-<td class="gt_row gt_left" headers="definition">Based on inflection point or dividing line between frequency modes of a CH/CW ratio histogram</td>
-<td class="gt_row gt_left" headers="lines_connect">NA</td>
-<td class="gt_row gt_left" headers="parallel_ok">NA</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">Yes (indirectly)</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">9</td>
-<td class="gt_row gt_left" headers="code">INT</td>
-<td class="gt_row gt_left" headers="definition">Intersecting</td>
-<td class="gt_row gt_left" headers="lines_connect">Yes</td>
-<td class="gt_row gt_left" headers="parallel_ok">No</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">No, intersection is SMM</td>
-<td class="gt_row gt_left" headers="notes">Two separate lines are plotted for known mature and known immature individuals (like with Somerton method), and t-test used to compare slopes b/w lines. If slopes diff, SM50 is taken to be the intersection of the two lines.</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">10</td>
-<td class="gt_row gt_left" headers="code">LM</td>
-<td class="gt_row gt_left" headers="definition">Linear</td>
-<td class="gt_row gt_left" headers="lines_connect">NA</td>
-<td class="gt_row gt_left" headers="parallel_ok">NA</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">No</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">11</td>
-<td class="gt_row gt_left" headers="code">MIX</td>
-<td class="gt_row gt_left" headers="definition">Mixture modeling</td>
-<td class="gt_row gt_left" headers="lines_connect">No</td>
-<td class="gt_row gt_left" headers="parallel_ok">Yes</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">Yes (indirectly)</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">12</td>
-<td class="gt_row gt_left" headers="code">PU</td>
-<td class="gt_row gt_left" headers="definition">Piecewise linear unclear/not specified</td>
-<td class="gt_row gt_left" headers="lines_connect">Varies</td>
-<td class="gt_row gt_left" headers="parallel_ok">Varies</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">No</td>
-<td class="gt_row gt_left" headers="notes">The description is either unclear or contradictory; for example, citing Somerton 1980b but the description is of TL_even</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">13</td>
-<td class="gt_row gt_left" headers="code">QM</td>
-<td class="gt_row gt_left" headers="definition">Quadratic</td>
-<td class="gt_row gt_left" headers="lines_connect">NA</td>
-<td class="gt_row gt_left" headers="parallel_ok">NA</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">No</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">14</td>
-<td class="gt_row gt_left" headers="code">RATIO</td>
-<td class="gt_row gt_left" headers="definition">Based on a change in CH/CW ratio using a method other than the inflection point method</td>
-<td class="gt_row gt_left" headers="lines_connect">NA</td>
-<td class="gt_row gt_left" headers="parallel_ok">NA</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">Yes (indirectly)</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">15</td>
-<td class="gt_row gt_left" headers="code">SR</td>
-<td class="gt_row gt_left" headers="definition">Broken-stick/segmented regression</td>
-<td class="gt_row gt_left" headers="lines_connect">Yes</td>
-<td class="gt_row gt_left" headers="parallel_ok">No</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">No, breakpoint is SMM</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">16</td>
-<td class="gt_row gt_left" headers="code">TL</td>
-<td class="gt_row gt_left" headers="definition">Two-line model no transition (lines start/end at breakpoint)</td>
-<td class="gt_row gt_left" headers="lines_connect">No</td>
-<td class="gt_row gt_left" headers="parallel_ok">Yes</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">No, breakpoint is SMM</td>
-<td class="gt_row gt_left" headers="notes">TL_obs = iterates over observed values, TL_even = iterates over evenly-spaced values b/w lower and upper limit of unknown range</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">17</td>
-<td class="gt_row gt_left" headers="code">TLL</td>
-<td class="gt_row gt_left" headers="definition">Two-line model with logistic transition</td>
-<td class="gt_row gt_left" headers="lines_connect">Yes</td>
-<td class="gt_row gt_left" headers="parallel_ok">Yes</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">Yes</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">18</td>
-<td class="gt_row gt_left" headers="code">TLS</td>
-<td class="gt_row gt_left" headers="definition">Two-line Somerton method (lines can overlap)</td>
-<td class="gt_row gt_left" headers="lines_connect">No</td>
-<td class="gt_row gt_left" headers="parallel_ok">Yes</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">Yes (indirectly)</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">19</td>
-<td class="gt_row gt_left" headers="code">TLS2</td>
-<td class="gt_row gt_left" headers="definition">Somerton method where lines are tested for a sig. diff. before classifying the unknown points</td>
-<td class="gt_row gt_left" headers="lines_connect">No</td>
-<td class="gt_row gt_left" headers="parallel_ok">Yes</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">Yes (indirectly)</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">20</td>
-<td class="gt_row gt_left" headers="code">VE (B)</td>
-<td class="gt_row gt_left" headers="definition">Visual estimation of allometric breakpoint</td>
-<td class="gt_row gt_left" headers="lines_connect">Varies</td>
-<td class="gt_row gt_left" headers="parallel_ok">Yes</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">No</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">21</td>
-<td class="gt_row gt_left" headers="code">VE (D)</td>
-<td class="gt_row gt_left" headers="definition">Visual estimation of discriminant function</td>
-<td class="gt_row gt_left" headers="lines_connect">NA</td>
-<td class="gt_row gt_left" headers="parallel_ok">NA</td>
-<td class="gt_row gt_left" headers="logistic_reg_included">Yes (indirectly)</td>
-<td class="gt_row gt_left" headers="notes">NA</td>
-</tr>
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_ptbla4b8ozb9c77426cm(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script><style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_i8vuha4suce1v74hnde0, .table th.tinytable_css_i8vuha4suce1v74hnde0 { text-align: left; }
+    </style>
+<div class="container">
+      <table class="table" id="tinytable_ptbla4b8ozb9c77426cm" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+<thead><tr>
+<th scope="col">code</th>
+                <th scope="col">definition</th>
+                <th scope="col">lines_connect</th>
+                <th scope="col">parallel_ok</th>
+                <th scope="col">logistic_reg_included</th>
+                <th scope="col">notes</th>
+              </tr></thead>
+<tbody>
+<tr>
+<td>BSL    </td>
+                  <td>Broken-stick model with logistic transition                                                  </td>
+                  <td>Yes   </td>
+                  <td>No    </td>
+                  <td>Yes                    </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>CLASS  </td>
+                  <td>Separate linear regression lines fit to already-classified points                            </td>
+                  <td>Varies</td>
+                  <td>Varies</td>
+                  <td>Varies                 </td>
+                  <td>- CLASS-INT: intersection of regression lines
+- CLASS-SEP: separate lines not specified to intersect
+- CLASS-LOG: if overlap b/w two lines, used logistic regression to find breakpoint                                      </td>
+                </tr>
+<tr>
+<td>CLU    </td>
+                  <td>Clustering (without discriminant analysis)                                                   </td>
+                  <td>NA    </td>
+                  <td>NA    </td>
+                  <td>Yes (indirectly)       </td>
+                  <td>Includes kmeans, pam, hkmeans, dbscan, hdbscan, mixture models, etc.                                                                                                                                                           </td>
+                </tr>
+<tr>
+<td>CM     </td>
+                  <td>Cubic                                                                                        </td>
+                  <td>NA    </td>
+                  <td>NA    </td>
+                  <td>No                     </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>DIS    </td>
+                  <td>Discriminant analysis                                                                        </td>
+                  <td>NA    </td>
+                  <td>NA    </td>
+                  <td>Yes (indirectly)       </td>
+                  <td>Includes LDA and QDA. Can be preceded by PCA (principle component analysis = principal factor analysis = major axis regression) and/or preceded by any clustering method.                                                      </td>
+                </tr>
+<tr>
+<td>DID    </td>
+                  <td>distribution interval derived (DID) maturity cutline                                         </td>
+                  <td>No    </td>
+                  <td>NA    </td>
+                  <td>Yes (indirectly)       </td>
+                  <td>Richar &amp; Foy (2022)                                                                                                                                                                                                            </td>
+                </tr>
+<tr>
+<td>GAM    </td>
+                  <td>Generalized additive model or other form of smoothing splines                                </td>
+                  <td>NA    </td>
+                  <td>NA    </td>
+                  <td>No                     </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>INFL_PT</td>
+                  <td>Based on inflection point or dividing line between frequency modes of a CH/CW ratio histogram</td>
+                  <td>NA    </td>
+                  <td>NA    </td>
+                  <td>Yes (indirectly)       </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>INT    </td>
+                  <td>Intersecting                                                                                 </td>
+                  <td>Yes   </td>
+                  <td>No    </td>
+                  <td>No, intersection is SMM</td>
+                  <td>Two separate lines are plotted for known mature and known immature individuals (like with Somerton method), and t-test used to compare slopes b/w lines. If slopes diff, SM50 is taken to be the intersection of the two lines.</td>
+                </tr>
+<tr>
+<td>LM     </td>
+                  <td>Linear                                                                                       </td>
+                  <td>NA    </td>
+                  <td>NA    </td>
+                  <td>No                     </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>MIX    </td>
+                  <td>Mixture modeling                                                                             </td>
+                  <td>No    </td>
+                  <td>Yes   </td>
+                  <td>Yes (indirectly)       </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>PU     </td>
+                  <td>Piecewise linear unclear/not specified                                                       </td>
+                  <td>Varies</td>
+                  <td>Varies</td>
+                  <td>No                     </td>
+                  <td>The description is either unclear or contradictory; for example, citing Somerton 1980b but the description is of TL_even                                                                                                       </td>
+                </tr>
+<tr>
+<td>QM     </td>
+                  <td>Quadratic                                                                                    </td>
+                  <td>NA    </td>
+                  <td>NA    </td>
+                  <td>No                     </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>RATIO  </td>
+                  <td>Based on a change in CH/CW ratio using a method other than the inflection point method       </td>
+                  <td>NA    </td>
+                  <td>NA    </td>
+                  <td>Yes (indirectly)       </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>SR     </td>
+                  <td>Broken-stick/segmented regression                                                            </td>
+                  <td>Yes   </td>
+                  <td>No    </td>
+                  <td>No, breakpoint is SMM  </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>TL     </td>
+                  <td>Two-line model no transition (lines start/end at breakpoint)                                 </td>
+                  <td>No    </td>
+                  <td>Yes   </td>
+                  <td>No, breakpoint is SMM  </td>
+                  <td>TL_obs = iterates over observed values, TL_even = iterates over evenly-spaced values b/w lower and upper limit of unknown range                                                                                                </td>
+                </tr>
+<tr>
+<td>TLL    </td>
+                  <td>Two-line model with logistic transition                                                      </td>
+                  <td>Yes   </td>
+                  <td>Yes   </td>
+                  <td>Yes                    </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>TLS    </td>
+                  <td>Two-line Somerton method (lines can overlap)                                                 </td>
+                  <td>No    </td>
+                  <td>Yes   </td>
+                  <td>Yes (indirectly)       </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>TLS2   </td>
+                  <td>Somerton method where lines are tested for a sig. diff. before classifying the unknown points</td>
+                  <td>No    </td>
+                  <td>Yes   </td>
+                  <td>Yes (indirectly)       </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>VE (B) </td>
+                  <td>Visual estimation of allometric breakpoint                                                   </td>
+                  <td>Varies</td>
+                  <td>Yes   </td>
+                  <td>No                     </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
+<tr>
+<td>VE (D) </td>
+                  <td>Visual estimation of discriminant function                                                   </td>
+                  <td>NA    </td>
+                  <td>NA    </td>
+                  <td>Yes (indirectly)       </td>
+                  <td>NA                                                                                                                                                                                                                             </td>
+                </tr>
 </tbody>
 </table>
 </div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </figure>
 </div>
 </div>
-<section id="measurement-notes" class="level3" data-number="C.0.1"><h3 data-number="C.0.1" class="anchored" data-anchor-id="measurement-notes">
-<span class="header-section-number">C.0.1</span> Measurement Notes</h3>
+<section id="measurement-notes" class="level2" data-number="C.1"><h2 data-number="C.1" class="anchored" data-anchor-id="measurement-notes">
+<span class="header-section-number">C.1</span> Measurement Notes</h2>
 <ol type="1">
 <li>Prefixes: l_ = left, r_ = right, d_ = dominant, m_ = minor. pre_ = pre-molt, post_ = post-molt, o_ = original, reg_ = regenerated. Use dominant and minor instead of left/right where possible</li>
 <li>“Claw” is assumed to mean chela rather than the entire cheliped</li>

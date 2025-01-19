@@ -1,5 +1,7 @@
 ---
 format: html
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Data extraction keys {#sec-databasekeys}
@@ -7,7 +9,7 @@ format: html
 ```{r}
 #| message: false
 library(tidyverse)
-library(gt)
+library(tinytable)
 ```
 
 ```{r}
@@ -18,8 +20,10 @@ library(gt)
 # factor_keys <- read_clip_tbl()
 # write.csv(factor_keys, "factor_keys.csv")
 
-factor_keys <- read.csv("factor_keys.csv")
-factor_keys %>% gt()
+factor_keys <- read.csv("factor_keys.csv") %>% select(-X)
+
+tt(factor_keys, theme = "bootstrap") %>% 
+  style_tt(align = "l")
 ```
 
 ```{r}
@@ -27,11 +31,13 @@ factor_keys %>% gt()
 #| label: tbl-stdmeasurements
 #| tbl-cap: "Standardized measurement codes to be used during data extraction."
 
-# supporting_tabs <- read_clip_tbl()
-# write.csv(supporting_tabs, "supporting_tabs.csv")
+# measurement_keys <- read_clip_tbl()
+# write.csv(measurement_keys, "measurement_tabs.csv")
 
-supporting_tabs <- read.csv("supporting_tabs.csv")
-supporting_tabs %>% gt()
+measurement_keys <- read.csv("supporting_tabs.csv") %>% select(-X)
+
+tt(measurement_keys, theme = "bootstrap") %>% 
+  style_tt(align = "l")
 ```
 
 
@@ -40,14 +46,16 @@ supporting_tabs %>% gt()
 #| label: tbl-stdmodels
 #| tbl-cap: "Standardized model codes to be used during data extraction."
 
-# std_models <- read_clip_tbl()
-# write.csv(std_models, "std_models.csv")
+# model_keys <- read_clip_tbl()
+# write.csv(model_keys, "model_keys.csv")
 
-std_models <- read.csv("std_models.csv")
-std_models %>% gt()
+model_keys <- read.csv("std_models.csv") %>% select(-X)
+
+tt(model_keys, theme = "bootstrap") %>% 
+  style_tt(align = "l")
 ```
 
-### Measurement Notes
+## Measurement Notes
 
 1.  Prefixes: l\_ = left, r\_ = right, d\_ = dominant, m\_ = minor. pre\_ = pre-molt, post\_ = post-molt, o\_ = original, reg\_ = regenerated. Use dominant and minor instead of left/right where possible
 2.  "Claw" is assumed to mean chela rather than the entire cheliped

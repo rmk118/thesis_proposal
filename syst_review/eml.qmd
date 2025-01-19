@@ -1,11 +1,13 @@
 ---
 format: html
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
 #| message: false
 library(tidyverse)
-library(gt)
+library(tinytable)
 ```
 
 # Database structure {#sec-databases}
@@ -13,38 +15,29 @@ library(gt)
 ```{r}
 #| message: false
 #| label: tbl-litrevkeys
-#| tbl-cap: "EML attributes for study-level data"
+#| tbl-cap: "EML attributes for study-level, record-level, and species-level data"
 
-# x <- "11quZD2e4_RDqfX7bn75G7LxkEtVeL-m-9Dv_Ou3PliM"
-# x <- drive_get(as_id(x))
-# keys_eml <- drive_download(x, type = "csv", overwrite = TRUE, path = "lit_rev_keys")
-lit_keys <- read.csv("lit_rev_keys.csv")
+eml_keys <- read.csv("eml_keys.csv") %>% 
+  rename(table = Database.table)
 
-lit_keys %>% gt()
-```
-
-```{r}
-#| message: false
-#| label: tbl-recordkeys
-#| tbl-cap: "EML attributes for record-level data"
-
-# params_keys <- read_clip_tbl()
-# write.csv(params_keys, "params_keys.csv")
-params_keys <- read.csv("params_keys.csv")
-
-params_keys %>% gt()
-```
-
-```{r}
-#| message: false
-#| label: tbl-specieskeys
-#| tbl-cap: "EML attributes for species data"
-
-# species_keys <- read_clip_tbl()
-# write.csv(species_keys, "species_keys.csv")
-species_keys <- read.csv("species_keys.csv")
-
-species_keys %>% gt()
+tt(eml_keys) %>% 
+  style_tt(
+    j = "table",
+    i = which(eml_keys$table == c("Study")),
+    background = "#c6e6f0"
+  )  %>% 
+  style_tt(
+    j = "table",
+    i = which(eml_keys$table %in% c("Record", "Study, record")),
+    background = "#5eb6e9"
+  ) %>% 
+  style_tt(
+    j = "table",
+    i = which(eml_keys$table %in% c("Species", "Study, record, species", "Record, species", "Study, species")),
+    background = "#b1dc6b"
+  ) %>% 
+  style_tt(align = "l")
+  
 ```
 
 

@@ -1,5 +1,7 @@
 ---
 bibliography: ../references.bib
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Overview & Background
@@ -82,7 +84,7 @@ There are three kinds of allometric growth: ontogenetic allometry, static allome
 
 ![Relationship between ontogenetic and static allometry, after Shingleton (2010). Thin grey lines represent individual growth trajectories (the relationship between body and claw size within the development of a single individual). The final body and claw sizes (blue dots) combine to form the allometry of size for the population (the thick black line).](images/onto_plus_static.png){fig-align="center" width="400"}
 
-![All three types of allometry in one figure. After Neiro (2020). Different shapes represent three different crustacean species.](images/three_allometry.png){fig-align="center"}
+![All three types of allometry in one figure. After Neiro [-@neiro]. Different shapes represent three different crustacean species.](images/three_allometry.png){fig-align="center"}
 
 Growth patterns often change upon reaching maturity due to increased energy allocation towards reproduction, meaning that biphasic growth models are more accurate than those that do not differentiate between pre- and post-maturation growth [@quince2008; @minte-vera2016]. Within the broad paradigm of crustacean growth, there exists a tremendous diversity of growth patterns. The first major factor distinguishing these growth scenarios is the presence or absence of a terminal molt. For species that exhibit indeterminate growth, molting continues until death, whereas determinate growth is said to occur when a crustacean enters “terminal anecdysis” after the last molt (often the puberty molt) and can no longer grow or repair bodily damage by molting. An extreme example of how growth changes at maturity can be found in crustacean species like the snow crab that have a terminal molt to maturity, meaning that growth ceases once an individual becomes mature [@conan1986].
 

@@ -1,5 +1,7 @@
 ---
 bibliography: ../references.bib
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Systematic Review
@@ -101,7 +103,7 @@ Author information will be used to visualize citation and co-authorship networks
 
 Most factor variables will be summarized by calculating the proportion of included studies for which the variable was coded TRUE: for example, if the study also recorded physiological maturity, if the study included a measure of variance for their SM50 estimate, or if the study mentioned excluding individuals with regenerating chelae.
 
-More complex meta-analytical models will be fit as Bayesian multilevel mixed models, likely using the `MCMCglmm` or `brms` packages with `bayestestR` or `bayesplot` for visualizing posterior distributions, trace plots, and other relevant graphics. These models will include phylogenetic correlation matrices and can account for non-independence when multiple effect sizes are obtained from the same study. Where sufficient phylogenetic data are available, I will employ the powerful multilevel comparative meta-analysis approach described by Pottier et al. [-@pottier2024].
+More complex meta-analytical models will be fit as Bayesian multilevel mixed models, likely using `brms` with packages like `tidybayes`, `ggdist`, `bayestestR` or `bayesplot` for visualizing posterior distributions, trace plots, and other relevant graphics. These models will include phylogenetic correlation matrices and can account for non-independence when multiple effect sizes are obtained from the same study. Where sufficient phylogenetic data are available, I will employ the powerful multilevel comparative meta-analysis approach described by Pottier et al. [-@pottier2024].
 
 [![Figure 2 from Pottier et al. illustrating conceptual frameworks for community-level and function-valued analyses.](images/pottier_etal2024.jpg){fig-align="center"}](https://doi.org/10.1016/j.tree.2023.12.004)
 

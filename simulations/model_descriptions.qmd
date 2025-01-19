@@ -492,8 +492,10 @@ partC_left1 + points2 + arrowplot + partC_right +
   # subtitle = 'Hypotheses concerning evolutionary processes and generality',
   # theme = theme(plot.title = element_text(hjust = 0.5, face = "bold"),
   #               plot.subtitle = element_text(hjust = 0.5, vjust = -0.1)))
-partC_left1 + points2 + partC_right + 
-  plot_layout(ncol = 3, widths = c(4, 3.5, 2))
+(partC_left1 | points2) + partC_right + 
+  plot_layout(ncol = 3, widths = c(4, 3.5, 2)) + 
+  plot_annotation(tag_levels = list(c('A', '', 'B'))) & 
+  theme(plot.tag = element_text(vjust = 1))
 ```
 
 ```{r}
@@ -513,4 +515,46 @@ four_panel_funnel <- ggplot(pointsC)  +
   
 (partC_left1 | points2) / (partC_right + four_panel_funnel) + plot_annotation(tag_levels = "A")
 ```
+
+```{r}
+d <- readr::read_rds("https://www.andrewheiss.com/blog/2022/11/29/conditional-marginal-marginaleffects/df_example_lognormal.rds")
+
+library(brms)
+library(marginaleffects)
+library(ggdist)
+
+fit <- brm(
+  bf(y ~ 1 + TX + (1 | cluster)), 
+  family = lognormal(), 
+  data = d,
+  chains = 4, iter = 5000, warmup = 1000, seed = 4445
+)
+
+conditional_preds <- predictions(
+  fit, 
+  newdata = datagrid(TX = c(0, 1)), 
+  by = "TX", 
+  re_formula = NA
+) %>% 
+  posterior_draws()
+
+bayes <- conditional_preds %>% 
+  ggplot(aes(x = draw, fill = factor(TX))) +
+  stat_halfeye(alpha = 0.7) +
+  scale_fill_manual(values = c("#FF6C57", "#A8B8FF")) +
+  labs(x = "Posterior distributions", y = "Probability density") +
+  coord_cartesian(xlim = c(100, 1000)) +
+  theme_classic() +
+  theme(plot.background = element_rect(fill = "white", color = NA),
+        plot.title = element_text(face = "bold"),
+        legend.position = "none",
+        axis.ticks = element_blank(), 
+        axis.text = element_blank())
+
+(partC_left1 | points2) + (partC_right / bayes) +
+  plot_layout(ncol = 3, widths = c(4, 3.5, 2)) + 
+  plot_annotation(tag_levels = list(c('A', '', 'B', 'C'))) & 
+  theme(plot.tag = element_text(vjust = 1))
+```
+
 
