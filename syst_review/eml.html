@@ -248,2211 +248,873 @@ ul.task-list li input[type="checkbox"] {
 </header><div class="cell">
 <div id="tbl-litrevkeys" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-litrevkeys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;B.1: EML attributes for study-level data
+Table&nbsp;B.1: EML attributes for study-level, record-level, and species-level data
 </figcaption><div aria-describedby="tbl-litrevkeys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="kkbuwuasgk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kkbuwuasgk table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<!-- preamble start -->
 
-#kkbuwuasgk thead, #kkbuwuasgk tbody, #kkbuwuasgk tfoot, #kkbuwuasgk tr, #kkbuwuasgk td, #kkbuwuasgk th {
-  border-style: none;
-}
+    <script>
 
-#kkbuwuasgk p {
-  margin: 0;
-  padding: 0;
-}
+      function styleCell_vpzvo6zymhzd6u7fipk6(i, j, css_id) {
+          var table = document.getElementById("tinytable_vpzvo6zymhzd6u7fipk6");
+          var cell = table.rows[i]?.cells[j];  // Safe navigation to avoid errors
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_vpzvo6zymhzd6u7fipk6');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_vpzvo6zymhzd6u7fipk6(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_vpzvo6zymhzd6u7fipk6");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: 0, j: 0 }, { i: 0, j: 5 }, { i: 0, j: 1 }, { i: 0, j: 3 }, { i: 0, j: 4 }, { i: 0, j: 2 }, { i: 0, j: 6 },  ], css_id: 'tinytable_css_ziyvgn8vdxqna1wufdsl',}, 
+          { positions: [ { i: 85, j: 0 },  ], css_id: 'tinytable_css_vvznum3zmd8prnctf1h7',}, 
+          { positions: [ { i: 4, j: 1 }, { i: 2, j: 1 }, { i: 8, j: 1 }, { i: 5, j: 1 }, { i: 10, j: 1 }, { i: 7, j: 1 }, { i: 12, j: 1 }, { i: 13, j: 1 }, { i: 1, j: 1 }, { i: 15, j: 1 }, { i: 3, j: 1 }, { i: 17, j: 1 }, { i: 18, j: 1 }, { i: 19, j: 1 }, { i: 20, j: 1 }, { i: 21, j: 1 }, { i: 9, j: 1 }, { i: 23, j: 1 }, { i: 24, j: 1 }, { i: 25, j: 1 }, { i: 26, j: 1 }, { i: 14, j: 1 }, { i: 28, j: 1 }, { i: 29, j: 1 }, { i: 30, j: 1 }, { i: 31, j: 1 }, { i: 32, j: 1 }, { i: 33, j: 1 }, { i: 34, j: 1 }, { i: 35, j: 1 }, { i: 36, j: 1 }, { i: 37, j: 1 }, { i: 38, j: 1 }, { i: 39, j: 1 }, { i: 40, j: 1 }, { i: 41, j: 1 }, { i: 42, j: 1 }, { i: 43, j: 1 }, { i: 44, j: 1 }, { i: 45, j: 1 }, { i: 6, j: 1 }, { i: 47, j: 1 }, { i: 48, j: 1 }, { i: 49, j: 1 }, { i: 50, j: 1 }, { i: 11, j: 1 }, { i: 52, j: 1 }, { i: 53, j: 1 }, { i: 54, j: 1 }, { i: 55, j: 1 }, { i: 56, j: 1 }, { i: 57, j: 1 }, { i: 58, j: 1 }, { i: 59, j: 1 }, { i: 60, j: 1 }, { i: 61, j: 1 }, { i: 22, j: 1 }, { i: 63, j: 1 }, { i: 64, j: 1 }, { i: 65, j: 1 }, { i: 66, j: 1 }, { i: 27, j: 1 }, { i: 68, j: 1 }, { i: 69, j: 1 }, { i: 70, j: 1 }, { i: 71, j: 1 }, { i: 72, j: 1 }, { i: 73, j: 1 }, { i: 74, j: 1 }, { i: 75, j: 1 }, { i: 76, j: 1 }, { i: 77, j: 1 }, { i: 78, j: 1 }, { i: 79, j: 1 }, { i: 80, j: 1 }, { i: 81, j: 1 }, { i: 82, j: 1 }, { i: 83, j: 1 }, { i: 84, j: 1 }, { i: 34, j: 3 }, { i: 46, j: 1 }, { i: 1, j: 2 }, { i: 2, j: 2 }, { i: 3, j: 2 }, { i: 4, j: 2 }, { i: 5, j: 2 }, { i: 6, j: 2 }, { i: 7, j: 2 }, { i: 8, j: 2 }, { i: 9, j: 2 }, { i: 10, j: 2 }, { i: 11, j: 2 }, { i: 12, j: 2 }, { i: 13, j: 2 }, { i: 14, j: 2 }, { i: 15, j: 2 }, { i: 62, j: 1 }, { i: 17, j: 2 }, { i: 18, j: 2 }, { i: 19, j: 2 }, { i: 20, j: 2 }, { i: 21, j: 2 }, { i: 22, j: 2 }, { i: 23, j: 2 }, { i: 24, j: 2 }, { i: 25, j: 2 }, { i: 26, j: 2 }, { i: 27, j: 2 }, { i: 28, j: 2 }, { i: 29, j: 2 }, { i: 30, j: 2 }, { i: 31, j: 2 }, { i: 32, j: 2 }, { i: 33, j: 2 }, { i: 34, j: 2 }, { i: 35, j: 2 }, { i: 36, j: 2 }, { i: 37, j: 2 }, { i: 38, j: 2 }, { i: 39, j: 2 }, { i: 40, j: 2 }, { i: 41, j: 2 }, { i: 42, j: 2 }, { i: 43, j: 2 }, { i: 44, j: 2 }, { i: 45, j: 2 }, { i: 46, j: 2 }, { i: 47, j: 2 }, { i: 48, j: 2 }, { i: 49, j: 2 }, { i: 50, j: 2 }, { i: 16, j: 1 }, { i: 52, j: 2 }, { i: 53, j: 2 }, { i: 54, j: 2 }, { i: 55, j: 2 }, { i: 56, j: 2 }, { i: 57, j: 2 }, { i: 58, j: 2 }, { i: 59, j: 2 }, { i: 60, j: 2 }, { i: 61, j: 2 }, { i: 62, j: 2 }, { i: 63, j: 2 }, { i: 64, j: 2 }, { i: 65, j: 2 }, { i: 66, j: 2 }, { i: 67, j: 2 }, { i: 68, j: 2 }, { i: 69, j: 2 }, { i: 70, j: 2 }, { i: 71, j: 2 }, { i: 72, j: 2 }, { i: 73, j: 2 }, { i: 74, j: 2 }, { i: 75, j: 2 }, { i: 76, j: 2 }, { i: 77, j: 2 }, { i: 78, j: 2 }, { i: 79, j: 2 }, { i: 80, j: 2 }, { i: 81, j: 2 }, { i: 82, j: 2 }, { i: 83, j: 2 }, { i: 84, j: 2 }, { i: 34, j: 4 }, { i: 51, j: 1 }, { i: 1, j: 3 }, { i: 2, j: 3 }, { i: 3, j: 3 }, { i: 4, j: 3 }, { i: 5, j: 3 }, { i: 6, j: 3 }, { i: 7, j: 3 }, { i: 8, j: 3 }, { i: 9, j: 3 }, { i: 10, j: 3 }, { i: 11, j: 3 }, { i: 12, j: 3 }, { i: 13, j: 3 }, { i: 14, j: 3 }, { i: 15, j: 3 }, { i: 67, j: 1 }, { i: 17, j: 3 }, { i: 18, j: 3 }, { i: 19, j: 3 }, { i: 20, j: 3 }, { i: 21, j: 3 }, { i: 22, j: 3 }, { i: 23, j: 3 }, { i: 24, j: 3 }, { i: 25, j: 3 }, { i: 26, j: 3 }, { i: 27, j: 3 }, { i: 28, j: 3 }, { i: 29, j: 3 }, { i: 30, j: 3 }, { i: 31, j: 3 }, { i: 32, j: 3 }, { i: 33, j: 3 }, { i: 69, j: 4 }, { i: 35, j: 3 }, { i: 36, j: 3 }, { i: 37, j: 3 }, { i: 38, j: 3 }, { i: 39, j: 3 }, { i: 40, j: 3 }, { i: 41, j: 3 }, { i: 42, j: 3 }, { i: 43, j: 3 }, { i: 44, j: 3 }, { i: 45, j: 3 }, { i: 46, j: 3 }, { i: 47, j: 3 }, { i: 48, j: 3 }, { i: 49, j: 3 }, { i: 50, j: 3 }, { i: 16, j: 2 }, { i: 52, j: 3 }, { i: 53, j: 3 }, { i: 54, j: 3 }, { i: 55, j: 3 }, { i: 56, j: 3 }, { i: 57, j: 3 }, { i: 58, j: 3 }, { i: 59, j: 3 }, { i: 60, j: 3 }, { i: 61, j: 3 }, { i: 62, j: 3 }, { i: 63, j: 3 }, { i: 64, j: 3 }, { i: 65, j: 3 }, { i: 66, j: 3 }, { i: 67, j: 3 }, { i: 68, j: 3 }, { i: 69, j: 3 }, { i: 70, j: 3 }, { i: 71, j: 3 }, { i: 72, j: 3 }, { i: 73, j: 3 }, { i: 74, j: 3 }, { i: 75, j: 3 }, { i: 76, j: 3 }, { i: 77, j: 3 }, { i: 78, j: 3 }, { i: 79, j: 3 }, { i: 80, j: 3 }, { i: 81, j: 3 }, { i: 82, j: 3 }, { i: 83, j: 3 }, { i: 84, j: 3 }, { i: 34, j: 5 }, { i: 51, j: 2 }, { i: 1, j: 4 }, { i: 2, j: 4 }, { i: 3, j: 4 }, { i: 4, j: 4 }, { i: 5, j: 4 }, { i: 6, j: 4 }, { i: 7, j: 4 }, { i: 8, j: 4 }, { i: 9, j: 4 }, { i: 10, j: 4 }, { i: 11, j: 4 }, { i: 12, j: 4 }, { i: 13, j: 4 }, { i: 14, j: 4 }, { i: 15, j: 4 }, { i: 16, j: 4 }, { i: 17, j: 4 }, { i: 18, j: 4 }, { i: 19, j: 4 }, { i: 20, j: 4 }, { i: 21, j: 4 }, { i: 22, j: 4 }, { i: 23, j: 4 }, { i: 24, j: 4 }, { i: 25, j: 4 }, { i: 26, j: 4 }, { i: 27, j: 4 }, { i: 28, j: 4 }, { i: 29, j: 4 }, { i: 30, j: 4 }, { i: 31, j: 4 }, { i: 32, j: 4 }, { i: 33, j: 4 }, { i: 69, j: 5 }, { i: 35, j: 4 }, { i: 36, j: 4 }, { i: 37, j: 4 }, { i: 38, j: 4 }, { i: 39, j: 4 }, { i: 40, j: 4 }, { i: 41, j: 4 }, { i: 42, j: 4 }, { i: 43, j: 4 }, { i: 44, j: 4 }, { i: 45, j: 4 }, { i: 46, j: 4 }, { i: 47, j: 4 }, { i: 48, j: 4 }, { i: 49, j: 4 }, { i: 50, j: 4 }, { i: 16, j: 3 }, { i: 52, j: 4 }, { i: 53, j: 4 }, { i: 54, j: 4 }, { i: 55, j: 4 }, { i: 56, j: 4 }, { i: 57, j: 4 }, { i: 58, j: 4 }, { i: 59, j: 4 }, { i: 60, j: 4 }, { i: 61, j: 4 }, { i: 62, j: 4 }, { i: 63, j: 4 }, { i: 64, j: 4 }, { i: 65, j: 4 }, { i: 66, j: 4 }, { i: 67, j: 4 }, { i: 68, j: 4 }, { i: 18, j: 6 }, { i: 70, j: 4 }, { i: 71, j: 4 }, { i: 72, j: 4 }, { i: 73, j: 4 }, { i: 74, j: 4 }, { i: 75, j: 4 }, { i: 76, j: 4 }, { i: 77, j: 4 }, { i: 78, j: 4 }, { i: 79, j: 4 }, { i: 80, j: 4 }, { i: 81, j: 4 }, { i: 82, j: 4 }, { i: 83, j: 4 }, { i: 84, j: 4 }, { i: 34, j: 6 }, { i: 51, j: 3 }, { i: 1, j: 5 }, { i: 2, j: 5 }, { i: 3, j: 5 }, { i: 4, j: 5 }, { i: 5, j: 5 }, { i: 6, j: 5 }, { i: 7, j: 5 }, { i: 8, j: 5 }, { i: 9, j: 5 }, { i: 10, j: 5 }, { i: 11, j: 5 }, { i: 12, j: 5 }, { i: 13, j: 5 }, { i: 14, j: 5 }, { i: 15, j: 5 }, { i: 16, j: 5 }, { i: 17, j: 5 }, { i: 18, j: 5 }, { i: 19, j: 5 }, { i: 20, j: 5 }, { i: 21, j: 5 }, { i: 22, j: 5 }, { i: 23, j: 5 }, { i: 24, j: 5 }, { i: 25, j: 5 }, { i: 26, j: 5 }, { i: 27, j: 5 }, { i: 28, j: 5 }, { i: 29, j: 5 }, { i: 30, j: 5 }, { i: 31, j: 5 }, { i: 32, j: 5 }, { i: 33, j: 5 }, { i: 69, j: 6 }, { i: 35, j: 5 }, { i: 36, j: 5 }, { i: 37, j: 5 }, { i: 38, j: 5 }, { i: 39, j: 5 }, { i: 40, j: 5 }, { i: 41, j: 5 }, { i: 42, j: 5 }, { i: 43, j: 5 }, { i: 44, j: 5 }, { i: 45, j: 5 }, { i: 46, j: 5 }, { i: 47, j: 5 }, { i: 48, j: 5 }, { i: 49, j: 5 }, { i: 50, j: 5 }, { i: 51, j: 5 }, { i: 52, j: 5 }, { i: 53, j: 5 }, { i: 54, j: 5 }, { i: 55, j: 5 }, { i: 56, j: 5 }, { i: 57, j: 5 }, { i: 58, j: 5 }, { i: 59, j: 5 }, { i: 60, j: 5 }, { i: 61, j: 5 }, { i: 62, j: 5 }, { i: 63, j: 5 }, { i: 64, j: 5 }, { i: 65, j: 5 }, { i: 66, j: 5 }, { i: 67, j: 5 }, { i: 68, j: 5 }, { i: 23, j: 6 }, { i: 70, j: 5 }, { i: 71, j: 5 }, { i: 72, j: 5 }, { i: 73, j: 5 }, { i: 74, j: 5 }, { i: 75, j: 5 }, { i: 76, j: 5 }, { i: 77, j: 5 }, { i: 78, j: 5 }, { i: 79, j: 5 }, { i: 80, j: 5 }, { i: 81, j: 5 }, { i: 82, j: 5 }, { i: 83, j: 5 }, { i: 84, j: 5 }, { i: 39, j: 6 }, { i: 51, j: 4 }, { i: 1, j: 6 }, { i: 2, j: 6 }, { i: 3, j: 6 }, { i: 4, j: 6 }, { i: 5, j: 6 }, { i: 6, j: 6 }, { i: 7, j: 6 }, { i: 8, j: 6 }, { i: 9, j: 6 }, { i: 10, j: 6 }, { i: 11, j: 6 }, { i: 12, j: 6 }, { i: 13, j: 6 }, { i: 14, j: 6 }, { i: 15, j: 6 }, { i: 16, j: 6 }, { i: 17, j: 6 }, { i: 58, j: 6 }, { i: 19, j: 6 }, { i: 20, j: 6 }, { i: 21, j: 6 }, { i: 22, j: 6 }, { i: 63, j: 6 }, { i: 24, j: 6 }, { i: 25, j: 6 }, { i: 26, j: 6 }, { i: 27, j: 6 }, { i: 28, j: 6 }, { i: 29, j: 6 }, { i: 30, j: 6 }, { i: 31, j: 6 }, { i: 32, j: 6 }, { i: 33, j: 6 }, { i: 74, j: 6 }, { i: 35, j: 6 }, { i: 36, j: 6 }, { i: 37, j: 6 }, { i: 38, j: 6 }, { i: 79, j: 6 }, { i: 40, j: 6 }, { i: 41, j: 6 }, { i: 42, j: 6 }, { i: 43, j: 6 }, { i: 44, j: 6 }, { i: 45, j: 6 }, { i: 46, j: 6 }, { i: 47, j: 6 }, { i: 48, j: 6 }, { i: 49, j: 6 }, { i: 50, j: 6 }, { i: 51, j: 6 }, { i: 52, j: 6 }, { i: 53, j: 6 }, { i: 54, j: 6 }, { i: 55, j: 6 }, { i: 56, j: 6 }, { i: 57, j: 6 }, { i: 71, j: 6 }, { i: 59, j: 6 }, { i: 60, j: 6 }, { i: 61, j: 6 }, { i: 62, j: 6 }, { i: 76, j: 6 }, { i: 64, j: 6 }, { i: 65, j: 6 }, { i: 66, j: 6 }, { i: 67, j: 6 }, { i: 68, j: 6 }, { i: 82, j: 6 }, { i: 70, j: 6 }, { i: 84, j: 6 }, { i: 72, j: 6 }, { i: 73, j: 6 }, { i: 78, j: 6 }, { i: 75, j: 6 }, { i: 80, j: 6 }, { i: 77, j: 6 }, { i: 83, j: 6 }, { i: 81, j: 6 },  ], css_id: 'tinytable_css_q7qaepysh38oohongji1',}, 
+          { positions: [ { i: 9, j: 0 }, { i: 53, j: 0 }, { i: 77, j: 0 }, { i: 83, j: 0 }, { i: 80, j: 0 }, { i: 81, j: 0 }, { i: 78, j: 0 }, { i: 8, j: 0 }, { i: 79, j: 0 }, { i: 84, j: 0 }, { i: 82, j: 0 },  ], css_id: 'tinytable_css_pi2hh9vv0ont4im3k9e5',}, 
+          { positions: [ { i: 44, j: 0 }, { i: 42, j: 0 }, { i: 48, j: 0 }, { i: 5, j: 0 }, { i: 10, j: 0 }, { i: 12, j: 0 }, { i: 13, j: 0 }, { i: 1, j: 0 }, { i: 7, j: 0 }, { i: 3, j: 0 }, { i: 16, j: 0 }, { i: 18, j: 0 }, { i: 15, j: 0 }, { i: 20, j: 0 }, { i: 21, j: 0 }, { i: 49, j: 0 }, { i: 23, j: 0 }, { i: 24, j: 0 }, { i: 25, j: 0 }, { i: 26, j: 0 }, { i: 14, j: 0 }, { i: 28, j: 0 }, { i: 29, j: 0 }, { i: 30, j: 0 }, { i: 35, j: 0 }, { i: 19, j: 0 }, { i: 33, j: 0 }, { i: 34, j: 0 }, { i: 39, j: 0 }, { i: 22, j: 0 }, { i: 37, j: 0 }, { i: 38, j: 0 }, { i: 43, j: 0 }, { i: 40, j: 0 }, { i: 41, j: 0 }, { i: 55, j: 0 }, { i: 47, j: 0 }, { i: 51, j: 0 }, { i: 45, j: 0 }, { i: 6, j: 0 }, { i: 11, j: 0 }, { i: 56, j: 0 }, { i: 50, j: 0 }, { i: 59, j: 0 }, { i: 46, j: 0 }, { i: 54, j: 0 }, { i: 27, j: 0 },  ], css_id: 'tinytable_css_nqspsuuqos2bpztn8cab',}, 
+          { positions: [ { i: 36, j: 0 }, { i: 66, j: 0 }, { i: 4, j: 0 }, { i: 17, j: 0 }, { i: 58, j: 0 }, { i: 31, j: 0 }, { i: 61, j: 0 }, { i: 74, j: 0 }, { i: 75, j: 0 }, { i: 2, j: 0 }, { i: 64, j: 0 }, { i: 65, j: 0 }, { i: 52, j: 0 }, { i: 63, j: 0 }, { i: 68, j: 0 }, { i: 69, j: 0 }, { i: 70, j: 0 }, { i: 71, j: 0 }, { i: 72, j: 0 }, { i: 60, j: 0 }, { i: 32, j: 0 }, { i: 76, j: 0 }, { i: 62, j: 0 }, { i: 67, j: 0 }, { i: 57, j: 0 }, { i: 73, j: 0 },  ], css_id: 'tinytable_css_9bc8bb3207t5kfkap527',}, 
+          { positions: [ { i: 85, j: 4 }, { i: 85, j: 2 }, { i: 85, j: 3 }, { i: 85, j: 5 }, { i: 85, j: 1 }, { i: 85, j: 6 },  ], css_id: 'tinytable_css_5jujt51k1se4w5kay21k',}, 
+          ];
 
-#kkbuwuasgk .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#kkbuwuasgk .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#kkbuwuasgk .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#kkbuwuasgk .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#kkbuwuasgk .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#kkbuwuasgk .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#kkbuwuasgk .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#kkbuwuasgk .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#kkbuwuasgk .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#kkbuwuasgk .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#kkbuwuasgk .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#kkbuwuasgk .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#kkbuwuasgk .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#kkbuwuasgk .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#kkbuwuasgk .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#kkbuwuasgk .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#kkbuwuasgk .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#kkbuwuasgk .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#kkbuwuasgk .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#kkbuwuasgk .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#kkbuwuasgk .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#kkbuwuasgk .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#kkbuwuasgk .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#kkbuwuasgk .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#kkbuwuasgk .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#kkbuwuasgk .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#kkbuwuasgk .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#kkbuwuasgk .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#kkbuwuasgk .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#kkbuwuasgk .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#kkbuwuasgk .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#kkbuwuasgk .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#kkbuwuasgk .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#kkbuwuasgk .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#kkbuwuasgk .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#kkbuwuasgk .gt_left {
-  text-align: left;
-}
-
-#kkbuwuasgk .gt_center {
-  text-align: center;
-}
-
-#kkbuwuasgk .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#kkbuwuasgk .gt_font_normal {
-  font-weight: normal;
-}
-
-#kkbuwuasgk .gt_font_bold {
-  font-weight: bold;
-}
-
-#kkbuwuasgk .gt_font_italic {
-  font-style: italic;
-}
-
-#kkbuwuasgk .gt_super {
-  font-size: 65%;
-}
-
-#kkbuwuasgk .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#kkbuwuasgk .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#kkbuwuasgk .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#kkbuwuasgk .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#kkbuwuasgk .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#kkbuwuasgk .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#kkbuwuasgk .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#kkbuwuasgk .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#kkbuwuasgk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
-<th id="attributeName" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">attributeName</th>
-<th id="class" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">class</th>
-<th id="attributeDefinition" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">attributeDefinition</th>
-<th id="formatString" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">formatString</th>
-<th id="unit" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">unit</th>
-<th id="numberType" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">numberType</th>
-</tr></thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">authors</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Authors of the source, in the order in which they were listed in the source. Author names should be in Last, First M.I. format (e.g., Smith, John L.) with initials used if first names are not provided (Smith, J. or Smith, J.L.). Separate author names with a semicolon and do not include "and" or an ampersand symbol before the last author in the list.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">auth_short</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">First author of source if there are 3+ authors or "Auth1 &amp; Auth2" if there are only two authors.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">type</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Source type (journal article, thesis, conference paper, etc.)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">title</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Source title, in sentence case.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">paper_link</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Link to paper, using a DOI or other permanent identifier where available.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">language</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Language(s) in which the source was published</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">journal</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Journal title, if applicable. Do not abbreviate.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">species_common</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Common name of modeled species, either as given in the source document or as listed in WoRMS. Separated by ";" if multiple</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">species_sci</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Scientific name of modeled species (ITIS standard/most current valid taxonomic name, as listed in WoRMS). Separated by ";" if multiple</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">country</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Country or countries where the samples were collected. This is not necessarily the country home to the institution(s) with which the authors are primarily affiliated. Refer to this link for standardized country names: https://en.wikipedia.org/wiki/List_of_sovereign_states</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">time_method</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Description of how temporal variation was included in the study (e.g., separate estimates of SM50 for multiple years of data vs. dynamical system/state-space approach).</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">spatial_method</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Description of how spatial variation was included in the study (e.g., separate estimates of SM50 for multiple regions vs. a spatially-explicit model).</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">all_vars_meas</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">List of all variables measured in the study for the purpose of determining size at maturity, separated by ";". Use standardized measurement names where possible</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">all_vars_used</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">List of all variables used to obtain the final estimate of SM50, separated by ";". Most commonly carapace width and chela height for males and carapace width and abdomen width or length for females. Use standardized measurement names where possible.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">ref_var</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Which reference variable was used as a measure of body size? Use standardized measurement names where possible.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">claw_regen_notes</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Description of approach used to exclude regenerating chelae from the final analysis.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">mod_form</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Modeling approach used to estimate SM50, separated by ";" if multiple. Used standardized names where possible.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">referred_to_as</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Authors' name for the modeling approach used to estimate SM50.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">reference</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Which paper(s) did the authors cite as a reference for their modeling approach?</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">error_dist</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Did the authors mention error distributions? If true, explain: did they explicitly model error distributions or structures (measurement error, heteroscedasticity, etc.) and if so, how?</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">reg_type</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Provide details on the type of regression did the authors use, if the answer was TRUE for "Did the authors discuss/justify their use of Model I vs Model II regression?"</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">mod_tests</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">What kinds of tests, if any, did the authors perform on the results of their model? This can include the type of test used to compare the SM50 to a linear model</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">ref_var_notes</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Notes about justification for selecting the given reference variable.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">software</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">What software or programming language was used for the modeling?</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">package</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Any specific computer programs, scripts, orcpackages described by the source as being used for the model.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">code_link</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Link to code, using a DOI or other permanent identifier where available.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">data_link</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Link to data, using a DOI or other permanent identifier where available.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">ecoevo_sig</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Paper's explanation of the evolutionary/ecological significance of the change in chela and/or abdomen morphology at maturity.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">fishing_effect</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Paper's findings related to the effects of harvesting on size at maturity.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">temp_effect</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Paper's findings related to the effects of temperature or climate change on size at maturity.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">comments</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Other comments about the paper</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">year</td>
-<td class="gt_row gt_left" headers="class">dateTime</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Year of publication</td>
-<td class="gt_row gt_left" headers="formatString">YYYY</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">start_date</td>
-<td class="gt_row gt_left" headers="class">dateTime</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Beginning of time period during which samples were collected</td>
-<td class="gt_row gt_left" headers="formatString">YYYY-MM-DD</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">end_date</td>
-<td class="gt_row gt_left" headers="class">dateTime</td>
-<td class="gt_row gt_left" headers="attributeDefinition">End of time period during which samples were collected</td>
-<td class="gt_row gt_left" headers="formatString">YYYY-MM-DD</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">habitat</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Type of habitat where the crustacean lives ("marine", "fresh", "brackish", "terrestrial"). Default should be what is listed in WoRMS, unless the source document indicates otherwise. For example, if WoRMS lists a species as marine/freshwater/brackish but the population studied in the article was only from a freshwater stream, put "fresh".</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">sex</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Sex for which SM50 is being estimated (M, F, B = both separately, C = both combined, NS = not specified). Note that sometimes size at maturity will be estimated for both sexes but for females will be done using ovarian staging or similar physiological methods, while allometric data are used for males. If estimates of SM50 are not derived for the females besides a normal maturity ogive, this would only count as "M"</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">phys_comp</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">How did the estimate of size at morphometric maturity compare to estimates of size at physiological or functional maturity, either from the same study or from previous studies mentioned in the paper? higher/lower/same = morphometric L50 was higher than/lower than/roughly the same as phys/func L50 conflict = morphometric L50 was higher than some previous phys/func estimates and lower than others NA if no comparison made</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">also_phys</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Did the authors also measure physiological or functional maturity? E.g., classification of gonad development, presence of sperm in female spermathecae. (TRUE/FALSE)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">coords_avail</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Did the authors provide geographic coordinates for the location(s) where samples were collected? TRUE, FALSE, or APPROX if not provided but could be extracted from provided maps or closely approximated based on information given in the text</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">time_var</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Did the authors consider temporal variation in SM50? (TRUE/FALSE)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">spatial_var</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Did the authors consider spatial variation in SM50? (TRUE/FALSE)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">claw_regen</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Did they mention excluding crabs with (fully or partially) regenerated chelae? (TRUE/FALSE)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">mult_models</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Did the authors test multiple modeling approaches to estimate SM50? Note: this does not include a simple linear model developed as the null hypothesis to a piecewise model (see next question). Also excluded are models based on morphological or functional maturity data. (TRUE/FALSE)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">reg_mention</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Did the authors discuss/justify their use of Model I vs Model II regression? (OLS, Reduced Major Axis, Major Axis) (TRUE/FALSE)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">log_trans</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Did the authors assume an untransformed or log-log relationship for the regression equation? NOTE that this does NOT refer to whether the authors used log-log data for the regression fitting or non-linear least squares (e.g., Levenberg-Marquardt), as either of those methods assume y=aX^b instead of y=a+bx</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">est_variance</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Did the study provide a measure of variance/confidence for their estimate of SM50? (SD, 95% CIs, etc.)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">code_avail</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Does the paper provide the code used for the modeling? (TRUE/FALSE)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">data_avail</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Does the paper provide the raw data used for the analysis? (TRUE/FALSE)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">success</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Did the authors conclude that the morphometric relationship could be reliably used to estimate size at maturity, or at least to distinguish between immature and mature individuals? (TRUE/FALSE)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">mgmt_context</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Did the authors mention tangible ways in which fisheries regulations/management frameworks might be adjusted based on their findings? (TRUE/FALSE)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">novel_stats</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Does the paper develop a novel method or include commentary about an existing modeling method that should be tested/explored during the simulation testing? (TRUE/FALSE)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">study_id</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">ID number assigned to each study for the purpose of aligning entries in different datasets</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">dimensionless</td>
-<td class="gt_row gt_left" headers="numberType">natural</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">AphiaID</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">WoRMS AphiaID(s) of the species included in the study, separated by ";" if multiple</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">dimensionless</td>
-<td class="gt_row gt_left" headers="numberType">natural</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">tot_samp_size</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Total number of unique crustaceans from which morphometric data were analyzed</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">number</td>
-<td class="gt_row gt_left" headers="numberType">natural</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">min_samp_size</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Minimum sample size used to estimate size at maturity, if separate models were fit for different sexes, regions, etc.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">number</td>
-<td class="gt_row gt_left" headers="numberType">natural</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">max_samp_size</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Maximum sample size used to estimate size at maturity, if separate models were fit for different sexes, regions, etc.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">number</td>
-<td class="gt_row gt_left" headers="numberType">natural</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">latitude</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Latitude value(s), in EPSG 4326/WGS84 format, separated by ";" if multiple</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">degree</td>
-<td class="gt_row gt_left" headers="numberType">real</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="attributeName">longitude</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Longitude value(s), in EPSG 4326/WGS84 format, separated by ";" if multiple</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">degree</td>
-<td class="gt_row gt_left" headers="numberType">real</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="attributeName">num_breakpoints</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">How many transition points were estimated? Default is 1, the transition between immature and mature, but could be &gt;1 if used to differentiate instars</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">number</td>
-<td class="gt_row gt_left" headers="numberType">natural</td>
-</tr>
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_vpzvo6zymhzd6u7fipk6(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script><style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_ziyvgn8vdxqna1wufdsl, .table th.tinytable_css_ziyvgn8vdxqna1wufdsl { text-align: left; border-top: solid #d3d8dc 0.1em; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_vvznum3zmd8prnctf1h7, .table th.tinytable_css_vvznum3zmd8prnctf1h7 { background-color: #b1dc6b; text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_q7qaepysh38oohongji1, .table th.tinytable_css_q7qaepysh38oohongji1 { text-align: left; }
+      .table td.tinytable_css_pi2hh9vv0ont4im3k9e5, .table th.tinytable_css_pi2hh9vv0ont4im3k9e5 { background-color: #b1dc6b; text-align: left; }
+      .table td.tinytable_css_nqspsuuqos2bpztn8cab, .table th.tinytable_css_nqspsuuqos2bpztn8cab { background-color: #c6e6f0; text-align: left; }
+      .table td.tinytable_css_9bc8bb3207t5kfkap527, .table th.tinytable_css_9bc8bb3207t5kfkap527 { background-color: #5eb6e9; text-align: left; }
+      .table td.tinytable_css_5jujt51k1se4w5kay21k, .table th.tinytable_css_5jujt51k1se4w5kay21k { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+    </style>
+<div class="container">
+      <table class="table table-borderless" id="tinytable_vpzvo6zymhzd6u7fipk6" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+<thead><tr>
+<th scope="col">table</th>
+                <th scope="col">attributeName</th>
+                <th scope="col">class</th>
+                <th scope="col">attributeDefinition</th>
+                <th scope="col">formatString</th>
+                <th scope="col">unit</th>
+                <th scope="col">numberType</th>
+              </tr></thead>
+<tbody>
+<tr>
+<td>Study                 </td>
+                  <td>authors                </td>
+                  <td>character</td>
+                  <td>Authors of the source, in the order in which they were listed in the source. Author names should be in Last, First M.I. format (e.g., Smith, John L.) with initials used if first names are not provided (Smith, J. or Smith, J.L.). Separate author names with a semicolon and do not include "and" or an ampersand symbol before the last author in the list.                                                                           </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study, record         </td>
+                  <td>auth_short             </td>
+                  <td>character</td>
+                  <td>First author of source if there are 3+ authors or "Auth1 &amp; Auth2" if there are only two authors.                                                                                                                                                                                                                                                                                                                                          </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>type                   </td>
+                  <td>character</td>
+                  <td>Source type (journal article, thesis, conference paper, etc.)                                                                                                                                                                                                                                                                                                                                                                             </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study, record         </td>
+                  <td>title                  </td>
+                  <td>character</td>
+                  <td>Source title, in sentence case.                                                                                                                                                                                                                                                                                                                                                                                                           </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>paper_link             </td>
+                  <td>character</td>
+                  <td>Link to paper, using a DOI or other permanent identifier where available.                                                                                                                                                                                                                                                                                                                                                                 </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>language               </td>
+                  <td>character</td>
+                  <td>Language(s) in which the source was published                                                                                                                                                                                                                                                                                                                                                                                             </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>journal                </td>
+                  <td>character</td>
+                  <td>Journal title, if applicable. Do not abbreviate.                                                                                                                                                                                                                                                                                                                                                                                          </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study, species        </td>
+                  <td>species_common         </td>
+                  <td>character</td>
+                  <td>Common name of modeled species, either as given in the source document or as listed in WoRMS. Separated by ";" if multiple                                                                                                                                                                                                                                                                                                                </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study, record, species</td>
+                  <td>species_sci            </td>
+                  <td>character</td>
+                  <td>Scientific name of modeled species (ITIS standard/most current valid taxonomic name, as listed in WoRMS). Separated by ";" if multiple                                                                                                                                                                                                                                                                                                    </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>country                </td>
+                  <td>character</td>
+                  <td>Country or countries where the samples were collected. This is not necessarily the country home to the institution(s) with which the authors are primarily affiliated. Refer to this link for standardized country names: https://en.wikipedia.org/wiki/List_of_sovereign_states                                                                                                                                                          </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>time_method            </td>
+                  <td>character</td>
+                  <td>Description of how temporal variation was included in the study (e.g., separate estimates of SM50 for multiple years of data vs. dynamical system/state-space approach).                                                                                                                                                                                                                                                                  </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>spatial_method         </td>
+                  <td>character</td>
+                  <td>Description of how spatial variation was included in the study (e.g., separate estimates of SM50 for multiple regions vs. a spatially-explicit model).                                                                                                                                                                                                                                                                                    </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>all_vars_meas          </td>
+                  <td>character</td>
+                  <td>List of all variables measured in the study for the purpose of determining size at maturity, separated by ";". Use standardized measurement names where possible                                                                                                                                                                                                                                                                          </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>all_vars_used          </td>
+                  <td>character</td>
+                  <td>List of all variables used to obtain the final estimate of SM50, separated by ";". Most commonly carapace width and chela height for males and carapace width and abdomen width or length for females. Use standardized measurement names where possible.                                                                                                                                                                                 </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>ref_var                </td>
+                  <td>character</td>
+                  <td>Which reference variable was used as a measure of body size? Use standardized measurement names where possible.                                                                                                                                                                                                                                                                                                                           </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>claw_regen_notes       </td>
+                  <td>character</td>
+                  <td>Description of approach used to exclude regenerating chelae from the final analysis.                                                                                                                                                                                                                                                                                                                                                      </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study, record         </td>
+                  <td>mod_form               </td>
+                  <td>character</td>
+                  <td>Modeling approach used to estimate SM50, separated by ";" if multiple. Used standardized names where possible.                                                                                                                                                                                                                                                                                                                            </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>referred_to_as         </td>
+                  <td>character</td>
+                  <td>Authors' name for the modeling approach used to estimate SM50.                                                                                                                                                                                                                                                                                                                                                                            </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>reference              </td>
+                  <td>character</td>
+                  <td>Which paper(s) did the authors cite as a reference for their modeling approach?                                                                                                                                                                                                                                                                                                                                                           </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>error_dist             </td>
+                  <td>character</td>
+                  <td>Did the authors mention error distributions? If true, explain: did they explicitly model error distributions or structures (measurement error, heteroscedasticity, etc.) and if so, how?                                                                                                                                                                                                                                                  </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>reg_type               </td>
+                  <td>character</td>
+                  <td>Provide details on the type of regression did the authors use, if the answer was TRUE for "Did the authors discuss/justify their use of Model I vs Model II regression?"                                                                                                                                                                                                                                                                  </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>mod_tests              </td>
+                  <td>character</td>
+                  <td>What kinds of tests, if any, did the authors perform on the results of their model? This can include the type of test used to compare the SM50 to a linear model                                                                                                                                                                                                                                                                          </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>ref_var_notes          </td>
+                  <td>character</td>
+                  <td>Notes about justification for selecting the given reference variable.                                                                                                                                                                                                                                                                                                                                                                     </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>software               </td>
+                  <td>character</td>
+                  <td>What software or programming language was used for the modeling?                                                                                                                                                                                                                                                                                                                                                                          </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>package                </td>
+                  <td>character</td>
+                  <td>Any specific computer programs, scripts, orcpackages described by the source as being used for the model.                                                                                                                                                                                                                                                                                                                                 </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>code_link              </td>
+                  <td>character</td>
+                  <td>Link to code, using a DOI or other permanent identifier where available.                                                                                                                                                                                                                                                                                                                                                                  </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>data_link              </td>
+                  <td>character</td>
+                  <td>Link to data, using a DOI or other permanent identifier where available.                                                                                                                                                                                                                                                                                                                                                                  </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>ecoevo_sig             </td>
+                  <td>character</td>
+                  <td>Paper's explanation of the evolutionary/ecological significance of the change in chela and/or abdomen morphology at maturity.                                                                                                                                                                                                                                                                                                             </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>fishing_effect         </td>
+                  <td>character</td>
+                  <td>Paper's findings related to the effects of harvesting on size at maturity.                                                                                                                                                                                                                                                                                                                                                                </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>temp_effect            </td>
+                  <td>character</td>
+                  <td>Paper's findings related to the effects of temperature or climate change on size at maturity.                                                                                                                                                                                                                                                                                                                                             </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study, record         </td>
+                  <td>comments               </td>
+                  <td>character</td>
+                  <td>Other comments about the paper                                                                                                                                                                                                                                                                                                                                                                                                            </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study, record         </td>
+                  <td>year                   </td>
+                  <td>dateTime </td>
+                  <td>Year of publication                                                                                                                                                                                                                                                                                                                                                                                                                       </td>
+                  <td>YYYY      </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>start_date             </td>
+                  <td>dateTime </td>
+                  <td>Beginning of time period during which samples were collected                                                                                                                                                                                                                                                                                                                                                                              </td>
+                  <td>YYYY-MM-DD</td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>end_date               </td>
+                  <td>dateTime </td>
+                  <td>End of time period during which samples were collected                                                                                                                                                                                                                                                                                                                                                                                    </td>
+                  <td>YYYY-MM-DD</td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>habitat                </td>
+                  <td>factor   </td>
+                  <td>Type of habitat where the crustacean lives ("marine", "fresh", "brackish", "terrestrial"). Default should be what is listed in WoRMS, unless the source document indicates otherwise. For example, if WoRMS lists a species as marine/freshwater/brackish but the population studied in the article was only from a freshwater stream, put "fresh".                                                                                       </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study, record         </td>
+                  <td>sex                    </td>
+                  <td>factor   </td>
+                  <td>Sex for which SM50 is being estimated (M, F, B = both separately, C = both combined, NS = not specified). Note that sometimes size at maturity will be estimated for both sexes but for females will be done using ovarian staging or similar physiological methods, while allometric data are used for males. If estimates of SM50 are not derived for the females besides a normal maturity ogive, this would only count as "M"         </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>phys_comp              </td>
+                  <td>factor   </td>
+                  <td>How did the estimate of size at morphometric maturity compare to estimates of size at physiological or functional maturity, either from the same study or from previous studies mentioned in the paper? 
+higher/lower/same = morphometric L50 was higher than/lower than/roughly the same as phys/func L50
+conflict = morphometric L50 was higher than some previous phys/func estimates and lower than others
+NA if no comparison made</td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>also_phys              </td>
+                  <td>factor   </td>
+                  <td>Did the authors also measure physiological or functional maturity? E.g., classification of gonad development, presence of sperm in female spermathecae. (TRUE/FALSE)                                                                                                                                                                                                                                                                      </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>coords_avail           </td>
+                  <td>factor   </td>
+                  <td>Did the authors provide geographic coordinates for the location(s) where samples were collected? TRUE, FALSE, or APPROX if not provided but could be extracted from provided maps or closely approximated based on information given in the text                                                                                                                                                                                          </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>time_var               </td>
+                  <td>factor   </td>
+                  <td>Did the authors consider temporal variation in SM50? (TRUE/FALSE)                                                                                                                                                                                                                                                                                                                                                                         </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>spatial_var            </td>
+                  <td>factor   </td>
+                  <td>Did the authors consider spatial variation in SM50? (TRUE/FALSE)                                                                                                                                                                                                                                                                                                                                                                          </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>claw_regen             </td>
+                  <td>factor   </td>
+                  <td>Did they mention excluding crabs with (fully or partially) regenerated chelae? (TRUE/FALSE)                                                                                                                                                                                                                                                                                                                                               </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>mult_models            </td>
+                  <td>factor   </td>
+                  <td>Did the authors test multiple modeling approaches to estimate SM50? Note: this does not include a simple linear model developed as the null hypothesis to a piecewise model (see next question). Also excluded are models based on morphological or functional maturity data. (TRUE/FALSE)                                                                                                                                                </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>reg_mention            </td>
+                  <td>factor   </td>
+                  <td>Did the authors discuss/justify their use of Model I vs Model II regression? (OLS, Reduced Major Axis, Major Axis) (TRUE/FALSE)                                                                                                                                                                                                                                                                                                           </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>log_trans              </td>
+                  <td>factor   </td>
+                  <td>Did the authors assume an untransformed or log-log relationship for the regression equation? NOTE that this does NOT refer to whether the authors used log-log data for the regression fitting or non-linear least squares (e.g., Levenberg-Marquardt), as either of those methods assume y=aX^b instead of y=a+bx                                                                                                                        </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>est_variance           </td>
+                  <td>factor   </td>
+                  <td>Did the study provide a measure of variance/confidence for their estimate of SM50? (SD, 95% CIs, etc.)                                                                                                                                                                                                                                                                                                                                    </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>code_avail             </td>
+                  <td>factor   </td>
+                  <td>Does the paper provide the code used for the modeling? (TRUE/FALSE)                                                                                                                                                                                                                                                                                                                                                                       </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>data_avail             </td>
+                  <td>factor   </td>
+                  <td>Does the paper provide the raw data used for the analysis? (TRUE/FALSE)                                                                                                                                                                                                                                                                                                                                                                   </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>success                </td>
+                  <td>factor   </td>
+                  <td>Did the authors conclude that the morphometric relationship could be reliably used to estimate size at maturity, or at least to distinguish between immature and mature individuals? (TRUE/FALSE)                                                                                                                                                                                                                                         </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>mgmt_context           </td>
+                  <td>factor   </td>
+                  <td>Did the authors mention tangible ways in which fisheries regulations/management frameworks might be adjusted based on their findings? (TRUE/FALSE)                                                                                                                                                                                                                                                                                        </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>novel_stats            </td>
+                  <td>factor   </td>
+                  <td>Does the paper develop a novel method or include commentary about an existing modeling method that should be tested/explored during the simulation testing? (TRUE/FALSE)                                                                                                                                                                                                                                                                  </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Study, record         </td>
+                  <td>study_id               </td>
+                  <td>numeric  </td>
+                  <td>ID number assigned to each study for the purpose of aligning entries in different datasets                                                                                                                                                                                                                                                                                                                                                </td>
+                  <td>NA        </td>
+                  <td>dimensionless</td>
+                  <td>natural</td>
+                </tr>
+<tr>
+<td>Study, record, species</td>
+                  <td>AphiaID                </td>
+                  <td>numeric  </td>
+                  <td>WoRMS AphiaID(s) of the species included in the study, separated by ";" if multiple                                                                                                                                                                                                                                                                                                                                                       </td>
+                  <td>NA        </td>
+                  <td>dimensionless</td>
+                  <td>natural</td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>tot_samp_size          </td>
+                  <td>numeric  </td>
+                  <td>Total number of unique crustaceans from which morphometric data were analyzed                                                                                                                                                                                                                                                                                                                                                             </td>
+                  <td>NA        </td>
+                  <td>number       </td>
+                  <td>natural</td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>min_samp_size          </td>
+                  <td>numeric  </td>
+                  <td>Minimum sample size used to estimate size at maturity, if separate models were fit for different sexes, regions, etc.                                                                                                                                                                                                                                                                                                                     </td>
+                  <td>NA        </td>
+                  <td>number       </td>
+                  <td>natural</td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>max_samp_size          </td>
+                  <td>numeric  </td>
+                  <td>Maximum sample size used to estimate size at maturity, if separate models were fit for different sexes, regions, etc.                                                                                                                                                                                                                                                                                                                     </td>
+                  <td>NA        </td>
+                  <td>number       </td>
+                  <td>natural</td>
+                </tr>
+<tr>
+<td>Study, record         </td>
+                  <td>latitude               </td>
+                  <td>numeric  </td>
+                  <td>Latitude value(s), in EPSG 4326/WGS84 format, separated by ";" if multiple                                                                                                                                                                                                                                                                                                                                                                </td>
+                  <td>NA        </td>
+                  <td>degree       </td>
+                  <td>real   </td>
+                </tr>
+<tr>
+<td>Study, record         </td>
+                  <td>longitude              </td>
+                  <td>numeric  </td>
+                  <td>Longitude value(s), in EPSG 4326/WGS84 format, separated by ";" if multiple                                                                                                                                                                                                                                                                                                                                                               </td>
+                  <td>NA        </td>
+                  <td>degree       </td>
+                  <td>real   </td>
+                </tr>
+<tr>
+<td>Study                 </td>
+                  <td>num_breakpoints        </td>
+                  <td>numeric  </td>
+                  <td>How many transition points were estimated? Default is 1, the transition between immature and mature, but could be &gt;1 if used to differentiate instars                                                                                                                                                                                                                                                                                     </td>
+                  <td>NA        </td>
+                  <td>number       </td>
+                  <td>natural</td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>start_date_record      </td>
+                  <td>dateTime </td>
+                  <td>Beginning of time period during which samples for this specific record were collected                                                                                                                                                                                                                                                                                                                                                     </td>
+                  <td>YYYY-MM-DD</td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>end_date_record        </td>
+                  <td>dateTime </td>
+                  <td>End of time period during which samples were for this specific record were collected                                                                                                                                                                                                                                                                                                                                                      </td>
+                  <td>YYYY-MM-DD</td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>mod_form_record        </td>
+                  <td>character</td>
+                  <td>Modeling approach used to estimate SM50 in this specific instance. Used standardized names where possible.                                                                                                                                                                                                                                                                                                                                </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>x_axis_units           </td>
+                  <td>character</td>
+                  <td>Unit of the x-axis/independent variable in the regression for which slope &amp; intercept parameters are being extracted                                                                                                                                                                                                                                                                                                                      </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>y_axis_units           </td>
+                  <td>character</td>
+                  <td>Unit of the y-axis/dependent variable in the regression for which slope &amp; intercept parameters are being extracted                                                                                                                                                                                                                                                                                                                        </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>sm50_units             </td>
+                  <td>numeric  </td>
+                  <td>Unit in which SM50 value was given                                                                                                                                                                                                                                                                                                                                                                                                        </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>sm50_SE                </td>
+                  <td>numeric  </td>
+                  <td>Standard error of SM50 value, if provided                                                                                                                                                                                                                                                                                                                                                                                                 </td>
+                  <td>NA        </td>
+                  <td>dimensionless</td>
+                  <td>real   </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>sm50_SD                </td>
+                  <td>numeric  </td>
+                  <td>Standard deviation of SM50 value, if provided                                                                                                                                                                                                                                                                                                                                                                                             </td>
+                  <td>NA        </td>
+                  <td>dimensionless</td>
+                  <td>real   </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>sm50                   </td>
+                  <td>numeric  </td>
+                  <td>Final SM50 value(s) estimated in the study, in the original units                                                                                                                                                                                                                                                                                                                                                                         </td>
+                  <td>NA        </td>
+                  <td>dimensionless</td>
+                  <td>real   </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>samp_size_record       </td>
+                  <td>numeric  </td>
+                  <td>Sample size of the specific regression from which parameters are being extracted                                                                                                                                                                                                                                                                                                                                                          </td>
+                  <td>NA        </td>
+                  <td>number       </td>
+                  <td>natural</td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>f_ab_slope             </td>
+                  <td>factor   </td>
+                  <td>How did the allometric slope parameter (growth rate of the female abdomen compared to carapace width or length) change at maturity? Variables are abdomen width and carapace width unless otherwise specified                                                                                                                                                                                                                             </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>m_claw_slope           </td>
+                  <td>factor   </td>
+                  <td>How did the allometric slope parameter (growth rate of the male claw compared to carapace width or length) change at maturity?                                                                                                                                                                                                                                                                                                            </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>f_ab_int               </td>
+                  <td>factor   </td>
+                  <td>How did the allometric intercept parameter (relative size of the female abdomen compared to carapace width or length) change at maturity?                                                                                                                                                                                                                                                                                                 </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>m_claw_int             </td>
+                  <td>factor   </td>
+                  <td>How did the allometric intercept parameter (relative size of the male claw compared to carapace width or length) change at maturity?                                                                                                                                                                                                                                                                                                      </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>imm_slope_val          </td>
+                  <td>numeric  </td>
+                  <td>Allometric growth slope parameter for male claw size vs. body size before maturity                                                                                                                                                                                                                                                                                                                                                        </td>
+                  <td>NA        </td>
+                  <td>dimensionless</td>
+                  <td>real   </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>mat_slope_val          </td>
+                  <td>numeric  </td>
+                  <td>Allometric growth slope parameter for male claw size vs. body size before maturity                                                                                                                                                                                                                                                                                                                                                        </td>
+                  <td>NA        </td>
+                  <td>dimensionless</td>
+                  <td>real   </td>
+                </tr>
+<tr>
+<td>Record                </td>
+                  <td>comments_group         </td>
+                  <td>character</td>
+                  <td>Comments about the sampling dates, region, etc. needed to distinguish between multiple SM50 values obtained from a single study                                                                                                                                                                                                                                                                                                           </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Species               </td>
+                  <td>sex_species            </td>
+                  <td>factor   </td>
+                  <td>Sex for which the traits are being reported (M, F, B = both separately, C = both combined, NS = not specified)                                                                                                                                                                                                                                                                                                                            </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Species               </td>
+                  <td>terminal_molt          </td>
+                  <td>factor   </td>
+                  <td>Does the species exhibit determinate growth/terminal anecdysis?                                                                                                                                                                                                                                                                                                                                                                           </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Species               </td>
+                  <td>terminal_source_name   </td>
+                  <td>character</td>
+                  <td>Brief citation of source document reporting presence or absence of terminal molt, e.g., Jones et al. (2018)                                                                                                                                                                                                                                                                                                                               </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Species               </td>
+                  <td>terminal_molt_link     </td>
+                  <td>character</td>
+                  <td>Link to source reporting presence or absence of terminal molt, DOI preferred.                                                                                                                                                                                                                                                                                                                                                             </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Species               </td>
+                  <td>heterochely            </td>
+                  <td>factor   </td>
+                  <td>Does the species exhibit heterochely?                                                                                                                                                                                                                                                                                                                                                                                                     </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Species               </td>
+                  <td>heterochely_source_name</td>
+                  <td>character</td>
+                  <td>Brief citation of source document reporting presence or absence of heterochely, e.g., Jones et al. (2018)                                                                                                                                                                                                                                                                                                                                 </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Species               </td>
+                  <td>heterochely_link       </td>
+                  <td>character</td>
+                  <td>Link to source reporting presence or absence of heterochely, DOI preferred.                                                                                                                                                                                                                                                                                                                                                               </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Species               </td>
+                  <td>comments               </td>
+                  <td>character</td>
+                  <td>Other comments about the entry                                                                                                                                                                                                                                                                                                                                                                                                            </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
+<tr>
+<td>Species               </td>
+                  <td>genetic_data_link      </td>
+                  <td>character</td>
+                  <td>Links to relevant genetic data/phylogenetic tree for genus/etc.                                                                                                                                                                                                                                                                                                                                                                           </td>
+                  <td>NA        </td>
+                  <td>NA           </td>
+                  <td>NA     </td>
+                </tr>
 </tbody>
 </table>
 </div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<div class="cell">
-<div id="tbl-recordkeys" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-recordkeys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;B.2: EML attributes for record-level data
-</figcaption><div aria-describedby="tbl-recordkeys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div id="lyvutqljut" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lyvutqljut table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#lyvutqljut thead, #lyvutqljut tbody, #lyvutqljut tfoot, #lyvutqljut tr, #lyvutqljut td, #lyvutqljut th {
-  border-style: none;
-}
-
-#lyvutqljut p {
-  margin: 0;
-  padding: 0;
-}
-
-#lyvutqljut .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#lyvutqljut .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#lyvutqljut .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#lyvutqljut .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#lyvutqljut .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#lyvutqljut .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lyvutqljut .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#lyvutqljut .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#lyvutqljut .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#lyvutqljut .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#lyvutqljut .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#lyvutqljut .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#lyvutqljut .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#lyvutqljut .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#lyvutqljut .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#lyvutqljut .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#lyvutqljut .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#lyvutqljut .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#lyvutqljut .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lyvutqljut .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#lyvutqljut .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#lyvutqljut .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#lyvutqljut .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lyvutqljut .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#lyvutqljut .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#lyvutqljut .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lyvutqljut .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lyvutqljut .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#lyvutqljut .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lyvutqljut .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#lyvutqljut .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#lyvutqljut .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#lyvutqljut .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lyvutqljut .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#lyvutqljut .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#lyvutqljut .gt_left {
-  text-align: left;
-}
-
-#lyvutqljut .gt_center {
-  text-align: center;
-}
-
-#lyvutqljut .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#lyvutqljut .gt_font_normal {
-  font-weight: normal;
-}
-
-#lyvutqljut .gt_font_bold {
-  font-weight: bold;
-}
-
-#lyvutqljut .gt_font_italic {
-  font-style: italic;
-}
-
-#lyvutqljut .gt_super {
-  font-size: 65%;
-}
-
-#lyvutqljut .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#lyvutqljut .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#lyvutqljut .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#lyvutqljut .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#lyvutqljut .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#lyvutqljut .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#lyvutqljut .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#lyvutqljut .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#lyvutqljut div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
-<th id="X" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">X</th>
-<th id="attributeName" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">attributeName</th>
-<th id="class" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">class</th>
-<th id="attributeDefinition" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">attributeDefinition</th>
-<th id="formatString" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">formatString</th>
-<th id="unit" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">unit</th>
-<th id="numberType" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">numberType</th>
-</tr></thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">1</td>
-<td class="gt_row gt_left" headers="attributeName">study_id</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">ID number assigned to each study for the purpose of aligning entries in different datasets</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">dimensionless</td>
-<td class="gt_row gt_left" headers="numberType">natural</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">2</td>
-<td class="gt_row gt_left" headers="attributeName">auth_short</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">First author of source if there are 3+ authors or Auth1 &amp; Auth2 if there are only two authors.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">3</td>
-<td class="gt_row gt_left" headers="attributeName">year</td>
-<td class="gt_row gt_left" headers="class">dateTime</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Year of publication</td>
-<td class="gt_row gt_left" headers="formatString">YYYY</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">4</td>
-<td class="gt_row gt_left" headers="attributeName">title</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Source title, in sentence case.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">5</td>
-<td class="gt_row gt_left" headers="attributeName">start_date</td>
-<td class="gt_row gt_left" headers="class">dateTime</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Beginning of time period during which samples for this specific record were collected</td>
-<td class="gt_row gt_left" headers="formatString">YYYY-MM-DD</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">6</td>
-<td class="gt_row gt_left" headers="attributeName">end_date</td>
-<td class="gt_row gt_left" headers="class">dateTime</td>
-<td class="gt_row gt_left" headers="attributeDefinition">End of time period during which samples were for this specific record were collected</td>
-<td class="gt_row gt_left" headers="formatString">YYYY-MM-DD</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">7</td>
-<td class="gt_row gt_left" headers="attributeName">species_sci</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Scientific name of modeled species (ITIS standard/most current valid taxonomic name, as listed in WoRMS)</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">8</td>
-<td class="gt_row gt_left" headers="attributeName">AphiaID</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">WoRMS AphiaID(s) of the species included in the study, separated by ; if multiple</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">dimensionless</td>
-<td class="gt_row gt_left" headers="numberType">natural</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">9</td>
-<td class="gt_row gt_left" headers="attributeName">sex</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Sex for which SM50 is being estimated (M, F, B = both separately, C = both combined, NS = not specified).</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">10</td>
-<td class="gt_row gt_left" headers="attributeName">mod_form</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Modeling approach used to estimate SM50, separated by ; if multiple. Used standardized names where possible.</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">11</td>
-<td class="gt_row gt_left" headers="attributeName">x_axis_units</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Unit of the x-axis/independent variable in the regression for which slope &amp; intercept parameters are being extracted</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">12</td>
-<td class="gt_row gt_left" headers="attributeName">y_axis_units</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Unit of the y-axis/dependent variable in the regression for which slope &amp; intercept parameters are being extracted</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">13</td>
-<td class="gt_row gt_left" headers="attributeName">sm50_units</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Unit in which SM50 value was given</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">14</td>
-<td class="gt_row gt_left" headers="attributeName">sm50_SE</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Standard error of SM50 value, if provided</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">dimensionless</td>
-<td class="gt_row gt_left" headers="numberType">real</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">15</td>
-<td class="gt_row gt_left" headers="attributeName">sm50_SD</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Standard deviation of SM50 value, if provided</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">dimensionless</td>
-<td class="gt_row gt_left" headers="numberType">real</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">16</td>
-<td class="gt_row gt_left" headers="attributeName">sm50</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Final SM50 value(s) estimated in the study, in the original units</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">dimensionless</td>
-<td class="gt_row gt_left" headers="numberType">real</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">17</td>
-<td class="gt_row gt_left" headers="attributeName">samp_size</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Sample size of the specific regression from which parameters are being extracted</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">number</td>
-<td class="gt_row gt_left" headers="numberType">natural</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">18</td>
-<td class="gt_row gt_left" headers="attributeName">f_ab_slope</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">How did the allometric slope parameter (growth rate of the female abdomen compared to carapace width or length) change at maturity? Variables are abdomen width and carapace width unless otherwise specified</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">19</td>
-<td class="gt_row gt_left" headers="attributeName">m_claw_slope</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">How did the allometric slope parameter (growth rate of the male claw compared to carapace width or length) change at maturity?</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">20</td>
-<td class="gt_row gt_left" headers="attributeName">f_ab_int</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">How did the allometric intercept parameter (relative size of the female abdomen compared to carapace width or length) change at maturity?</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">21</td>
-<td class="gt_row gt_left" headers="attributeName">m_claw_int</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">How did the allometric intercept parameter (relative size of the male claw compared to carapace width or length) change at maturity?</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">22</td>
-<td class="gt_row gt_left" headers="attributeName">imm_slope_val</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">NA</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">dimensionless</td>
-<td class="gt_row gt_left" headers="numberType">real</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">23</td>
-<td class="gt_row gt_left" headers="attributeName">mat_slope_val</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">NA</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">dimensionless</td>
-<td class="gt_row gt_left" headers="numberType">real</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">24</td>
-<td class="gt_row gt_left" headers="attributeName">comments_group</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Comments about the sampling dates, region, etc. needed to distinguish between multiple SM50 values obtained from a single study</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">25</td>
-<td class="gt_row gt_left" headers="attributeName">comments</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Other comments about the paper</td>
-<td class="gt_row gt_left" headers="formatString">NA</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</figure>
-</div>
-</div>
-<div class="cell">
-<div id="tbl-specieskeys" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-specieskeys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;B.3: EML attributes for species data
-</figcaption><div aria-describedby="tbl-specieskeys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div id="smssssrjnr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#smssssrjnr table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#smssssrjnr thead, #smssssrjnr tbody, #smssssrjnr tfoot, #smssssrjnr tr, #smssssrjnr td, #smssssrjnr th {
-  border-style: none;
-}
-
-#smssssrjnr p {
-  margin: 0;
-  padding: 0;
-}
-
-#smssssrjnr .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#smssssrjnr .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#smssssrjnr .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#smssssrjnr .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#smssssrjnr .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#smssssrjnr .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#smssssrjnr .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#smssssrjnr .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#smssssrjnr .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#smssssrjnr .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#smssssrjnr .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#smssssrjnr .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#smssssrjnr .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#smssssrjnr .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#smssssrjnr .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#smssssrjnr .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#smssssrjnr .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#smssssrjnr .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#smssssrjnr .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#smssssrjnr .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#smssssrjnr .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#smssssrjnr .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#smssssrjnr .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#smssssrjnr .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#smssssrjnr .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#smssssrjnr .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#smssssrjnr .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#smssssrjnr .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#smssssrjnr .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#smssssrjnr .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#smssssrjnr .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#smssssrjnr .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#smssssrjnr .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#smssssrjnr .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#smssssrjnr .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#smssssrjnr .gt_left {
-  text-align: left;
-}
-
-#smssssrjnr .gt_center {
-  text-align: center;
-}
-
-#smssssrjnr .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#smssssrjnr .gt_font_normal {
-  font-weight: normal;
-}
-
-#smssssrjnr .gt_font_bold {
-  font-weight: bold;
-}
-
-#smssssrjnr .gt_font_italic {
-  font-style: italic;
-}
-
-#smssssrjnr .gt_super {
-  font-size: 65%;
-}
-
-#smssssrjnr .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#smssssrjnr .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#smssssrjnr .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#smssssrjnr .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#smssssrjnr .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#smssssrjnr .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#smssssrjnr .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#smssssrjnr .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#smssssrjnr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
-<th id="X" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">X</th>
-<th id="attributeName" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">attributeName</th>
-<th id="class" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">class</th>
-<th id="attributeDefinition" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">attributeDefinition</th>
-<th id="unit" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">unit</th>
-<th id="numberType" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">numberType</th>
-</tr></thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">1</td>
-<td class="gt_row gt_left" headers="attributeName">species_common</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Common name of the species, either as given in the source document or as listed in WoRMS.</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">2</td>
-<td class="gt_row gt_left" headers="attributeName">species_sci</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Scientific name of the species (ITIS standard/most current valid taxonomic name, as listed in WoRMS)</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">3</td>
-<td class="gt_row gt_left" headers="attributeName">AphiaID</td>
-<td class="gt_row gt_left" headers="class">numeric</td>
-<td class="gt_row gt_left" headers="attributeDefinition">WoRMS AphiaID of the species.</td>
-<td class="gt_row gt_left" headers="unit">dimensionless</td>
-<td class="gt_row gt_left" headers="numberType">natural</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">4</td>
-<td class="gt_row gt_left" headers="attributeName">sex</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Sex for which the traits are being reported (M, F, B = both separately, C = both combined, NS = not specified)</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">5</td>
-<td class="gt_row gt_left" headers="attributeName">terminal_molt</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Does the species exhibit determinate growth/terminal anecdysis?</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">6</td>
-<td class="gt_row gt_left" headers="attributeName">terminal_source_name</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Brief citation of source document reporting presence or absence of terminal molt, e.g., Jones et al. (2018)</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">7</td>
-<td class="gt_row gt_left" headers="attributeName">terminal_molt_link</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Link to source reporting presence or absence of terminal molt, DOI preferred.</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">8</td>
-<td class="gt_row gt_left" headers="attributeName">heterochely</td>
-<td class="gt_row gt_left" headers="class">factor</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Does the species exhibit heterochely?</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">9</td>
-<td class="gt_row gt_left" headers="attributeName">heterochely_source_name</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Brief citation of source document reporting presence or absence of heterochely, e.g., Jones et al. (2018)</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">10</td>
-<td class="gt_row gt_left" headers="attributeName">heterochely_link</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Link to source reporting presence or absence of heterochely, DOI preferred.</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="X">11</td>
-<td class="gt_row gt_left" headers="attributeName">comments</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Other comments about the entry</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_right" headers="X">12</td>
-<td class="gt_row gt_left" headers="attributeName">genetic_data_link</td>
-<td class="gt_row gt_left" headers="class">character</td>
-<td class="gt_row gt_left" headers="attributeDefinition">Links to relevant genetic data/phylogenetic tree for genus/etc.</td>
-<td class="gt_row gt_left" headers="unit">NA</td>
-<td class="gt_row gt_left" headers="numberType">NA</td>
-</tr>
-</tbody>
-</table>
-</div>
+<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </figure>
